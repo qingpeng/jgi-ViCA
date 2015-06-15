@@ -1,0 +1,39 @@
+{ 
+"url" :
+	{
+	"ncbi_taxonomy" : "ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/gi_taxid_nucl.dmp.gz",
+	"refseq_release_number" :"ftp://ftp.ncbi.nlm.nih.gov/refseq/release/RELEASE_NUMBER",
+	"archaea" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/archaea/archaea.*.genomic.fna.gz",
+	"bacteria" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/bacteria/bacteria.*.genomic.fna.gz",
+	"plasmid" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plasmid/plasmid.*.genomic.fna.gz",
+	"plastid" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plastid/plastid.*.genomic.fna.gz",
+	"mitochondrion" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/mitochondrion/mitochondrion.*.genomic.fna.gz",
+	"protozoa" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/protozoa/protozoa.*.genomic.fna.gz",
+	"plant" : " ftp://ftp.ncbi.nlm.nih.gov/refseq/release/plant/plant.*.genomic.fna.gz",
+	"invertebrate" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/vertebrate_mammalian/vertebrate_mammalian.*.genomic.fna.gz",
+	"vertebrate_mammalian" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/vertebrate_mammalian/vertebrate_mammalian.*.genomic.fna.gz",
+	"vertebrate_other" :"ftp://ftp.ncbi.nlm.nih.gov/refseq/release/vertebrate_other/vertebrate_other.*.genomic.fna.gz",
+	"fungal" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/fungi/fungi.*.genomic.fna.gz",
+	"viral" : "ftp://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.*.genomic.fna.gz"
+	},
+"dir" : 
+	{"data" : 
+		{"traininggenomes" : ["archaea","dsRNAviruses", "mitochondrion","plastid","ssDNAviruses","vertebrate_other","bacteria","fungi","plant","protozoa","ssRNAviruses","viruses_other","dsDNAviruses","invertebrate","plasmid","retroviruses","vertebrate_mammalian"]
+		}
+	},
+"metamarkparams" :
+	{"prok" : "gmsn.pl --clean --gm",
+	"euk" : "gmsn.pl --offover --gcode 1 --clean --fixmotif --prestart 6 --width 12 --order 4 --gm",
+	"virus" : "gmsn.pl --gcode 1 --clean --fixmotif --prestart 6 --width 12 --gm"
+	},
+"parfile" :
+	{"prok" : "par_11.modified",
+	"euk" : "par_1.modified",
+	"virus" : "par_1.modified"
+	},
+"qsubparams" :
+	{"prok" : "-l ram.c=5G,h_rt=01:00:00",
+	"euk" :  "-l ram.c=40G,h_rt=12:00:00",
+	"virus" :  "-l ram.c=5G,h_rt=00:10:00"
+	}
+}
