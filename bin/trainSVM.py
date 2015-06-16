@@ -20,6 +20,10 @@ from sklearn.utils import shuffle
 from sklearn.metrics import roc_curve, auc
 import pylab as pl
 
+import matplotlib.pyplot as plt
+
+from sklearn.cross_validation import train_test_split
+from sklearn.metrics import confusion_matrix
 from sklearn.metrics import confusion_matrix
 
 parser = argparse.ArgumentParser(description='A script to train an SVM model')
@@ -52,9 +56,9 @@ modd = np.array(moddata)
 classtrain_viral = classtrain
 for n,i in enumerate(classtrain_viral):
 	if i in ['dsDNAviruses', 'viruses_other', 'ssRNAviruses','dsRNAviruses', 'retroviruses','viruses_other']:
-		classtrain_viral[n]=True
+		classtrain_viral[n]='viral'
 	else:
-		classtrain_viral[n]=False
+		classtrain_viral[n]='nonviral'
 clstrain_viral = np.array(classtrain_viral)
 print("classes and elements in viral/non-viral class vector:")
 print(Counter(classtrain_viral))
@@ -63,10 +67,10 @@ print(Counter(classtrain_viral))
 #create viral/non-viral two class model 
 classdata_viral = classdata
 for n,i in enumerate(classdata_viral):
-	if i in ['dsDNAviruses', 'viruses_other', 'ssRNAviruses','dsRNAviruses', 'retroviruses','viruses_other']:
-		classdata_viral[n]=True
+	if i in ['viruses']:
+		classdata_viral[n]='viral'
 	else:
-		classdata_viral[n]=False
+		classdata_viral[n]='nonviral'
 clsdata_viral = np.array(classdata_viral)
 print("classes and elements in viral/non-viral class vector:")
 print(Counter(classtrain_viral))
@@ -96,10 +100,39 @@ moddscaled = scaler.transform(modd)
 
 
 clf = svm.SVC(kernel='rbf', C=10, gamma = 0.008, class_weight='auto', cache_size=4000)
-clf.fit(modtscaled,clstrain_viral)
-metaTpredictions = clf.predict(moddscaled)
-print(confusion_matrix(metaTpredictions, clsdata_viral))
+clf = clf.fit(modtscaled,clstrain_viral)
+y_pred = clf.predict(moddscaled)
+print(y_pred)
+print(clsdata_viral)
 
+def plot_confusion_matrix(cm, title='Confusion matrix', cmap=plt.cm.Blues):
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(2)
+    plt.xticks(tick_marks, ["Non-viral", "Viral"], rotation=45)
+    plt.yticks(tick_marks, ["Non-viral", "Viral"])
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+
+# Compute confusion matrix
+cm = confusion_matrix(clsdata_viral, y_pred)
+np.set_printoptions(precision=2)
+print('Confusion matrix, without normalization')
+print(cm)
+plt.figure()
+plot_confusion_matrix(cm)
+
+# Normalize the confusion matrix by row (i.e by the number of samples
+# in each class)
+cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+print('Normalized confusion matrix')
+print(cm_normalized)
+plt.figure()
+plot_confusion_matrix(cm_normalized, title='Normalized confusion matrix')
+
+plt.show()
 ############# Cross-validation of optimized model ##############
 # print("Beginning cross-validation of the optimized model")
 # clf = svm.SVC(kernel='rbf', C=10, gamma = 0.008, class_weight='auto', cache_size=4000)
