@@ -1,0 +1,30 @@
+{
+	"$schema" : "http://json-schema.org/draft-04/schema#",
+	"title" : "Training Data",
+	"description" : "Feature data for training a machine learning classifier",
+	"type" : "object",
+	"properties" : {
+		"id" : {
+			"description" : "the id of a training instance for the classifier",
+			"type" : "string",
+			"metadata":{
+				"taxonomyArray" : {
+				"description": "an array containing taxonomic levels",
+				"type" : "array",
+				"items": {
+                	"type": "string"
+            		}
+            	}
+            }
+			"data" : {
+				"description": "data describing the training instance ",
+				"genestructure"	{
+					"description" : "A vector describing the training instance derived from gene structure",
+					"type" : "array",
+					"items" : "number"
+					}
+				}	
+			},
+		"required": ["id"]
+	}
+}
