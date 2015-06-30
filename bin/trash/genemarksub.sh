@@ -5,7 +5,7 @@
 #$ -w e
 
 #source genemark program
-source ~/dev/codonpatternclassifier/bin/env.sh
+source env.sh
 
 #set human friendly variable names
 inputdir="$1"
