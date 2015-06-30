@@ -18,7 +18,7 @@
             }
 			"data" : {
 				"description": "data describing the training instance ",
-				"genestructure"	{
+				"genestructure":{
 					"description" : "A vector describing the training instance derived from gene structure",
 					"type" : "array",
 					"items" : "number"

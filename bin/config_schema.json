@@ -1,0 +1,15 @@
+{
+	"$schema" : "http://json-schema.org/draft-04/schema#",
+	"title" : "Congiguration Data",
+	"description" : "Configuration data for training a machine learning classifier",
+	"type" : "object",
+	"properties" : 
+		"task" :{
+			"description": "Analysis task to be done needed for assignment",
+			"type" : "string"
+				}
+		"method":{
+			"description" : " the method to use for feature extraction",
+			"type" : "string"
+			}
+ }	
