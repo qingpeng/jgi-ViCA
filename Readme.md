@@ -52,5 +52,5 @@ probabilities calculated from gene calling.
 * feature_extraction_metamark.py - a wrapper to run metamark and extract the genomic feature
 * feature_extraction_kmer.py an alternate method of extracting feature information
 ## Diagram of program
-![Diagram](GeneStructureClassifier.png)
+![Diagram](GenePatternClassifier.png)
  	
