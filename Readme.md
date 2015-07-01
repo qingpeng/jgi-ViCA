@@ -1,7 +1,6 @@
 
-#Gene Pattern Classifier
-## A program to classify genes and genomes based on the codon transition 
-probabilities calculated from gene calling. 
+#Gene Structure Classifier
+## A program to classify genes and genomes based on the codon transition probabilities calculated from gene calling. 
  
 ##Use cases:
 * Classifying metagenomic and metatransciptomic contigs taxonomically
@@ -10,15 +9,15 @@ probabilities calculated from gene calling.
   divergent forms of life
 
 # Dependencies
-[GenemarkS version 4.29](http://exon.gatech.edu/GeneMark/)
-[RefTree](http://jgi.goe.gov)
-[Python v2.74](https://www.python.org/)
-[Scikit-learn](https://scikits.appspot.com/scikit-learn)
-[Biopython](http://biopython.org)
-[simplejson](https://github.com/simplejson/simplejson)
-[numpy](http://www.numpy.org/)
-[scipy](http://www.scipy.org/)
-[matplotlib](http://matplotlib.org/)
+* [GenemarkS version 4.29](http://exon.gatech.edu/GeneMark/)
+* [RefTree](http://jgi.goe.gov)
+* [Python v2.74](https://www.python.org/)
+* [Scikit-learn](https://scikits.appspot.com/scikit-learn)
+* [Biopython](http://biopython.org)
+* [simplejson](https://github.com/simplejson/simplejson)
+* [numpy](http://www.numpy.org/)
+* [scipy](http://www.scipy.org/)
+* [matplotlib](http://matplotlib.org/)
 
 ## Files
 ###Setup
@@ -42,15 +41,26 @@ probabilities calculated from gene calling.
 	2. svm_training.py - A script to take training data, do a parameter search, create a model and cross-validate it 
 
 ### Sample classification
-* svm classification a wrapper to run SVM classification
+* svm_classification.py - a wrapper to run SVM classification
 	1. feature extraction scripts - see below
 	2. feature_formatter.py - a utility script  to format csv feature data into json data
 	3. svm_classifier.py a script to load a SVM model and classify sequences
-* Feature extraction script
 
-### Feature Extraction Scripts 
+### Producing data for genome binning
+* metagenome_binning_data.py -a a wrapper for producing genome binning data
+	1. Feature extraction script
+	2. feature formatter
+	
+
+### Feature extraction ecripts 
 * feature_extraction_metamark.py - a wrapper to run metamark and extract the genomic feature
 * feature_extraction_kmer.py an alternate method of extracting feature information
+
+### Utility scripts 
+* feature_formatter.py
+
 ## Diagram of program
+
 ![Diagram](GenePatternClassifier.png)
- 	
+
+
