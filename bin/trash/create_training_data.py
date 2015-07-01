@@ -1,4 +1,4 @@
-#!/usr/common/usg/languages/python/2.7.4/bin/python
+#!/usr/bin/env python
 # This runs a pipeline that 
 #usage create_training_data.py <refseq file location> <root directory>
 import sys

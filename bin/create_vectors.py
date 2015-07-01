@@ -1,4 +1,4 @@
-#!/usr/common/usg/languages/python/2.7.4/bin/python
+#!/usr/bin/env python
 #create_vectors.py
 #adam Rivers
 
