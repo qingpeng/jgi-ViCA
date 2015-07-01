@@ -1,0 +1,166 @@
+<!doctype html>
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Berkeley Lab Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/idp/styles/bootstrap.css" />
+    <link rel="stylesheet" href="/idp/styles/lbl-styles.css">
+      <link rel='stylesheet' id='genesis-sample-theme-css'  href='/idp/styles/lbl-style.css' type='text/css' media='all' />
+      <link rel='stylesheet' id='above-header-nav-style-css'  href='/idp/styles/lbl-aboveheadernav.css' type='text/css' media='all' />
+      <link rel="stylesheet" href="/idp/styles/main.css"/>
+          <link rel="stylesheet" href="/idp/styles/bootstrap.css" />
+
+  </head>
+  <body>
+
+    <!-- Add your site or application content here -->
+
+    <div id="header">
+        <div class="wrap">
+            <div id="title-area"><p id="title"><a href="http://www.lbl.gov/" title="Berkeley Lab">Berkeley Lab</a></p>
+
+                <p id="description">Berkeley Lab Login</p>
+            </div>
+     
+        </div>
+    </div>
+    <div id="wrap">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="left-hand-login" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <div><h3>Log in with your Berkeley Lab Identity.</h3></div>
+                    <div>
+                        
+                        
+                            <form id="login" action="/idp/Authn/UserPassword" method="post">
+                        
+
+                        
+                            <div class="form-group ">
+                                <label class="control-label" for="usernameEntry"><span class="visible-xs">Berkeley Lab Identity Username</span><span class="hidden-xs">Username</span></label>
+                                <input type="text" name="j_username" class="form-control" id="usernameEntry" placeholder="Username" autofocus>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label" for="passwordEntry"><span class="visible-xs">Berkeley Lab Identity Password</span><span class="hidden-xs">Password</span></label>
+                                <input type="password" name="j_password" class="form-control" id="passwordEntry" placeholder="Password" autocomplete="off">
+                            </div>
+                        <button type="submit" id="loginButton" class="btn btn-default">Login</button>
+                            <div id="lost-or-forgotten-link" style="padding-top:10px;padding-left:5px;font-size:smaller;"><a href="https://password.lbl.gov/lost/">Lost or forgot password?</a></div>
+
+                        </form>
+                    </div>                    
+                </div>
+                <div class="entry-content container col-lg-7 col-md-7 col-sm-7">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default" id="additionalContent">
+                        <div class="panel-body">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">
+                                    <h4>Beware of phishing!</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Check that your browser considers this page secure.</li>
+                                        <li>Make sure that the URL or hostname your browser shows is at <strong>login.lbl.gov</strong></li>
+                                        <li>See <a href="https://commons.lbl.gov/display/cpp/Spam,+Phishing,+Targetted+Phishing">this page on phishing and spam</a> for more on what
+                                        to watch for.</li>
+                                        <li>If you have concerns about the legitimacy of this site, please contact the <a href="http://help.lbl.gov">IT Help Desk</a> at x4357 or <a href="mailto:help@lbl.gov">help@lbl.gov</a>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel-group" id="accordian" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="service-info">
+                                    A service named <strong>Google Apps</strong> requested that you login. 
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#service-details" aria-expanded="false" aria-controls="service-details">
+                                            Click
+                                            </a> for more details.
+                                    </div>
+                                    <div id="service-details" class="panel-collapse collapse" role="tabpanel" aria-labelledby="service-info">
+                                        <div class="panel-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    <span class="mdui-title">Service name:&nbsp;</span>
+                                                    <span class="mdui-value">Google Apps</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="mdui-title">Service description:&nbsp;</span>
+                                                    <span class="mdui-value">Berkeley Lab&#x27;s Google Apps service provides email, calendar, file sharing, and other services to the Laboratory.</span>
+                                                </li>
+                                            
+                                                <li class="list-group-item">
+                                                    <span class="mdui-title">Service operator:&nbsp;</span>
+                                                    <span class="mdui-value">No operator name provided.</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="mdui-title">Service support contact:&nbsp;</span>
+                                                    <span class="mdui-value">No contact provided</span>
+                                                <li class="list-group-item">
+                                                    <span class="mdui-value"><a href="https&#x3a;&#x2f;&#x2f;commons.lbl.gov&#x2f;display&#x2f;google&#x2f;Google&#x2b;Apps&#x2b;Help&#x2b;Center" id="mdui-more-info-link">More information about this service.</a></span>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Additional Information
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="https://password.lbl.gov">Change your password.</a></li>
+                                        <li><a href="https://commons.lbl.gov/x/exfSAw">More information about this service.</a></li>    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="footer" class="footer">
+            <div class="wrap">
+                <div class="social-mobile">
+                    <ul class="social-links">
+                        <li class="social-links"><a class="item1 ir" href="http://twitter.com/BerkeleyLab" target="_blank">twitter</a></li>
+                        <li class="social-links"><a class="item2 ir" href="http://instagram.com/berkeleylab#" target="_blank">instagram</a></li>
+                        <li class="social-links"><a class="item3 ir" href="https://plus.google.com/+BerkeleyLab/posts" target="_blank">google plus</a></li>
+                        <li class="social-links"><a class="item4 ir" href="http://www.facebook.com/BerkeleyLab" target="_blank">facebook</a></li>
+                        <li class="social-links"><a class="item5 ir" href="http://www.youtube.com/user/BerkeleyLab" target="_blank">youtube</a></li>
+                    </ul>
+                </div>
+                <div class="disclaimer-logos">
+                    <ul class="disclaimer-logos">
+                        <li class="disclaimer-logos item1"></li>
+                        <li class="disclaimer-logos item2"></li> 
+                    </ul>
+                </div>
+                <div class="disclaimer-text"><p>A U.S. Department of Energy National Laboratory Managed by the University of California</p>
+                </div>
+                <div class="lbl-disclaimer"><p><a class="disclaimer-left" href="mailto:help@lbl.gov">Questions &amp; Comments</a>
+                    <a  class="disclaimer-right" href="http://www.lbl.gov/Disclaimers.html">Privacy &amp; Security Notice</a></p>
+                </div>
+                <div class="social">
+                    <ul class="social-links">
+                        <li class="social-links"><a class="item1 ir" href="http://twitter.com/BerkeleyLab" target="_blank">twitter</a></li>
+                        <li class="social-links"><a class="item2 ir" href="http://instagram.com/berkeleylab#" target="_blank">instagram</a></li>
+                        <li class="social-links"><a class="item3 ir" href="https://plus.google.com/+BerkeleyLab/posts" target="_blank">google plus</a></li>
+                        <li class="social-links"><a class="item4 ir" href="http://www.facebook.com/BerkeleyLab" target="_blank">facebook</a></li>
+                        <li class="social-links"><a class="item5 ir" href="http://www.youtube.com/user/BerkeleyLab" target="_blank">youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="styles/collapse.js"></script>
+<script src="/idp/styles/collapse.js"></script>
+</body>
+</html>
