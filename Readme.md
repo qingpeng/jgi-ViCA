@@ -1,6 +1,6 @@
 
 #Gene Structure Classifier
-## A program to classify genes and genomes based on the codon transition probabilities calculated from gene calling. 
+## A program to classify genes and genomes based on the codon transition probabilities calculated from gene calling 
  
 ##Use cases:
 * Classifying metagenomic and metatransciptomic contigs taxonomically
@@ -22,16 +22,16 @@
 ## Files
 ###Setup
  * env.sh - source environment variables
- * taxdmpsetup.sql - Creates a sqlite database from NCBI taxonomy files
  * gm_parameters A directory with modified GeneMark Parameter files
- 8 config.json, config2.json - Config files for running the classifier 
+ * config.json, training.json - config files for running the classifier 
 
-### Creating Training data 
- * taxon_feature_extraction.py - A wrapper to run all tasks necessary to create training data for a single genome
+### Creating Training data
+ *  taskfarmer
+ * single_taxon_training.py - A wrapper to run all tasks necessary to create training data for a single genome
  	1. shred.py - shreds the genome into smaller pieces of fixed length or conforming to a gamma distribution
  	2. Feature extraction script
  	3. feature_formatter.py - a utility script  to format csv feature data into json data
- 	4. add_to_reftree.py - a utility to add all the individual jsons to a local Reftree directory
+ * add_to_reftree.py - a utility to add all the individual jsons to a local Reftree directory
 
 
 ###model training and cross validation via SVM
