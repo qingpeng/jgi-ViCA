@@ -9,6 +9,7 @@ from Bio import SeqIO
 from itertools import chain
 import csv
 import shutil
+import re
 
 parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
 using emmission data from Metamark')
@@ -34,11 +35,12 @@ def flatten(listOfLists):
     return chain.from_iterable(listOfLists)
 
 def parsemod(dir, taxid):
-    # Find file and parse
+    """Finds the Genemark model, parses it and returns a feature vector with the taxid as the first element"""
     for file in os.listdir(dir):
         if file.endswith("hmm.mod"):
             with open(file, "r") as f:
                 rawvec = []
+                taxlist = [taxid]
                 for line in f.readlines():
                     rawvec.append(line.split())
                 start1 = rawvec.index(['COD1']) +1
@@ -49,15 +51,16 @@ def parsemod(dir, taxid):
                 itemvect = COD1 + NONC
                 itemvect = [float(i) for i in itemvect]
                 assert len(itemvect) == 256, "a full length vector could not be extracted from %s" % f.name
-                itemvect[:0] = str(taxid)
-                ### This isn't working: splits taxid into digits
-                print(taxid)
-                return itemvect
-
+                modvect =  taxlist + itemvect
+     		f.close()       
+    		return modvect
+    		break
+            
 
 # for each sequence in the fasta file:
 for record in records:
-    #os.mkdir(path) # Generate a temp dir
+    if not os.path.isdir(path):
+    	os.mkdir(path) # Generate a temp dir
     os.chdir(path) 
     handle = open("fragment.fasta", "w") # open a fasta file
     SeqIO.write(record, handle, "fasta") # write the sequence to it
@@ -67,13 +70,15 @@ for record in records:
     metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
     p1 = subprocess.Popen(metamarkparams, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     metamarkout, metamarkerr= p1.communicate()
-    #print(metamarkout)
-    #print(metamarkerr)
+    error = re.search("ERROR", metamarkout)
+    if error:
+    	os.chdir(os.path.abspath(args.tmpdir))
+    	shutil.rmtree(path)
+    	break
     #Parse results
-    dir = os.getcwd()
-    featurevect = parsemod(dir,args.taxid)
-    print(featurevect)
-#     csvout.writerow(featurevect)
-#     os.chdir(os.path.abspath(args.tmpdir))
-#     shutil.rmtree(path)
+    featurevect = parsemod(path,args.taxid)
+    if featurevect:
+    	csvout.writerow(list(featurevect))
+    	os.chdir(os.path.abspath(args.tmpdir))
+    	shutil.rmtree(path)
     

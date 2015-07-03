@@ -38,7 +38,7 @@ def estimate_samples_fixed(genomelength, samples, length):
     return num
 
 def shred(fasta, shred, samples, shape, scale, offset, length):
-    """Take genome fasta and shred it into pieces"""
+    """Take a large FASTA and Return a Multi sequence FASTA with fragments of specified length"""
     #create weighting vectors based on the length of the contigs in the genome
     records = SeqIO.to_dict(SeqIO.parse(fasta, "fasta"))
     sampled_frags = []
