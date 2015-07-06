@@ -6,9 +6,9 @@ import jsonschema
 import csv
 
 parser = argparse.ArgumentParser(description='A script convert between different sequence feature formats' )
-parser.add_argument('-i', '--input', type=argparse.FileType('r'), help="A feature file",\
+parser.add_argument('-i', '--input', type=argparse.FileType('r'), help="An input feature file",\
 	 default='-')
-parser.add_argument('-o', '--output', type=argparse.FileType('r'), help="A feature file",\
+parser.add_argument('-o', '--output', type=argparse.FileType('w'), help="A output feature file",\
 	 default='-')
 parser.add_argument('-if', '--infmt', help ="Input format", choices=["csv"], default="csv") 
 parser.add_argument('-of', '--outfmt', help ="Desired output format", choices=["esom-lrn"], default="esom-lrn") 
