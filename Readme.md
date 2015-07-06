@@ -11,6 +11,7 @@
 # Dependencies
 * [GenemarkS version 4.29](http://exon.gatech.edu/GeneMark/)
 * [RefTree](http://jgi.goe.gov)
+* [Task Farmer](http://jgi.goe.gov)
 * [Python v2.74](https://www.python.org/)
 * [Scikit-learn](https://scikits.appspot.com/scikit-learn)
 * [Biopython](http://biopython.org)

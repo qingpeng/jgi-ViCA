@@ -2,6 +2,8 @@
   "method" : "metamark",
   "shred" : "gamma",
   "gamma" : { "a" : "1", "b" : "2", "n" : "1"},
-  "fixed" : "3000"
-  "rootdir" : "/global/homes/a/arrivers/dev/jgi-gene-structure-classifier/bin"
+  "fixed" : "3000",
+  "analysisrootdir" : "/global/homes/a/arrivers/dev/jgi-gene-structure-classifier/test",
+  "trainingid" : "[1]",
+  "
 }

@@ -32,7 +32,6 @@ conf = json.load(args.config)
 # 	print("There seems to be a problem with the format of your configuration file")
 
 
-
 #get root directory
 root = os.path.abspath(conf["rootdir"])
 temp ='temp_' + ''.join(random.choice(string.ascii_uppercase) for _ in range(6))
