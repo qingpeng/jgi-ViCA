@@ -1,6 +1,6 @@
 
-#Gene Structure Classifier
-## A program to classify genes and genomes based on the codon transition probabilities calculated from gene calling 
+#GeneLearn
+## A program to classify, bin and discover divergent  genomic sequences with machine learning using novel feature extraction methods  
  
 ##Use cases:
 * Classifying metagenomic and metatransciptomic contigs taxonomically
@@ -34,6 +34,13 @@
  * add_to_reftree.py - a utility to add all the individual jsons to a local Reftree directory
 
 
+###Feature extraction of Taxonomic training data
+*Task farmer - a script to distribute jobsd on the cluster
+* Single_taxon_training.py - a wrapper to run a taxon through the feature extraction process
+	1. shred.py - a script do split a genome into pieces based on a fixed length or a gamma distribution of lengths
+	2. Feature Extraction Script - see below
+* reftree_loader.sh - ascript to create a reftree data directory
+
 ###model training and cross validation via SVM
 * svm_training_cross_validation.py
 	1. training_data_formatter.py - a script to take taxonomic nodes or levels and create
@@ -54,13 +61,14 @@
 
 ### Feature extraction ecripts 
 * feature_extraction_metamark.py - a wrapper to run metamark and extract the genomic feature
-* feature_extraction_kmer.py an alternate method of extracting feature information
+* feature_extraction_kmer.py an alternate method of extracting feature information by kmer
 
 ### Utility scripts 
-* feature_formatter.py
+* feature_formatter.py - a script to convert between tab delimited and ESOM data formats
+* estimate_gamma_parameters.py - a script to estimate gamma parameters from a dataset that will be classified
 
 ## Diagram of program
 
-![Diagram](GenePatternClassifier.png)
+![Diagram](GeneLearn.png)
 
 
