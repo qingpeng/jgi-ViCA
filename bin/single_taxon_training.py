@@ -9,8 +9,8 @@ import random
 import string
 from Bio import SeqIO
 
-parser = argparse.ArgumentParser(description='A script extract geomic features on a single taxon \
-	optionally shredding the taxon into sizes spefified by a distbution and creating a \
+parser = argparse.ArgumentParser(description='A script to extract genomic features on a single taxon \
+	optionally shredding the taxon into sizes specified by a distribution and creating a \
 	file with vector(s) describing the taxon and writing that taxon to a RefTree database')
 parser.add_argument('-i', '--input', type=argparse.FileType('r'), help="A fasta file",\
 	 default='-')
@@ -20,6 +20,7 @@ parser.add_argument('-s','--schema', help="A JSON formatted configuration schema
 	default="config_schema.json")
 args = parser.parse_args()
 
+##TODO !! have worker retrieve sequence rather than having the wrapper script do it  
 
 #Parse config file
 config = os.path.abspath(args.config)
@@ -39,7 +40,7 @@ taxonfile = os.path.join(root,args.taxid)
 if not os.path.exists(taxondir):
     os.makedirs(d=taxondir)
 tempdir = os.path.join(taxondir,temp)
-if not os.path.exists(tempdir):
+if not os.path.exists(tempdir): 
 	os.makedir(tempdir)
 
 
@@ -59,24 +60,16 @@ if conf['shread'] == fixed:
 #Run selected feature extraction script
 if conf[method] == "metamark":
 	#run metamark wrapper
-	metamarkopts = ["metamark_wrapper.py", "-config", config, "-dir", tempdir]
+	metamarkopts = ["feature_extraction_metamark.py", "-config", config, "-dir", tempdir]
 	p2 = subprocess.Popen(metamarkopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 	matrixdata, metamarkwerr= p2.communicate()
 	p2.stdout.close()  # Allow p1 to receive a SIGPIPE if p2 exits.
 if conf[method] == "kmer":
+	print("kmer method not yet implemented"
 	pass
 
-# convert csv data to json with matrix_2_json.py
-featureformatteropts = ["feature_formatter.py", "-infmt", "csv", "-outfmt", "json", "-in", "-", "-out" "-"]
-p3 = subprocess.Popen(featureformatteropts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-p3.communicate(matrixdata)
-jsondata, featureformattererr= p3.communicate()
-p3.stdout.close()  # Allow p1 to receive a SIGPIPE if p2 exits.
-# add to refTree
-reftreewriteopts = ["reftree.pl", "-in", "-"]
-p4 = subprocess.Popen(featureformatteropts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-p4.communicate(jsondata)
-jsondata, metamarkwerr= p4.communicate()
-p4.stdout.close()  # Allow p1 to receive a SIGPIPE if p2 exits.
-
-## TODO load reftree.dmp for outputting
+# save vector to a file
+ for line in matrixdata:
+ 	args.input.write(line + "\n")
+ 	
+ 	
