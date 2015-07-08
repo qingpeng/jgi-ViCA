@@ -1,7 +1,7 @@
 {"task" : "taxon_feature_extraction",
   "method" : "metamark",
   "shred" : "gamma",
-  "gamma" : {"shape" : "2", "scale" : "1", "offset": "10"},
+  "gamma" : {"alpha" : "2", "scale": "10","loc" : "1",},
   "fixed" : "3000",
    "shredsamples" : "0.8",
   "rootdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/test",
