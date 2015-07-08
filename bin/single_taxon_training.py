@@ -4,10 +4,6 @@ import os
 import argparse
 import subprocess
 import simplejson as json
-import jsonschema
-import random
-import string
-from Bio import SeqIO
 
 parser = argparse.ArgumentParser(description='A script to extract genomic features on a single taxon \
 	optionally shredding the taxon into sizes specified by a distribution and creating a \

@@ -14,7 +14,7 @@ parser.add_argument('--samples', help="Total number of shreded contigs to create
 parser.add_argument('--length', help="The length of the genome subsamples", default = 100, type=int)
 parser.add_argument('--shape', help="Shape parameter of gamma distribution, k", default =100, type=float)
 parser.add_argument('--scale', help="Scale parameter of gamma distribution, theta", default = 10, type=float)
-parser.add_argument('--offset', help= "offset, or minimum contig length allowed", default = 0, type=int)
+parser.add_argument('--offset', help= "Offset, or minimum contig length allowed", default = 0, type=int)
 
 args = parser.parse_args()
 
