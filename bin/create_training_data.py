@@ -2,11 +2,10 @@
 
 import argparse
 import simplejson as json
-import jsonschema
-import csv
 import os
 import subprocess
 from Bio import SeqIO
+
 parser = argparse.ArgumentParser(description='A script to create training data from gemomes' )
 parser.add_argument('-c', '--config', help ="json formatted config file")
 parser.add_argument('-o', '--output', help ="Reftree database directory location") 
