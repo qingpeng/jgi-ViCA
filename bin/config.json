@@ -1,9 +1,10 @@
 {"task" : "taxon_feature_extraction",
   "method" : "metamark",
   "shred" : "gamma",
-  "gamma" : { "a" : "1", "b" : "2", "n" : "1"},
+  "gamma" : {"shape" : "2", "scale" : "1", "offset": "10"},
   "fixed" : "3000",
-  "analysisrootdir" : "/global/homes/a/arrivers/dev/jgi-gene-structure-classifier/test",
+   "shredsamples" : "0.8",
+  "rootdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/test",
   "trainingid" : "[1]",
-  "
+  "nodetempdir" : "/scratch"
 }
