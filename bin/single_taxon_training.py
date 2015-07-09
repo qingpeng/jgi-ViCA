@@ -16,7 +16,7 @@ parser.add_argument('-c', '--config', help='A JSON formatted configuration file'
 args = parser.parse_args()
 
 # Read the configuration file
-config = json.loads( open(args.config, 'r'))
+config = json.load( open(args.config, 'r'))
 
 # set up scratch tmp dir
 try:
