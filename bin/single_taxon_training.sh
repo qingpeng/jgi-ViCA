@@ -6,4 +6,6 @@ module load biopython
 
 TAXON=$1
 OUT=$2
-python single_taxon_training.py --taxid '$TAXON' --outfile '$OUT' 
+CONFIG=$3
+
+python single_taxon_training.py --taxid '$TAXON' --outfile '$OUT' --config '$CONFIG'

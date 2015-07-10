@@ -13,6 +13,7 @@ parser.add_argument('-i', '--input', help="A fasta file",type=argparse.FileType(
 parser.add_argument('-o', '--output', help ='A tab delimited list with taxid and a feature vector',\
 	type=argparse.FileType('w'), default='-') 
 parser.add_argument('-c', '--config', help='A JSON formatted configuration file', default='config.json')
+
 args = parser.parse_args()
 
 # Read the configuration file
@@ -24,36 +25,37 @@ try:
 except:
 	sge_task_id = 1
 tempdir = os.path.join(config["nodetempdir"],'tmp_' + str(sge_task_id))
-os.makedir(tempdir)
+os.makedirs(tempdir)
 
 # Shred the sequence with shred.py
-if conf['shred'] == 'gamma':
+if config['shred'] == 'gamma':
 	shredopts = ["shred.py",  "--shred", "gamma","--samples",config["shredsamples"], \
-		"--shape", config["gamma"]["shape"],"--scale", config["gamma"]["scale"], \
-		"--offset", config["gamma"]["offset"]]
-if conf['shred'] == 'fixed':
+		"--alpha", config["gamma"]["alpha"],"--scale", config["gamma"]["scale"], \
+		"--loc", config["gamma"]["loc"]]
+if config['shred'] == 'fixed':
 	shredopts = ["shred.py",  "--shred", "fixed", "--samples", config["shredsamples"], \
-	"--length", config["gamma"]["length"]]
+	"--length", config["fixed"]]
 # If shredding is desired run shread.py
-p1 = subprocess.Popen(shredopts, stdin=PIPE, stdout=PIPE)
-p1.communicate(args.input) 
-shredout, shrederr= p1.communicate()
+p1 = subprocess.Popen(shredopts, stdin=args.input, stdout=subprocess.PIPE)
 	
-
 #Run selected feature extraction script
-if conf[method] == "metamark":
+if config["method"] == "metamark":
 	#run metamark wrapper
-	metamarkopts = ["feature_extraction_metamark.py", "-config", config, "-tmpdir", tempdir]
-	p2 = subprocess.Popen(metamarkopts, stdin=p1.PIPE, stdout=PIPE)
+	metamarkopts = ["feature_extraction_metamark.py", "--tmpdir", tempdir, "--mmp", config["mmp"], "--taxid", args.taxid]
+	p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout, stdout=subprocess.PIPE)
 	p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
-	matrixdata, metamarkwerr= p2.communicate()
-if conf[method] == "kmer":
-	print("kmer method not yet implemented")
-	pass
+# 	matrixdata, metamarkerr= p2.communicate()
+# 	print(type(matrixdata))
+# 	print(type(metamarkerr))
+# 	print(matrixdata)
+# 	print(metamarkerr)
+# elif config["method"] == "kmer":
+# 	print("kmer method not yet implemented")
+# 	pass
+# else:
+# 	pass
 
 # save vector to reftree
-for line in matrixdata:
+for line in p2.stdout:
 	args.output.write(line + "\n")
- 	
-
  	

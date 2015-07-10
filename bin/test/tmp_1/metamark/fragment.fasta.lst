@@ -1,0 +1,13 @@
+GeneMark.hmm PROKARYOTIC (Version 3.25)
+Date: Thu Jul  9 17:04:06 2015
+Sequence file name: fragment.fasta
+Model file name: GeneMark_hmm_heuristic.mod
+RBS: false
+Model information: Heuristic_model_for_genetic_code_11_and_GC_48
+
+FASTA definition line: gi|511782593|ref|NC_021399.1|185695..187827 gi|511782593|ref|NC_021399.1| Butomus umbellatus mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+    1        -        1894       >2130          237        1
+

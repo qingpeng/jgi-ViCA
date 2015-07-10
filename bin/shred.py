@@ -48,7 +48,7 @@ def shred(fasta, shred, samples, shape, scale, loc, length):
         ids.append(id)  # add contig ids
         slen.append(len(record.seq)) # add contig lengths to a list
     totlen = sum(slen) # total length of all contigs
-    assert totlen > length, "Plese choose a shorter sample length"
+    assert totlen > length, "Plese choose a shorter sample length, total length is %s " % str(totlen)
     weights = []
     for x in slen:
         weights.append(float(x) / totlen) # Weighting vector for selecting contigs
@@ -84,5 +84,5 @@ def shred(fasta, shred, samples, shape, scale, loc, length):
     return sampled_frags
 
 samples_frags = shred(fasta=args.input, shred=args.shred, samples=args.samples, \
-shape=args.shape, scale=args.scale, loc=args.loc, length=args.length)
+shape=args.alpha, scale=args.scale, loc=args.loc, length=args.length)
 SeqIO.write(samples_frags, args.output, "fasta")

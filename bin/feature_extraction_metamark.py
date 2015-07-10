@@ -10,9 +10,9 @@ import re
 parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
 using emmission data from Metamark')
 parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
-parser.add_argument('--output', help= "output file, tab delimited format", type=argparse.FileType('w'), default='-')
+parser.add_argument('--output', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
 parser.add_argument('--tmpdir', help="A path to a temporary directory")
-parser.add_argument('--taxid', help="A path to a temporary directory")
+parser.add_argument('--taxid', help="The taxonomy id")
 parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
 args = parser.parse_args()
 
@@ -23,7 +23,7 @@ mmp = os.path.abspath(args.mmp)
 
 # Functions
 def flatten(listOfLists):
-    """Flatten one level of nesting"""
+    """Flatten a list to one level of nesting"""
     return chain.from_iterable(listOfLists)
 
 def parsemod(dir, taxid):

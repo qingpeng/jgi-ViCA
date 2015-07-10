@@ -6,6 +6,6 @@
   "shredsamples" : "0.8",
   "rootdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/test",
   "trainingid" : "22",
-  "nodetempdir" : "/scratch",
-  "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/test"
+  "nodetempdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/bin/test",
+  "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/bin/gm_parameters/par_11.modified"
 }
