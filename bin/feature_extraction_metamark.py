@@ -10,7 +10,7 @@ import re
 parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
 using emmission data from Metamark')
 parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
-parser.add_argument('--output', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
+parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), required=True)
 parser.add_argument('--tmpdir', help="A path to a temporary directory")
 parser.add_argument('--taxid', help="The taxonomy id")
 parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
@@ -18,7 +18,6 @@ args = parser.parse_args()
 
 ## File parsing and variable assignment
 path = os.path.join(os.path.abspath(args.tmpdir),"metamark" )
-records = SeqIO.parse(args.input, "fasta")
 mmp = os.path.abspath(args.mmp)
 
 # Functions
@@ -50,28 +49,32 @@ def parsemod(dir, taxid):
             
 
 # for each sequence in the fasta file:
+records = SeqIO.parse(args.input, "fasta")
+
 for record in records:
-    if not os.path.isdir(path):
+    if not os.path.exists(path):
         os.mkdir(path) # Generate a temp dir
     os.chdir(path) 
     handle = open("fragment.fasta", "w") # open a fasta file
     SeqIO.write(record, handle, "fasta") # write the sequence to it
     handle.close() # close the file
-    
     ## Run metamark
     metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
-    p1 = subprocess.Popen(metamarkparams, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
     metamarkout, metamarkerr= p1.communicate()
-    error = re.search("ERROR", metamarkout)
-    if error:
+    #print(p1.returncode)
+    if p1.returncode == 0:
+        featurevect = parsemod(path,args.taxid)
+        if featurevect:
+            args.outfile.write("\t".join(featurevect))
+            args.outfile.write("\n")
+            os.chdir(os.path.abspath(args.tmpdir))
+            shutil.rmtree(path)
+        else:
+            os.chdir(os.path.abspath(args.tmpdir))
+            shutil.rmtree(path)
+    else:
         os.chdir(os.path.abspath(args.tmpdir))
         shutil.rmtree(path)
-        break
-    #Parse results
-    featurevect = parsemod(path,args.taxid)
-    if featurevect:
-        args.output.write("\t".join(featurevect))
-        args.output.write("\n")
-        os.chdir(os.path.abspath(args.tmpdir))
-        shutil.rmtree(path)
+
     

@@ -48,7 +48,7 @@ def shred(fasta, shred, samples, shape, scale, loc, length):
         ids.append(id)  # add contig ids
         slen.append(len(record.seq)) # add contig lengths to a list
     totlen = sum(slen) # total length of all contigs
-    assert totlen > length, "Plese choose a shorter sample length, total length is %s " % str(totlen)
+    assert totlen > length, "Please choose a shorter sample length, total length is %s " % str(totlen)
     weights = []
     for x in slen:
         weights.append(float(x) / totlen) # Weighting vector for selecting contigs
@@ -63,10 +63,10 @@ def shred(fasta, shred, samples, shape, scale, loc, length):
     while reads_selected < numsamples:
         attempts += 1
         assert (attempts < 10 * numsamples), "Too many attempts were made subsampling the genome, adjust the sampling parameters"
+        
         #Calculate sample read length based on gamma distribution
         if shred == "gamma":
             length = int(np.random.gamma(shape=shape,scale=scale)) + int(loc)
-        print(length)
         id = np.random.choice(a=ids,p=weights)
         selectedseq = records[id]
         selectlen = len(selectedseq)
@@ -80,9 +80,10 @@ def shred(fasta, shred, samples, shape, scale, loc, length):
             sampled_frags.append(subrecord)
             reads_selected += 1
         except:
-            pass
+            break
     return sampled_frags
 
 samples_frags = shred(fasta=args.input, shred=args.shred, samples=args.samples, \
 shape=args.alpha, scale=args.scale, loc=args.loc, length=args.length)
-SeqIO.write(samples_frags, args.output, "fasta")
+if samples_frags:
+	SeqIO.write(samples_frags, args.output, "fasta")

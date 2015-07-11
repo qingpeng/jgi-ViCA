@@ -27,7 +27,7 @@ else:
 
 
 reftreeopts = ["reftree.pl", "--exe", node,"genomic", args.output,\
-	"TRUE", "./single_taxon_training.sh","--","__TAXON__","__TMPFILE__"]
+	"TRUE", "./single_taxon_training.sh","--","__TAXON__","__OUTFILE__"]
 p1 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 reftreeout, reftreeerr= p1.communicate()
 assert p1.returncode == 0, "RefTree returned the error %s while executing taxon training" % reftreeerr

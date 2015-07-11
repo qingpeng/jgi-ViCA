@@ -10,7 +10,7 @@
 --MIN_CONTIG_SIZE   1000
 
 # minimum total sequence length  after cleaning to run self-training 
---MIN_SEQ_SIZE     3000
+--MIN_SEQ_SIZE     2000
 
 # allow incomplete gene prediction at 'N...N' gaps longer or equal to
 --MAX_N_SUBSTRING     50
