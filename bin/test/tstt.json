@@ -2,10 +2,10 @@
   "method" : "metamark",
   "shred" : "fixed",
   "gamma" : {"alpha" : "100", "scale": "30","loc" : "200"},
-  "fixed" : "10000",
-  "shredsamples" : "5",
+  "fixed" : "5000",
+  "shredsamples" : "10",
   "rootdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/test",
   "trainingid" : "22",
-  "nodetempdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/bin/test",
+  "nodetempdir" : "/scratch",
   "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/bin/gm_parameters/par_11.modified"
 }
