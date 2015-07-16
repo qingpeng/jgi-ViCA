@@ -1,5 +1,5 @@
 {"task" : "training_data_formatter",
-"method" : "level",
+"method" : "taxids",
 "dbpath" : "path",
 "categories" : {"Archaea":[{"taxid" : "2157"}],
 				"Bacteria" : [{"taxid" : "2"}],
