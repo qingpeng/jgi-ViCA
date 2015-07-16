@@ -1,0 +1,19 @@
+{"task" : "training_data_formatter",
+"method" : "level",
+"categories" : {"Archaea":[{"taxid" : "2157"}],
+				"Bacteria" : [{"taxid" : "2"}],
+				"ssRNAPhage" : [{"taxid" : "439488", "code": "11"}],
+				"ssRNAVirus" : [{"taxid" : "439488", "code": "1"}],
+				"dsRNAPhage" : [{"taxid" : "35325", "code": "11"}],
+				"dsRNAVirus" : [{"taxid" : "35325", "code": "1"}],
+				"dsDNAPhage" : [{"taxid" : "35237", "code": "11"}],
+				"dsDNAVirus" : [{"taxid" : "35237", "code": "1"}],
+				"ssDNAPhage" : [{"taxid" : "29258", "code": "11"}],
+				"ssDNAVirus" : [{"taxid" : "29258", "code": "1"}],
+				"Retroviruses" : [{"taxid" : "35268"}],				
+				"Archaeplastida" : [{"taxid" : "33090"},{"taxid" : "2763"},{"taxid" : "38254"}],
+				"Unikonts": [{"name":"Opisthokonta" ,"taxid" : "33154"},{"name":"Amoebozoa" ,"taxid" : "554915"}],
+				"Chromalveolates" : [{"name":"Stramenopiles","taxid" : "33634"},
+				{"name":"Aveoleta", "taxid": "33630"},{"name":"Cryptophyta", "taxid": "3027"
+			}
+}
