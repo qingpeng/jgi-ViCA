@@ -9,7 +9,7 @@ from Bio import SeqIO
 parser = argparse.ArgumentParser(description='A script select taxonomic groups from a reftree feature vector database' )
 parser.add_argument('-c', '--config', help ="A json formatted config file")
 parser.add_argument('-o', '--output', help ="An output vector file", type=argparse.FileType('w'), default='-')
-parser.add_argument('-a', '--attribute', help ="Reftree database directory location") 
+parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
 args = parser.parse_args()
 
 
