@@ -10,7 +10,7 @@
 
 # Dependencies
 * [GenemarkS version 4.29](http://exon.gatech.edu/GeneMark/)
-* [RefTree](http://jgi.goe.gov)
+* [RefTree](https://bitbucket.org/berkeleylab/jgi_reftree)
 * [Task Farmer](http://jgi.goe.gov)
 * [Python v2.74](https://www.python.org/)
 * [Scikit-learn](https://scikits.appspot.com/scikit-learn)
@@ -27,20 +27,11 @@
  * config.json, training.json - config files for running the classifier 
 
 ### Creating Training data
- *  taskfarmer
- * single_taxon_training.py - A wrapper to run all tasks necessary to create training data for a single genome
- 	1. shred.py - shreds the genome into smaller pieces of fixed length or conforming to a gamma distribution
- 	2. Feature extraction script
- 	3. feature_formatter.py - a utility script  to format csv feature data into json data
- * add_to_reftree.py - a utility to add all the individual jsons to a local Reftree directory
-
-
-###Feature extraction of Taxonomic training data
-*Task farmer - a script to distribute jobsd on the cluster
-* Single_taxon_training.py - a wrapper to run a taxon through the feature extraction process
-	1. shred.py - a script do split a genome into pieces based on a fixed length or a gamma distribution of lengths
-	2. Feature Extraction Script - see below
-* reftree_loader.sh - ascript to create a reftree data directory
+ * crate_training_data.py - a wrapper to have reftree run single_taxon_training.py on each taxon below the selected taxonomic node
+ * single_taxon_training.sh - a shell script that calls single_taxon_training.py
+ * single_taxon_training.py - A wrapper to have run tasks necessary to create training data for a single genome
+ 	1. shred.py - shreds the genome into smaller pieces of fixed length or sizes conforming to a gamma distribution
+ 	2. Feature extraction script - see below of a list of features
 
 ###model training and cross validation via SVM
 * svm_training_cross_validation.py

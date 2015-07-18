@@ -28,12 +28,6 @@ else:
 # Open a subprocess to create a new reftree database directory, have it execute a shell \
 # script that calls single_taxon_training and writes the results to the reftree database directory
 
-# reftreeopts = ["reftree.pl", "--create", taxdmp ]
-# p0 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-# reftreeout, reftreeerr= p0.communicate()
-# assert p0.returncode == 0, "RefTree returned the error %s while creating the new database" % reftreeerr
-
-
 reftreeopts = ["reftree.pl", "--exec", node,"genomic", args.output,\
 	"TRUE",numworkers,"--","single_taxon_training.sh", "__TAXON__","__OUTFILE__"]
 p1 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
