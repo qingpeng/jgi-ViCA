@@ -1,11 +1,9 @@
 #!/bin/bash
-. env.sh
-#. /global/homes/e/ekirton/dev/RefTree/env.sh
-
+. /global/homes/a/arrivers/dev/jgi-genelearn/bin/env.sh
 module load biopython
 
 TAXON=$1
 OUT=$2
 CONFIG=$3
 
-python single_taxon_training.py --taxid '$TAXON' --outfile '$OUT' --config '$CONFIG'
+single_taxon_training.py --taxid "$TAXON" --outfile "$OUT" --config "$CONFIG"

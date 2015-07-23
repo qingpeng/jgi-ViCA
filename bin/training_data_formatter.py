@@ -16,7 +16,7 @@ args = parser.parse_args()
 # Functions
 def get_reftree_data(dbpath, attributes):
     """A function to run RefTree on a particular taxonomy level or node and return the attributes and vector data"""
-    reftreeopts = ["reftree.pl", "--tree", "dbpath", attributes]
+    reftreeopts = ["reftree.pl", "--dbDir", __ , "--db", __ , "--subtree", __ ]
     p0 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     reftreeout, reftreeerr= p0.communicate()
     assert p0.returncode == 0, "RefTree returned an error while searching the tree"
