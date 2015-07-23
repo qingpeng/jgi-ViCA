@@ -1,5 +1,6 @@
 #!/bin/bash
 . /global/homes/a/arrivers/dev/jgi-genelearn/bin/env.sh
+. /global/homes/a/arrivers/lib/env-reftree.sh
 module load biopython
 
 TAXON=$1
