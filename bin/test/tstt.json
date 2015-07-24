@@ -3,7 +3,7 @@
    "resources" :"-l ram.c=5G,h_rt=12:00:00",
   "method" : "metamark",
   "shred" : "fixed",
-  "gamma" : {"alpha" : "100", "scale": "30","loc" : "200"},
+  "gamma" : {"shape" : "1.33", "loc" : "3000", "scale": "1140"},
   "fixed" : "5000",
   "shredsamples" : "10",
   "rootdir" : "/global/homes/a/arrivers/dev/jgi-genelearn/test",
