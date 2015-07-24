@@ -41,10 +41,10 @@ def parsemod(dir, taxid):
                 NONC = (list(flatten(rawvec[start2: start2 +64 ])))
                 itemvect = COD1 + NONC
                 #itemvect = [float(i) for i in itemvect]
-                assert len(itemvect) == 256, "a full length vector could not be extracted from %s" % f.name
-                modvect =  taxlist + itemvect
-            f.close()       
-            return modvect
+                if len(itemvect) == 256:
+                	modvect =  taxlist + itemvect
+                	return modvect
+            f.close()
             break
             
 

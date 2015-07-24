@@ -62,7 +62,7 @@ def shred(fasta, shred, samples, shape, loc, scale, length):
     #select the contigs
     reads_selected = 0
     attempts = 0
-    while reads_selected < numsamples:
+    while len(sampled_frags) < numsamples:
         attempts += 1
         assert (attempts < 10 * numsamples), "Too many attempts were made subsampling the genome, adjust the sampling parameters"
         #Calculate sample read length based on gamma distribution
@@ -79,9 +79,8 @@ def shred(fasta, shred, samples, shape, loc, scale, length):
             subid = str(id) + str(startpos) + ".." + str(endpos)
             subrecord.id = subid
             sampled_frags.append(subrecord)
-            reads_selected += 1
         except:
-            break
+            continue
     return sampled_frags
 
 
