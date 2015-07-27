@@ -6,6 +6,8 @@ from Bio import SeqIO
 from itertools import chain
 import shutil
 import re
+import sys
+
 
 parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
 using emmission data from Metamark')
@@ -42,18 +44,22 @@ def parsemod(dir, taxid):
                 itemvect = COD1 + NONC
                 #itemvect = [float(i) for i in itemvect]
                 if len(itemvect) == 256:
-                	modvect =  taxlist + itemvect
-                	return modvect
+                    modvect =  taxlist + itemvect
+                    return modvect
             f.close()
             break
             
 
 # for each sequence in the fasta file:
 records = SeqIO.parse(args.input, "fasta")
-
+cnt_success = 0
+cnt_vectfailure = 0
+cnt_mmfailure = 0
+len_records =0
 for record in records:
+    len_records += 1
     if not os.path.exists(path):
-        os.mkdir(path) # Generate a temp dir
+    	os.mkdir(path) # Generate a temp dir
     os.chdir(path) 
     handle = open("fragment.fasta", "w") # open a fasta file
     SeqIO.write(record, handle, "fasta") # write the sequence to it
@@ -62,7 +68,6 @@ for record in records:
     metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
     p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
     metamarkout, metamarkerr= p1.communicate()
-    #print(p1.returncode)
     if p1.returncode == 0:
         featurevect = parsemod(path,args.taxid)
         if featurevect:
@@ -70,11 +75,17 @@ for record in records:
             args.outfile.write("\n")
             os.chdir(os.path.abspath(args.tmpdir))
             shutil.rmtree(path)
+            cnt_success += 1
         else:
             os.chdir(os.path.abspath(args.tmpdir))
             shutil.rmtree(path)
+            cnt_vectfailure  += 1
     else:
         os.chdir(os.path.abspath(args.tmpdir))
         shutil.rmtree(path)
+        cnt_mmfailure += 1
+        print(metamarkerr)
+#if cnt_success == 0:
+args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s \n" % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure))
+args.outfile.close()
 
-    

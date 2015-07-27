@@ -13,7 +13,7 @@ matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 parser = argparse.ArgumentParser( \
-	description='Estimate-Log normal distribution parameters describing the length of assemblies by sampling')
+	description='Estimate log-normal distribution parameters describing the length of assemblies by sampling')
 parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
 parser.add_argument('--output', help="output file with the 3 parameters" , type=argparse.FileType('w'), default='-')
 parser.add_argument('--fitplot', help ="a file with more information on the fit", default="lognormfit.pdf") 

@@ -5,11 +5,13 @@ import argparse
 import subprocess
 import simplejson as json
 import shutil
-import random
+import errno
+import sys
+
 
 parser = argparse.ArgumentParser(description='A script to extract genomic features on a single taxon \
-	optionally shredding the taxon into sizes specified by a distribution and creating a \
-	file with vector(s) describing the taxon and writing that taxon to a RefTree database')
+    optionally shredding the taxon into sizes specified by a distribution and creating a \
+    file with vector(s) describing the taxon and writing that taxon to a RefTree database')
 parser.add_argument('-t', '--taxid', help ='An NCBI taxid',required=True) 
 parser.add_argument('-o', '--outfile', help ='location to write the  feature vector file', required=True) 
 parser.add_argument('-c', '--config', help='A JSON formatted configuration file', default='config.json')
@@ -20,14 +22,16 @@ args = parser.parse_args()
 config = json.load( open(args.config, 'r'))
 
 # set up scratch tmp dir
-randint =  random.randint(1,9999999)
-try:
-	sge_task_id = os.environ['SGE_TASK_ID']
-except:
-	sge_task_id = randint
-tempdir = os.path.join(config["nodetempdir"],'genelearntmp_' + str(sge_task_id))
-os.makedirs(tempdir)
 
+
+tempdir = os.path.join(config["nodetempdir"],'genelearntmp_' + str(os.getenv("SGE_TASK_ID",os.getpid())))
+
+try:
+	os.makedirs(tempdir)
+except OSError, e:
+	sys.stderr.write("Unable to make tempdir %s : error %s " % (tempdir,e.errorno) )
+	sys.exit(1)
+	
 ## Retrieve the sequence from reftree
 reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid ]
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
@@ -35,14 +39,14 @@ p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.P
 
 
 ## Shred the sequence with shred.py
-if config['shred'] == 'gamma':
-	shredopts = ["shred.py",  "--shred", "gamma","--samples",config["shredsamples"], \
-		"--alpha", config["gamma"]["alpha"],"--scale", config["gamma"]["scale"], \
-		"--loc", config["gamma"]["loc"]]
+if config['shred'] == 'lognorm':
+    shredopts = ["shred.py",  "--shred", "lognorm","--samples",config["shredsamples"], \
+        "--shape", config["lognorm"]["shape"],"--scale", config["lognorm"]["scale"], \
+        "--loc", config["lognorm"]["loc"]]
 
 if config['shred'] == 'fixed':
-	shredopts = ["shred.py",  "--shred", "fixed", "--samples", config["shredsamples"], \
-	"--length", config["fixed"]]
+    shredopts = ["shred.py",  "--shred", "fixed", "--samples", config["shredsamples"], \
+    "--length", config["fixed"]]
 
 # If shredding is desired run shread.py
 p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -50,13 +54,13 @@ p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 ex
 
 ## Run selected feature extraction script
 if config["method"] == "metamark":
-	#run metamark wrapper
-	metamarkopts = ["feature_extraction_metamark.py", "--tmpdir", tempdir, "--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
-	p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
-	p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
-	matrixdata, metamarkerr= p2.communicate()
+    #run metamark wrapper
+    metamarkopts = ["feature_extraction_metamark.py", "--tmpdir", tempdir, "--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
+    p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    matrixdata, metamarkerr= p2.communicate()
 
 elif config["method"] == "kmer":
- 	print("kmer method not yet implemented")
- 	
+    print("kmer method not yet implemented")
+    
 shutil.rmtree(tempdir)
