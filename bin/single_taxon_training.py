@@ -8,7 +8,6 @@ import shutil
 import errno
 import sys
 
-
 parser = argparse.ArgumentParser(description='A script to extract genomic features on a single taxon \
     optionally shredding the taxon into sizes specified by a distribution and creating a \
     file with vector(s) describing the taxon and writing that taxon to a RefTree database')
@@ -20,22 +19,10 @@ args = parser.parse_args()
 
 # Read the configuration file
 config = json.load( open(args.config, 'r'))
-
-# set up scratch tmp dir
-
-
-tempdir = os.path.join(config["nodetempdir"],'genelearntmp_' + str(os.getenv("SGE_TASK_ID",os.getpid())))
-
-try:
-	os.makedirs(tempdir)
-except OSError, e:
-	sys.stderr.write("Unable to make tempdir %s : error %s " % (tempdir,e.errorno) )
-	sys.exit(1)
-	
+    
 ## Retrieve the sequence from reftree
 reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid ]
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
-#reftreedata, reftreeerr = p0.communicate()
 
 
 ## Shred the sequence with shred.py
@@ -55,12 +42,11 @@ p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 ex
 ## Run selected feature extraction script
 if config["method"] == "metamark":
     #run metamark wrapper
-    metamarkopts = ["feature_extraction_metamark.py", "--tmpdir", tempdir, "--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    metamarkopts = ["feature_extraction_metamark.py", "--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
     p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
-
+    assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
 elif config["method"] == "kmer":
     print("kmer method not yet implemented")
-    
-shutil.rmtree(tempdir)
+

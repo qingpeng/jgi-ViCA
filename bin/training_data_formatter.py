@@ -4,13 +4,11 @@ import argparse
 import simplejson as json
 import os
 import subprocess
-from Bio import SeqIO
+
 
 parser = argparse.ArgumentParser(description='A script to select taxonomic groups from a reftree feature vector database' )
 parser.add_argument('-c', '--config', help ="A json formatted config file")
-parser.add_argument('-o', '--training', help ="An output vector file", type=argparse.FileType('w'), default='-')
-parser.add_argument('-v', '--crossvalidation', help ="An output vector file", type=argparse.FileType('w'), default = "crossval.txt")
-parser.add_argument('-v', '--test', help ="An output vector file", type=argparse.FileType('w'), default = "crossval.txt")
+parser.add_argument('-o', '--output', help ="An output vector file", type=argparse.FileType('w'), default='-')
 parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
 args = parser.parse_args()
 
@@ -27,11 +25,7 @@ def get_reftree_data(dbpath, attributes):
 # Read the configuration file
 config = json.load( open(args.config, 'r'))
 
-test = float(config["split"]["test"])
-train = float(config["split"["train"]) 
-crossval = float(config["split"]["crossval"])
-assert test + train + crossval = 1
-	
+
 
 # If an ID list is specified in config write it, otherwise query everything from the root node writing  \
 if config["method"] == "level":
@@ -53,4 +47,4 @@ elif config["method"] == "taxids":
         	args.output.write(data)
         	args.output.write("\n")
 else:
-    print("Unknown methods requested in hte config file.")
+    print("Unknown classification methods were requested in the config file.")

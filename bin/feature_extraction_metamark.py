@@ -7,19 +7,19 @@ from itertools import chain
 import shutil
 import re
 import sys
+import tempfile
 
 
 parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
 using emmission data from Metamark')
 parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
 parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), required=True)
-parser.add_argument('--tmpdir', help="A path to a temporary directory")
 parser.add_argument('--taxid', help="The taxonomy id")
 parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
 args = parser.parse_args()
 
 ## File parsing and variable assignment
-path = os.path.join(os.path.abspath(args.tmpdir),"metamark" )
+
 mmp = os.path.abspath(args.mmp)
 
 # Functions
@@ -42,7 +42,6 @@ def parsemod(dir, taxid):
                 start2 = 1 + rawvec.index(['NONC'])
                 NONC = (list(flatten(rawvec[start2: start2 +64 ])))
                 itemvect = COD1 + NONC
-                #itemvect = [float(i) for i in itemvect]
                 if len(itemvect) == 256:
                     modvect =  taxlist + itemvect
                     return modvect
@@ -58,9 +57,8 @@ cnt_mmfailure = 0
 len_records =0
 for record in records:
     len_records += 1
-    if not os.path.exists(path):
-    	os.mkdir(path) # Generate a temp dir
-    os.chdir(path) 
+    tmpdir = tempfile.mkdtemp(dir="/scratch")
+    os.chdir(tmpdir) 
     handle = open("fragment.fasta", "w") # open a fasta file
     SeqIO.write(record, handle, "fasta") # write the sequence to it
     handle.close() # close the file
@@ -69,23 +67,21 @@ for record in records:
     p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
     metamarkout, metamarkerr= p1.communicate()
     if p1.returncode == 0:
-        featurevect = parsemod(path,args.taxid)
+        featurevect = parsemod(tmpdir,args.taxid)
         if featurevect:
             args.outfile.write("\t".join(featurevect))
             args.outfile.write("\n")
-            os.chdir(os.path.abspath(args.tmpdir))
-            shutil.rmtree(path)
+            shutil.rmtree(tmpdir)
             cnt_success += 1
         else:
-            os.chdir(os.path.abspath(args.tmpdir))
-            shutil.rmtree(path)
+            shutil.rmtree(tmpdir)
             cnt_vectfailure  += 1
     else:
-        os.chdir(os.path.abspath(args.tmpdir))
-        shutil.rmtree(path)
+        shutil.rmtree(tmpdir)
         cnt_mmfailure += 1
-        print(metamarkerr)
-#if cnt_success == 0:
-args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s \n" % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure))
+
+if cnt_success == 0:
+	args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s \n" \
+	% (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure))
 args.outfile.close()
 
