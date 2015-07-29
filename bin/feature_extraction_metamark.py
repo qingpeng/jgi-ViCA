@@ -13,8 +13,9 @@ import tempfile
 parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
 using emmission data from Metamark')
 parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
-parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), required=True)
+parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
 parser.add_argument('--taxid', help="The taxonomy id")
+parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
 parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
 args = parser.parse_args()
 
@@ -27,13 +28,13 @@ def flatten(listOfLists):
     """Flatten a list to one level of nesting"""
     return chain.from_iterable(listOfLists)
 
-def parsemod(dir, taxid):
+def parsemod(dir, id):
     """Finds the Genemark model, parses it and returns a feature vector with the taxid as the first element"""
     for file in os.listdir(dir):
         if file.endswith("hmm.mod"):
             with open(file, "r") as f:
                 rawvec = []
-                taxlist = [taxid]
+                idlist = [id]
                 for line in f.readlines():
                     rawvec.append(line.split())
                 start1 = rawvec.index(['COD1']) +1
@@ -43,7 +44,7 @@ def parsemod(dir, taxid):
                 NONC = (list(flatten(rawvec[start2: start2 +64 ])))
                 itemvect = COD1 + NONC
                 if len(itemvect) == 256:
-                    modvect =  taxlist + itemvect
+                    modvect =  idlist + itemvect
                     return modvect
             f.close()
             break
@@ -66,6 +67,12 @@ for record in records:
     metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
     p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
     metamarkout, metamarkerr= p1.communicate()
+    if args.label == 'taxid':
+    	featurevect = parsemod(tmpdir,args.taxid)
+    elif args.label == 'readid':
+    	featurevect = parsemod(tmpdir,record.id)
+    else:
+    	raise InputError("the label parameter must be either 'taxid' or 'readid'")
     if p1.returncode == 0:
         featurevect = parsemod(tmpdir,args.taxid)
         if featurevect:
