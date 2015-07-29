@@ -18,7 +18,7 @@ args = parser.parse_args()
 
 
 # Read the configuration file
-config = json.load( open(args.config, 'r'))
+config = json.load( open(args.config, 'r'))["create_training_data"]
     
 ## Retrieve the sequence from reftree
 reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid ]

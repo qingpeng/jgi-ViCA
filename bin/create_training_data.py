@@ -15,7 +15,7 @@ args = parser.parse_args()
 #Variables
 configpath = os.path.abspath(args.config)
 # Read the configuration file
-config = json.load( open(configpath, 'r'))
+config = json.load(open(configpath, 'r'))
 numworkers = str(config["numworkers"])
 resources = config["resources"]
 # If an id list is specified in config write it otherwise query everything from the root node \
