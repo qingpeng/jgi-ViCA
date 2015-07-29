@@ -14,43 +14,50 @@ parser.add_argument('-r', '--reftree', help ="Reftree database directory locatio
 args = parser.parse_args()
 
 
+# Read the configuration file
+config = json.load(open(args.config, 'r'))["training_data_formatter"]
+
+dbdir,dbname = os.path.split(os.path.abspath(args.reftree))
+
 # Functions
 
 #todo add level and attribute filtering once Ed adds it to Reftree
-def get_reftree_data(dbdir, dbname, subtree, level, code):
-    """A function to run RefTree on a particular taxonomy level or node and return the attributes and vector data"""
-    if level:
-    	reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname ,  level ]
-    else:
-    	reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", subtree ]
-    p0 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+def get_reftree_data(reftreeopts):
+    """A function to run RefTree"""
+    p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE)
     reftreeout, reftreeerr= p0.communicate()
-    assert p0.returncode == 0, "RefTree returned an error while searching the tree with taxid %s" % subtree
+    assert p0.returncode == 0, "RefTree returned an error while searching the tree with taxid"
     return reftreeout
 
-# Read the configuration file
-config = json.load( open(args.config, 'r'))
+        
 
 
 # If a a taxonomic rank is specified return the data for for each category at that rank \
 # If an ID list is specified in config write it   \
-if config["method"] == "level":
-    sys.stderr.write("Formatting training data for all taxa at the %s level" % config["levelattr"]["level"])
-    level = config["levelattr"]["level"].lower
-    data = get_reftree_data(dbdir = config["dbpath"],level = level)
-    args.output.write(data)
-elif config["method"] == "taxids":
-    print("Formatting training data for selected taxa")
-    for key, record in config["categories"].iteritems():
-        for pair in record:
-            assert pair["taxid"], "A taxon id is required for each category"
-            if "code" in pair:
-                attributes = str(pair["taxid"]) + ":" + str(pair["code"])
-            else:
-                attributes = str(pair["taxid"])
-            #print(str(key) + "\t" + attributes)
-        	data = get_reftree_data(config["dbpath"],attributes)
-        	args.output.write(data)
-        	args.output.write("\n")
+# if config["method"] == "level":
+#   pass
+#     sys.stderr.write("Formatting training data for all taxa at the %s level" % config["levelattr"]["level"])
+#     level = config["levelattr"]["level"].lower
+#     reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--some_command?", level ]
+#     data = get_reftree_data(reftreeopts)
+#     args.output.write(data)
+#     #To be done after Ed implements level feature
+if config["method"] == "taxids":
+    # Create a data list that contains taxa below selected nodes with the attributes specified in the config file
+    sys.stderr.write("Formatting training data for selected taxa\n")
+    for key, record in config["categories"].iteritems():  
+        assert record["taxid"], "A taxon id is required for each category"
+        attributes = [str(record["taxid"]), "--attributes", "code"]
+        reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree"] + attributes
+        print(reftreeopts)
+#         data = get_reftree_data(reftreeopts)
+#         data_list = data.split()
+#         if record["code"]:
+#             if data_list[1] == record["code"]:
+#                 final = [key] + data_list[2:]
+#         else:
+#             final = [key] + data_list[2:]
+#         args.output.write(final)
+#         args.output.write("\n")
 else:
     print("Unknown classification methods were requested in the config file.")
