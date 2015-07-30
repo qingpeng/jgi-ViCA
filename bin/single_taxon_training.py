@@ -5,7 +5,6 @@ import argparse
 import subprocess
 import simplejson as json
 import shutil
-import errno
 import sys
 
 parser = argparse.ArgumentParser(description='A script to extract genomic features on a single taxon \
@@ -42,7 +41,7 @@ p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 ex
 ## Run selected feature extraction script
 if config["method"] == "metamark":
     #run metamark wrapper
-    metamarkopts = ["feature_extraction_metamark.py", "--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    metamarkopts = ["feature_extraction_metamark.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
     p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()

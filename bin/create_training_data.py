@@ -16,8 +16,7 @@ args = parser.parse_args()
 configpath = os.path.abspath(args.config)
 # Read the configuration file
 config = json.load(open(configpath, 'r'))["create_training_data"]
-numworkers = str(config["numworkers"])
-resources = config["resources"]
+
 # If an id list is specified in config write it otherwise query everything from the root node \
 if config["trainingid"]:
 	node = str(config["trainingid"])
@@ -29,7 +28,13 @@ else:
 # Open a subprocess to create a new reftree database directory, have it execute a shell \
 # script that calls single_taxon_training and writes the results to the reftree database directory
 
-reftreeopts = ["reftree.pl", "--db", "genomic","--slots",numworkers, "--resources", resources,"--keep", "--foreach", node, args.output,\
+if config["taskfarmer"] == "True":
+	numworkers = str(config["numworkers"])
+	resources = config["resources"]
+	reftreeopts = ["reftree.pl", "--db", "genomic","--slots",numworkers, "--resources", resources,"--keep", "--foreach", node, args.output,\
+"--","single_taxon_training.sh", "__TAXON__","__OUTFILE__", configpath]
+else:
+	reftreeopts = ["reftree.pl", "--db", "genomic","--keep", "--foreach", node, args.output,\
 "--","single_taxon_training.sh", "__TAXON__","__OUTFILE__", configpath]
 #print(reftreeopts)
 p1 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)

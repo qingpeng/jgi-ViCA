@@ -17,6 +17,7 @@ parser.add_argument('--outfile', help= "Output file, tab delimited format", type
 parser.add_argument('--taxid', help="The taxonomy id")
 parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
 parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
+parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
 args = parser.parse_args()
 
 ## File parsing and variable assignment
@@ -59,7 +60,7 @@ len_records =0
 for record in records:
     readid = record.id
     len_records += 1
-    tmpdir = tempfile.mkdtemp(dir="/scratch")
+    tmpdir = tempfile.mkdtemp(dir=args.tmp)
     os.chdir(tmpdir) 
     handle = open("fragment.fasta", "w") # open a fasta file
     SeqIO.write(record, handle, "fasta") # write the sequence to it

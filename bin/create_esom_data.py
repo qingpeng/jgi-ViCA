@@ -23,4 +23,5 @@ p1.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 ex
 ffout, fferr = p2.communicate()
 p1.wait()
 assert p2.returncode ==0, "the feature formatter script could not return a valid file"
+sys.stderr.write(fferr)
 args.outfile.write(ffout)
