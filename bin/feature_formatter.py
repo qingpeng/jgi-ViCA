@@ -13,13 +13,6 @@ parser.add_argument('--infmt', help ="Input format", choices=["csv"], default="c
 parser.add_argument('--outfmt', help ="Desired output format", choices=["esom-lrn"], default="esom-lrn") 
 args = parser.parse_args()
 
-# class featureset(object):
-#   """ A class for a feature describing a sequence"""
-#   def __init__(self):
-#   self.taxid = None
-#   self.feature
-
-    
 def csv2esom(csvhandle, esomhandle):
     """Returns a dictionary of features from a csv"""
     writelist = []

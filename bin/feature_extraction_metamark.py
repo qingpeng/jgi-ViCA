@@ -57,6 +57,7 @@ cnt_vectfailure = 0
 cnt_mmfailure = 0
 len_records =0
 for record in records:
+    readid = record.id
     len_records += 1
     tmpdir = tempfile.mkdtemp(dir="/scratch")
     os.chdir(tmpdir) 
@@ -67,14 +68,13 @@ for record in records:
     metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
     p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
     metamarkout, metamarkerr= p1.communicate()
-    if args.label == 'taxid':
-    	featurevect = parsemod(tmpdir,args.taxid)
-    elif args.label == 'readid':
-    	featurevect = parsemod(tmpdir,record.id)
-    else:
-    	raise InputError("the label parameter must be either 'taxid' or 'readid'")
     if p1.returncode == 0:
-        featurevect = parsemod(tmpdir,args.taxid)
+        if args.label == 'taxid':
+        	featurevect = parsemod(tmpdir,args.taxid)
+    	elif args.label == 'readid':
+        	featurevect = parsemod(tmpdir,readid)
+    	else:
+        	raise InputError("the label parameter must be either 'taxid' or 'readid'")
         if featurevect:
             args.outfile.write("\t".join(featurevect))
             args.outfile.write("\n")
@@ -88,7 +88,7 @@ for record in records:
         cnt_mmfailure += 1
 
 if cnt_success == 0:
-	args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s \n" \
-	% (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure))
+    args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s \n" \
+    % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure))
 args.outfile.close()
 
