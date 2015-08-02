@@ -33,6 +33,7 @@ if config['shred'] == 'lognorm':
 if config['shred'] == 'fixed':
     shredopts = ["shred.py",  "--shred", "fixed", "--samples", config["shredsamples"], \
     "--length", config["fixed"]]
+    
 
 # If shredding is desired run shread.py
 p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
