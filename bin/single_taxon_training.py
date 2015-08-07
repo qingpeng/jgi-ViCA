@@ -20,7 +20,7 @@ args = parser.parse_args()
 config = json.load( open(args.config, 'r'))["create_training_data"]
     
 ## Retrieve the sequence from reftree
-reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid]
+reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid,"--attributes", "gencode"]
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 
 

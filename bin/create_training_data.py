@@ -12,8 +12,10 @@ parser.add_argument('-o', '--output', help ="Reftree database directory location
 args = parser.parse_args()
 
 
-#Variables
+# Variables
 configpath = os.path.abspath(args.config)
+sts = os.path.join(os.environ['GENELEARN_DIR'],"single_taxon_training.sh")
+
 # Read the configuration file
 config = json.load(open(configpath, 'r'))["create_training_data"]
 
@@ -32,10 +34,10 @@ if config["taskfarmer"] == "True":
 	numworkers = str(config["numworkers"])
 	resources = config["resources"]
 	reftreeopts = ["reftree.pl", "--db", "genomic","--slots",numworkers, "--resources", resources,"--keep", "--foreach", node, args.output,\
-"--","single_taxon_training.sh", "__TAXON__","__OUTFILE__", configpath]
+"--",sts, "__TAXON__","__OUTFILE__", configpath]
 else:
 	reftreeopts = ["reftree.pl", "--db", "genomic","--keep", "--foreach", node, args.output,\
-"--","single_taxon_training.sh", "__TAXON__","__OUTFILE__", configpath]
+"--",sts, "__TAXON__","__OUTFILE__", configpath]
 #print(reftreeopts)
 p1 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 reftreeout, reftreeerr= p1.communicate()

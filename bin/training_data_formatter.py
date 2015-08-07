@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 
-parser = argparse.ArgumentParser(description='A script to select taxonomic groups from a reftree feature vector database' )
+parser = argparse.ArgumentParser(description='A script to select taxonomic groups with particular attributes from a reftree feature vector database' )
 parser.add_argument('-c', '--config', help ="A json formatted config file")
 parser.add_argument('-o', '--output', help ="An output vector file", type=argparse.FileType('w'), default='-')
 parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
@@ -29,7 +29,17 @@ def get_reftree_data(reftreeopts):
     assert p0.returncode == 0, "RefTree returned an error while searching the tree with taxid"
     return reftreeout
 
-        
+def parse_vector(line, catkey, config):
+	"""Returns a list with category and vector filtered by  """
+	catid = 
+	for line in text:
+		lv = line.strip().split("\t")
+		taxid = lv[0]
+		readid = lv[1]
+		desc = lv[2]
+		vector = lv[3:]
+	 
+	        
 
 
 # If a a taxonomic rank is specified return the data for for each category at that rank \
