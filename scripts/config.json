@@ -1,0 +1,31 @@
+{"create_training_data" :{
+  "taskfarmer" : "False",
+  "numworkers" : "80",
+  "resources" :"-l ram.c=5G,h_rt=12:00:00",
+  "method" : "metamark",
+  "shred" : "fixed",
+  "lognorm" : {"shape" : "1.3335", "loc" : "3000", "scale": "1140"},
+  "fixed" : "5000",
+  "shredsamples" : "200",
+  "tmpdir": "/scratch",
+  "trainingid" : "22",
+  "mmp" : "/global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/bin/gm_parameters/par_11.modified"
+},
+"training_data_formatter" : {
+	"method" : "taxids",
+	"categories" : {"Archaea" : {"taxid" : "2157"},
+						"Bacteria" : {"taxid" : "2"},
+						"ssRNAPhage" : {"taxid" : "439488", "code" : "11"},
+						"ssRNAVirus" : {"taxid" : "439488", "code" : "1"},
+						"dsRNAPhage" : {"taxid" : "35325", "code" : "11"},
+						"dsRNAVirus" : {"taxid" : "35325", "code" : "1"},
+						"dsDNAPhage" : {"taxid" : "35237", "code" : "11"},
+						"dsDNAVirus" : {"taxid" : "35237", "code" : "1"},
+						"ssDNAPhage" : {"taxid" : "29258", "code" : "11"},
+						"ssDNAVirus" : {"taxid" : "29258", "code" : "1"},
+						"Retroviruses" : {"taxid" : "35268"},			
+						"Eukaryota" : {"taxid" : "2759"}
+					},
+	"levelattr" : {"level" : "Phylum"}
+		}
+	}

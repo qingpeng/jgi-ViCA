@@ -1,0 +1,114 @@
+Options:
+  Selection Criteria:
+    Specify which nodes or subtrees you wish to select using exactly one of
+    the following options:
+
+    --node "taxonId", ...
+         Output record for each node in list or use '-' to read from
+         standard input.
+
+    --subtree "taxonId", ...
+         Output records for all nodes in each subtree in list or use '-' to
+         read from standard input.
+
+    --select <string>
+         Act only upon nodes for which the statement evaluates to TRUE.
+         Refer to attributes as variables (i.e. preceded by "$"; e.g. $code,
+         the name of the genetic code attribute), Perl comparison operators
+         (numeric comparisons: ==, !=, <, >, >=, <=; string comparisons: eq,
+         ne, gt, lt, ge, le), the "defined" function, and logic statements
+         (and, or, not, xor). Note: enclose the entire statement in quotes
+         so it's treated as a string. Works with "--subtree" and
+         "--foreach". Examples:
+
+         *         "$code == 11"
+
+         *         "!defined($organelle)"
+
+         *         "$code == 11 and !defined($organelle)"
+
+         *         "$rankId >= 24"
+
+         *         "$rank eq 'species'"
+
+  User-Specified Data:
+    If accessing any user-specified databases or attributes, provide the
+    folders which contain them. All dbs and attributes under the listed
+    folders become available (no need to specify each attribute separately).
+
+    --dbDir "path", ...
+         Recursively search each folder in list to find available (user)
+         DBs.
+
+    --attrDir "path", ...
+         Recursively search each folder in list to find avaiable (user)
+         attributes.
+
+  Output Options:
+    --db "name"
+         Output records for this db; only one db may be queried at a time.
+         Optional.
+
+    --attributes "field", ...
+         List of taxon-specific fields to include in output: rankId,
+         rankName, taxonomy, code, name, or user-supplied attribute(s). The
+         "taxonomy" option outputs the complete taxonomic path in the
+         format: "taxonId0:rankId0/..." (note that not all nodes have
+         rankIds defined).
+
+    --outFile "path"
+         Write output to file. Optional; by default use standard output.
+
+  Job Management:
+    If you're analyzing large sets of nodes, RefTree can manage the jobs for
+    you. Create an executable file to process a single node or subtree,
+    which reads from standard input and generates a single output file, with
+    the path received as a parameter. RefTree will automatically collect the
+    results and prepares it as a RefTree database for subsequent retrieval
+    via RefTree.
+
+    --foreach "taxon" "outDir" -- "exe" "args", ...
+         Perform an action on each node in the subtree starting at the
+         specified taxon. The results will be written to outDir, where the
+         folder name shall be the db name. Whatever follows the double-dash
+         is used as the executable and arguments. An instance is run for
+         each node or subtree selected. Use the special strings "__TAXON__"
+         and "__OUTFILE__", which are replaced with the appropriate taxon ID
+         and output file, respectively. It's the executable's responsibility
+         to retrieve the records of the taxon from RefTree.
+
+    --resources "string"
+         To execute the tasks on the computer cluster, use this option to
+         provide the qsub parameters (e.g. "-l ram.c=xG, h_rt=xx:xx:xx");
+         tasks shall be executed using TaskFarmer if installed, otherwise a
+         batch job shall be used. Without this parameter, the jobs are
+         executed locally. This script will block until all tasks are
+         complete.
+
+    --slots "int"
+         The number of processes to use when running locally or on the
+         cluster with TaskFarmer, but is not applicable to batch jobs.
+
+    --keep
+         Use this option in order to keep temporary outfiles (purged by
+         default); only applies to data that is aggregated (i.e. __OUTFILE__
+         option used).
+
+  Importing User-Supplied Data:
+    User data may be imported as a database or an attribute. Generally,
+    attributes are small data points and databases contain large, possibly
+    multiple values per taxon. Attributes may be used to direct traversals
+    as they are stored in RAM. While it's possible to use database records
+    to direct traversals by using the Perl API, this script does not offer
+    such functionality.
+
+    --importAttributes "name" "infile" "outDir"
+         Import attributes in tabular format, where the taxon ID is the
+         first column, followed by the datum.
+
+    --importDb "name" "indir" "outDir"
+         Import data in either FASTA or tabular format. The former requires
+         header lines which include the string "tax|<taxon>" or
+         "tax=<taxon>"; while the later must be tab-delimited with the taxon
+         ID in the first column.
+
