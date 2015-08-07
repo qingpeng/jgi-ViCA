@@ -13,6 +13,38 @@ parser.add_argument('-o', '--output', help ="An output vector file", type=argpar
 parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
 args = parser.parse_args()
 
+# no_rank = None
+# superkingdom = 0
+# kingdom = 1
+# subkingdom = 2
+# superphylum = 3
+# phylum = 4
+# subphylum = 5
+# superclass = 6
+# class = 7
+# subclass = 8
+# infraclass = 9
+# superorder = 10
+# order = 11
+# suborder = 12
+# infraorder = 13
+# parvorder = 14
+# superfamily => 15
+# family => 16
+# subfamily = 17
+# tribe = 18
+# subtribe = 19
+# genus = 20
+# subgenus = 21
+# species group = 22,
+# species subgroup = 23
+# species = 24
+# subspecies = 25
+# varietas = 26
+# forma = 27
+
+
+
 
 # Read the configuration file
 config = json.load(open(args.config, 'r'))["training_data_formatter"]
@@ -29,29 +61,29 @@ def get_reftree_data(reftreeopts):
     assert p0.returncode == 0, "RefTree returned an error while searching the tree with taxid"
     return reftreeout
 
-def parse_vector(line, catkey, config):
-	"""Returns a list with category and vector filtered by  """
-	catid = 
-	for line in text:
+def simple_vector(line, catkey, config):
+	"""Returns a takes complete vector and returns simplified vector for the clasisfier """
 		lv = line.strip().split("\t")
 		taxid = lv[0]
 		readid = lv[1]
 		desc = lv[2]
 		vector = lv[3:]
-	 
+		simple =  taxid + vector
+	 	return "\t".join(simple)
 	        
 
 
 # If a a taxonomic rank is specified return the data for for each category at that rank \
 # If an ID list is specified in config write it   \
-# if config["method"] == "level":
-#   pass
-#     sys.stderr.write("Formatting training data for all taxa at the %s level" % config["levelattr"]["level"])
-#     level = config["levelattr"]["level"].lower
-#     reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--some_command?", level ]
-#     data = get_reftree_data(reftreeopts)
-#     args.output.write(data)
-#     #To be done after Ed implements level feature
+if config["method"] == "level":
+
+level = config["levelattr"]["level"].lower
+reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--some_command?", level ]
+data = get_reftree_data(reftreeopts)
+args.output.write(data)
+#To be done after Ed implements level feature
+
+
 if config["method"] == "taxids":
     # Create a data list that contains taxa below selected nodes with the attributes specified in the config file
     sys.stderr.write("Formatting training data for selected taxa\n")
