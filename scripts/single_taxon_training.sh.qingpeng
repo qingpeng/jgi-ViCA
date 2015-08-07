@@ -1,0 +1,10 @@
+#!/bin/bash
+. /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/bin/env.sh
+. /global/homes/a/arrivers/lib/env-reftree.sh
+module load biopython
+
+TAXON=$1
+OUT=$2
+CONFIG=$3
+
+single_taxon_training.py --taxid "$TAXON" --outfile "$OUT" --config "$CONFIG"
