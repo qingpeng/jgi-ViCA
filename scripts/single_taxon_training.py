@@ -6,6 +6,8 @@ import subprocess
 import simplejson as json
 import shutil
 import sys
+import signal
+ 
 
 parser = argparse.ArgumentParser(description='A script to extract genomic features on a single taxon \
     optionally shredding the taxon into sizes specified by a distribution and creating a \
@@ -15,6 +17,11 @@ parser.add_argument('-o', '--outfile', help ='location to write the  feature vec
 parser.add_argument('-c', '--config', help='A JSON formatted configuration file', default='config.json')
 args = parser.parse_args()
 
+def signal_term_handler(signal, frame):
+	sys.stderr.write('single_taxon_training.py was killed by a SIGTERM command')
+	sys.exit(1)
+
+signal.signal(signal.SIGTERM, signal_term_handler)
 
 # Read the configuration file
 config = json.load( open(args.config, 'r'))["create_training_data"]

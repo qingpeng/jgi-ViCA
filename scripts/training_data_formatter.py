@@ -13,37 +13,6 @@ parser.add_argument('-o', '--output', help ="An output vector file", type=argpar
 parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
 args = parser.parse_args()
 
-# no_rank = None
-# superkingdom = 0
-# kingdom = 1
-# subkingdom = 2
-# superphylum = 3
-# phylum = 4
-# subphylum = 5
-# superclass = 6
-# class = 7
-# subclass = 8
-# infraclass = 9
-# superorder = 10
-# order = 11
-# suborder = 12
-# infraorder = 13
-# parvorder = 14
-# superfamily => 15
-# family => 16
-# subfamily = 17
-# tribe = 18
-# subtribe = 19
-# genus = 20
-# subgenus = 21
-# species group = 22,
-# species subgroup = 23
-# species = 24
-# subspecies = 25
-# varietas = 26
-# forma = 27
-
-
 
 
 # Read the configuration file
@@ -73,12 +42,12 @@ def simple_vector(line, catkey, config):
 	        
 
 
-# If a a taxonomic rank is specified return the data for for each category at that rank \
+# If a taxonomic rank is specified return the data for for each category at that rank \
 # If an ID list is specified in config write it   \
 if config["method"] == "level":
-
 level = config["levelattr"]["level"].lower
-reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--some_command?", level ]
+selectstr = '\"$rank eq ' + str(leveldict[level]) + '\"'
+reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", "1", "--select", selectstr  ]
 data = get_reftree_data(reftreeopts)
 args.output.write(data)
 #To be done after Ed implements level feature
@@ -89,9 +58,17 @@ if config["method"] == "taxids":
     sys.stderr.write("Formatting training data for selected taxa\n")
     for key, record in config["categories"].iteritems():  
         assert record["taxid"], "A taxon id is required for each category"
-        attributes = [str(record["taxid"]), "--attributes", "code"]
-        reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree"] + attributes
-        print(reftreeopts)
+        if record["gencode"]:
+        selectstr = '\"$gencode == ' + str(record["gencode"]) + '\"'
+        reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", \
+        	str(record["taxid"]), "--attributes", "code", "organelle", "--select" selectstr] 
+        else:
+        reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", \
+        	str(record["taxid"]), "--attributes", "code", "organelle"] 
+    	#Retrieve record
+    	
+        
+        
 #         data = get_reftree_data(reftreeopts)
 #         data_list = data.split()
 #         if record["code"]:
