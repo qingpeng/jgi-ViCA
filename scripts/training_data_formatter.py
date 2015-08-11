@@ -4,148 +4,105 @@ import argparse
 import simplejson as json
 import os
 import subprocess
-import sys
 import numpy
 
 
 parser = argparse.ArgumentParser( description='A script to select taxonomic groups with particular attributes from a reftree feature vector database and split the data into test and train datasets' )
 parser.add_argument('-c', '--config', help ="A json formatted config file")
-parser.add_argument('-o', '--output', help ="An output vector file", type=argparse.FileType('w'), default='-')
-parser.add_argument('-t', '--testfile', help ="An output vector file", type=argparse.FileType('w'), default='testdata.txt')
+parser.add_argument('-t', '--trainfile', help ="An output vector file", type=argparse.FileType('w'), default='-')
+parser.add_argument('-e', '--testfile', help ="An output vector file", type=argparse.FileType('w'), default='testdata.txt')
 parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
 args = parser.parse_args()
-
-leveldict ={ "no_rank": None, 
-"superkingdom" : 0,
-"kingdom" : 1,
-"subkingdom" : 2,
-"superphylum" : 3,
-"phylum" : 4,
-"subphylum" : 5,
-"superclass" : 6,
-"class" : 7,
-"subclass" : 8,
-"infraclass" : 9,
-"superorder" : 10,
-"order" : 11,
-"suborder" : 12,
-"infraorder" : 13,
-"parvorder" : 14,
-"superfamily" : 15,
-"family" : 16,
-"subfamily" : 17,
-"tribe" : 18,
-"subtribe" : 19,
-"genus" : 20,
-"subgenus" : 21,
-"species_group" : 22,
-"species_subgroup" : 23,
-"species" : 24,
-"subspecies" : 25,
-"varietas" : 26,
-"forma" : 27
-}
 
 # Read the configuration file
 config = json.load(open(args.config, 'r'))["training_data_formatter"]
 
 # Variables
 dbdir,dbname = os.path.split(os.path.abspath(args.reftree))
-testlist = []
-trainlist =[]
 
 # Functions
+def linetodict(line):
+    lv =line.strip().split("\t")
+    if len(lv) < 5:
+        return None
+    c3 = lv[2].split(" ")
+    attributes = lv[1]+","+ c3[2]
+    attlist = attributes.split(',')
+    d = dict(s.split('=') for s in attlist)
+    taxlist = (d["taxonomy"].split('/'))
+    t = dict(r.split(':') for r in taxlist)
+    d["taxonomy"] = t
+    d["readId"] = c3[0]
+    d["refseqId"] = c3[1]
+    d["vector"] = lv[3:]
+    return d
 
-#todo add level and attribute filtering once Ed adds it to Reftree
-def get_reftree_data(reftreeopts):
-    """A function to run RefTree"""
-    p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE)
-    reftreeout, reftreeerr= p0.communicate()
-    assert p0.returncode == 0, "RefTree returned an error while searching the tree with taxid"
-    return reftreeout
-
-def organelle(line):
-    """Returns the organelle value of a line"""
-    attributedict = {}
-    lv = line.strip().split('\t')
-    desc = lv[2].split(' ')[1].split(',')
-    for item in desc:
-        name, var = line.partition("=")[::2]
-        attributedict[name.strip()] = var
-        if "organelle" in attributedict:
-            return attributedict["organelle"]
-        else:
-            return None
-
-
-def split_data(key, line, trainhandle, testhandle, trainlist, testlist, testprop):
-    """takes a vector and assigns it to the test or train datasets updating the taxid lists """
-    lv = line.strip().split('\t')
-    taxid = lv[0]
-    simple = [key] + lv[3:]
-    if taxid in trainlist:
-        trainhandle.write('\t'.join(simple) + '\n')
-        return (trainlist, testlist)
-    if taxid in testlist:
-        testhandle.write('\t'.join(simple) + '\n')
-        return (trainlist, testlist)
+def mmatch(val):
+    """returns a tuple containing the gencode and organelle from an item in the params dict"""
+    if "organelle" in val:
+        o = val["organelle"]
     else:
-        selection = numpy.random.choice(["trainlist","testlist"], p=[1-testprop,testprop])
-        if selection == "trainlist":
-            trainlist.append(taxid)
-            trainhandle.write(simple)
-            return (trainlist, testlist)
+        o = None
+    if "gencode" in val:
+        g = val["gencode"]
+    else:
+        g = None
+    return (o,g) 
+
+def filter(d, params):
+    # For each group in the config file
+    for key, val in params.iteritems():
+        taxid = val["taxid"] # this is the taxid of interest
+        if taxid in d["taxonomy"]:
+            a = mmatch(val)
+            b = mmatch(d) 
+            if a[0]:
+                if a[0] != b[0]:
+                    continue
+            if a[1]:
+                if a[1] != b[1]:
+                    continue
+            else:
+                return [key] + d["vector"]
         else:
-            testlist.append(taxid)
-            testhandle.write(simple)
-            return (trainlist, testlist)
+            continue
+
 
 # MAIN
 
-# If a taxonomic rank is specified return the data for for each category at that rank \
-# If an ID list is specified in config write it   \
-if config["method"] == "level":
-    level = config["levelattr"]["level"].lower
-    selectstr = '\'$rankId >= ' + str(leveldict[level]) + '\''
-    reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", "1", "--select", selectstr  ]
-    reftreeout = get_reftree_data(reftreeopts)
-    for line in reftreeout:
-        trainlist, testlist = split_data(line, args.output, args.testfile,trainlist, testlist, float(config["testprop"]))
+# retrieve all data
+reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree" ,"1"] 
+p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE)
 
-if config["method"] == "taxids":
-    # Create a data list that contains taxa below selected nodes with the attributes specified in the config file
-    sys.stderr.write("Formatting training data for selected taxa\n")
-    # Search for records in each specified category
-    for key, record in config["categories"].iteritems():  
-        assert record["taxid"], "A taxon id is required for each category"
-        
-        # if gencode is specified, select only records with a matching gencode
-        if "gencode" in record:
-            selectstr = '\'$gencode == ' + str(record["gencode"]) + '\''    
-            reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", \
-                str(record["taxid"]), "--select", selectstr]
-            #print(reftreeopts)
-        
-        #otherwise return the the records without filtering 
+
+# Create lists to hold taxids
+testlist = []
+trainlist =[]
+
+# For each line 
+for line in p0.stdout:
+    # Convert the line to a dictionary
+    d = linetodict(line)
+    # decide whether data should go in the test or train bin
+    if d:
+        if d["taxid"] in trainlist:
+            out = args.trainfile
+        if d["taxid"] in testlist:
+            out = args.trainfile
         else:
-            reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree", \
-                str(record["taxid"])] 
-            #print(reftreeopts)
-        
-        #Retrieve the records
-        reftreeout = get_reftree_data(reftreeopts)
-        # organelle is a read-level, not node-level attribute it must be parsed from the record after retrieval
-        if reftreeout:
-            if "organelle" in record:
-                for line in reftreeout.split(os.linesep):
-                    org = organelle(line)
-                    if record["organelle"] == org:
-                        trainlist, testlist = split_data(line, args.output, args.testfile,trainlist, testlist, float(config["testprop"]))  
-                    else:
-                        continue
+            selection = numpy.random.choice(["train","test"], p=[1-float(config["testprop"]),float(config["testprop"])])
+            if selection =="train":
+                out = args.trainfile
+            elif selection == "test":
+                out = args.testfile
             else:
-                for line in reftreeout.split(os.linesep):
-                    trainlist, testlist = split_data(line, args.output, args.testfile,trainlist, testlist, float(config["testprop"])) 
-        
-else:
-    print("Unknown classification methods were requested in the config file.")
+                raise ValueError('numpy.random.choice could not select a fiel to write the vector to')
+        # Create a list with the category and vector if a match exists
+        vectlist = filter(d, config["categories"])
+        if vectlist: # If the vector list exists write it to the file
+            out.write('\t'.join(vectlist))
+            out.write('\n')
+    else:
+        continue
+    
+
