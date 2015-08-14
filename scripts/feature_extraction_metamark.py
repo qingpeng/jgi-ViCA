@@ -10,20 +10,6 @@ import sys
 import tempfile
 
 
-parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
-using emmission data from Metamark')
-parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
-parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
-parser.add_argument('--taxid', help="The taxonomy id")
-parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
-parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
-parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
-parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
-args = parser.parse_args()
-
-## File parsing and variable assignment
-
-mmp = os.path.abspath(args.mmp)
 
 # Functions
 def flatten(listOfLists):
@@ -51,51 +37,70 @@ def parsemod(dir):
 
 
 
+def main():
 
-# for each sequence in the fasta file:
-records = SeqIO.parse(args.input, "fasta")
-cnt_success = 0
-cnt_vectfailure = 0
-cnt_mmfailure = 0
-len_records =0
-shortreads = 0
-for record in records:
-    #go on if reads are too short
-    if len(record) < args.minlen:
-        shortreads += 1
-        continue
-    len_records += 1
-    tmpdir = tempfile.mkdtemp(dir=args.tmp)
-    os.chdir(tmpdir) 
-    handle = open("fragment.fasta", "w") # open a fasta file
-    SeqIO.write(record, handle, "fasta") # write the sequence to it
-    handle.close() # close the file
-    ## Run metamark
-    metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
-    p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
-    metamarkout, metamarkerr= p1.communicate()
-    if p1.returncode == 0:
-        featurevect = parsemod(tmpdir)
-        if featurevect:
-            if args.label == 'taxid':
-                vect = [args.taxid] + [record.description] + featurevect
-            elif args.label == 'readid':
-                vect = [readid] + [record.description] + featurevect
+    parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
+    using emmission data from Metamark')
+    parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
+    parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
+    parser.add_argument('--taxid', help="The taxonomy id")
+    parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
+    parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
+    parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
+    parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
+    args = parser.parse_args()
+
+    ## File parsing and variable assignment
+
+    mmp = os.path.abspath(args.mmp)
+
+
+    # for each sequence in the fasta file:
+    records = SeqIO.parse(args.input, "fasta")
+    cnt_success = 0
+    cnt_vectfailure = 0
+    cnt_mmfailure = 0
+    len_records =0
+    shortreads = 0
+    for record in records:
+        #go on if reads are too short
+        if len(record) < args.minlen:
+            shortreads += 1
+            continue
+        len_records += 1
+        tmpdir = tempfile.mkdtemp(dir=args.tmp)
+        os.chdir(tmpdir) 
+        handle = open("fragment.fasta", "w") # open a fasta file
+        SeqIO.write(record, handle, "fasta") # write the sequence to it
+        handle.close() # close the file
+        ## Run metamark
+        metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
+        p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
+        metamarkout, metamarkerr= p1.communicate()
+        if p1.returncode == 0:
+            featurevect = parsemod(tmpdir)
+            if featurevect:
+                if args.label == 'taxid':
+                    vect = [args.taxid] + [record.description] + featurevect
+                elif args.label == 'readid':
+                    vect = [readid] + [record.description] + featurevect
+                else:
+                    raise InputError("the label parameter must be either 'taxid' or 'readid'")
+                args.outfile.write("\t".join(vect))
+                args.outfile.write("\n")
+                shutil.rmtree(tmpdir)
+                cnt_success += 1
             else:
-                raise InputError("the label parameter must be either 'taxid' or 'readid'")
-            args.outfile.write("\t".join(vect))
-            args.outfile.write("\n")
-            shutil.rmtree(tmpdir)
-            cnt_success += 1
+                shutil.rmtree(tmpdir)
+                cnt_vectfailure  += 1
         else:
             shutil.rmtree(tmpdir)
-            cnt_vectfailure  += 1
-    else:
-        shutil.rmtree(tmpdir)
-        cnt_mmfailure += 1
+            cnt_mmfailure += 1
 
-if cnt_success == 0:
-    args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s, reads below metamark min: %s \n" \
-    % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure,shortreads))
-args.outfile.close()
-
+    if cnt_success == 0:
+        args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s, reads below metamark min: %s \n" \
+        % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure,shortreads))
+    args.outfile.close()
+    
+if __name__ == '__main__':
+    main()

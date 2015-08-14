@@ -1,0 +1,23 @@
+GeneMark.hmm PROKARYOTIC (Version 3.26)
+Date: Fri Aug 14 14:18:33 2015
+Sequence file name: example.mito.fasta.shreded.1st_seq
+Model file name: GeneMark_hmm.mod
+RBS: true
+Model information: GeneMarkS_gcode_11
+
+FASTA definition line: gi|452849234|ref|NC_020325.1||pos|2360..7360 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+    1        -         914        1183          270        1
+    2        -        1590        1868          279        1
+    3        -        1965        2159          195        1
+    4        -        2229        2396          168        1
+    5        -        2484        2645          162        1
+    6        -        3172        3312          141        1
+    7        -        3463        3774          312        1
+    8        -        3820        4122          303        1
+    9        -        4147        4320          174        1
+   10        -        4351        4524          174        1
+   11        -        4819        4998          180        1
+
