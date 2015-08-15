@@ -56,14 +56,17 @@ def filter(d, params):
         if taxid in d["taxonomy"]:
             a = mmatch(val)
             b = mmatch(d) 
+            if a[0] and a[1]:
+                if a[0] == b[0] and a[1] == b[1]:
+                    return [key] + d["vector"]
             if a[0]:
-                if a[0] != b[0]:
-                    continue
+                if a[0] == b[0]:
+                    return [key] + d["vector"]
             if a[1]:
-                if a[1] != b[1]:
-                    continue
+                if a[1] == b[1]:
+                    return [key] + d["vector"]
             else:
-                return [key] + d["vector"]
+                continue
         else:
             continue
 
@@ -93,10 +96,12 @@ for line in p0.stdout:
             selection = numpy.random.choice(["train","test"], p=[1-float(config["testprop"]),float(config["testprop"])])
             if selection =="train":
                 out = args.trainfile
+                trainlist.append(d["taxid"])
             elif selection == "test":
                 out = args.testfile
+                testlist.append(d["taxid"])
             else:
-                raise ValueError('numpy.random.choice could not select a fiel to write the vector to')
+                raise ValueError('numpy.random.choice could not select a file to write the vector to')
         # Create a list with the category and vector if a match exists
         vectlist = filter(d, config["categories"])
         if vectlist: # If the vector list exists write it to the file
