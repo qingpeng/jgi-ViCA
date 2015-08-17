@@ -69,10 +69,7 @@ def main():
             shortreads += 1
             continue
         len_records += 1
-        print tmp
         tmpdir = tempfile.mkdtemp(dir=tmp)
-        print dir
-        print tmpdir
         os.chdir(tmpdir) 
         handle = open("fragment.fasta", "w") # open a fasta file
         SeqIO.write(record, handle, "fasta") # write the sequence to it

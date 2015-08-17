@@ -37,8 +37,8 @@ def test_shred_lognorm():
     
     outfile = infile+'.shred'
     script = scriptpath('shred.py')
-    args = ["--input", infile, "--shred", "lognorm", "--shape", "1.5","--scale", "1000", "--loc", 
-    "3000", "--out", outfile, 
+    args = ["--input", infile, "--shred", "lognorm", "--shape", "1.5","--scale", "1000", 
+    "--loc", "3000", "--out", outfile, 
     "--testing"]
     utils.runscript(script, args, in_dir)
     assert os.path.exists(outfile), outfile
@@ -51,4 +51,30 @@ def test_shred_lognorm():
     assert data[-1] == "GGTTACTCTCGTTGCGGTTATTGCTAAAAGCAAGGGATATTCACTCAGCAGAAAG"
     utils.cleanup()
 
+def test_feature_extraction_metamark():
 
+    infile = utils.get_temp_filename('test.fa')
+    in_dir = os.path.dirname(infile)
+    shutil.copyfile(utils.get_test_data('example.mito.fasta.shreded.subset'), infile)
+    
+    outfile = infile+'.metamark_vector'
+    script = scriptpath('feature_extraction_metamark.py')
+    mmp = os.path.abspath("../scripts/gm_parameters/par_11.modified")
+    print mmp
+    tmp = os.path.abspath("./")
+    print tmp
+    print in_dir
+    args = ["--input", infile, "--outfile", outfile, "--tmp", tmp, "--mmp", 
+    mmp, "--taxid", "12345" ]
+    utils.runscript(script, args, in_dir)
+    assert os.path.exists(outfile), outfile
+    print outfile
+    data = [x.strip() for x in open(outfile)]
+    print len(data)
+    assert len(data) == 30
+    assert data[1].startswith("12345\tgi|511782593|ref|NC_021399.1") == True
+    assert data[0].endswith("0.018679\t0.016415\t0.016415") == True
+    assert data[-1].startswith("12345\tgi|511782593|ref|NC_021399.1||pos|295582..300582") == True
+    assert data[-1].endswith("0.023325\t0.019296\t0.021310") == True
+    utils.cleanup()
+    
