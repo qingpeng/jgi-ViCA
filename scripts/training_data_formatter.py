@@ -31,10 +31,12 @@ def linetodict(line):
     d = dict(s.split('=') for s in attlist)
     taxlist = (d["taxonomy"].split('/'))
     t = dict(r.split(':') for r in taxlist)
+    d["taxid"] = lv[0]
     d["taxonomy"] = t
     d["readId"] = c3[0]
     d["refseqId"] = c3[1]
     d["vector"] = lv[3:]
+    
     return d
 
 def mmatch(val):
@@ -59,14 +61,14 @@ def filter(d, params):
             if a[0] and a[1]:
                 if a[0] == b[0] and a[1] == b[1]:
                     return [key] + d["vector"]
-            if a[0]:
-                if a[0] == b[0]:
+            elif a[0]:
+                if a[0] == b[0] and a[1] != b[1]:
                     return [key] + d["vector"]
-            if a[1]:
-                if a[1] == b[1]:
+            elif a[1]:
+                if a[0] != b[0] and a[1] == b[1]:
                     return [key] + d["vector"]
             else:
-                continue
+                return [key] + d["vector"]
         else:
             continue
 
@@ -80,7 +82,7 @@ p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE)
 
 # Create lists to hold taxids
 testlist = []
-trainlist =[]
+trainlist = []
 
 # For each line 
 for line in p0.stdout:
@@ -90,11 +92,11 @@ for line in p0.stdout:
     if d:
         if d["taxid"] in trainlist:
             out = args.trainfile
-        if d["taxid"] in testlist:
-            out = args.trainfile
+        elif d["taxid"] in testlist:
+            out = args.testfile
         else:
             selection = numpy.random.choice(["train","test"], p=[1-float(config["testprop"]),float(config["testprop"])])
-            if selection =="train":
+            if selection == "train":
                 out = args.trainfile
                 trainlist.append(d["taxid"])
             elif selection == "test":
