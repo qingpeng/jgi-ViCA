@@ -10,33 +10,24 @@ import os
 import scipy.stats
 import pylab as pl
 import matplotlib.pyplot as plt
+import simplejson as json
 
 
-parser = argparse.ArgumentParser(description='A script to train a radial basis function kernel SVM model')
-parser.add_argument('-i','--input', help='Input training matrix', type=argparse.FileType('r'), default='-' )
-parser.add_argument('-o,','--output',help= 'Output model',type=argparse.FileType('w'), default='-' )
+parser = argparse.ArgumentParser(description='A script to train a SVM model')
+parser.add_argument('-i','--train', help='Input training matrix', type=argparse.FileType('r'), default='-' )
+parser.add_argument('-t','--test', help = 'test data matrix', type = argparse.FileType('r'), required=True)
 parser.add_argument('-r,','--reportdir',help= 'Directory for reports of he model' ,  default='svmresults' )
 parser.add_argument('-c,','--config',help= 'config file', default='config.json' )
 args = parser.parse_args()
 
 ## Read the configuration file
-config = json.load( open(args.config, 'r'))
+config = json.load( open(args.config, 'r'))["svm"]
 reportdir = os.path.abspath(args.reportdir)
 
 
 ## Functions
-def report(grid_scores, n_top=3):
-    """Return best scores after parameter grid search"""
-    top_scores = sorted(grid_scores, key=itemgetter(1), reverse=True)[:n_top]
-    for i, score in enumerate(top_scores):
-        print("Model with rank: {0}".format(i + 1))
-        print("Mean validation score: {0:.3f} (std: {1:.3f})".format(
-              score.mean_validation_score,
-              np.std(score.cv_validation_scores)))
-        print("Parameters: {0}".format(score.parameters))
-        print("")
 
-def plot_confusion_matrix(cm, title='Confusion matrix', cmap=plt.cm.Blues, plotname):
+def plot_confusion_matrix(cm,plotname, title='Confusion matrix', cmap=plt.cm.Blues ):
     """Plots a confusion matrix (cross tabulation) of classification assignments""" 
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
@@ -46,10 +37,19 @@ def plot_confusion_matrix(cm, title='Confusion matrix', cmap=plt.cm.Blues, plotn
     plt.xlabel('Predicted label')
     pl.savefig(plotname, format="pdf")
 
-def randomized_grid_search_rbf(C=4.6, gamma=0.01, n=20, datamat, classvect, n_jobs=1 ):
+def randomized_grid_search_rbf(datamat, classvect, C=4.6, gamma=0.01, n=20, n_jobs=1 ):
     """Retun best parameters from randomized grid search"""
     clf = svm.SVC(kernel = 'rbf',cache_size=4000, class_weight='auto')
-    param_dist = {'C': scipy.stats.expon(scale=C), 'gamma': scipy.stats.expon(scale=gamma),}
+    param_dist = {'C': scipy.stats.expon(scale=C), 'gamma': scipy.stats.expon(scale=gamma)}
+    # run randomized search
+    random_search = grid_search.RandomizedSearchCV(clf, param_distributions=param_dist,n_iter=n, n_jobs = n_jobs)
+    random_search.fit(datamat, classvect)
+    return random_search
+
+def randomized_grid_search_linear(datamat, classvect, C=4.6, n=20, n_jobs=1 ):
+    """Retun best parameters from randomized grid search"""
+    clf = svm.LinearSVC(class_weight='auto')
+    param_dist = {'C': scipy.stats.expon(scale=C)}
     # run randomized search
     random_search = grid_search.RandomizedSearchCV(clf, param_distributions=param_dist,n_iter=n, n_jobs = n_jobs)
     random_search.fit(datamat, classvect)
@@ -83,68 +83,93 @@ def plot_roc_curve(datamat, classvect, C, gamma, plotname, reporthandle):
     pl.legend(loc="lower right")
     pl.savefig(plotname, format="pdf")
 
+def import_matrix(filehandle):
+	classvect = [] # Classes for training
+	for i,line in enumerate(filehandle):
+		vect = line.split('\t') 
+		vect = vect[:0]+ [float(k) for k in vect[1:]] # convert numbers to float
+		classvect.append(line[0])
+		if i == 0:
+			modt = np.array(vect[1:])
+		else:
+			modt = np.vstack([modt, vect[1:]])
+	return (classvect, modt)
+
 ## Run Parameter Search cross-validation and write the model
 
 # Open Data 
-classvect = [] # Classes for training
-modvect = [] # list of training vectors
-for line in args.output:
-    vect = line.split()
-    classvect.append(line[0])
-    modvect.append(vect[1:])
-modt = np.array(modtrain) # Convert vector list to numpy array
+classvect, modt = import_matrix(args.train)
+testclassvect, testt = import_matrix(args.test)
 
-# Normalize and scale data
+# Normalize and scale training data
 scaler = preprocessing.StandardScaler().fit(modt)
 modtscaled = scaler.transform(modt)
+testtscaled = scaler.transform(testt)
 
 # Open report document
 reportname = os.path.join(reportdir, "report.txt")
-report = open(reportname, "w")
+reporthandle = open(reportname, "w")
 
-# Perform parameter search
-random_search = randomized_grid_search_rbf(4.6,0.01,20, modtscaled, classvect,1)
-params = get_params(random_search)
-report.write("Randomized Grid Results")
-report.write("\n")
-report.write(report(random_search.grid_scores_))
 
-# Fit the model
-clf = svm.SVC(kernel='rbf', C=params["C"], gamma = params["gamma"], class_weight='auto', probability=True, cache_size=4000)
-clf.fit(modtscaled, classvect)
-
+if config["model"] == "rbf":
+	# Perform parameter search
+	random_search = randomized_grid_search_rbf(datamat=modtscaled, classvect=classvect,C=4.6,gamma=0.01,n=int(config["grid_runs"]),n_jobs=int(config["cores"]))
+	params =random_search.best_params_
+	reporthandle.write("Randomized Grid Search was run")
+	reporthandle.write("\n")
+	# Fit the model
+	clf = svm.SVC(kernel='rbf', C=params["C"], gamma = params["gamma"], class_weight='auto', probability=True, cache_size=5000)
+	clf.fit(modtscaled, classvect)
+	
+if config["model"] == "linear":
+	# Perform parameter search
+	random_search = randomized_grid_search_linear(datamat=modtscaled, classvect=classvect,n=int(config["grid_runs"]),n_jobs=int(config["cores"]))
+	params =random_search.best_params_
+	reporthandle.write("Randomized Grid Search was run")
+	reporthandle.write("\n")
+	# Fit the model
+	clf = svm.LinearSVC(C=params["C"], class_weight='auto')
+	clf.fit(modtscaled, classvect)
+	
 #  Fivefold Cross Validation
-report.write("Cross validation Results")
-report.write("\n")
-scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='precision')
-report.write(scores)
-report.write("Precision: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2))                        
-scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='accuracy')
-report.write(scores)
-report.write("Accuracy: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2))                        
-scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='recall')
-report.write(scores)
-report.write("Recall: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2))                        
-scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='f1')
-report.write(scores)
-report.write("f1: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2)) 
+reporthandle.write("Cross validation Results")
+reporthandle.write("\n")
+scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='precision_weighted')
+# reporthandle.write(scores)
+reporthandle.write("Weighted Precision: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2))                                               
+scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='recall_weighted')
+# reporthandle.write(scores)
+reporthandle.write("Weighted Recall: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2))                        
+scores = cross_validation.cross_val_score(clf, modtscaled, classvect, cv=5, scoring='f1_weighted')
+#reporthandle.write(scores)
+reporthandle.write("Weighted f1: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std() * 2)) 
 
 #Generate ROC curve
-rocfile=os.path.join(reportdir,"roc.pdf")
-report.write("\n")
-report.write("Writing SVM model to the file %s" % modelfile)
-plot_roc_curve(datamat=modtscaled, classvect=classvect, C=params["C"], \
-    gamma=params["gamma"], plotname=rocfile, reporthandle=report)
+# rocfile=os.path.join(reportdir,"roc.pdf")
+# reporthandle.write("\n")
+# reporthandle.write("Writing ROC Curve to the file" )
+# plot_roc_curve(datamat=modtscaled, classvect=classvect, C=params["C"], \
+#    gamma=params["gamma"], plotname=rocfile, reporthandle=report)
     
+# Test with real data
 
-
+testpredict= clf.predict(testtscaled)
+cm = confusion_matrix(testclassvect, testpredict)
+cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+np.set_printoptions(precision=3)
+reporthandle.write('Normalized confusion matrix\n')
+print(cm_normalized)
+plot_confusion_matrix(cm_normalized, os.path.join(reportdir,"cm_norm.pdf") )
+print(cm)
+plot_confusion_matrix(cm, os.path.join(reportdir,"cm.pdf") )
 #write model to file
 modelfile = os.path.join(reportdir,"svmmodel.p")
-report.write("\n")
-report.write("Writing SVM model to the file %s" % modelfile)
-pickle.dump(clf,os.pathjoin(reportdir,open(modelfile, 'wb'))
-modelfile.close()
+reporthandle.write("\n")
+reporthandle.write("Writing SVM model to the file %s" % modelfile)
+with open(modelfile, 'wb') as modelhandle:
+	pickle.dump(clf,modelhandle)
+modelhandle.close()
 
 #close report document
-report.close()
+reporthandle.close()
 
