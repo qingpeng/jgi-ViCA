@@ -20,6 +20,7 @@ def parsemod(dir):
     """Finds the Genemark model, parses it and returns a feature vector with the taxid as the first element"""
     for file in os.listdir(dir):
         if file.endswith("hmm.mod"):
+            file = os.path.join(dir,file)
             with open(file, "r") as f:
                 rawvec = []
                 for line in f.readlines():
@@ -53,7 +54,7 @@ def main():
     ## File parsing and variable assignment
 
     mmp = os.path.abspath(args.mmp)
-
+    tmp = os.path.abspath(args.tmp)
 
     # for each sequence in the fasta file:
     records = SeqIO.parse(args.input, "fasta")
@@ -68,7 +69,10 @@ def main():
             shortreads += 1
             continue
         len_records += 1
-        tmpdir = tempfile.mkdtemp(dir=args.tmp)
+        print tmp
+        tmpdir = tempfile.mkdtemp(dir=tmp)
+        print dir
+        print tmpdir
         os.chdir(tmpdir) 
         handle = open("fragment.fasta", "w") # open a fasta file
         SeqIO.write(record, handle, "fasta") # write the sequence to it
