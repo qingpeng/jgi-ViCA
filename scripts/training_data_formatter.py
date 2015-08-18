@@ -21,7 +21,22 @@ config = json.load(open(args.config, 'r'))["training_data_formatter"]
 dbdir,dbname = os.path.split(os.path.abspath(args.reftree))
 
 # Functions
+
+def validate(a,b):
+    """A function to validate that every item in dictionary 'a' is present in 'b' and 
+    its value matched the value in 'a' including cases where that value is 'None in 'a'
+     but not present in 'b'. Returns True or False."""
+    for key, val in a.iteritems():
+        if val == "None":
+            if key in b and b[key] != "None":
+                return False
+        else:
+            if key not in b or b[key] != val:
+                return False
+    return True 
+        
 def linetodict(line):
+	"""split the data vector into a dictionary"""
     lv =line.strip().split("\t")
     if len(lv) < 5:
         return None
@@ -36,48 +51,56 @@ def linetodict(line):
     d["readId"] = c3[0]
     d["refseqId"] = c3[1]
     d["vector"] = lv[3:]
-    
     return d
 
-def mmatch(val):
-    """returns a tuple containing the gencode and organelle from an item in the params dict"""
-    if "organelle" in val:
-        o = val["organelle"]
-    else:
-        o = None
-    if "gencode" in val:
-        g = val["gencode"]
-    else:
-        g = None
-    return (o,g) 
 
 def filter(d, params):
-    # For each group in the config file
+    """Returns a class label and vector given  dictionaries of params and data"""
+    # create a dictionary of lists containing the unique parameters for each taxid (needed to define wanted_keys)
+    taxcatdict = {}
+    for key1, val1 in params.iteritems():
+        tmplist =[]
+        for key2 in val1:
+            tmplist.append(key2)
+        tid = params[key1]["taxcat"]
+        if tid in taxcatdict:
+            taxcatdict[tid] = list(set(taxcatdict[tid] + tmplist))
+        else:
+            taxcatdict[tid] = tmplist 
+    #iterate over the list pf parameters finding the category to assign the vector to   
     for key, val in params.iteritems():
-        taxid = val["taxid"] # this is the taxid of interest
-        if taxid in d["taxonomy"]:
-            a = mmatch(val)
-            b = mmatch(d) 
-            if a[0] and a[1]:
-                if a[0] == b[0] and a[1] == b[1]:
-                    return [key] + d["vector"]
-            elif a[0]:
-                if a[0] == b[0] and a[1] != b[1]:
-                    return [key] + d["vector"]
-            elif a[1]:
-                if a[0] != b[0] and a[1] == b[1]:
-                    return [key] + d["vector"]
+        dc = d.copy()
+        taxonomy = d["taxonomy"]
+        if val["taxcat"] in taxonomy:
+            dc["taxcat"] = val["taxcat"]
+            if validate(val,dc) == True:
+                dsub = {}
+                wanted_keys = taxcatdict[val["taxcat"]] # The keys you want
+                for item in wanted_keys:
+                    if item in dc:
+                        dsub[item] = dc[item]
+                if validate(dsub, val) == True:
+                    return [key] + dc["vector"]
+                else:
+                    continue
             else:
-                return [key] + d["vector"]
+                continue
         else:
             continue
-
+    
 
 # MAIN
+
+# validate config categories
+
+
+
 
 # retrieve all data
 reftreeopts = ["reftree.pl", "--dbDir", dbdir , "--db", dbname , "--subtree" ,"1"] 
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE)
+
+#
 
 
 # Create lists to hold taxids
