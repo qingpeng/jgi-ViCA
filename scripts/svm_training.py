@@ -151,7 +151,7 @@ reporthandle.write("Weighted f1: %0.4f (+/- %0.4f)" % (scores.mean(), scores.std
 # plot_roc_curve(datamat=modtscaled, classvect=classvect, C=params["C"], \
 #    gamma=params["gamma"], plotname=rocfile, reporthandle=report)
     
-# Test with real data
+# Test with real test data
 
 testpredict= clf.predict(testtscaled)
 cm = confusion_matrix(testclassvect, testpredict)
