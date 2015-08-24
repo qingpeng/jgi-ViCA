@@ -1,0 +1,1 @@
+shred.py --shred fixed --samples 200 --length 5000 --input example.mito.fasta --output example.mito.fasta.shreded

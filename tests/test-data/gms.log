@@ -1,0 +1,271 @@
+
+
+
+-------------------------------------------------
+start time            : Fri Aug 14 14:18:30 2015
+GMS version           : 4.30 October 2014
+working directory     : /global/u2/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/tests/test-data
+command line          : --clean --gm --par ../../scripts/gm_parameters/par_11.modified example.mito.fasta.shreded.1st_seq
+output file with predictions : example.mito.fasta.shreded.1st_seq.lst
+input sequence        : example.mito.fasta.shreded.1st_seq
+output name for model : 
+combine model         : 
+GeneMark model        : 1
+species name          : 
+delete temp files     : 1
+markov chain order    : 2
+non-coding order      : 2
+genetic code          : 11
+sequence organization : partial
+search for motif      : 1
+motif width           : 6
+prestart length       : 40
+identity threshold    : 0.99
+maximum iteration     : 10
+fixed motif position  : 
+gene overlap off      : 
+strand to predict on  : both
+mode prokaryotic      : 
+mode eukaryotic       : 
+mode virus            : 
+mode phage            : 
+mode est              : 
+GeneMarkS parameters  : ../../scripts/gm_parameters/par_11.modified
+initial hmm model     : 
+output format         : LST
+output PostScript     : 
+output PDF            : 
+output nucleotides    : 
+output proteins       : 
+gibbs version         : 3
+heuristic version     : 2
+evidense data file    : 
+combine native with   : 
+use input defline     : 
+
+      run starts here:
+prepare sequence
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --clean_join sequence --seq example.mito.fasta.shreded.1st_seq --log gms.log
+Clean-Join      IN   OUT
+Contigs - 1 1
+All letters - 5000   5000
+Unambiguous letters - 5000 5000
+A - 1459 1459
+C - 1601 1601
+G - 735 735
+T - 1205 1205
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 2000
+system call done
+do_iterations = 1
+set initial <gmhmmp> model
+get GC
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --gc --seq sequence
+GC of sequence = 47
+initial <gmhmm> model: /global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/heuristic_mod/heu_11_47.mod
+copy initial model to working directory
+cp /global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/heuristic_mod/heu_11_47.mod  itr_0.mod
+system call done
+run initial prediction
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/gmhmmp -g 11   sequence  -m itr_0.mod  -o itr_0.lst
+system call done
+entering iteration loop
+build model: itr_1.mod for iteration: 1
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --mkmod itr_1.mod --seq sequence --geneset itr_0.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.1 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/Gibbs3 startseq.1 6 -o gibbs_out.1 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --gibbs gibbs_out.1 --mod itr_1.mod --seq startseq.1 --log gms.log
+-34	0.022
+-33	0.028
+-32	0.028
+-31	0.028
+-30	0.028
+-29	0.028
+-28	0.033
+-27	0.044
+-26	0.033
+-25	0.028
+-24	0.028
+-23	0.028
+-22	0.028
+-21	0.028
+-20	0.028
+-19	0.028
+-18	0.028
+-17	0.028
+-16	0.028
+-15	0.028
+-14	0.028
+-13	0.028
+-12	0.028
+-11	0.028
+-10	0.028
+-9	0.028
+-8	0.028
+-7	0.028
+-6	0.028
+-5	0.028
+-4	0.028
+-3	0.028
+-2	0.028
+-1	0.028
+0	0.022
+Pos   A   C   G   T
+1 0.200 0.200 0.200 0.400
+2 0.200 0.200 0.200 0.400
+3 0.200 0.200 0.200 0.400
+4 0.200 0.200 0.200 0.400
+5 0.200 0.200 0.200 0.400
+6 0.400 0.200 0.200 0.200
+
+system call done
+prediction, iteration: 1
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/gmhmmp -g 11   sequence  -m itr_1.mod  -o itr_1.lst -r
+system call done
+compare:
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --compare --source itr_1.lst --target itr_0.lst
+compare itr_0.lst and itr_1.lst: 0.6341
+build model: itr_2.mod for iteration: 2
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --mkmod itr_2.mod --seq sequence --geneset itr_1.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.2 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/Gibbs3 startseq.2 6 -o gibbs_out.2 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --gibbs gibbs_out.2 --mod itr_2.mod --seq startseq.2 --log gms.log
+-34	0.022
+-33	0.028
+-32	0.028
+-31	0.028
+-30	0.028
+-29	0.028
+-28	0.033
+-27	0.044
+-26	0.033
+-25	0.028
+-24	0.028
+-23	0.028
+-22	0.028
+-21	0.028
+-20	0.028
+-19	0.028
+-18	0.028
+-17	0.028
+-16	0.028
+-15	0.028
+-14	0.028
+-13	0.028
+-12	0.028
+-11	0.028
+-10	0.028
+-9	0.028
+-8	0.028
+-7	0.028
+-6	0.028
+-5	0.028
+-4	0.028
+-3	0.028
+-2	0.028
+-1	0.028
+0	0.022
+Pos   A   C   G   T
+1 0.200 0.200 0.200 0.400
+2 0.200 0.200 0.200 0.400
+3 0.200 0.200 0.200 0.400
+4 0.200 0.200 0.200 0.400
+5 0.200 0.200 0.200 0.400
+6 0.400 0.200 0.200 0.200
+
+system call done
+prediction, iteration: 2
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/gmhmmp -g 11   sequence  -m itr_2.mod  -o itr_2.lst -r
+system call done
+compare:
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --compare --source itr_2.lst --target itr_1.lst
+compare itr_1.lst and itr_2.lst: 0.8182
+build model: itr_3.mod for iteration: 3
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --mkmod itr_3.mod --seq sequence --geneset itr_2.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.3 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/Gibbs3 startseq.3 6 -o gibbs_out.3 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --gibbs gibbs_out.3 --mod itr_3.mod --seq startseq.3 --log gms.log
+-34	0.022
+-33	0.028
+-32	0.028
+-31	0.028
+-30	0.028
+-29	0.028
+-28	0.033
+-27	0.044
+-26	0.033
+-25	0.028
+-24	0.028
+-23	0.028
+-22	0.028
+-21	0.028
+-20	0.028
+-19	0.028
+-18	0.028
+-17	0.028
+-16	0.028
+-15	0.028
+-14	0.028
+-13	0.028
+-12	0.028
+-11	0.028
+-10	0.028
+-9	0.028
+-8	0.028
+-7	0.028
+-6	0.028
+-5	0.028
+-4	0.028
+-3	0.028
+-2	0.028
+-1	0.028
+0	0.022
+Pos   A   C   G   T
+1 0.200 0.200 0.200 0.400
+2 0.200 0.200 0.200 0.400
+3 0.200 0.200 0.200 0.400
+4 0.200 0.200 0.200 0.400
+5 0.200 0.200 0.200 0.400
+6 0.400 0.200 0.200 0.200
+
+system call done
+prediction, iteration: 3
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/gmhmmp -g 11   sequence  -m itr_3.mod  -o itr_3.lst -r
+system call done
+compare:
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --compare --source itr_3.lst --target itr_2.lst
+compare itr_2.lst and itr_3.lst: 1.0000
+Stopped iterations on identity: 1.0000
+output: GeneMark_hmm.mod
+cp itr_3.mod GeneMark_hmm.mod
+system call done
+output initial model: GeneMark_hmm_heuristic.mod
+cp /global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/heuristic_mod/heu_11_47.mod GeneMark_hmm_heuristic.mod
+system call done
+parse sequence for GeneMark model building
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/probuild --par ../../scripts/gm_parameters/par_11.modified  --parse --seq sequence --non non --cod cod --geneset itr_3.lst --COD_L_MARGIN 3 --COD_R_MARGIN 3
+system call done
+create mkmat commnet file
+create parameter file for GeneMark: GeneMark.mat
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/mkmat -x cod non 4 GeneMark.mat < mkmat_comment
+system call done
+predict genes using native model with motif
+/global/u2/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/gmhmmp -g 11  -o example.mito.fasta.shreded.1st_seq.lst  example.mito.fasta.shreded.1st_seq  -r -m GeneMark_hmm.mod 
+system call done
+rm -f sequence itr_0.mod itr_0.lst itr_1.mod startseq.1 gibbs_out.1 itr_1.lst itr_2.mod startseq.2 gibbs_out.2 itr_2.lst itr_3.mod startseq.3 gibbs_out.3 itr_3.lst cod non mkmat_comment
+system call done
+End: Fri Aug 14 14:18:33 2015
+
