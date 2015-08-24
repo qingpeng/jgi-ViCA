@@ -1,5 +1,5 @@
 #!/bin/bash 
-. /global/homes/a/arrivers/dev/jgi-genelearn/scripts/env.sh
+. /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/env.sh
 module load tfmq
 module load biopython
 module load sqlite3
