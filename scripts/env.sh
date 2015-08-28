@@ -6,6 +6,7 @@ export PYTHONPATH=$PYTHONPATH:/global/homes/q/qpzhang/anaconda/lib/python2.7/sit
 export PYTHONPATH=$PYTHONPATH:/global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts
 export REFTREE_DIR='/global/projectb/scratch/ekirton/RefTree'
 export GENELEARN_DIR='/global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts'
+export TMPDIR='/global/projectb/scratch/qpzhang'
 module load tfmq
 module load sqlite3
 module load biopython
