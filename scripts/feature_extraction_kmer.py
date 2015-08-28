@@ -8,15 +8,13 @@ Use '-h' for parameter help.
 """
 
 import sys
-import screed
 import os
 # require khmer 1.4.1
 import khmer
 import argparse
 import itertools
-import csv
 from Bio.Seq import Seq
-
+from Bio import SeqIO
 
 def iterate_kmer(k):
     bases = ['A','C','T','G']
@@ -37,7 +35,7 @@ def get_composition(seq, kmers, norm):
     composition = [counting_hash.get(kmer) for kmer in kmers]
     if norm == True:
         total = sum(composition)
-        composition_norm = [number*1.0/total for number in composition]
+        composition_norm = [str(number*1.0/total) for number in composition]
         composition = composition_norm
     return composition
     
@@ -77,8 +75,8 @@ def main():
 
     parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
     using k-mer frequency profile')
-    parser.add_argument('--input', help="A multi-sequence fasta file", default='-')
-    parser.add_argument('--outfile', help= "Output file, tab delimited format", default='-')
+    parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
+    parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
     parser.add_argument('--taxid', help="The taxonomy id")
     parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
     parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
@@ -96,34 +94,29 @@ def main():
 #     
 #     args = parser.parse_args()
 # 
-
-    file_in = args.input
-    file_out = args.outfile
-    csvfile = open(file_out, 'w')
-
-    writer = csv.writer(csvfile, delimiter='\t',)
-    
-        
-    seqfile =  screed.open(file_in)
+    records = SeqIO.parse(args.input, "fasta")
     kmers = iterate_kmer(4)
 #     if args.header == True:
 #         writer.writerow(['seq_id']+kmers)
 #         
     shortreads = 0
     len_records =0
-    for read in seqfile:
-        if len(read.sequence) < args.minlen:
+    for record in records:
+        if len(record) < args.minlen:
             shortreads += 1
             continue
         len_records += 1
         norm = True
         if args.label == 'taxid':
-            vect = [args.taxid] + [read.description] + get_composition(read.sequence.upper(), kmers,norm)
-            writer.writerow(vect)
+            vect = [args.taxid] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
+            args.outfile.write("\t".join(vect))
+            args.outfile.write("\n")
         elif args.label == 'readid':
-            vect = [read.id] + [record.description] + get_composition(read.sequence.upper(), kmers,norm)
-            writer.writerow(vect)
+            vect = [record.id] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
+            args.outfile.write("\t".join(vect))
+            args.outfile.write("\n")
     print "#Taxon id:",args.taxid,"Sucessful contigs:",len_records,"Failed contigs:",shortreads,"\n"
+    args.outfile.close()
     
 if __name__ == '__main__':
     main()
