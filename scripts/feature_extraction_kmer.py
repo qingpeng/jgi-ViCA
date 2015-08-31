@@ -115,7 +115,9 @@ def main():
             vect = [record.id] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
             args.outfile.write("\t".join(vect))
             args.outfile.write("\n")
-    print "#Taxon id:",args.taxid,"Sucessful contigs:",len_records,"Failed contigs:",shortreads,"\n"
+    if len_records == 0:
+        args.outfile.write("no valid results\n")
+   # print "#Taxon id:",args.taxid,"Sucessful contigs:",len_records,"Failed contigs:",shortreads,"\n"
     args.outfile.close()
     
 if __name__ == '__main__':
