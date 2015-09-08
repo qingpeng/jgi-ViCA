@@ -63,12 +63,14 @@ def main():
     cnt_mmfailure = 0
     len_records =0
     shortreads = 0
+
     for record in records:
         #go on if reads are too short
         if len(record) < args.minlen:
             shortreads += 1
             continue
         len_records += 1
+
         tmpdir = tempfile.mkdtemp(dir=tmp)
         os.chdir(tmpdir) 
         handle = open("fragment.fasta", "w") # open a fasta file

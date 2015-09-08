@@ -1,7 +1,7 @@
 {"create_training_data" :{
   "taskfarmer" : "True",
-  "numworkers" : "80",
-  "resources" :"-l ram.c=5G,h_rt=12:00:00",
+  "numworkers" : "120",
+  "resources" :"-l ram.c=5G,h_rt=5:00:00 -pe pe_slots 2",
   "method" : "kmer",
   "shred" : "fixed",
   "lognorm" : {"shape" : "1.3335", "loc" : "3000", "scale": "1140"},

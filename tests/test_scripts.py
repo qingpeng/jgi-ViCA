@@ -78,3 +78,29 @@ def test_feature_extraction_metamark():
     assert data[-1].endswith("0.023325\t0.019296\t0.021310") == True
     utils.cleanup()
     
+def test_feature_extraction_kmer():
+
+    infile = utils.get_temp_filename('test.fa')
+    in_dir = os.path.dirname(infile)
+    shutil.copyfile(utils.get_test_data('example.mito.fasta.shreded.subset'), infile)
+    
+    outfile = infile+'.kmer_vector'
+    script = scriptpath('feature_extraction_kmer.py')
+    mmp = os.path.abspath("../scripts/gm_parameters/par_11.modified")
+    print mmp
+    tmp = os.path.abspath("./")
+    print tmp
+    print in_dir
+    args = ["--input", infile, "--outfile", outfile, "--taxid", "12345", "--label", "taxid"]
+    utils.runscript(script, args, in_dir)
+    assert os.path.exists(outfile), outfile
+    print outfile
+    data = [x.strip() for x in open(outfile)]
+    print len(data)
+    assert len(data) == 54
+    assert data[1].startswith("12345\tgi|511782593|ref|NC_021399.1") == True
+    assert data[0].endswith("0.00300180108065\t0.00640384230538\t0.00380228136882") == True
+    assert data[-1].startswith("12345\tgi|511782593|ref|NC_021399.1||pos|304493..309493") == True
+    assert data[-1].endswith("0.00300180108065\t0.00500300180108\t0.00200120072043") == True
+    utils.cleanup()
+    
