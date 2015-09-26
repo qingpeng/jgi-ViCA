@@ -36,30 +36,40 @@ if config['shred'] == 'lognorm':
     shredopts = ["shred.py",  "--shred", "lognorm","--samples",config["shredsamples"], \
         "--shape", config["lognorm"]["shape"],"--scale", config["lognorm"]["scale"], \
         "--loc", config["lognorm"]["loc"]]
-
-if config['shred'] == 'fixed':
+elif config['shred'] == 'fixed':
     shredopts = ["shred.py",  "--shred", "fixed", "--samples", config["shredsamples"], \
     "--length", config["fixed"]]
-    
+elif config['shred'] =='None':
+	sequencein = p0.stdout 
+else:
+	raise ValueError('In inccorect value was specified in the configuration file for shredding: ' + config['shred'])
 
-# If shredding is desired run shread.py
-p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 exits before p0
-
+if config['shred'] == 'lognorm' or 'fixed':
+	# If shredding is desired run shread.py
+	p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 exits before p0
+	sequencein = p1.stdout 
+	
 ## Run selected feature extraction script
-if config["method"] == "metamark":
+if config["method"] == "genemarks":
     #run metamark wrapper
-    metamarkopts = ["feature_extraction_metamark.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
-    p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
+    genemarksopts = ["feature_extraction_genemarks.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    p2 = subprocess.Popen(genemarksopts, stdin=sequencein , stdout=subprocess.PIPE)
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+elif config["method"] == "metagenemark":
+    #run metamark wrapper
+    metagenemarkopts = ["feature_extraction_metagenemark.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    p2 = subprocess.Popen(metagenemarkopts, stdin=sequencein , stdout=subprocess.PIPE)
+    p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    matrixdata, metamarkerr= p2.communicate()
+    assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+    
 elif config["method"] == "kmer":
     metamarkopts = ["feature_extraction_kmer.py", "--taxid", args.taxid, "--outfile", args.outfile]
-    p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
+    p2 = subprocess.Popen(metamarkopts, stdin=sequencein , stdout=subprocess.PIPE)
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
-
-#    print("kmer method not yet implemented")
 
