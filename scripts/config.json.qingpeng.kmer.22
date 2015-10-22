@@ -2,13 +2,13 @@
   "taskfarmer" : "True",
   "numworkers" : "120",
   "resources" :"-l ram.c=5G,h_rt=12:00:00 -pe pe_slots 2",
-  "method" : "metamark",
+  "method" : "kmer",
   "shred" : "fixed",
   "lognorm" : {"shape" : "1.3335", "loc" : "3000", "scale": "1140"},
   "fixed" : "5000",
   "shredsamples" : "200",
   "tmpdir": "/scratch",
-  "trainingid" : "1",
+  "trainingid" : "22",
   "mmp" : "/global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/gm_parameters/par_11.modified"
 },
 "training_data_formatter" : {

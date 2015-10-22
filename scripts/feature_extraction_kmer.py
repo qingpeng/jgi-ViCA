@@ -85,12 +85,14 @@ def main():
     records = SeqIO.parse(args.input, "fasta")
     kmers = iterate_kmer(4)
     shortreads = 0
+    cnt_success = 0
     len_records =0
     for record in records:
+        len_records = len_records + 1
         if len(record) < args.minlen:
             shortreads += 1
             continue
-        len_records = len_records + 1
+        
         norm = True
         if args.label == 'taxid':
             vect = [args.taxid] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
@@ -100,9 +102,12 @@ def main():
             vect = [record.id] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
             args.outfile.write("\t".join(vect))
             args.outfile.write("\n")
-    if len_records == 0:
-        args.outfile.write("no valid results\n")
-        
+        cnt_success += 1
+    if cnt_success == 0:
+        #args.outfile.write("#Taxon id: 123, Number of Contigs: 3\n") #kmer_v3
+        args.outfile.write("#Taxon id: 123\n") #kmer_v4
+       # args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, reads below metamark min: %s \n" \
+        #% (args.taxid, len_records, cnt_success, shortreads))
    # print "#Taxon id:",args.taxid,"Sucessful contigs:",len_records,"Failed contigs:",shortreads,"\n"
     args.outfile.close()
     
