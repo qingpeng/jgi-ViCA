@@ -14,5 +14,5 @@
 #$ -l ram.c=40G
 
 ## Your job info goes here
-/global/homes/q/qpzhang/anaconda/bin/python /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/datoclassifier.py -i train_genemark.vect.1-10 -t test_genemark.vect.1-10 -r report_genemark_full_1-10
+/global/homes/q/qpzhang/anaconda/bin/python /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/datoclassifier.py -i train_genemark.vect.1-10.convert -t test_genemark.vect.1-10.convert -r report_genemark_full_1-10
 

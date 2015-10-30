@@ -23,8 +23,11 @@ train.save('train_sframe')
 
 model = gl.svm_classifier.create(train, target='X1')
 predictions = model.predict(test)
-file_report.write(predictions)
+print predictions
+#file_report.write(predictions)
 results = model.evaluate(test)
-file_report.write(results)
+print results
+#file_report.write(results)
 model.save(args.modeldir)
-file_report.write(model.summary)
+print model.summary
+#file_report.write(model.summary)

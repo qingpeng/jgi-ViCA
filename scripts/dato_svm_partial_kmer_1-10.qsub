@@ -14,5 +14,5 @@
 #$ -l ram.c=40G
 
 ## Your job info goes here
-/global/homes/q/qpzhang/anaconda/bin/python /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/datoclassifier_svm.py -i train_kmer_full.vect.1-10 -t test_kmer_full.vect.1-10 -r svm_full_1-10 -d svm_1_10
+/global/homes/q/qpzhang/anaconda/bin/python /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/datoclassifier_svm.py -i train_kmer_full.vect.1-10.convert -t test_kmer_full.vect.1-10.convert -r svm_full_1-10 -d svm_1_10
 
