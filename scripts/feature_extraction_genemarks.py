@@ -34,21 +34,22 @@ def parsemod(dir):
                 if len(itemvect) == 256:
                     return itemvect
             f.close()
-            break
+        break
 
 
 
 def main():
 
     parser = argparse.ArgumentParser(description='A script to generate a feature matrix  \
-    using emmission data from Metamark')
+    using emmission data from GeneMarkS')
     parser.add_argument('--input', help="A multi-sequence fasta file",type=argparse.FileType('r'), default='-')
     parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
     parser.add_argument('--taxid', help="The taxonomy id")
-    parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
+    parser.add_argument('--label', help="Choice of label, normally taxid, but readid for binning applications", choices=['taxid','readid'],default='taxid')
     parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
     parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
     parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
+    parser.add_argument('--prog', help="metamerk program to run", choices=['genemarks','metagenemark'],default='genemarkS')
     args = parser.parse_args()
 
     ## File parsing and variable assignment
@@ -76,17 +77,18 @@ def main():
         handle = open("fragment.fasta", "w") # open a fasta file
         SeqIO.write(record, handle, "fasta") # write the sequence to it
         handle.close() # close the file
-        ## Run metamark
-        metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
-        p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
-        metamarkout, metamarkerr= p1.communicate()
+        
+        ## Run genemarks
+        genemarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
+        p1 = subprocess.Popen(genemarkparams, stdout=subprocess.PIPE)
+        genemarkout, genemarkerr= p1.communicate()
         if p1.returncode == 0:
             featurevect = parsemod(tmpdir)
             if featurevect:
                 if args.label == 'taxid':
                     vect = [args.taxid] + [record.description] + featurevect
                 elif args.label == 'readid':
-                    vect = [readid] + [record.description] + featurevect
+                    vect = [record.id] + [record.description] + featurevect
                 else:
                     raise InputError("the label parameter must be either 'taxid' or 'readid'")
                 args.outfile.write("\t".join(vect))
@@ -101,9 +103,9 @@ def main():
             cnt_mmfailure += 1
 
     if cnt_success == 0:
-        args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s, reads below metamark min: %s \n" \
+        args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, genemark errors: %s, vector errors: %s, reads below Genemark min: %s \n" \
         % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure,shortreads))
-    args.outfile.close()
+args.outfile.close()
     
 if __name__ == '__main__':
     main()

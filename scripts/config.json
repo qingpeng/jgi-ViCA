@@ -2,7 +2,7 @@
   "taskfarmer" : "False",
   "numworkers" : "80",
   "resources" :"-l ram.c=5G,h_rt=12:00:00",
-  "method" : "metamark",
+  "method" : "genemarks",
   "shred" : "fixed",
   "lognorm" : {"shape" : "1.3335", "loc" : "3000", "scale": "1140"},
   "fixed" : "5000",
