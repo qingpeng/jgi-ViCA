@@ -80,32 +80,19 @@ def main():
     parser.add_argument('--taxid', help="The taxonomy id")
     parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
     parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
-    
     args = parser.parse_args()
     
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument('filein')
-#     parser.add_argument('fileout')
-# 
-# #    parser.add_argument("-c", "--core", help="only count core k-mers", action="store_true")
-#     parser.add_argument("-n", "--norm", help="normalize frequency profile", action="store_true")
-#     parser.add_argument("-c", "--cvs", help="output cvs format file", action="store_true")
-#     parser.add_argument("-e", "--header", help="output header with the kmers", action="store_true")
-#     
-#     args = parser.parse_args()
-# 
     records = SeqIO.parse(args.input, "fasta")
     kmers = iterate_kmer(4)
-#     if args.header == True:
-#         writer.writerow(['seq_id']+kmers)
-#         
     shortreads = 0
+    cnt_success = 0
     len_records =0
     for record in records:
+        len_records = len_records + 1
         if len(record) < args.minlen:
             shortreads += 1
             continue
-        len_records += 1
+        
         norm = True
         if args.label == 'taxid':
             vect = [args.taxid] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
@@ -115,10 +102,15 @@ def main():
             vect = [record.id] + [record.description] + get_composition(str(record.seq).upper(), kmers,norm)
             args.outfile.write("\t".join(vect))
             args.outfile.write("\n")
-    print "#Taxon id:",args.taxid,"Sucessful contigs:",len_records,"Failed contigs:",shortreads,"\n"
+        cnt_success += 1
+    if cnt_success == 0:
+        #args.outfile.write("#Taxon id: 123, Number of Contigs: 3\n") #kmer_v3
+        args.outfile.write("#Taxon id: 123\n") #kmer_v4
+       # args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, reads below metamark min: %s \n" \
+        #% (args.taxid, len_records, cnt_success, shortreads))
+   # print "#Taxon id:",args.taxid,"Sucessful contigs:",len_records,"Failed contigs:",shortreads,"\n"
     args.outfile.close()
     
 if __name__ == '__main__':
     main()
 
-main()

@@ -36,7 +36,7 @@ def validate(a,b):
     return True 
         
 def linetodict(line):
-	"""split the data vector into a dictionary"""
+    """split the data vector into a dictionary"""
     lv =line.strip().split("\t")
     if len(lv) < 5:
         return None

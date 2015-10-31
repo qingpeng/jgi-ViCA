@@ -31,6 +31,7 @@ reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid,"--attribu
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 
 
+
 ## Shred the sequence with shred.py
 if config['shred'] == 'lognorm':
     shredopts = ["shred.py",  "--shred", "lognorm","--samples",config["shredsamples"], \
@@ -58,6 +59,7 @@ if config["method"] == "genemarks":
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+
 elif config["method"] == "metagenemark":
     #run metamark wrapper
     metagenemarkopts = ["feature_extraction_metagenemark.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
@@ -72,4 +74,13 @@ elif config["method"] == "kmer":
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+
+elif config["method"] == "both":
+    #run metamark wrapper
+    metamarkopts = ["feature_extraction.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
+    p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    matrixdata, metamarkerr= p2.communicate()
+    assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+
 
