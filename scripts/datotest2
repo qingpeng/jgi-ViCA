@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+import graphlab as gl
+
+
+gl.set_runtime_config('GRAPHLAB_CACHE_FILE_LOCATIONS','/scratch')
+gl.set_runtime_config('GRAPHLAB_FILEIO_MAXIMUM_CACHE_CAPACITY',100000000000)
+gl.set_runtime_config('GRAPHLAB_FILEIO_MAXIMUM_CACHE_CAPACITY_PER_FILE', 100000000000)
+gl.set_runtime_config('GRAPHLAB_SFRAME_SORT_BUFFER_SIZE',100000000000)
+
+
+#test =  gl.SFrame.read_csv('/global/projectb/scratch/arrivers/geneleanrntest/20150818/test.twoclass.txt', delimiter='\t', header=False)
+#train =  gl.SFrame.read_csv('/global/projectb/scratch/arrivers/geneleanrntest/20150818/train.twoclass.txt', delimiter='\t', header=False)
+#test.save('test_twoclass_sframe')
+#train.save('train_twoclass_sframe')
+
+test = gl.load_sframe('test_twoclass_sframe')
+train = gl.load_sframe('train_twoclass_sframe')
+model = gl.classifier.create(train, target='X1')
+model.save("dato.twoclass.model")
+
+results = model.evaluate(test)
+print(results)
+print(results["confusion_matrix"].print_rows(200,3))

@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import graphlab as gl
+
+
+gl.set_runtime_config('GRAPHLAB_CACHE_FILE_LOCATIONS','/scratch')
+gl.set_runtime_config('GRAPHLAB_FILEIO_MAXIMUM_CACHE_CAPACITY',100000000000)
+gl.set_runtime_config('GRAPHLAB_FILEIO_MAXIMUM_CACHE_CAPACITY_PER_FILE', 100000000000)
+gl.set_runtime_config('GRAPHLAB_SFRAME_SORT_BUFFER_SIZE',100000000000)
+
+test =  gl.load_sframe('/global/projectb/scratch/arrivers/geneleanrntest/20150818/test_sframe')
+train =  gl.load_sframe('/global/projectb/scratch/arrivers/geneleanrntest/20150818/train_sframe')
+
+model = gl.boosted_trees_classifier.create(train, target='X1', class_weights='auto', max_iterations= 15, verbose=True)
+model.save("dato.model")
+
+results = model.evaluate(test)
+print(results)
+print(results["confusion_matrix"].print_rows(200,3))
