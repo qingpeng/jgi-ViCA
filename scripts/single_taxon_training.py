@@ -43,9 +43,9 @@ elif config['shred'] == 'fixed':
 elif config['shred'] =='None':
 	sequencein = p0.stdout 
 else:
-	raise ValueError('In inccorect value was specified in the configuration file for shredding: ' + config['shred'])
+	raise ValueError('An inccorect value was specified in the configuration file for shredding: ' + config['shred'])
 
-if config['shred'] == 'lognorm' or 'fixed':
+if config['shred'] == 'lognorm' or config['shred'] == 'fixed':
 	# If shredding is desired run shread.py
 	p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 exits before p0
@@ -67,6 +67,14 @@ elif config["method"] == "metagenemark":
     p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+
+elif config["method"] == "metagenemark_kmer":
+    #run metamark wrapper
+    metagenemarkopts = ["feature_extraction_metagenemark_kmer.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    p2 = subprocess.Popen(metagenemarkopts, stdin=sequencein , stdout=subprocess.PIPE)
+    p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    matrixdata, metamarkerr= p2.communicate()
+    assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
     
 elif config["method"] == "kmer":
     metamarkopts = ["feature_extraction_kmer.py", "--taxid", args.taxid, "--outfile", args.outfile]
@@ -78,8 +86,9 @@ elif config["method"] == "kmer":
 elif config["method"] == "both":
     #run metamark wrapper
     metamarkopts = ["feature_extraction.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
-    p2 = subprocess.Popen(metamarkopts, stdin=p1.stdout , stdout=subprocess.PIPE)
-    p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    p2 = subprocess.Popen(metamarkopts, stdin=sequencein , stdout=subprocess.PIPE)
+    if config['shred'] != 'None':
+        p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
 
