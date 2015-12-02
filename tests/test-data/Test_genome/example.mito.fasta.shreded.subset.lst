@@ -1,0 +1,853 @@
+GeneMark.hmm PROKARYOTIC (Version 3.26)
+Date: Mon Nov 30 15:46:24 2015
+Sequence file name: ../example.mito.fasta.shreded.subset
+Model file name: GeneMark_hmm.mod
+RBS: true
+Model information: GeneMarkS_gcode_11
+
+FASTA definition line: gi|452849234|ref|NC_020325.1||pos|2360..7360 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+    1        +          11         277          267        1
+    2        +         486         695          210        1
+    3        -         914        1183          270        1
+    4        +        1250        1354          105        1
+    5        -        1590        1832          243        1
+    6        -        1965        2159          195        1
+    7        -        2229        2408          180        1
+    8        -        2484        2645          162        1
+    9        +        3028        3177          150        1
+   10        -        3172        3384          213        1
+   11        -        3463        3774          312        1
+   12        -        3820        4122          303        1
+   13        -        4147        4320          174        1
+   14        -        4446        4583          138        1
+   15        -        4819        4998          180        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|305812..310812 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   16        -          41         337          297        1
+   17        -         347         550          204        1
+   18        +         586         768          183        1
+   19        +         765         935          171        1
+   20        -        1418        1633          216        1
+   21        -        1664        1786          123        1
+   22        +        1995        2402          408        1
+   23        +        2409        2753          345        1
+   24        +        2924        3064          141        1
+   25        +        3171        3464          294        1
+   26        +        3620        3760          141        1
+   27        +        3877        4179          303        1
+   28        +        4432        4587          156        1
+   29        +        4699        4884          186        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|33803..38803 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   30        +         104         271          168        1
+   31        +         306         464          159        1
+   32        +         480         653          174        1
+   33        -         642        1151          510        1
+   34        +        1198        1347          150        1
+   35        -        1351        1452          102        1
+   36        -        1577        1765          189        1
+   37        +        1955        2251          297        1
+   38        -        2346        2609          264        1
+   39        +        2590        2757          168        1
+   40        +        2902        3078          177        1
+   41        -        3113        3313          201        1
+   42        -        3605        3880          276        1
+   43        +        3957        4151          195        1
+   44        -        4307        4711          405        1
+   45        +        4774       >4998          225        1
+
+FASTA definition line: gi|435856657|ref|NC_020029.1||pos|961..5961 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   46        +        4836        4982          147        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|186731..191731 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   47        +          <2         151          150        1
+   48        +         271         516          246        1
+   49        -         653         784          132        1
+   50        -         858        1373          516        1
+   51        -        1666        1860          195        1
+   52        +        1933        2022           90        1
+   53        -        2248        2439          192        1
+   54        -        2440        2748          309        1
+   55        -        3312        3572          261        1
+   56        -        3726        3908          183        1
+   57        -        4016        4216          201        1
+   58        -        4393        4749          357        1
+   59        -        4789        4965          177        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|195275..200275 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   60        -          <2         121          120        1
+   61        -         118         558          441        1
+   62        -         571         897          327        1
+   63        -        1177        1461          285        1
+   64        -        1549        1809          261        1
+   65        +        1832        2284          453        1
+   66        +        2329        2568          240        1
+   67        +        2655        2864          210        1
+   68        +        2952        3182          231        1
+   69        -        3171        3377          207        1
+   70        -        3393        3731          339        1
+   71        -        3770        4147          378        1
+   72        +        4136        4474          339        1
+   73        -        4549        4791          243        1
+   74        -        4846       >4998          153        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|226715..231715 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   75        +         228         353          126        1
+   76        -         704         847          144        1
+   77        -         863         970          108        1
+   78        -         971        1102          132        1
+   79        +        1181        1384          204        1
+   80        -        1559        1732          174        1
+   81        +        1737        2153          417        1
+   82        +        2168        2353          186        1
+   83        +        2417        3004          588        1
+   84        +        3057        3392          336        1
+   85        +        3389        3586          198        1
+   86        -        3708        3878          171        1
+   87        +        4009        4194          186        1
+   88        +        4197        4382          186        1
+   89        -        4487        4795          309        1
+   90        +        4790        4909          120        1
+
+FASTA definition line: gi|347600392|ref|NC_016020.1||pos|9441..14441 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+   91        +          <2         259          258        1
+   92        +         260         376          117        1
+   93        +         399         614          216        1
+   94        -         785         991          207        1
+   95        -        1468        1779          312        1
+   96        -        1876        2010          135        1
+   97        -        2014        2223          210        1
+   98        +        2243        2494          252        1
+   99        -        2665        2871          207        1
+  100        -        2872        3018          147        1
+  101        -        3071        3220          150        1
+  102        -        3217        3423          207        1
+  103        -        3583        3825          243        1
+  104        -        3886        4440          555        1
+  105        -        4546        4914          369        1
+
+FASTA definition line: gi|408772797|ref|NC_018814.1||pos|7673..12673 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  106        +          <1         138          138        1
+  107        +         335         553          219        1
+  108        -         985        1095          111        1
+  109        +        1320        1841          522        1
+  110        -        2064        2222          159        1
+  111        -        2578        2757          180        1
+  112        -        2881        2970           90        1
+  113        -        3580        3714          135        1
+  114        -        3718        3906          189        1
+  115        -        4208        4537          330        1
+
+FASTA definition line: gi|545906466|ref|NC_022258.1||pos|25578..30578 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  116        +          <2         127          126        1
+  117        +         445         759          315        1
+  118        -        1132        1326          195        1
+  119        +        1666        1815          150        1
+  120        +        3605        4030          426        1
+  121        +        4032        4463          432        1
+  122        +        4519       >4998          480        1
+
+FASTA definition line: gi|254055017|ref|NC_012979.1||pos|10748..15748 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  123        +          <3         599          597        1
+  124        -         594         716          123        1
+  125        +         865         966          102        1
+  126        -        1091        1417          327        1
+  127        -        1826        1963          138        1
+  128        +        1962        3029         1068        1
+  129        -        3019        3204          186        1
+  130        -        3292        3546          255        1
+  131        +        3865        3987          123        1
+  132        +        4065        4433          369        1
+  133        -        4448        4639          192        1
+
+FASTA definition line: gi|391223809|ref|NC_018030.1||pos|8595..13595 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+
+FASTA definition line: gi|5835862|ref|NC_000845.1||pos|4092..9092 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  134        -         168         770          603        1
+  135        -        1009        1470          462        1
+  136        -        2598        2912          315        1
+  137        -        4446        4670          225        1
+
+FASTA definition line: gi|254055003|ref|NC_012976.1||pos|6826..11826 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  138        -         749         886          138        1
+  139        -        2242        2367          126        1
+  140        +        3964        4305          342        1
+
+FASTA definition line: gi|317097043|ref|NC_014849.1||pos|3972..8972 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  141        -           6         512          507        1
+  142        -         615         842          228        1
+  143        +         849        1124          276        1
+  144        -        1303        1401           99        1
+  145        +        1396        1530          135        1
+  146        -        1882        2148          267        1
+  147        +        2157        2330          174        1
+  148        +        2515        2763          249        1
+  149        -        2836        3009          174        1
+  150        +        3203        3397          195        1
+  151        -        3577        3774          198        1
+  152        -        4036        4197          162        1
+  153        -        4396        4623          228        1
+  154        -        4642        4752          111        1
+  155        -        4818        4991          174        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|131536..136536 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  156        +          <1         288          288        1
+  157        +         425         526          102        1
+  158        +         562         879          318        1
+  159        -        1067        1183          117        1
+  160        +        1182        1307          126        1
+  161        -        1342        1533          192        1
+  162        -        1530        1970          441        1
+  163        +        2008        2541          534        1
+  164        +        2582        2839          258        1
+  165        +        2836        3018          183        1
+  166        +        3099        4334         1236        1
+  167        +        4358        4504          147        1
+  168        +        4494        4616          123        1
+  169        +        4622       >4999          378        1
+
+FASTA definition line: gi|545601253|ref|NC_022435.1||pos|43254..48254 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|273649..278649 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  170        -          <3          89           87        1
+  171        +          96         350          255        1
+  172        +         399         539          141        1
+  173        +         593         781          189        1
+  174        +        1111        1275          165        1
+  175        +        1318        1440          123        1
+  176        +        1437        1601          165        1
+  177        +        1598        2008          411        1
+  178        -        2195        2335          141        1
+  179        +        2390        2557          168        1
+  180        -        2660        2896          237        1
+  181        -        2938        3267          330        1
+  182        +        3261        3383          123        1
+  183        +        3385        3753          369        1
+  184        -        4122        4319          198        1
+  185        +        4395        4796          402        1
+
+FASTA definition line: gi|435857262|ref|NC_020047.1||pos|5021..10021 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  186        -        1824        1997          174        1
+  187        -        2483        2680          198        1
+  188        -        3809        4015          207        1
+  189        -        4103        4201           99        1
+  190        +        4739        4891          153        1
+
+FASTA definition line: gi|545906466|ref|NC_022258.1||pos|30456..35456 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  191        +         705        1082          378        1
+  192        +        1114        2634         1521        1
+  193        +        2720        3100          381        1
+  194        +        3129        3338          210        1
+  195        +        3517        4119          603        1
+  196        -        4730       >4999          270        1
+
+FASTA definition line: gi|5835862|ref|NC_000845.1||pos|4882..9882 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  197        -         219         680          462        1
+  198        -        1808        2122          315        1
+  199        -        3656        3880          225        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|167806..172806 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  200        +          <1         165          165        1
+  201        +         165         338          174        1
+  202        -         393         620          228        1
+  203        -         621         776          156        1
+  204        +         777        1016          240        1
+  205        -        1124        1240          117        1
+  206        +        1239        1682          444        1
+  207        +        1684        1779           96        1
+  208        -        1873        1989          117        1
+  209        +        2055        2162          108        1
+  210        +        2332        2514          183        1
+  211        +        2516        3286          771        1
+  212        +        3283        3630          348        1
+  213        +        3638        3811          174        1
+  214        -        4137        4448          312        1
+  215        +        4477        4971          495        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|188029..193029 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  216        +          <2         190          189        1
+  217        -         368         562          195        1
+  218        +         635         724           90        1
+  219        -         950        1141          192        1
+  220        -        1142        1450          309        1
+  221        -        2014        2274          261        1
+  222        -        2428        2610          183        1
+  223        -        2718        2918          201        1
+  224        -        3095        3451          357        1
+  225        -        3491        3712          222        1
+  226        +        3738        3893          156        1
+  227        -        3888        4574          687        1
+  228        -        4584        4712          129        1
+  229        -        4735       >4998          264        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|137351..142351 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  230        +          26         280          255        1
+  231        -         281         589          309        1
+  232        -         640        1140          501        1
+  233        +        1185        1376          192        1
+  234        -        1526        1834          309        1
+  235        -        2068        2331          264        1
+  236        +        2414        2515          102        1
+  237        -        2496        2888          393        1
+  238        -        3407        3508          102        1
+  239        -        3633        4073          441        1
+  240        -        4151        4285          135        1
+  241        -        4423        4554          132        1
+  242        -        4569        4991          423        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|299572..304572 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  243        -          66         227          162        1
+  244        +         285         452          168        1
+  245        +         462         671          210        1
+  246        +         671         892          222        1
+  247        -        1013        1792          780        1
+  248        -        1888        2760          873        1
+  249        -        2763        2903          141        1
+  250        -        2944        3024           81        1
+  251        +        3045        3335          291        1
+  252        -        3459        3809          351        1
+  253        -        4035        4244          210        1
+  254        +        4235        4510          276        1
+  255        +        4507        4788          282        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|108737..113737 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  256        -          <1         378          378        1
+  257        +         395        1093          699        1
+  258        -        1358        1492          135        1
+  259        -        1749        1898          150        1
+  260        +        1942        2088          147        1
+  261        +        2166        2393          228        1
+  262        -        2632        2889          258        1
+  263        -        3072        3272          201        1
+  264        +        3315        3650          336        1
+  265        +        3651        3740           90        1
+  266        -        3735        4043          309        1
+  267        -        4040        4294          255        1
+  268        -        4805       >4999          195        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|164749..169749 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  269        -          <2          91           90        1
+  270        +         124         258          135        1
+  271        -         691        1017          327        1
+  272        +        1114        1317          204        1
+  273        +        1351        1617          267        1
+  274        +        1686        1880          195        1
+  275        +        1894        2052          159        1
+  276        +        2082        2234          153        1
+  277        +        2281        2835          555        1
+  278        +        2851        2961          111        1
+  279        -        2952        3197          246        1
+  280        +        3222        3395          174        1
+  281        -        3450        3677          228        1
+  282        -        3678        3833          156        1
+  283        +        3834        4073          240        1
+  284        -        4181        4297          117        1
+  285        +        4296        4739          444        1
+  286        +        4741        4836           96        1
+  287        +        4886        4981           96        1
+
+FASTA definition line: gi|408772489|ref|NC_018791.1||pos|6199..11199 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  288        +          <3         227          225        1
+  289        -         761         919          159        1
+  290        +        1028        1222          195        1
+  291        +        1391        1693          303        1
+  292        +        1821        1943          123        1
+  293        -        2041        2181          141        1
+  294        -        2221        2442          222        1
+  295        -        2577        2795          219        1
+  296        -        2937        3068          132        1
+  297        -        3535        3753          219        1
+  298        -        4053        4157          105        1
+  299        +        4259        4438          180        1
+  300        -        4835        4936          102        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|297129..302129 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  301        -          35         256          222        1
+  302        -         285         416          132        1
+  303        -         531         674          144        1
+  304        +         882        1019          138        1
+  305        -        1016        1150          135        1
+  306        +        1156        1533          378        1
+  307        +        1668        1799          132        1
+  308        -        1817        2116          300        1
+  309        +        2298        2465          168        1
+  310        -        2509        2670          162        1
+  311        +        2728        2895          168        1
+  312        +        2905        3114          210        1
+  313        +        3114        3335          222        1
+  314        -        3456        4235          780        1
+  315        -        4331        4999          669        1
+
+FASTA definition line: gi|545601253|ref|NC_022435.1||pos|23865..28865 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|295085..300085 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  316        -          <3         167          165        1
+  317        -         198         503          306        1
+  318        +         576         887          312        1
+  319        +         859        1173          315        1
+  320        +        1226        1375          150        1
+  321        +        1522        1680          159        1
+  322        +        1683        1832          150        1
+  323        -        1829        2026          198        1
+  324        -        2079        2300          222        1
+  325        -        2329        2460          132        1
+  326        -        2575        2718          144        1
+  327        +        2926        3063          138        1
+  328        -        3060        3194          135        1
+  329        +        3200        3577          378        1
+  330        +        3712        3843          132        1
+  331        -        3861        4160          300        1
+  332        +        4342        4509          168        1
+  333        -        4553        4714          162        1
+  334        +        4772        4939          168        1
+
+FASTA definition line: gi|254055003|ref|NC_012976.1||pos|1013..6013 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  335        -         301         426          126        1
+  336        +        1398        1574          177        1
+  337        -        2169        2570          402        1
+  338        +        2906        3235          330        1
+  339        -        4594        4875          282        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|11994..16994 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  340        +          <3          98           96        1
+  341        +         131         451          321        1
+  342        +         470         853          384        1
+  343        +        1005        2588         1584        1
+  344        +        2739        2987          249        1
+  345        +        3093        3281          189        1
+  346        +        3357        3602          246        1
+  347        -        3775        3993          219        1
+  348        -        3990        4208          219        1
+  349        -        4530        4784          255        1
+
+FASTA definition line: gi|408772489|ref|NC_018791.1||pos|572..5572 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  350        -          <1         102          102        1
+  351        -          89         502          414        1
+  352        +         788         931          144        1
+  353        -         992        1141          150        1
+  354        -        1149        1367          219        1
+  355        -        1750        1920          171        1
+  356        +        1920        2069          150        1
+  357        +        2078        2191          114        1
+  358        -        2188        2364          177        1
+  359        -        2479        2772          294        1
+  360        -        2776        3360          585        1
+  361        +        3613        3786          174        1
+  362        +        3865        4035          171        1
+  363        -        4144        4320          177        1
+  364        +        4868       >4999          132        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|306275..311275 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  365        +         123         305          183        1
+  366        +         302         472          171        1
+  367        -         955        1170          216        1
+  368        -        1201        1323          123        1
+  369        +        1532        1939          408        1
+  370        +        1946        2290          345        1
+  371        +        2461        2601          141        1
+  372        +        2708        3001          294        1
+  373        +        3157        3297          141        1
+  374        +        3414        3716          303        1
+  375        +        3969        4124          156        1
+  376        +        4236        4421          186        1
+  377        -        4456        4629          174        1
+  378        -        4711       >4998          288        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|310512..315512 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  379        +          <2         184          183        1
+  380        -         219         392          174        1
+  381        -         474         764          291        1
+  382        -         771        1046          276        1
+  383        -        1489        1650          162        1
+  384        +        1769        1903          135        1
+  385        +        1975        2103          129        1
+  386        -        2247        2372          126        1
+  387        -        2428        2571          144        1
+  388        +        3241        3483          243        1
+  389        -        3584        3868          285        1
+  390        -        3953        4279          327        1
+  391        -        4462        4734          273        1
+  392        -        4741        4833           93        1
+  393        -        4830        4958          129        1
+
+FASTA definition line: gi|545906466|ref|NC_022258.1||pos|25773..30773 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  394        +         250         564          315        1
+  395        -         937        1131          195        1
+  396        +        1471        1620          150        1
+  397        +        3410        3835          426        1
+  398        +        3837        4268          432        1
+  399        +        4324        4887          564        1
+
+FASTA definition line: gi|452849234|ref|NC_020325.1||pos|3741..8741 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  400        -         209         451          243        1
+  401        -         584         778          195        1
+  402        -         848        1027          180        1
+  403        -        1103        1264          162        1
+  404        +        1647        1796          150        1
+  405        -        1791        2003          213        1
+  406        -        2082        2393          312        1
+  407        -        2439        2741          303        1
+  408        -        2766        2939          174        1
+  409        -        3065        3202          138        1
+  410        -        3438        3617          180        1
+  411        -        3678        3872          195        1
+  412        -        4044        4211          168        1
+  413        -        4271        4486          216        1
+  414        -        4505        4750          246        1
+  415        -        4751        4861          111        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|215985..220985 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  416        +          <2         229          228        1
+  417        -         396         599          204        1
+  418        +         598         993          396        1
+  419        -         995        1342          348        1
+  420        +        1403        1552          150        1
+  421        -        1620        1808          189        1
+  422        -        1871        2218          348        1
+  423        -        2346        2621          276        1
+  424        -        3063        3248          186        1
+  425        -        3245        3379          135        1
+  426        +        3573        3719          147        1
+  427        -        3780        4373          594        1
+  428        -        4370        4735          366        1
+  429        -        4745        4996          252        1
+
+FASTA definition line: gi|391223809|ref|NC_018030.1||pos|2103..7103 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|242778..247778 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  430        +          53         298          246        1
+  431        -         383         523          141        1
+  432        -         593         730          138        1
+  433        +         872        1114          243        1
+  434        +        1111        1254          144        1
+  435        -        1349        1555          207        1
+  436        -        1888        2025          138        1
+  437        -        2699        2893          195        1
+  438        -        2893        3186          294        1
+  439        -        3186        3344          159        1
+  440        +        3339        3515          177        1
+  441        -        3507        3695          189        1
+  442        -        3779        3937          159        1
+  443        -        4073        4261          189        1
+  444        +        4441        4596          156        1
+  445        +        4605        4757          153        1
+  446        +        4795        4959          165        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|14962..19962 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  447        +          <3          98           96        1
+  448        +         125         313          189        1
+  449        +         389         634          246        1
+  450        -         807        1025          219        1
+  451        -        1022        1240          219        1
+  452        -        1562        1816          255        1
+  453        -        1918        2058          141        1
+  454        -        2055        2186          132        1
+  455        -        2399        2650          252        1
+  456        +        2650        2823          174        1
+  457        +        3041        3202          162        1
+  458        +        3231        3506          276        1
+  459        -        3780        4391          612        1
+  460        -        4421        4609          189        1
+  461        -        4646        4999          354        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|255404..260404 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  462        -          65         289          225        1
+  463        +         288         761          474        1
+  464        +         733         900          168        1
+  465        +         897        1391          495        1
+  466        +        1513        1782          270        1
+  467        +        1798        2010          213        1
+  468        +        2119        2334          216        1
+  469        +        2499        2876          378        1
+  470        +        3047        3598          552        1
+  471        -        3611        4135          525        1
+  472        +        4152        4274          123        1
+  473        +        4414        4899          486        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|182732..187732 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  474        +          <3         146          144        1
+  475        +         286         381           96        1
+  476        +         623        1168          546        1
+  477        +        1656        1826          171        1
+  478        -        1851        1943           93        1
+  479        +        1945        2046          102        1
+  480        -        2202        2321          120        1
+  481        +        2354        2569          216        1
+  482        +        2533        2784          252        1
+  483        +        2796        2924          129        1
+  484        +        3083        3274          192        1
+  485        -        3255        3422          168        1
+  486        -        3737        3844          108        1
+  487        +        4270        4515          246        1
+  488        -        4652        4783          132        1
+  489        -        4810        4935          126        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|89598..94598 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  490        +          <3         218          216        1
+  491        -         313         651          339        1
+  492        +         733        1074          342        1
+  493        -        1100        1303          204        1
+  494        +        1306        1845          540        1
+  495        +        1842        1934           93        1
+  496        -        1982        2326          345        1
+  497        -        2428        3267          840        1
+  498        -        3345        3632          288        1
+  499        -        3657        4052          396        1
+  500        -        4083        4187          105        1
+  501        -        4184        4384          201        1
+  502        -        4692        4856          165        1
+
+FASTA definition line: gi|545601253|ref|NC_022435.1||pos|16773..21773 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+
+FASTA definition line: gi|545601253|ref|NC_022435.1||pos|48105..53105 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+
+FASTA definition line: gi|391223850|ref|NC_018033.1||pos|8307..13307 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  503        -         286         390          105        1
+  504        -         387         473           87        1
+  505        -         874        1068          195        1
+  506        +        1042        1569          528        1
+  507        +        1566        1853          288        1
+  508        -        2485        2685          201        1
+  509        -        2819        3025          207        1
+  510        -        3580        3696          117        1
+  511        +        3727        4089          363        1
+  512        -        4084        4266          183        1
+  513        -        4309        4554          246        1
+  514        +        4625        4795          171        1
+
+FASTA definition line: gi|408772797|ref|NC_018814.1||pos|5383..10383 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  515        +          <1         105          105        1
+  516        +         598         795          198        1
+  517        +        1086        1352          267        1
+  518        -        1547        1723          177        1
+  519        -        2125        2385          261        1
+  520        +        2625        2843          219        1
+  521        -        3275        3385          111        1
+  522        +        3610        4131          522        1
+  523        -        4354        4512          159        1
+  524        -        4863       >5000          138        1
+
+FASTA definition line: gi|5835862|ref|NC_000845.1||pos|5253..10253 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  525        -          <1         309          309        1
+  526        -        1437        1751          315        1
+  527        -        3285        3509          225        1
+  528        +        4714       >4998          285        1
+
+FASTA definition line: gi|545906466|ref|NC_022258.1||pos|4725..9725 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  529        +         158         934          777        1
+  530        +         992        1972          981        1
+  531        +        3326        3724          399        1
+  532        +        4348       >4998          651        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|295582..300582 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  533        +          79         390          312        1
+  534        +         362         676          315        1
+  535        +         729         878          150        1
+  536        +        1025        1183          159        1
+  537        +        1186        1335          150        1
+  538        -        1332        1529          198        1
+  539        -        1582        1803          222        1
+  540        -        1832        1963          132        1
+  541        -        2078        2221          144        1
+  542        +        2429        2566          138        1
+  543        -        2563        2697          135        1
+  544        +        2703        3080          378        1
+  545        +        3215        3346          132        1
+  546        -        3364        3663          300        1
+  547        +        3845        4012          168        1
+  548        -        4056        4217          162        1
+  549        +        4275        4442          168        1
+  550        +        4452        4661          210        1
+  551        +        4661        4882          222        1
+
+FASTA definition line: gi|435857187|ref|NC_020046.1||pos|5518..10518 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  552        +        1468        1617          150        1
+  553        -        1978        2175          198        1
+  554        +        2174        2302          129        1
+  555        -        2415        2549          135        1
+  556        -        2573        2746          174        1
+  557        -        2981        3127          147        1
+  558        -        3304        3492          189        1
+  559        -        3598        3747          150        1
+  560        -        4263        4433          171        1
+  561        -        4564        4821          258        1
+
+FASTA definition line: gi|511782593|ref|NC_021399.1||pos|304493..309493 gi|408772797|ref|NC_018814.1| Petrochromis trewavasae mitochondrion, complete genome
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+  562        +          <2         349          348        1
+  563        +         419         553          135        1
+  564        +         605         880          276        1
+  565        +        1045        1170          126        1
+  566        -        1167        1319          153        1
+  567        -        1360        1656          297        1
+  568        -        1666        1869          204        1
+  569        +        1905        2087          183        1
+  570        +        2084        2254          171        1
+  571        -        2737        2952          216        1
+  572        -        2983        3105          123        1
+  573        +        3314        3721          408        1
+  574        +        3728        4072          345        1
+  575        +        4243        4383          141        1
+  576        +        4490        4783          294        1
+
