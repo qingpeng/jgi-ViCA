@@ -19,13 +19,17 @@
 * [numpy](http://www.numpy.org/)
 * [scipy](http://www.scipy.org/)
 * [matplotlib](http://matplotlib.org/)
+* [khmer v1.4](https://pypi.python.org/pypi/khmer/1.4/)
+
 
 ## Files
 ###Setup
- * env.sh - source environment variables
  * gm_parameters A directory with modified GeneMark Parameter files
  * config.json, training.json - config files for running the classifier 
-
+ * Before running the job:
+    1. modify config.json with current environment variables and parameters 
+    2. run script/setup_configuration.py to create necessary scripts (env.sh and single_taxon_training.sh)
+ 
 ### Creating Training data
  * crate_training_data.py - a wrapper to have reftree run single_taxon_training.py on each taxon below the selected taxonomic node
  * single_taxon_training.sh - a shell script that calls single_taxon_training.py
