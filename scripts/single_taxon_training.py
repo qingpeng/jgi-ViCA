@@ -27,7 +27,8 @@ signal.signal(signal.SIGTERM, signal_term_handler)
 config = json.load( open(args.config, 'r'))["create_training_data"]
     
 ## Retrieve the sequence from reftree
-reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid,"--attributes", "gencode"]
+# with taxonomy -QP for reading raw results
+reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid,"--attributes", "gencode,taxonomy"]
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 
 

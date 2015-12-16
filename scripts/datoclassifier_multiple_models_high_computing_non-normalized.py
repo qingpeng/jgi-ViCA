@@ -21,10 +21,10 @@ dir = args.reportdir
 test =  gl.SFrame.read_csv(args.test, delimiter='\t', header=False)
 train =  gl.SFrame.read_csv(args.train, delimiter='\t', header=False)
 
-test_sframe_file = args.test+'.sframe'
-train_sframe_file = args.train+'.sframe'
-test.save(test_sframe_file)
-train.save(train_sframe_file)
+#test_sframe_file = args.test+'.sframe'
+#train_sframe_file = args.train+'.sframe'
+#test.save(test_sframe_file)
+#train.save(train_sframe_file)
 
 #model = gl.classifier.create(train, target='X1')
 
@@ -40,7 +40,7 @@ def write_results(results, file_out, svm):
     
 
 print "boosted_trees:\n"
-model = gl.boosted_trees_classifier.create(train, target='X1', class_weights='auto', max_iterations= 15, verbose=True)
+model = gl.boosted_trees_classifier.create(train, target='X1',  max_iterations= 50, verbose=True)
 model.save(dir+"boosted_trees.model")
 predictions = model.classify(test)
 predictions.save(dir+"boosted_trees.predictions")
@@ -52,7 +52,7 @@ print(results["confusion_matrix"].print_rows(200,3))
 
 
 print "logistic: feature_rescaling = True\n"
-model = gl.logistic_classifier.create(train, target='X1', class_weights='auto', feature_rescaling=True, max_iterations= 15, verbose=True)
+model = gl.logistic_classifier.create(train, target='X1',  feature_rescaling=True, max_iterations= 50, verbose=True)
 model.save(dir+"logistic_rescaling.model")
 predictions = model.classify(test)
 predictions.save(dir+"logistic_rescaling.predictions")
@@ -63,7 +63,7 @@ print(results)
 print(results["confusion_matrix"].print_rows(200,3))
 
 print "logistic: feature_rescaling = False\n"
-model = gl.logistic_classifier.create(train, target='X1', class_weights='auto', feature_rescaling=False, max_iterations= 15, verbose=True)
+model = gl.logistic_classifier.create(train, target='X1',  feature_rescaling=False, max_iterations= 50, verbose=True)
 model.save(dir+"logistic_no_rescaling.model")
 predictions = model.classify(test)
 predictions.save(dir+"logistic_no_rescaling.predictions")
@@ -76,7 +76,7 @@ print(results["confusion_matrix"].print_rows(200,3))
 
 
 print "SVM: feature_rescaling = True\n"
-model = gl.svm_classifier.create(train, target='X1', class_weights='auto', feature_rescaling=True, max_iterations= 15, verbose=True)
+model = gl.svm_classifier.create(train, target='X1',  feature_rescaling=True, max_iterations= 50, verbose=True)
 model.save(dir+"SVM_rescaling.model")
 predictions = model.classify(test)
 predictions.save(dir+"SVM_rescaling.predictions")
@@ -87,7 +87,7 @@ print(results)
 print(results["confusion_matrix"].print_rows(200,3))
 
 print "SVM: feature_rescaling = False\n"
-model = gl.svm_classifier.create(train, target='X1', class_weights='auto', feature_rescaling=False, max_iterations= 15, verbose=True)
+model = gl.svm_classifier.create(train, target='X1',  feature_rescaling=False, max_iterations= 50, verbose=True)
 model.save(dir+"SVM_no_rescaling.model")
 predictions = model.classify(test)
 predictions.save(dir+"SVM_no_rescaling.predictions")

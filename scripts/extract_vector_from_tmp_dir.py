@@ -17,11 +17,11 @@ def parse_vect(dir, output):
     fh_output = open(output, 'w')
     
     for dir2 in os.listdir(dir):
-        print dir2
+#        print dir2
         if os.path.isdir(os.path.join(dir,dir2)):
             for file in os.listdir(os.path.join(dir,dir2)):
                 file_name = os.path.join(dir,dir2,file)
-                print file_name
+#               print file_name
                 f = open(file_name, 'r')
                 for line in f:
                     if line[0] != '#':
