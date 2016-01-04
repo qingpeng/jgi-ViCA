@@ -76,7 +76,8 @@ def main():
     parser.add_argument('--outfile', help= "Output file, tab delimited format", type=argparse.FileType('w'), default='-')
     parser.add_argument('--taxid', help="The taxonomy id")
     parser.add_argument('--label', help="Choice of label, normally taxid, but readid for bining applications", choices=['taxid','readid'],default='taxid')
-    parser.add_argument('--mmp', help="the parameters file for metamark", default = "../gm_parameters/par_11.modified")
+    parser.add_argument('--mmp', help="the parameters file for GeneMark", default = "../gm_parameters/par_11.modified")
+    parser.add_argument('--meta_mmp', help="the parameters file for MetaGeneMark", default = "~/bin/genemark_suite_linux_64/gmsuite/MetaGeneMark_v1.mod")
     parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
     parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
     parser.add_argument('--prog', help="GeneMark program to run (all GeneMarkS, GeneMarkS+MetaGenemark, all MetaGeneMark)", choices=['genemarks','metagenemark','hybrid'],default='metagenemark')
@@ -86,6 +87,7 @@ def main():
     ## File parsing and variable assignment
 
     mmp = os.path.abspath(args.mmp)
+    meta_mmp = os.path.abspath(args.meta_mmp)
     tmp = os.path.abspath(args.tmp)
     file_fail = open(args.failseq,'w')
     
@@ -96,6 +98,8 @@ def main():
     cnt_success = 0
     cnt_vectfailure = 0
     cnt_mmfailure = 0
+    cnt_probuild_failure = 0
+    cnt_gmhmmp_failure = 0
     len_records =0
     shortreads = 0
     kmers = iterate_kmer(4)
@@ -112,40 +116,155 @@ def main():
         handle = open("fragment.fasta", "w") # open a fasta file
         SeqIO.write(record, handle, "fasta") # write the sequence to it
         handle.close() # close the file
-        ## Run metamark
-        metamarkparams = ["gmsn.pl", "--clean", "--gm", "--par", mmp,"fragment.fasta"]
-        p1 = subprocess.Popen(metamarkparams, stdout=subprocess.PIPE)
-        metamarkout, metamarkerr= p1.communicate()
-        if p1.returncode == 0: # if genemarkS can generate the model
-            featurevect = parsemod(tmpdir)
-            if featurevect:
-                if args.label == 'taxid':
-                    vect = [args.taxid] + [record.description] + featurevect + \
-                    get_composition(str(record.seq).upper(), kmers,True)
-                elif args.label == 'readid':
-                    vect = [readid] + [record.description] + featurevect + \
-                    get_composition(str(record.seq).upper(), kmers,True)
+        if args.prog == "genemarks":
+            ## Run GeneMarkS only
+            GeneMarkS_params = ["gmsn.pl", "--clean", "--par", mmp,"fragment.fasta"]
+            p1 = subprocess.Popen(GeneMarkS_params, stdout=subprocess.PIPE)
+            metamarkout, metamarkerr= p1.communicate()
+            if p1.returncode == 0: # if genemarkS can generate the model
+                featurevect = parsemod(tmpdir)
+                if featurevect:
+                    if args.label == 'taxid':
+                        vect = [args.taxid] + [record.description] + featurevect + \
+                        get_composition(str(record.seq).upper(), kmers,True)
+                    elif args.label == 'readid':
+                        vect = [readid] + [record.description] + featurevect + \
+                        get_composition(str(record.seq).upper(), kmers,True)
+                    else:
+                        raise InputError("the label parameter must be either 'taxid' or 'readid'")
+                    args.outfile.write("\t".join(vect))
+                    args.outfile.write("\n")
+                    shutil.rmtree(tmpdir)
+                    cnt_success += 1
                 else:
-                    raise InputError("the label parameter must be either 'taxid' or 'readid'")
-                args.outfile.write("\t".join(vect))
-                args.outfile.write("\n")
-                shutil.rmtree(tmpdir)
-                cnt_success += 1
-            else:
-                #shutil.rmtree(tmpdir)
-                cnt_vectfailure  += 1
-                fail_seq.append(record)
-        else: # if not, try to use metagenemark firstly to identify coding region
+                    #shutil.rmtree(tmpdir)
+                    cnt_vectfailure  += 1
+                    fail_seq.append(record)
+            else: # if not, try to use metagenemark firstly to identify coding region
             
-            #shutil.rmtree(tmpdir)
-            cnt_mmfailure += 1
-            fail_seq.append(record)
+                #shutil.rmtree(tmpdir)
+                cnt_mmfailure += 1
+                fail_seq.append(record)
+                
+        elif args.prog == "metagenemark":
+            ## Run MetaGenemark only
+            MetaGeneMark_params = ["gmhmmp", "-m", meta_mmp, "fragment.fasta"]
+            p1 = subprocess.Popen(MetaGeneMark_params, stdout=subprocess.PIPE)
+            metamarkout, metamarkerr= p1.communicate()
+            if p1.returncode == 0: # if MetaGeneMark can generate the gene prediction
+            
+                probuild_params = ["probuild", "--par", mmp, "--ORDM", "2", "--order_non",\
+                 "2", "--revcomp_non", "1", "--seq", "fragment.fasta", "--geneset", \
+                 "fragment.fasta.lst", "--mkmod", "hmm.mod"]
+                p2 = subprocess.Popen(probuild_params, stdout=subprocess.PIPE)
+                metamarkout, metamarkerr= p2.communicate()
+                if p2.returncode == 0: # if probuild can generate hmm model
+                
+                    featurevect = parsemod(tmpdir)
+                    if featurevect:
+                        if args.label == 'taxid':
+                            vect = [args.taxid] + [record.description] + featurevect + \
+                            get_composition(str(record.seq).upper(), kmers,True)
+                        elif args.label == 'readid':
+                            vect = [readid] + [record.description] + featurevect + \
+                            get_composition(str(record.seq).upper(), kmers,True)
+                        else:
+                            raise InputError("the label parameter must be either 'taxid' or 'readid'")
+                        args.outfile.write("\t".join(vect))
+                        args.outfile.write("\n")
+                        shutil.rmtree(tmpdir)
+                        cnt_success += 1
+                
+                    else:
+                        #shutil.rmtree(tmpdir)
+                        cnt_vectfailure  += 1
+                        fail_seq.append(record)
+                else:
+                    cnt_probuild_failure += 1
+                    fail_seq.append(record)
+                    
+            else: # if not, try to use metagenemark firstly to identify coding region
+            
+                #shutil.rmtree(tmpdir)
+                cnt_gmhmmp_failure += 1
+                fail_seq.append(record)
+        elif args.prog == "hybrid":
+            ## Run geneMarkS firstly, if failed, (gibbs failed), try metaGenemark, it is still possible
+            # that there is no complete cds region to generate hmm model
+            GeneMarkS_params = ["gmsn.pl", "--clean", "--par", mmp,"fragment.fasta"]
+            p1 = subprocess.Popen(GeneMarkS_params, stdout=subprocess.PIPE)
+            metamarkout, metamarkerr= p1.communicate()
+            if p1.returncode == 0: # if genemarkS can generate the model
+                featurevect = parsemod(tmpdir)
+                if featurevect:
+                    if args.label == 'taxid':
+                        vect = [args.taxid] + [record.description] + featurevect + \
+                        get_composition(str(record.seq).upper(), kmers,True)
+                    elif args.label == 'readid':
+                        vect = [readid] + [record.description] + featurevect + \
+                        get_composition(str(record.seq).upper(), kmers,True)
+                    else:
+                        raise InputError("the label parameter must be either 'taxid' or 'readid'")
+                    args.outfile.write("\t".join(vect))
+                    args.outfile.write("\n")
+                    shutil.rmtree(tmpdir)
+                    cnt_success += 1
+                else:
+                    #shutil.rmtree(tmpdir)
+                    cnt_vectfailure  += 1
+                    fail_seq.append(record)
+            else: # if not, try to use metagenemark firstly to identify coding region
+            
+                #shutil.rmtree(tmpdir)
+                cnt_mmfailure += 1
+                
+                MetaGeneMark_params = ["gmhmmp", "-m", meta_mmp, "fragment.fasta"]
+                p2 = subprocess.Popen(MetaGeneMark_params, stdout=subprocess.PIPE)
+                metamarkout, metamarkerr= p2.communicate()
+                if p2.returncode == 0: # if MetaGeneMark can generate the gene prediction
+            
+                    probuild_params = ["probuild", "--par", mmp, "--ORDM", "2", "--order_non",\
+                     "2", "--revcomp_non", "1", "--seq", "fragment.fasta", "--geneset", \
+                     "fragment.fasta.lst", "--mkmod", "hmm.mod"]
+                    p3 = subprocess.Popen(probuild_params, stdout=subprocess.PIPE)
+                    metamarkout, metamarkerr= p3.communicate()
+                    if p3.returncode == 0: # if probuild can generate hmm model
+                
+                        featurevect = parsemod(tmpdir)
+                        if featurevect:
+                            if args.label == 'taxid':
+                                vect = [args.taxid] + [record.description] + featurevect + \
+                                get_composition(str(record.seq).upper(), kmers,True)
+                            elif args.label == 'readid':
+                                vect = [readid] + [record.description] + featurevect + \
+                                get_composition(str(record.seq).upper(), kmers,True)
+                            else:
+                                raise InputError("the label parameter must be either 'taxid' or 'readid'")
+                            args.outfile.write("\t".join(vect))
+                            args.outfile.write("\n")
+                            shutil.rmtree(tmpdir)
+                            cnt_success += 1
+                
+                        else:
+                            #shutil.rmtree(tmpdir)
+                            cnt_vectfailure  += 1
+                            fail_seq.append(record)
+                    else:
+                        cnt_probuild_failure += 1
+                        fail_seq.append(record)
+                    
+                else: # 
+            
+                    #shutil.rmtree(tmpdir)
+                    cnt_gmhmmp_failure += 1
+                    fail_seq.append(record)
+                
     
     SeqIO.write(fail_seq, file_fail, "fasta")
     
     if cnt_success == 0:
-        args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, metamark errors: %s, vector errors: %s, reads below metamark min: %s \n" \
-        % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure,shortreads))
+        args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, GeneMarkS errors: %s, vector errors: %s, MetaGenemark errors: %s, Probuild errors: %s, reads below min length: %s \n" \
+        % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure, cnt_gmhmmp_failure, cnt_probuild_failure, shortreads))
     args.outfile.close()
     
 if __name__ == '__main__':
