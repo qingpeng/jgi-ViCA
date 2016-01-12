@@ -57,4 +57,6 @@ fh_single_taxon_training_sh.write(string_block)
 
 fh_single_taxon_training_sh.close()
 
-    
+os.chmod(config["genelearn_path"]+"scripts/single_taxon_training.sh",0750)
+os.chmod(config["genelearn_path"]+"scripts/env.sh",0750)
+
