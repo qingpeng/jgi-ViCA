@@ -48,10 +48,16 @@ else:
 
 if config['shred'] == 'lognorm' or config['shred'] == 'fixed':
 	# If shredding is desired run shread.py
+	print "fixed"
 	p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 exits before p0
 	sequencein = p1.stdout 
-	
+#temp debug
+print "test"
+#for line in sequencein:
+#    print line
+
+print sequencein
 ## Run selected feature extraction script
 if config["method"] == "genemarks":
     #run metamark wrapper

@@ -79,7 +79,7 @@ def main():
     parser.add_argument('--mmp', help="the parameters file for GeneMark", default = "../gm_parameters/par_11.modified")
     parser.add_argument('--meta_mmp', help="the parameters file for MetaGeneMark", default = "/global/homes/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/MetaGeneMark_v1.mod")
     parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
-    parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 3000)
+    parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 1000)
     parser.add_argument('--prog', help="GeneMark program to run ( genemarks - all GeneMarkS, hybrid - GeneMarkS+MetaGenemark, metagenemark - all MetaGeneMark)", choices=['genemarks','metagenemark','hybrid'],default='metagenemark')
     parser.add_argument('--failseq', help="output sequences that failed the program to this file", default = "seq_fail.fa")
     args = parser.parse_args()
@@ -91,8 +91,8 @@ def main():
     tmp = os.path.abspath(args.tmp)
     file_fail = open(args.failseq,'w')
     
-    if not os.path.isdir(tmp): 
-        os.mkdir(tmp)
+#    if not os.path.isdir(tmp): 
+#        os.mkdir(tmp)
     # for each sequence in the fasta file:
     records = SeqIO.parse(args.input, "fasta")
     cnt_success = 0
@@ -137,12 +137,12 @@ def main():
                     shutil.rmtree(tmpdir)
                     cnt_success += 1
                 else:
-                    #shutil.rmtree(tmpdir)
+                    shutil.rmtree(tmpdir)
                     cnt_vectfailure  += 1
                     fail_seq.append(record)
             else: 
             
-                #shutil.rmtree(tmpdir)
+                shutil.rmtree(tmpdir)
                 cnt_mmfailure += 1
                 fail_seq.append(record)
                 
@@ -172,21 +172,22 @@ def main():
                             raise InputError("the label parameter must be either 'taxid' or 'readid'")
                         args.outfile.write("\t".join(vect))
                         args.outfile.write("\n")
-                        #shutil.rmtree(tmpdir)
+                        shutil.rmtree(tmpdir)
                         cnt_success += 1
                 
                     else:
-                        #shutil.rmtree(tmpdir)
+                        shutil.rmtree(tmpdir)
                         cnt_vectfailure  += 1
                         fail_seq.append(record)
                 else:
   #                  print "probuild fail\n"
+                    shutil.rmtree(tmpdir)
                     cnt_probuild_failure += 1
                     fail_seq.append(record)
                     
             else: # 
    #             print "gmhmmp fail\n"
-                #shutil.rmtree(tmpdir)
+                shutil.rmtree(tmpdir)
                 cnt_gmhmmp_failure += 1
                 fail_seq.append(record)
         elif args.prog == "hybrid":
@@ -211,12 +212,12 @@ def main():
                     shutil.rmtree(tmpdir)
                     cnt_success += 1
                 else:
-                    #shutil.rmtree(tmpdir)
+                    shutil.rmtree(tmpdir)
                     cnt_vectfailure  += 1
                     fail_seq.append(record)
             else: # if not, try to use metagenemark firstly to identify coding region
               
-                #shutil.rmtree(tmpdir)
+                shutil.rmtree(tmpdir)
                 cnt_mmfailure += 1
                 
                 MetaGeneMark_params = ["gmhmmp", "-m", meta_mmp, "fragment.fasta"]
@@ -247,7 +248,7 @@ def main():
                             cnt_success += 1
                 
                         else:
-                            #shutil.rmtree(tmpdir)
+                            shutil.rmtree(tmpdir)
                             cnt_vectfailure  += 1
                             fail_seq.append(record)
                     else:
@@ -256,7 +257,7 @@ def main():
                     
                 else: # 
             
-                    #shutil.rmtree(tmpdir)
+                    shutil.rmtree(tmpdir)
                     cnt_gmhmmp_failure += 1
                     fail_seq.append(record)
                 

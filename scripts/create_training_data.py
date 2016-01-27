@@ -36,7 +36,8 @@ if config["taskfarmer"] == "True":
 	reftreeopts = ["reftree.pl", "--db", "genomic","--slots",numworkers, "--resources", resources,"--keep", "--foreach", node, args.output,\
 "--",sts, "__TAXON__","__OUTFILE__", configpath]
 else:
-	reftreeopts = ["reftree.pl", "--db", "genomic","--keep", "--foreach", node, args.output,\
+	resources = config["resources"]
+	reftreeopts = ["reftree.pl", "--db", "genomic","--resources", resources, "--keep", "--foreach", node, args.output,\
 "--",sts, "__TAXON__","__OUTFILE__", configpath]
 #print(reftreeopts)
 p1 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
