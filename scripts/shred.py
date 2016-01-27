@@ -67,14 +67,22 @@ def shred(fasta, shred, samples, shape, loc, scale, length, test):
         selectlen = len(selectedseq)
         try:
             maxstart = selectlen - length
-            startpos = np.random.choice(maxstart)
-            endpos = startpos+length
+            if maxstart <= 0:
+                startpos = 0
+                endpos = selectlen
+
+            else:
+            
+            #print "maxstart:",maxstart
+                startpos = np.random.choice(maxstart)
+                endpos = startpos+length
             subrecord = selectedseq[startpos:endpos]
             subid = str(id) + "|pos|" + str(startpos) + ".." + str(endpos)
             subrecord.id = subid
             subrecord.description = record.description
             sampled_frags.append(subrecord)
         except:
+            print "error"
             continue
     return sampled_frags
 

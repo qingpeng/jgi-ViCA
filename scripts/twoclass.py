@@ -5,9 +5,12 @@ import sys
 with open(sys.argv[1], 'r') as file:
 	for line in file:
 		ll = line.split('\t')
-		if ll[0] in ["ssRNAphage","ssRNAvirus", "ssDNAphage","ssDNAvirus","Retroviruses", "dsRNAphage", "dsRNAvirus", "dsDNAvirus", "dsDNAphage"]:
+#		print ll
+		if ll[0] in ["ssRNAPhage","ssRNAVirus", "dsRNAPhage","dsRNAVirus","dsDNAPhage", "dsDNAVirus", "ssDNAPhage", "ssDNAVirus", "Retroviruses"]:
 			ll[0] = "viral"
+#			print "viral"
 		else:
 			ll[0] = "nonviral"
+#			print "nonviral"
 		print('\t'.join(ll))
 file.close()

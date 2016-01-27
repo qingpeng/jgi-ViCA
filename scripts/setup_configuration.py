@@ -31,7 +31,7 @@ fh_env_sh.write("export PYTHONPATH=$PYTHONPATH:" + config["genelearn_path"] + 's
 fh_env_sh.write("export REFTREE_DIR=" + config["reftree_db_path"] + '\n')
 fh_env_sh.write("export GENELEARN_DIR=" + config["genelearn_path"] + 'scripts/\n')
 fh_env_sh.write("export TMPDIR=" + config["TMPDIR"] + '\n')
-fh_env_sh.write("module load tfmq\n")
+#fh_env_sh.write("module load tfmq\n")
 fh_env_sh.write("module load sqlite3\n")
 fh_env_sh.write("module load biopython\n")
 
@@ -41,9 +41,8 @@ fh_env_sh.close()
 fh_single_taxon_training_sh = open(config["genelearn_path"]+"scripts/single_taxon_training.sh", 'w')
 
 fh_single_taxon_training_sh.write("#!/bin/bash \n")
-fh_single_taxon_training_sh.write(". " + config["genelearn_path"]+"env.sh\n")
+fh_single_taxon_training_sh.write(". " + config["genelearn_path"]+"scripts/env.sh\n")
 string_block = """
-module load tfmq
 module load biopython
 module load sqlite3
 
@@ -57,4 +56,6 @@ fh_single_taxon_training_sh.write(string_block)
 
 fh_single_taxon_training_sh.close()
 
-    
+os.chmod(config["genelearn_path"]+"scripts/single_taxon_training.sh",0750)
+os.chmod(config["genelearn_path"]+"scripts/env.sh",0750)
+

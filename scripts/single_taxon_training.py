@@ -27,7 +27,8 @@ signal.signal(signal.SIGTERM, signal_term_handler)
 config = json.load( open(args.config, 'r'))["create_training_data"]
     
 ## Retrieve the sequence from reftree
-reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid,"--attributes", "gencode"]
+# with taxonomy -QP for reading raw results
+reftreeopts = ["reftree.pl" , "--db", "genomic", "--node", args.taxid,"--attributes", "gencode,taxonomy"]
 p0 = subprocess.Popen(reftreeopts, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 
 
@@ -47,10 +48,16 @@ else:
 
 if config['shred'] == 'lognorm' or config['shred'] == 'fixed':
 	# If shredding is desired run shread.py
+	print "fixed"
 	p1 = subprocess.Popen(shredopts, stdin=p0.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	p0.stdout.close()  #This is needed in order for p0 to receive a SIGPIPE if p1 exits before p0
 	sequencein = p1.stdout 
-	
+#temp debug
+print "test"
+#for line in sequencein:
+#    print line
+
+print sequencein
 ## Run selected feature extraction script
 if config["method"] == "genemarks":
     #run metamark wrapper
@@ -92,4 +99,12 @@ elif config["method"] == "both":
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
 
+elif config["method"] == "metagenemark_v2":
+    #run metamark wrapper
+    metamarkopts = ["feature_extraction_v2.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
+    p2 = subprocess.Popen(metamarkopts, stdin=sequencein , stdout=subprocess.PIPE)
+    if config['shred'] != 'None':
+        p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    matrixdata, metamarkerr= p2.communicate()
+    assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
 
