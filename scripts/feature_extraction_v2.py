@@ -89,7 +89,7 @@ def main():
     mmp = os.path.abspath(args.mmp)
     meta_mmp = os.path.abspath(args.meta_mmp)
     tmp = os.path.abspath(args.tmp)
-    file_fail = open(args.failseq,'w')
+#    file_fail = open(args.failseq,'w')
     
 #    if not os.path.isdir(tmp): 
 #        os.mkdir(tmp)
@@ -217,7 +217,7 @@ def main():
                     fail_seq.append(record)
             else: # if not, try to use metagenemark firstly to identify coding region
               
-                shutil.rmtree(tmpdir)
+                #shutil.rmtree(tmpdir)
                 cnt_mmfailure += 1
                 
                 MetaGeneMark_params = ["gmhmmp", "-m", meta_mmp, "fragment.fasta"]
@@ -254,6 +254,7 @@ def main():
                     else:
                         cnt_probuild_failure += 1
                         fail_seq.append(record)
+                        shutil.rmtree(tmpdir)
                     
                 else: # 
             
@@ -262,7 +263,7 @@ def main():
                     fail_seq.append(record)
                 
     
-    SeqIO.write(fail_seq, file_fail, "fasta")
+#    SeqIO.write(fail_seq, file_fail, "fasta")
     
     if cnt_success == 0:
         args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, GeneMarkS errors: %s, vector errors: %s, MetaGenemark errors: %s, Probuild errors: %s, reads below min length: %s \n" \
