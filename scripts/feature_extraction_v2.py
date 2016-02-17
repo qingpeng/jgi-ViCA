@@ -82,6 +82,7 @@ def main():
     parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 1000)
     parser.add_argument('--prog', help="GeneMark program to run ( genemarks - all GeneMarkS, hybrid - GeneMarkS+MetaGenemark, metagenemark - all MetaGeneMark)", choices=['genemarks','metagenemark','hybrid'],default='metagenemark')
     parser.add_argument('--failseq', help="output sequences that failed the program to this file", default = "seq_fail.fa")
+    parser.add_argument('--ksize', help="size of kmer, default=4", default = 4)
     args = parser.parse_args()
 
     ## File parsing and variable assignment
@@ -91,8 +92,8 @@ def main():
     tmp = os.path.abspath(args.tmp)
 #    file_fail = open(args.failseq,'w')
     
-#    if not os.path.isdir(tmp): 
-#        os.mkdir(tmp)
+    if not os.path.isdir(tmp): 
+        os.mkdir(tmp)
     # for each sequence in the fasta file:
     records = SeqIO.parse(args.input, "fasta")
     cnt_success = 0
@@ -102,7 +103,7 @@ def main():
     cnt_gmhmmp_failure = 0
     len_records =0
     shortreads = 0
-    kmers = iterate_kmer(4)
+    kmers = iterate_kmer(int(args.ksize))
     fail_seq = []
     for record in records:
         #go on if reads are too short
