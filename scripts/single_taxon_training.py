@@ -119,3 +119,12 @@ elif config["method"] == "genemark_v2":
         p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
+
+elif config["method"] == "pfam_combine":
+    #run metamark wrapper
+    metamarkopts = ["feature_extraction_v2.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--prog", "pfam_combine", "--outfile", args.outfile]
+    p2 = subprocess.Popen(metamarkopts, stdin=sequencein , stdout=subprocess.PIPE)
+    if config['shred'] != 'None':
+        p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1
+    matrixdata, metamarkerr= p2.communicate()
+    assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
