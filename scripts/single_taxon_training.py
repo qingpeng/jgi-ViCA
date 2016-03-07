@@ -104,7 +104,7 @@ elif config["method"] == "metagenemark_v2":
     if 'ksize' not in config:
         metamarkopts = ["feature_extraction_v2.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile]
     else:
-        metamarkopts = ["feature_extraction_v2.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile, "--ksize", confg["ksize"]]
+        metamarkopts = ["feature_extraction_v2.py", "--tmp", config["tmpdir"],"--mmp", config["mmp"], "--taxid", args.taxid, "--outfile", args.outfile, "--ksize", config["ksize"]]
     p2 = subprocess.Popen(metamarkopts, stdin=sequencein , stdout=subprocess.PIPE)
     if config['shred'] != 'None':
         p1.stdout.close()  #This is needed in order for p1 to receive a SIGPIPE if p2 exits before p1

@@ -24,8 +24,7 @@
     "shredsamples" : "200",
     "tmpdir": "/scratch",
     "trainingid" : "1",
-    "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/scripts/gm_parameters/par_11.modified",
-    "testing_data" : "True",
+    "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/scripts/gm_parameters/par_11.modified"
   },
   "training_data_formatter" : {
     "method" : "taxids",
