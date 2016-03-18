@@ -4,6 +4,7 @@
 #module load tfmq
 module load biopython
 module load sqlite3
+module load hmmer/3.1b2
 
 TAXON=$1
 OUT=$2

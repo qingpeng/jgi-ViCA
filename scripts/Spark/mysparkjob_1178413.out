@@ -1,0 +1,34 @@
+writing to /global/cscratch1/sd/qpzhang/spark_env
+starting org.apache.spark.deploy.master.Master, logging to /global/cscratch1/sd/qpzhang/spark/1178413/sparklogs/spark-qpzhang-org.apache.spark.deploy.master.Master-1-nid00188.out
+nid00189: doing ssh -o StrictHostKeyChecking=no nid00189  cd /global/common/cori/software/spark/1.6.0/sbin/.. ; /usr/common/software/spark/1.6.0/sbin/start-slave.sh spark://nid00188:7077
+nid00189: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00189: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00189: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00189: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00189: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00189: It is also possible that a host key has just been changed.
+nid00189: The fingerprint for the ECDSA key sent by the remote host is
+nid00189: SHA256:/zDdd1ZVG1OOvkkglFe7pvHN+Q2TbhcnnvPC4D2Btks.
+nid00189: Please contact your system administrator.
+nid00189: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00189: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:93
+nid00189: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00189: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00189: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/1178413/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00188.out
+Lines with a: 58, Lines with b: 26
+nid00189: doing ssh -o StrictHostKeyChecking=no nid00189  cd /global/common/cori/software/spark/1.6.0/sbin/.. ; /usr/common/software/spark/1.6.0/sbin/stop-slave.sh
+nid00189: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00189: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00189: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00189: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00189: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00189: It is also possible that a host key has just been changed.
+nid00189: The fingerprint for the ECDSA key sent by the remote host is
+nid00189: SHA256:/zDdd1ZVG1OOvkkglFe7pvHN+Q2TbhcnnvPC4D2Btks.
+nid00189: Please contact your system administrator.
+nid00189: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00189: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:93
+nid00189: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00189: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00189: stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.master.Master

@@ -35,7 +35,7 @@ def validate(a,b):
                 return False
     return True 
         
-def linetodict_vector(line):
+def linetodict_vector(line): # based on genome
     print line
     """split the data vector into a dictionary for vector file directly"""
     lv =line.strip().split("\t")
@@ -60,7 +60,7 @@ def linetodict_vector(line):
     d["vector"] = lv[2:]
     return d
     
-def linetodict_vector_segment(line):
+def linetodict_vector_segment(line): #based on segments
 #    print line
     """split the data vector into a dictionary for vector file directly"""
     lv =line.strip().split("\t")
