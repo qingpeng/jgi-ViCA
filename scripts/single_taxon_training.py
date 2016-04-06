@@ -54,8 +54,9 @@ if config['shred'] == 'lognorm' or config['shred'] == 'fixed':
 	sequencein = p1.stdout
 #temp debug
 #print "test"
-#for line in sequencein:
-#    print line
+#seq2 = sequencein
+#for line in seq2:
+#    print line.rstrip()
 
 #print sequencein
 ## Run selected feature extraction script

@@ -1,9 +1,0 @@
-writing to /global/cscratch1/sd/qpzhang/spark_env
-starting org.apache.spark.deploy.master.Master, logging to /global/cscratch1/sd/qpzhang/spark/1382095/sparklogs/spark-qpzhang-org.apache.spark.deploy.master.Master-1-nid02044.out
-/global/common/cori/software/spark/1.5.1/sbin/..
-nid02045: doing ssh -o StrictHostKeyChecking=no nid02045  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid02044:7077
-nid02045: Warning: Permanently added '[nid02045]:204,[10.128.8.14]:204' (ECDSA) to the list of known hosts.
-nid02045: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/1382095/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid02044.out
-nid02045: doing ssh -o StrictHostKeyChecking=no nid02045  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/stop-slave.sh
-nid02045: stopping org.apache.spark.deploy.worker.Worker
-stopping org.apache.spark.deploy.master.Master

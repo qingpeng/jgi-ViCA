@@ -1,6 +1,0 @@
-Creating Directory SPARK_WORKER_DIR /global/cscratch1/sd/qpzhang/spark/1403674
-Creating /global/cscratch1/sd/qpzhang/spark/1403674/slaves file
-Determining the master node name...
-Master node is nid00336
-Error: Cannot load main class from JAR file:/global/homes/q/qpzhang/Dropbox/NewBitbucket_for_GeneLearn/jgi-genelearn/scripts/Spark/Training/target/scala-2.10/simple-project_2.10-1.0.jar
-Run with --help for usage help or --verbose for debug output
