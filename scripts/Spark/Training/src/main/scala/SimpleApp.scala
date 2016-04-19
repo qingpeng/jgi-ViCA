@@ -29,7 +29,7 @@ import java.io._
 object Simple {
 
     def testing_model(model, testing_scaled, output_dir, algorithm) = {
-
+        model.clearThreshold()
         // testing the model
         val scoreAndLabels = testing_scaled.map { point =>
           val score = model.predict(point.features)
@@ -86,6 +86,10 @@ object Simple {
         pw.write("Learned classification GBT model: %s \n".format(model.toDebugString))
     }
 
+    scala> val model2 = model
+model2: org.apache.spark.mllib.classification.LogisticRegressionModel = org.apache.spark.mllib.classification.LogisticRegressionModel: intercept = 0.0, numFeatures = 30391, numClasses = 2, threshold = 0.5
+
+    
         
     def logistic(parameters:String, output_dir:String, training_scaled, testing_scaled, algorithm) = {
             val model = new LogisticRegressionWithLBFGS().setNumClasses(2).run(training_scaled)

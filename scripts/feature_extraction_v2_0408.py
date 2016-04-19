@@ -80,31 +80,22 @@ def parsemod(dir):
 # #
 
 
-def parsemod_pfam(dir): # output the hit accession label and the score
-    rawvec = []
-    number_processed = 0
+def parsemod_pfam(dir, acc_list):
     for file in os.listdir(dir):
-        if file.endswith("fragment.fasta.aa.hmmscan_pfam") or file.endswith("fragment.fasta.aa.hmmscan_vfam"):
-            number_processed += 1
+        if file.endswith("fragment.fasta.aa.hmmscan"):
             file = os.path.join(dir,file)
             file_obj = open(file,'r')
-            
+            rawvec = []
             for line in file_obj:
                 if line[0] != "#":
                     line = line.rstrip()
                     fields = line.split()
-                    label = fields[0] # target name
+                    label = acc_list.index(fields[1])+1
                     e_value = fields[4]
-                    rawvec.append(label+":"+e_value)
+                    rawvec.append(str(label)+":"+e_value)
             file_obj.close()
-            if number_processed == 2: # found and processed pfam and vfam searching results
-                return rawvec
-                break
-            
-    return rawvec
-    
-            
-
+            return rawvec
+            break
 
 
 
@@ -120,7 +111,7 @@ def main():
     parser.add_argument('--meta_mmp', help="the parameters file for MetaGeneMark", default = "/global/homes/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/MetaGeneMark_v1.mod")
     parser.add_argument('--tmp', help="root directory to write temp files in", default = "/scratch")
     parser.add_argument('--minlen', help="minimum length to attempt to classify", default = 1000)
-    parser.add_argument('--prog', help="GeneMark program to run ( genemarks - all GeneMarkS, hybrid - GeneMarkS+MetaGenemark, metagenemark - all MetaGeneMark)", choices=['genemarks','metagenemark','hybrid','pfam','pfam_combine','pfam_combine_vfam'],default='metagenemark')
+    parser.add_argument('--prog', help="GeneMark program to run ( genemarks - all GeneMarkS, hybrid - GeneMarkS+MetaGenemark, metagenemark - all MetaGeneMark)", choices=['genemarks','metagenemark','hybrid','pfam','pfam_combine'],default='metagenemark')
     parser.add_argument('--failseq', help="output sequences that failed the program to this file", default = "seq_fail.fa")
     parser.add_argument('--ksize', help="size of kmer, default=4", default = 4)
     args = parser.parse_args()
@@ -447,88 +438,9 @@ def main():
                 cnt_gmhmmp_failure += 1
                 fail_seq.append(record)
                 
-        elif args.prog == "pfam_combine_vfam":
-
-            ## Run MetaGenemark only
-            MetaGeneMark_params = ["gmhmmp", "-m", meta_mmp, "fragment.fasta", "-a", "-A", "fragment.fasta.aa"]
-            p1 = subprocess.Popen(MetaGeneMark_params, stdout=subprocess.PIPE)
-            metamarkout, metamarkerr= p1.communicate()
-
-            pfam_path = "/global/projectb/scratch/qpzhang/Full_Training/Pfam/Pfam-A.hmm"
-            vfam_path = "/global/projectb/scratch/qpzhang/Full_Training/Pfam/Vfam/vFam-B_2014.hmm"
-
-            
                 
-            if p1.returncode == 0: # if MetaGeneMark can generate the gene prediction
-#                print "gmhmmp ok\n"
-                probuild_params = ["probuild", "--par", mmp, "--ORDM", "2", "--order_non",\
-                 "2", "--revcomp_non", "1", "--seq", "fragment.fasta", "--geneset", \
-                 "fragment.fasta.lst", "--mkmod", "hmm.mod"]
-                p2 = subprocess.Popen(probuild_params, stdout=subprocess.PIPE)
-                metamarkout, metamarkerr= p2.communicate()
-                if p2.returncode == 0: # if probuild can generate hmm model
- #                   print "probuild ok\n"
-                    featurevect_probuild = parsemod(tmpdir)
-                    if featurevect_probuild:
-                    
-
-                        hmmscan_params_pfam = ["hmmscan", "--tblout", "fragment.fasta.aa.hmmscan_pfam","-E",\
-                         "1e-5", pfam_path, "fragment.fasta.aa"]
-                        p3 = subprocess.Popen(hmmscan_params_pfam, stdout=subprocess.PIPE)
-                        metamarkout, metamarkerr= p3.communicate()
-                        
-                        hmmscan_params_vfam = ["hmmscan", "--tblout", "fragment.fasta.aa.hmmscan_vfam","-E",\
-                         "1e-5", vfam_path, "fragment.fasta.aa"]
-                        p4 = subprocess.Popen(hmmscan_params_vfam, stdout=subprocess.PIPE)
-                        metamarkout, metamarkerr= p4.communicate()
-                        
-                        
-                        
-                        if p3.returncode == 0 or p4.returncode == 0: # if hmmscan can generate results
-                    
-                            featurevect_hmm = parsemod_pfam(tmpdir)
-                            
-                            if featurevect_hmm:
-                                featurevect_hmm_out = featurevect_hmm
-                            else:
-                                featurevect_hmm_out = []
-                                cnt_hmmscan_failure += 1
-                                
-
-                        else:
-                            featurevect_hmm_out = []
-                            cnt_hmmscan_failure += 1
-                            
-                        if args.label == 'taxid':
-                            vect = [args.taxid] + [record.description] + featurevect_probuild + \
-                            get_composition(k_size,str(record.seq).upper(), kmers,True) + featurevect_hmm_out
-                        elif args.label == 'readid':
-                            vect = [readid] + [record.description] + featurevect_probuild + \
-                            get_composition(k_size,str(record.seq).upper(), kmers,True) + featurevect_hmm_out
-                        else:
-                            raise InputError("the label parameter must be either 'taxid' or 'readid'")
-                        args.outfile.write("\t".join(vect))
-                        args.outfile.write("\n")
-                        shutil.rmtree(tmpdir)
-                        cnt_success += 1
-                                
-
                 
-                    else:
-                        shutil.rmtree(tmpdir)
-                        cnt_vectfailure  += 1
-                        fail_seq.append(record)
-                else:
-  #                  print "probuild fail\n"
-                    shutil.rmtree(tmpdir)
-                    cnt_probuild_failure += 1
-                    fail_seq.append(record)
-                    
-            else: # 
-   #             print "gmhmmp fail\n"
-                shutil.rmtree(tmpdir)
-                cnt_gmhmmp_failure += 1
-                fail_seq.append(record)
+                
                 
 
 #    SeqIO.write(fail_seq, file_fail, "fasta")
