@@ -42,5 +42,5 @@ else:
 #print(reftreeopts)
 p1 = subprocess.Popen(reftreeopts, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 reftreeout, reftreeerr= p1.communicate()
-print(reftreeout)
+#print(reftreeout)
 

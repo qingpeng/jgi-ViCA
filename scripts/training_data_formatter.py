@@ -12,6 +12,7 @@ parser.add_argument('-c', '--config', help ="A json formatted config file")
 parser.add_argument('-t', '--trainfile', help ="An output vector file", type=argparse.FileType('w'), default='-')
 parser.add_argument('-e', '--testfile', help ="An output vector file", type=argparse.FileType('w'), default='testdata.txt')
 parser.add_argument('-s', '--switch', help ="reftree or vector to use") 
+parser.add_argument('-g', '--segment', help ="segment or genome, based vector") 
 parser.add_argument('-r', '--reftree', help ="Reftree database directory location") 
 parser.add_argument('-v', '--vector', help ="Vector file if no reftree database") 
 args = parser.parse_args()
@@ -34,20 +35,21 @@ def validate(a,b):
                 return False
     return True 
         
-def linetodict_vector(line):
-    #print line
+def linetodict_vector(line): # based on genome
+    print line
     """split the data vector into a dictionary for vector file directly"""
     lv =line.strip().split("\t")
     if len(lv) < 5:
         return None
     lv1_fields = lv[1].split(" ")
-    #print lv1_fields
+    print lv1_fields
     if len(lv1_fields) <2:
         return None
     attributes = lv1_fields[1]
 #    c3 = lv[2].split(" ")
 #    attributes = lv[1]+","+ c3[2]
     attlist = attributes.split(',')
+    print attlist
     d = dict(s.split('=') for s in attlist)
     taxlist = (d["taxonomy"].split('/'))
     t = dict(r.split(':') for r in taxlist)
@@ -57,6 +59,32 @@ def linetodict_vector(line):
     d["refseqId"] = lv1_fields[0]
     d["vector"] = lv[2:]
     return d
+    
+def linetodict_vector_segment(line): #based on segments
+#    print line
+    """split the data vector into a dictionary for vector file directly"""
+    lv =line.strip().split("\t")
+    if len(lv) < 5:
+        return None
+    lv1_fields = lv[1].split(" ")
+#    print lv1_fields
+    if len(lv1_fields) <3:
+        return None
+    attributes = lv1_fields[2]
+#    c3 = lv[2].split(" ")
+#    attributes = lv[1]+","+ c3[2]
+    attlist = attributes.split(',')
+#    print attlist
+    d = dict(s.split('=') for s in attlist)
+    taxlist = (d["taxonomy"].split('/'))
+    t = dict(r.split(':') for r in taxlist)
+    d["taxid"] = lv[0]
+    d["taxonomy"] = t
+#    d["readId"] = c3[0]
+    d["refseqId"] = lv1_fields[0]
+    d["vector"] = lv[2:]
+    return d
+    
 
 def linetodict(line):
     """split the data vector into a dictionary"""
@@ -172,7 +200,10 @@ else:
     # For each line 
     for line in input_stream:
         # Convert the line to a dictionary
-        d = linetodict_vector(line)
+        if args.segment == "genome":
+            d = linetodict_vector(line)
+        else:
+            d = linetodict_vector_segment(line)
         # decide whether data should go in the test or train bin
         if d:
             if d["taxid"] in trainlist:

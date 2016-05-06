@@ -101,7 +101,7 @@ def main():
 	parser.add_argument('--testing', help="Testing mode",  action="store_true")
 
 	args = parser.parse_args()
-	testing = False
+	testing = True # temperary
 	if args.testing:
 #   	    print "Testing mode is on"
    	    testing = True

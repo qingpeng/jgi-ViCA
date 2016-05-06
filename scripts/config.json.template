@@ -13,6 +13,7 @@
     "numworkers" : "80",
     "resources" : "-l ram.c=5G,h_rt=12:00:00",
     "method" : "genemarks",
+    "ksize" : "4",
     "shred" : "fixed",
     "lognorm" : {
       "shape" : "1.3335",
