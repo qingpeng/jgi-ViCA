@@ -123,12 +123,15 @@ def main():
     parser.add_argument('--prog', help="GeneMark program to run ( genemarks - all GeneMarkS, hybrid - GeneMarkS+MetaGenemark, metagenemark - all MetaGeneMark)", choices=['genemarks','metagenemark','hybrid','pfam','pfam_combine','pfam_combine_vfam'],default='metagenemark')
     parser.add_argument('--failseq', help="output sequences that failed the program to this file", default = "seq_fail.fa")
     parser.add_argument('--ksize', help="size of kmer, default=4", default = 4)
+    parser.add_argument('--fam_path', help="path with pfam/vfam database files", default = 4)
+ 
     args = parser.parse_args()
 
     ## File parsing and variable assignment
 
     mmp = os.path.abspath(args.mmp)
     meta_mmp = os.path.abspath(args.meta_mmp)
+    fam_path = args.fam_path
     tmp = os.path.abspath(args.tmp)
 #    file_fail = open(args.failseq,'w')
     
@@ -454,8 +457,10 @@ def main():
             p1 = subprocess.Popen(MetaGeneMark_params, stdout=subprocess.PIPE)
             metamarkout, metamarkerr= p1.communicate()
 
-            pfam_path = "/global/projectb/scratch/qpzhang/Full_Training/Pfam/Pfam-A.hmm"
-            vfam_path = "/global/projectb/scratch/qpzhang/Full_Training/Pfam/Vfam/vFam-B_2014.hmm"
+            #pfam_path = "/global/projectb/scratch/qpzhang/Full_Training/Pfam/Pfam-A.hmm"
+            pfam_hmm = fam_path + '/Pfam-A.hmm'
+            vfam_hmm = fam_path + '/vFam-B_2014.hmm'
+            #vfam_path = "/global/projectb/scratch/qpzhang/Full_Training/Pfam/Vfam/vFam-B_2014.hmm"
 
             
                 
@@ -473,12 +478,12 @@ def main():
                     
 
                         hmmscan_params_pfam = ["hmmscan", "--tblout", "fragment.fasta.aa.hmmscan_pfam","-E",\
-                         "1e-5", pfam_path, "fragment.fasta.aa"]
+                         "1e-5", pfam_hmm, "fragment.fasta.aa"]
                         p3 = subprocess.Popen(hmmscan_params_pfam, stdout=subprocess.PIPE)
                         metamarkout, metamarkerr= p3.communicate()
                         
                         hmmscan_params_vfam = ["hmmscan", "--tblout", "fragment.fasta.aa.hmmscan_vfam","-E",\
-                         "1e-5", vfam_path, "fragment.fasta.aa"]
+                         "1e-5", vfam_hmm, "fragment.fasta.aa"]
                         p4 = subprocess.Popen(hmmscan_params_vfam, stdout=subprocess.PIPE)
                         metamarkout, metamarkerr= p4.communicate()
                         
