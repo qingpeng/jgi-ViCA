@@ -20,6 +20,7 @@
 * [scipy](http://www.scipy.org/)
 * [matplotlib](http://matplotlib.org/)
 * [khmer v1.4](https://pypi.python.org/pypi/khmer/1.4/)
+* Pfam/Vfam HMMER
 
 
 ## Files

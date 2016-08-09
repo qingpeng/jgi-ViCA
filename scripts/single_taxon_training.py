@@ -57,6 +57,7 @@ if config['shred'] == 'lognorm' or config['shred'] == 'fixed':
 #seq2 = sequencein
 #for line in seq2:
 #    print line.rstrip()
+fo_obj = open(args.outfile, 'w')
 
 #print sequencein
 ## Run selected feature extraction script
@@ -139,3 +140,13 @@ elif config["method"] == "pfam_combine_vfam":
     matrixdata, metamarkerr= p2.communicate()
     assert p2.returncode == 0, 'there was an error in single taxon training with taxid %s' % args.taxid
 
+elif config["method"] == "seq_only":
+    
+#    fo_obj.write(sequencein)
+    
+    seq2 = sequencein
+    for line in seq2:
+        print line.rstrip()
+        fo_obj.write(line)
+        
+fo_obj.close()
