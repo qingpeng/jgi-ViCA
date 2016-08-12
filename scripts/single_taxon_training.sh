@@ -1,5 +1,5 @@
 #!/bin/bash 
-. /global/homes/q/qpzhang/Dropbox/NewBitbucket_for_GeneLearn/jgi-genelearn/scripts/env.sh
+. /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/env.sh
 
 #module load tfmq
 module load biopython
