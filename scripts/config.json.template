@@ -1,8 +1,8 @@
 {
   "environment_variables" : {
     "genemark_path" : "/global/homes/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/",
-    "genelearn_path" : "/global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/",
-    "reftree_script_path" : "/global/homes/q/qpzhang/Dropbox/Bitbucket/jgi_reftree/",
+    "genelearn_path" : "/global/homes/q/qpzhang/Bitbucket/jgi-genelearn/",
+    "reftree_script_path" : "/global/homes/q/qpzhang/Bitbucket/jgi_reftree/",
     "python_site_packages_path" : "/global/homes/q/qpzhang/anaconda/lib/python2.7/site-packages/",
     "reftree_db_path" : "/global/projectb/scratch/ekirton/RefTree/",
     "TMPDIR" : "/global/projectb/scratch/qpzhang"
@@ -11,7 +11,7 @@
   "create_training_data" : {
     "taskfarmer" : "False",
     "numworkers" : "80",
-    "resources" : "-l ram.c=5G,h_rt=12:00:00",
+    "resources" : "-l ram.c=5G,h_rt=0:20:00",
     "method" : "genemarks",
     "ksize" : "4",
     "shred" : "fixed",
@@ -23,7 +23,7 @@
     "fixed" : "5000",
     "shredsamples" : "200",
     "tmpdir": "/scratch",
-    "trainingid" : "1",
+    "trainingid" : "152180",
     "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/scripts/gm_parameters/par_11.modified"
   },
   "training_data_formatter" : {

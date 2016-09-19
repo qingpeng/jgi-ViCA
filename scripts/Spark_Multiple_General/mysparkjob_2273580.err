@@ -1,0 +1,264 @@
+Creating Directory SPARK_WORKER_DIR /global/cscratch1/sd/qpzhang/spark/2273580
+Creating /global/cscratch1/sd/qpzhang/spark/2273580/slaves file
+Determining the master node name...
+Master node is nid00677
+16/05/21 02:19:25 INFO SparkContext: Running Spark version 1.5.1
+16/05/21 02:19:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/05/21 02:19:26 INFO SecurityManager: Changing view acls to: qpzhang
+16/05/21 02:19:26 INFO SecurityManager: Changing modify acls to: qpzhang
+16/05/21 02:19:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(qpzhang); users with modify permissions: Set(qpzhang)
+16/05/21 02:19:26 INFO Slf4jLogger: Slf4jLogger started
+16/05/21 02:19:27 INFO Remoting: Starting remoting
+16/05/21 02:19:27 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.128.2.170:42476]
+16/05/21 02:19:27 INFO Utils: Successfully started service 'sparkDriver' on port 42476.
+16/05/21 02:19:27 INFO SparkEnv: Registering MapOutputTracker
+16/05/21 02:19:27 INFO SparkEnv: Registering BlockManagerMaster
+16/05/21 02:19:27 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e686f967-f0b0-45dd-89eb-679d39485462
+16/05/21 02:19:27 INFO DiskBlockManager: Created local directory at /global/cscratch1/sd/qpzhang/blockmgr-3f8a8dfc-07b1-4c92-aa42-c6a4a3fed42c
+16/05/21 02:19:27 INFO MemoryStore: MemoryStore started with capacity 25.9 GB
+16/05/21 02:19:27 INFO HttpFileServer: HTTP File server directory is /tmp/spark-8ff8ec95-2bfd-4283-85fc-e3f715223d43/httpd-e6e8fc06-dc86-4876-9721-03abad2dd585
+16/05/21 02:19:27 INFO HttpServer: Starting HTTP Server
+16/05/21 02:19:27 INFO Utils: Successfully started service 'HTTP file server' on port 40344.
+16/05/21 02:19:27 INFO SparkEnv: Registering OutputCommitCoordinator
+16/05/21 02:19:27 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/05/21 02:19:27 INFO SparkUI: Started SparkUI at http://10.128.2.170:4040
+16/05/21 02:19:27 INFO SparkContext: Added JAR file:/global/u2/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/Spark_Multiple_General/target/scala-2.10/simple-project_2.10-1.0.jar at http://10.128.2.170:40344/jars/simple-project_2.10-1.0.jar with timestamp 1463822367797
+16/05/21 02:19:27 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/05/21 02:19:27 INFO AppClient$ClientEndpoint: Connecting to master spark://nid00677:7077...
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20160521021928-0000
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/0 on worker-20160521021925-10.128.8.42-60264 (10.128.8.42:60264) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/0 on hostPort 10.128.8.42:60264 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/1 on worker-20160521021925-10.128.4.45-41431 (10.128.4.45:41431) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/1 on hostPort 10.128.4.45:41431 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/2 on worker-20160521021925-10.128.3.65-48173 (10.128.3.65:48173) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/2 on hostPort 10.128.3.65:48173 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/3 on worker-20160521021925-10.128.3.252-36449 (10.128.3.252:36449) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/3 on hostPort 10.128.3.252:36449 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/4 on worker-20160521021925-10.128.4.7-40939 (10.128.4.7:40939) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/4 on hostPort 10.128.4.7:40939 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/5 on worker-20160521021925-10.128.2.177-54360 (10.128.2.177:54360) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/5 on hostPort 10.128.2.177:54360 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/6 on worker-20160521021925-10.128.2.217-33292 (10.128.2.217:33292) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/6 on hostPort 10.128.2.217:33292 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/7 on worker-20160521021925-10.128.4.26-42358 (10.128.4.26:42358) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/7 on hostPort 10.128.4.26:42358 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/8 on worker-20160521021925-10.128.8.166-35765 (10.128.8.166:35765) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/8 on hostPort 10.128.8.166:35765 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/9 on worker-20160521021925-10.128.3.251-35424 (10.128.3.251:35424) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/9 on hostPort 10.128.3.251:35424 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/10 on worker-20160521021925-10.128.8.165-57499 (10.128.8.165:57499) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/10 on hostPort 10.128.8.165:57499 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/11 on worker-20160521021925-10.128.2.176-41559 (10.128.2.176:41559) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/11 on hostPort 10.128.2.176:41559 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/12 on worker-20160521021924-10.128.2.175-54059 (10.128.2.175:54059) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/12 on hostPort 10.128.2.175:54059 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/13 on worker-20160521021925-10.128.2.174-42903 (10.128.2.174:42903) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/13 on hostPort 10.128.2.174:42903 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/14 on worker-20160521021925-10.128.3.249-40093 (10.128.3.249:40093) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/14 on hostPort 10.128.3.249:40093 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/15 on worker-20160521021925-10.128.2.173-59183 (10.128.2.173:59183) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/15 on hostPort 10.128.2.173:59183 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/16 on worker-20160521021924-10.128.2.214-37467 (10.128.2.214:37467) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/16 on hostPort 10.128.2.214:37467 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/17 on worker-20160521021925-10.128.2.215-59017 (10.128.2.215:59017) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/17 on hostPort 10.128.2.215:59017 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/18 on worker-20160521021925-10.128.4.43-48086 (10.128.4.43:48086) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/18 on hostPort 10.128.4.43:48086 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/19 on worker-20160521021924-10.128.4.2-41883 (10.128.4.2:41883) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/19 on hostPort 10.128.4.2:41883 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/20 on worker-20160521021925-10.128.3.254-60844 (10.128.3.254:60844) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/20 on hostPort 10.128.3.254:60844 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/21 on worker-20160521021925-10.128.4.25-60973 (10.128.4.25:60973) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/21 on hostPort 10.128.4.25:60973 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/22 on worker-20160521021925-10.128.8.179-35550 (10.128.8.179:35550) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/22 on hostPort 10.128.8.179:35550 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/23 on worker-20160521021924-10.128.3.250-56794 (10.128.3.250:56794) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/23 on hostPort 10.128.3.250:56794 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/24 on worker-20160521021925-10.128.4.46-57922 (10.128.4.46:57922) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/24 on hostPort 10.128.4.46:57922 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/25 on worker-20160521021925-10.128.4.44-51300 (10.128.4.44:51300) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/25 on hostPort 10.128.4.44:51300 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/26 on worker-20160521021924-10.128.4.1-49279 (10.128.4.1:49279) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/26 on hostPort 10.128.4.1:49279 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/27 on worker-20160521021925-10.128.4.3-50384 (10.128.4.3:50384) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/27 on hostPort 10.128.4.3:50384 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/28 on worker-20160521021925-10.128.6.93-54218 (10.128.6.93:54218) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/28 on hostPort 10.128.6.93:54218 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/29 on worker-20160521021925-10.128.3.247-42296 (10.128.3.247:42296) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/29 on hostPort 10.128.3.247:42296 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/30 on worker-20160521021925-10.128.3.46-58322 (10.128.3.46:58322) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/30 on hostPort 10.128.3.46:58322 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/31 on worker-20160521021925-10.128.4.6-40735 (10.128.4.6:40735) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/31 on hostPort 10.128.4.6:40735 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/32 on worker-20160521021925-10.128.4.8-45494 (10.128.4.8:45494) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/32 on hostPort 10.128.4.8:45494 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/33 on worker-20160521021925-10.128.4.4-55842 (10.128.4.4:55842) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/33 on hostPort 10.128.4.4:55842 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/34 on worker-20160521021924-10.128.2.172-49515 (10.128.2.172:49515) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/34 on hostPort 10.128.2.172:49515 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/35 on worker-20160521021925-10.128.3.253-56937 (10.128.3.253:56937) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/35 on hostPort 10.128.3.253:56937 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/36 on worker-20160521021925-10.128.4.5-56363 (10.128.4.5:56363) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/36 on hostPort 10.128.4.5:56363 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/37 on worker-20160521021924-10.128.2.216-45258 (10.128.2.216:45258) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/37 on hostPort 10.128.2.216:45258 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor added: app-20160521021928-0000/38 on worker-20160521021924-10.128.2.171-39779 (10.128.2.171:39779) with 64 cores
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160521021928-0000/38 on hostPort 10.128.2.171:39779 with 64 cores, 100.0 GB RAM
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/0 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/1 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/2 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/3 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/4 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/5 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/6 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/7 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/8 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/9 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/10 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/11 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/12 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/13 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/14 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/15 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/16 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/17 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/18 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/19 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/20 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/21 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/22 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/23 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/24 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/25 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/26 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/27 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/28 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/29 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/30 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/31 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/32 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/33 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/34 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/35 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/36 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/37 is now RUNNING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/38 is now RUNNING
+16/05/21 02:19:28 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38848.
+16/05/21 02:19:28 INFO NettyBlockTransferService: Server created on 38848
+16/05/21 02:19:28 INFO BlockManagerMaster: Trying to register BlockManager
+16/05/21 02:19:28 INFO BlockManagerMasterEndpoint: Registering block manager 10.128.2.170:38848 with 25.9 GB RAM, BlockManagerId(driver, 10.128.2.170, 38848)
+16/05/21 02:19:28 INFO BlockManagerMaster: Registered BlockManager
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/0 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/3 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/18 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/38 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/7 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/21 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/16 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/13 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/34 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/19 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/5 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/36 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/12 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/37 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/4 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/1 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/6 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/11 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/20 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/23 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/29 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/10 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/22 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/28 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/33 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/35 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/17 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/32 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/27 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/8 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/31 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/2 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/26 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/25 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/24 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/14 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/9 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/30 is now LOADING
+16/05/21 02:19:28 INFO AppClient$ClientEndpoint: Executor updated: app-20160521021928-0000/15 is now LOADING
+16/05/21 02:19:28 INFO EventLoggingListener: Logging events to file:/global/cscratch1/sd/qpzhang/spark/app-20160521021928-0000
+16/05/21 02:19:28 INFO SparkDeploySchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+16/05/21 02:19:29 INFO MemoryStore: ensureFreeSpace(271176) called with curMem=0, maxMem=27783258439
+16/05/21 02:19:29 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 264.8 KB, free 25.9 GB)
+16/05/21 02:19:29 INFO MemoryStore: ensureFreeSpace(19788) called with curMem=271176, maxMem=27783258439
+16/05/21 02:19:29 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 19.3 KB, free 25.9 GB)
+16/05/21 02:19:29 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.128.2.170:38848 (size: 19.3 KB, free: 25.9 GB)
+16/05/21 02:19:29 INFO SparkContext: Created broadcast 0 from textFile at MLUtils.scala:75
+Exception in thread "main" org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/global/u2/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/Spark_Multiple_General/all.vect.order_training.svmlib.num.pvfam
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:285)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:228)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:313)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:207)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:239)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:237)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:237)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:1942)
+	at org.apache.spark.rdd.RDD$$anonfun$reduce$1.apply(RDD.scala:1003)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:147)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:108)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:306)
+	at org.apache.spark.rdd.RDD.reduce(RDD.scala:985)
+	at org.apache.spark.mllib.util.MLUtils$.loadLibSVMFile(MLUtils.scala:109)
+	at org.apache.spark.mllib.util.MLUtils$.loadLibSVMFile(MLUtils.scala:138)
+	at org.apache.spark.mllib.util.MLUtils$.loadLibSVMFile(MLUtils.scala:163)
+	at Simple$.main(SimpleApp.scala:39)
+	at Simple.main(SimpleApp.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.spark.deploy.SparkSubmit$.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:672)
+	at org.apache.spark.deploy.SparkSubmit$.doRunMain$1(SparkSubmit.scala:180)
+	at org.apache.spark.deploy.SparkSubmit$.submit(SparkSubmit.scala:205)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:120)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+16/05/21 02:19:29 INFO SparkContext: Invoking stop() from shutdown hook
+16/05/21 02:19:29 INFO SparkUI: Stopped Spark web UI at http://10.128.2.170:4040
+16/05/21 02:19:29 INFO DAGScheduler: Stopping DAGScheduler
+16/05/21 02:19:29 INFO SparkDeploySchedulerBackend: Shutting down all executors
+16/05/21 02:19:29 INFO SparkDeploySchedulerBackend: Asking each executor to shut down
+16/05/21 02:19:29 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/05/21 02:19:29 INFO MemoryStore: MemoryStore cleared
+16/05/21 02:19:29 INFO BlockManager: BlockManager stopped
+16/05/21 02:19:29 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/05/21 02:19:29 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/05/21 02:19:29 INFO SparkContext: Successfully stopped SparkContext
+16/05/21 02:19:29 INFO ShutdownHookManager: Shutdown hook called
+16/05/21 02:19:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-8ff8ec95-2bfd-4283-85fc-e3f715223d43

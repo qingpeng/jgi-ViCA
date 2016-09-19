@@ -156,7 +156,7 @@ def main():
             shortreads += 1
             continue
         len_records += 1
-
+        readid = record.id
         tmpdir = tempfile.mkdtemp(dir=tmp) # 
         os.chdir(tmpdir) 
         handle = open("fragment.fasta", "w") # open a fasta file
@@ -538,9 +538,9 @@ def main():
 
 #    SeqIO.write(fail_seq, file_fail, "fasta")
     
-    if cnt_success == 0:
-        args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, GeneMarkS errors: %s, vector errors: %s, MetaGenemark errors: %s,hmmscan errors: %s,  Probuild errors: %s, reads below min length: %s \n" \
-        % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure, cnt_gmhmmp_failure, cnt_hmmscan_failure, cnt_probuild_failure, shortreads))
+    #if cnt_success == 0:
+    #    args.outfile.write("#Taxon id: %s, Number of Contigs: %s, Successes: %s, GeneMarkS errors: %s, vector errors: %s, MetaGenemark errors: %s,hmmscan errors: %s,  Probuild errors: %s, reads below min length: %s \n" \
+    #    % (args.taxid, len_records, cnt_success, cnt_mmfailure, cnt_vectfailure, cnt_gmhmmp_failure, cnt_hmmscan_failure, cnt_probuild_failure, shortreads))
     args.outfile.close()
     
 if __name__ == '__main__':

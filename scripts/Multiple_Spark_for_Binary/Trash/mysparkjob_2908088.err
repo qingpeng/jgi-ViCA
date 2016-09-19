@@ -1,0 +1,20 @@
+Creating Directory SPARK_WORKER_DIR /global/cscratch1/sd/qpzhang/spark/2908088
+Creating /global/cscratch1/sd/qpzhang/spark/2908088/slaves file
+Determining the master node name with /usr/common/software/spark/spark_bin/myfindmaster.sh
+Master node is nid00596
+doing /usr/common/software/spark/spark_bin/conf_stager.sh
+Using properties file: /global/cscratch1/sd/qpzhang/spark_conf_files/spark-defaults.conf
+Adding default property: spark.serializer=org.apache.spark.serializer.KryoSerializer
+Adding default property: spark.history.fs.logDirectory=/global/cscratch1/sd/qpzhang/spark/event_logs
+Adding default property: spark.eventLog.enabled=true
+Adding default property: spark.driver.maxResultSize=5G
+Adding default property: spark.driver.memory=100G
+Adding default property: spark.logConf=true
+Adding default property: spark.default.parallelism=64
+Adding default property: spark.master=spark://nid00596:7077
+Adding default property: spark.executor.memory=100G
+Adding default property: spark.local.dir=/tmp,/global/cscratch1/sd/qpzhang
+Adding default property: spark.eventLog.dir=/global/cscratch1/sd/qpzhang/spark/event_logs
+Adding default property: spark.executor.cores=32
+Error: Must specify a primary resource (JAR or Python or R file)
+Run with --help for usage help or --verbose for debug output

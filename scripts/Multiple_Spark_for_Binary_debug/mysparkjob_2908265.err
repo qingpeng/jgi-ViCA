@@ -1,0 +1,8 @@
+Creating Directory SPARK_WORKER_DIR /global/cscratch1/sd/qpzhang/spark/2908265
+Creating /global/cscratch1/sd/qpzhang/spark/2908265/slaves file
+Determining the master node name with /usr/common/software/spark/spark_bin/myfindmaster.sh
+Master node is nid00829
+doing /usr/common/software/spark/spark_bin/conf_stager.sh
+[Stage 0:>                                                          (0 + 0) / 2][Stage 0:>                                                          (0 + 2) / 2][Stage 0:=============================>                             (1 + 1) / 2]                                                                                [Stage 1:>                                                          (0 + 2) / 2][Stage 1:=============================>                             (1 + 1) / 2]                                                                                [Stage 2:>                                                          (0 + 2) / 2]                                                                                [Stage 10:>                                                         (0 + 2) / 2]                                                                                SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.

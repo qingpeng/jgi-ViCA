@@ -1,0 +1,426 @@
+writing to /global/cscratch1/sd/qpzhang/spark_env
+starting org.apache.spark.deploy.master.Master, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.master.Master-1-nid00319.out
+/global/common/cori/software/spark/1.5.1/sbin/..
+nid00336: doing ssh -o StrictHostKeyChecking=no nid00336  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00337: doing ssh -o StrictHostKeyChecking=no nid00337  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00338: doing ssh -o StrictHostKeyChecking=no nid00338  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00427: doing ssh -o StrictHostKeyChecking=no nid00427  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00428: doing ssh -o StrictHostKeyChecking=no nid00428  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00429: doing ssh -o StrictHostKeyChecking=no nid00429  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00430: doing ssh -o StrictHostKeyChecking=no nid00430  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00446: doing ssh -o StrictHostKeyChecking=no nid00446  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00447: doing ssh -o StrictHostKeyChecking=no nid00447  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00464: doing ssh -o StrictHostKeyChecking=no nid00464  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00465: doing ssh -o StrictHostKeyChecking=no nid00465  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00796: doing ssh -o StrictHostKeyChecking=no nid00796  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00797: doing ssh -o StrictHostKeyChecking=no nid00797  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00798: doing ssh -o StrictHostKeyChecking=no nid00798  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00799: doing ssh -o StrictHostKeyChecking=no nid00799  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00990: doing ssh -o StrictHostKeyChecking=no nid00990  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00991: doing ssh -o StrictHostKeyChecking=no nid00991  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00992: doing ssh -o StrictHostKeyChecking=no nid00992  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00993: doing ssh -o StrictHostKeyChecking=no nid00993  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01406: doing ssh -o StrictHostKeyChecking=no nid01406  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01407: doing ssh -o StrictHostKeyChecking=no nid01407  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01424: doing ssh -o StrictHostKeyChecking=no nid01424  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01425: doing ssh -o StrictHostKeyChecking=no nid01425  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01426: doing ssh -o StrictHostKeyChecking=no nid01426  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01692: doing ssh -o StrictHostKeyChecking=no nid01692  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01693: doing ssh -o StrictHostKeyChecking=no nid01693  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01694: doing ssh -o StrictHostKeyChecking=no nid01694  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01695: doing ssh -o StrictHostKeyChecking=no nid01695  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01696: doing ssh -o StrictHostKeyChecking=no nid01696  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01838: doing ssh -o StrictHostKeyChecking=no nid01838  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01839: doing ssh -o StrictHostKeyChecking=no nid01839  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01840: doing ssh -o StrictHostKeyChecking=no nid01840  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01841: doing ssh -o StrictHostKeyChecking=no nid01841  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid01842: doing ssh -o StrictHostKeyChecking=no nid01842  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid02234: doing ssh -o StrictHostKeyChecking=no nid02234  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid02235: doing ssh -o StrictHostKeyChecking=no nid02235  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid02236: doing ssh -o StrictHostKeyChecking=no nid02236  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid02237: doing ssh -o StrictHostKeyChecking=no nid02237  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid02238: doing ssh -o StrictHostKeyChecking=no nid02238  cd /global/common/cori/software/spark/1.5.1/sbin/.. ; /usr/common/software/spark/1.5.1/sbin/start-slave.sh spark://nid00319:7077
+nid00338: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00338: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00338: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00338: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00338: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00338: It is also possible that a host key has just been changed.
+nid00338: The fingerprint for the ECDSA key sent by the remote host is
+nid00338: SHA256:5/OQ3ejmLxV850K/GBHYabARAEUbf1fAVhdawUcCNew.
+nid00338: Please contact your system administrator.
+nid00338: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00338: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:215
+nid00338: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00338: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00338: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00337: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00337: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00337: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00337: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00337: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00337: It is also possible that a host key has just been changed.
+nid00337: The fingerprint for the ECDSA key sent by the remote host is
+nid00337: SHA256:mB+kmlsqJYwKB3NFnQY0HbQ07EOjSu4wayvMmIq9SnE.
+nid00337: Please contact your system administrator.
+nid00337: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00337: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:211
+nid00337: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00337: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00337: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00336: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00336: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00336: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00336: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00336: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00336: It is also possible that a host key has just been changed.
+nid00336: The fingerprint for the ECDSA key sent by the remote host is
+nid00336: SHA256:uw9O6uNA5PY3eq/jz3V5LpghfuedHMBDJF2gj9v/Ya4.
+nid00336: Please contact your system administrator.
+nid00336: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00336: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:210
+nid00336: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00336: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00336: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00430: Warning: Permanently added '[nid00430]:204,[10.128.1.177]:204' (ECDSA) to the list of known hosts.
+nid00430: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00427: Warning: Permanently added '[nid00427]:204,[10.128.1.174]:204' (ECDSA) to the list of known hosts.
+nid00427: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00447: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00447: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00447: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00447: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00447: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00447: It is also possible that a host key has just been changed.
+nid00447: The fingerprint for the ECDSA key sent by the remote host is
+nid00447: SHA256:ttDvAAkXb3mMrW2xnT5gKdARoR2JszgkLYGD+qUrrSw.
+nid00447: Please contact your system administrator.
+nid00447: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00447: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:401
+nid00447: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00447: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00447: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00428: Warning: Permanently added '[nid00428]:204,[10.128.1.175]:204' (ECDSA) to the list of known hosts.
+nid00428: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00429: Warning: Permanently added '[nid00429]:204,[10.128.1.176]:204' (ECDSA) to the list of known hosts.
+nid00429: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00446: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00446: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00446: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00446: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00446: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00446: It is also possible that a host key has just been changed.
+nid00446: The fingerprint for the ECDSA key sent by the remote host is
+nid00446: SHA256:xffpKrIC53Cfm4+AQ/i3OhZ47Vlq25NTvxpIuDI77Lk.
+nid00446: Please contact your system administrator.
+nid00446: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00446: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:400
+nid00446: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00446: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00446: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00992: Warning: Permanently added '[nid00992]:204,[10.128.3.231]:204' (ECDSA) to the list of known hosts.
+nid00992: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00990: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00990: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00990: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00990: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00990: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00990: It is also possible that a host key has just been changed.
+nid00990: The fingerprint for the ECDSA key sent by the remote host is
+nid00990: SHA256:g6rhf40D7leiMSelbsgJlqrhjMeRWPSvqRZwcVBNAvo.
+nid00990: Please contact your system administrator.
+nid00990: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00990: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:378
+nid00990: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00990: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00990: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid00990: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid00990: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00465: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00465: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00465: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00465: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00465: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00465: It is also possible that a host key has just been changed.
+nid00465: The fingerprint for the ECDSA key sent by the remote host is
+nid00465: SHA256:2UJbVNXduSEHmvEnrXOS4AmlKzOFRAS0jCgcNrhoX54.
+nid00465: Please contact your system administrator.
+nid00465: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00465: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:403
+nid00465: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00465: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00465: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid00465: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid00465: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00796: Warning: Permanently added '[nid00796]:204,[10.128.3.35]:204' (ECDSA) to the list of known hosts.
+nid00796: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00991: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00991: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00991: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00991: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00991: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00991: It is also possible that a host key has just been changed.
+nid00991: The fingerprint for the ECDSA key sent by the remote host is
+nid00991: SHA256:2Yi1jAdbx53dszbUySkfi7alMky3zk3T7bictGsgTXM.
+nid00991: Please contact your system administrator.
+nid00991: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00991: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:380
+nid00991: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00991: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00991: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid00991: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid00991: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid00991: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00799: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00799: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00799: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00799: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00799: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00799: It is also possible that a host key has just been changed.
+nid00799: The fingerprint for the ECDSA key sent by the remote host is
+nid00799: SHA256:Kuc+A9jo79A0X1o/Du81+o5ixcxHs6Y2aiX+cCxvBfk.
+nid00799: Please contact your system administrator.
+nid00799: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00799: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:228
+nid00799: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00799: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00799: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid00799: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00993: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00993: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00993: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00993: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00993: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00993: It is also possible that a host key has just been changed.
+nid00993: The fingerprint for the ECDSA key sent by the remote host is
+nid00993: SHA256:7QiC+zXtJI5il4lbzNYXxKUscsraCw7T4cpQLNssgIc.
+nid00993: Please contact your system administrator.
+nid00993: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00993: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:531
+nid00993: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00993: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00993: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid00993: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid00993: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid00993: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00464: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00464: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00464: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00464: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00464: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00464: It is also possible that a host key has just been changed.
+nid00464: The fingerprint for the ECDSA key sent by the remote host is
+nid00464: SHA256:E3faaz87Tkb3EJy12BmRuPAEsdgy10rY/g6kCl4EEIc.
+nid00464: Please contact your system administrator.
+nid00464: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00464: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:402
+nid00464: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00464: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00464: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01407: Warning: Permanently added '[nid01407]:204,[10.128.5.138]:204' (ECDSA) to the list of known hosts.
+nid01407: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00797: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00797: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00797: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00797: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00797: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00797: It is also possible that a host key has just been changed.
+nid00797: The fingerprint for the ECDSA key sent by the remote host is
+nid00797: SHA256:0lLHjKxKY/fi3b/YQgIOC7kH7eP01maJu7V2k6FOpLY.
+nid00797: Please contact your system administrator.
+nid00797: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00797: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:226
+nid00797: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00797: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00797: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid00797: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid00797: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid00797: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid00798: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00798: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid00798: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid00798: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid00798: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid00798: It is also possible that a host key has just been changed.
+nid00798: The fingerprint for the ECDSA key sent by the remote host is
+nid00798: SHA256:j9JFvDUtO5L/glQXMdyBXRssxIaJrqICUiOL2xlmPDE.
+nid00798: Please contact your system administrator.
+nid00798: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid00798: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:227
+nid00798: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid00798: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid00798: mv: cannot move `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out' to `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid00798: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid02235: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid02235: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid02235: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid02235: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid02235: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid02235: It is also possible that a host key has just been changed.
+nid02235: The fingerprint for the ECDSA key sent by the remote host is
+nid02235: SHA256:kLVPHjasL8uN1mM4i+4wtk6yFuM/ezSVW98YNGFLAO8.
+nid02235: Please contact your system administrator.
+nid02235: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid02235: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:169
+nid02235: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid02235: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid02235: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid02235: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid02235: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01696: Warning: Permanently added '[nid01696]:204,[10.128.6.173]:204' (ECDSA) to the list of known hosts.
+nid01696: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01696: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01696: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01696: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01696: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01695: Warning: Permanently added '[nid01695]:204,[10.128.6.172]:204' (ECDSA) to the list of known hosts.
+nid01695: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01695: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01695: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01695: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid02234: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid02234: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid02234: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid02234: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid02234: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid02234: It is also possible that a host key has just been changed.
+nid02234: The fingerprint for the ECDSA key sent by the remote host is
+nid02234: SHA256:h//JWLdQMVFJnl8yJdwEH3VdOAZLlulA8eFT1eLbZhM.
+nid02234: Please contact your system administrator.
+nid02234: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid02234: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:170
+nid02234: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid02234: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid02234: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid02234: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid02234: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid02234: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid02234: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid02234: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01406: Warning: Permanently added '[nid01406]:204,[10.128.5.137]:204' (ECDSA) to the list of known hosts.
+nid01406: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01406: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01406: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01406: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01840: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01840: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid01840: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01840: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid01840: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid01840: It is also possible that a host key has just been changed.
+nid01840: The fingerprint for the ECDSA key sent by the remote host is
+nid01840: SHA256:sgfjV4dDHPgKePL+vQIzw4gmyy7EUOElPt3qPLyBflQ.
+nid01840: Please contact your system administrator.
+nid01840: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid01840: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:659
+nid01840: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid01840: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid01840: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01840: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01840: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01840: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01839: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01839: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid01839: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01839: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid01839: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid01839: It is also possible that a host key has just been changed.
+nid01839: The fingerprint for the ECDSA key sent by the remote host is
+nid01839: SHA256:3n2rzaQsidHHUnr28iM+UuVgjXsr2sBYrrvIxTlopwc.
+nid01839: Please contact your system administrator.
+nid01839: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid01839: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:640
+nid01839: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid01839: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid01839: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid01839: mv: cannot move `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3' to `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid01839: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01839: mv: cannot move `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1' to `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01839: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01426: Warning: Permanently added '[nid01426]:204,[10.128.5.157]:204' (ECDSA) to the list of known hosts.
+nid01426: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid01426: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01426: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01426: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01426: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01426: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01842: Warning: Permanently added '[nid01842]:204,[10.128.7.65]:204' (ECDSA) to the list of known hosts.
+nid01842: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01842: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01425: Warning: Permanently added '[nid01425]:204,[10.128.5.156]:204' (ECDSA) to the list of known hosts.
+nid01425: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid01425: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01425: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01425: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01425: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01424: Warning: Permanently added '[nid01424]:204,[10.128.5.155]:204' (ECDSA) to the list of known hosts.
+nid01424: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01424: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid02237: Warning: Permanently added '[nid02237]:204,[10.128.8.206]:204' (ECDSA) to the list of known hosts.
+nid02237: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01841: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01841: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid01841: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01841: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid01841: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid01841: It is also possible that a host key has just been changed.
+nid01841: The fingerprint for the ECDSA key sent by the remote host is
+nid01841: SHA256:QenNyH4rnp9UVJwJs7SvBMhUlVm2vup063W06VZ5kkY.
+nid01841: Please contact your system administrator.
+nid01841: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid01841: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:658
+nid01841: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid01841: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid01841: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid01841: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01841: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01841: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01841: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01841: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01693: Warning: Permanently added '[nid01693]:204,[10.128.6.170]:204' (ECDSA) to the list of known hosts.
+nid01693: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01693: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01692: Warning: Permanently added '[nid01692]:204,[10.128.6.169]:204' (ECDSA) to the list of known hosts.
+nid01692: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01692: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01692: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01692: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid01692: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid02236: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid02236: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid02236: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid02236: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid02236: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid02236: It is also possible that a host key has just been changed.
+nid02236: The fingerprint for the ECDSA key sent by the remote host is
+nid02236: SHA256:RYfyNn9tsmHt+OpT407Ow1qVaAnjyZgZM+EOZW+iS8Q.
+nid02236: Please contact your system administrator.
+nid02236: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid02236: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:541
+nid02236: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid02236: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid02236: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid02236: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out': No such file or directory
+nid02236: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01838: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01838: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+nid01838: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+nid01838: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+nid01838: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+nid01838: It is also possible that a host key has just been changed.
+nid01838: The fingerprint for the ECDSA key sent by the remote host is
+nid01838: SHA256:KqDxewvzzZeKSeIS5YBzxJO+BqUsgEQ71V9vD57xtjQ.
+nid01838: Please contact your system administrator.
+nid01838: Add correct host key in /global/homes/q/qpzhang/.ssh/known_hosts to get rid of this message.
+nid01838: Offending ECDSA key in /global/homes/q/qpzhang/.ssh/known_hosts:639
+nid01838: Password authentication is disabled to avoid man-in-the-middle attacks.
+nid01838: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+nid01838: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid01694: Warning: Permanently added '[nid01694]:204,[10.128.6.171]:204' (ECDSA) to the list of known hosts.
+nid01694: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.4': No such file or directory
+nid01694: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.3': No such file or directory
+nid01694: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.2': No such file or directory
+nid01694: mv: cannot stat `/global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out.1': No such file or directory
+nid01694: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
+nid02238: Warning: Permanently added '[nid02238]:204,[10.128.8.207]:204' (ECDSA) to the list of known hosts.
+nid02238: starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2244553/sparklogs/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00319.out
