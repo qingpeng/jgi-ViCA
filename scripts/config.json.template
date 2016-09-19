@@ -22,7 +22,7 @@
     },
     "fixed" : "5000",
     "shredsamples" : "200",
-    "tmpdir": "/scratch",
+    "tmpdir": "/global/projectb/scratch/qpzhang",
     "trainingid" : "152180",
     "mmp" : "/global/homes/a/arrivers/dev/jgi-genelearn/scripts/gm_parameters/par_11.modified"
   },
