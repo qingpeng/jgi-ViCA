@@ -163,7 +163,7 @@ def main():
                         
                             if p3.returncode == 0:
                                 vector_pfam = parse_hmmer("fragment.fasta.aa.hmmscan_pfam")
-                                line_pfam = line_pfam + ' '+ generate_line(vector_pfam)
+                                line_pfam = line_pfam + generate_line(vector_pfam)
 
 
                             hmmscan_params_vfam = ["hmmscan", "--tblout", "fragment.fasta.aa.hmmscan_vfam","-E",\
@@ -174,7 +174,7 @@ def main():
                         
                             if p4.returncode == 0:
                                 vector_vfam = parse_hmmer("fragment.fasta.aa.hmmscan_vfam")
-                                line_vfam = line_vfam + ' '+ generate_line(vector_vfam)
+                                line_vfam = line_vfam + generate_line(vector_vfam)
 
 
             
