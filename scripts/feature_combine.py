@@ -38,8 +38,9 @@ def main():
         for file_obj in file_handles[1:]:
             line = file_obj.readline()
             line = line.rstrip()
-            fields = line.split()
-            vect.extend(fields[3].split(' '))
+            fields = line.split('\t')
+            if len(fields) == 4:
+                vect.extend(fields[3].split(' '))
         
         if length >= cutoff:
             print_line = seq_id+'\t'+length+'\t'+seq_des+'\t'+ ' '.join(vect)

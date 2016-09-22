@@ -2,9 +2,9 @@
 
 
 
-params.out = "./output.fasta.vect_uge2"
-params.chunkSize = 50
-params.config = "/global/homes/q/qpzhang/Bitbucket/jgi-genelearn/scripts/config.json.template"
+params.out = "./69657.fasta.vect"
+params.chunkSize = 52
+params.config = "/global/projectb/scratch/qpzhang/Run_Genelearn/Small_Set/Nextflow/config.json.template"
  
 // run create_shred.py to get shreded segments for the genomes under taxonomy id
 
@@ -22,7 +22,7 @@ process get_segment {
     file configfile
     
     output:
-    file "Output/{1,2,3,4,5,6,7,8,9,0}*" into segment
+    file "Output/[0-9]*" into segment
     
     """
     create_shred.py -c $configfile -o Output
@@ -31,7 +31,7 @@ process get_segment {
 
  
 segment
-    .splitFasta(by: params.chunkSize)
+    .flatMap().splitFasta(by: params.chunkSize)
     .into { fasta }
  
 
