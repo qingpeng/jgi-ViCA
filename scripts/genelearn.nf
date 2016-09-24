@@ -2,7 +2,8 @@
 
 
 
-params.out = "./69657.fasta.vect"
+
+params.out = "./fasta.vect"
 params.chunkSize = 52
 params.config = "/global/projectb/scratch/qpzhang/Run_Genelearn/Small_Set/Nextflow/config.json.template"
  
@@ -52,7 +53,52 @@ process get_feature {
     """
 }
 
-vectors.collectFile(name: params.out)
+vectors.collectFile(name: params.out).into {vectors_combine}
 
 
 
+process split_vectors_on_rank {
+
+    input:
+    file vectors_combine
+    
+    output:
+    file "${vectors_combine}.*.t*" into split_vectors
+    // *.training and *.testing,   *.index is not included
+    
+    """
+    split_vectors_on_rank_v3.py -v ${vectors_combine}
+    """
+}
+
+split_vectors
+    .flatMap()
+    .into {split_vectors_map}
+
+process generate_svmlib {
+    publishDir "results"
+    
+    input:
+    file split_vectors_map
+    
+    output:
+    file "*.libsvm" into libsvm
+    
+    """
+    generate_svmlib_multiple_tax_newformat.py -i $split_vectors_map -o ${split_vectors_map}.libsvm -n ${split_vectors_map}.feature
+    """
+    
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

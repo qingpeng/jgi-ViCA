@@ -1,4 +1,13 @@
 #!/usr/bin/env python
+
+
+# feature:
+# 3.  get lowest e-value for pfam and vfam, if there are multiple hits, move such functions from convert to libsvm to here (09/23 updated)
+# 
+
+
+
+
 import khmer
 import argparse
 from Bio import SeqIO
@@ -49,21 +58,30 @@ def parsemod(dir):
 
 
 def parse_hmmer(file): # extract vector numbers from hmmer result file
+# also pick the lowest e value if there are multiple hits
     rawvec = []
     number_processed = 0
 
     file_obj = open(file,'r')
-    labels = []
-    values = []
+
+    e_values = {}
     for line in file_obj:
         if line[0] != "#":
             line = line.rstrip()
             fields = line.split()
-            labels.append(fields[0]) # target name
-            values.append(fields[4])
-
+            label = fields[0]
+            
+#            labels.append(fields[0]) # target name
+#            values.append(fields[4])
+            if not label in e_values:
+                e_values[label] = float(fields[4])
+            else:
+                if float(fields[4])<e_values[label]:
+                    e_values[label] = float(fields[4])
+    
+    
     file_obj.close()
-    return zip(labels,values)
+    return e_values.items()
 
 
 def generate_line(zip_list):
