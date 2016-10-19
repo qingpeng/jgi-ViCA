@@ -2,6 +2,7 @@
 import argparse
 import random
 
+# 10/19 update: output index file with feature name and feature id
 
 # 10/18 update: 1. add option for virus binary classifier only
 #               2. add randome seed for better reproducibility
@@ -32,10 +33,21 @@ def sample_testing(dictionary_rank):
             dictionary_rank_testing[key] = []
     return dictionary_rank_testing
 
+def get_feature_set_from_line(line):
+    fields = line.split('\t')
+    vectors = fields[3].split(' ')
+    feature_list = []
+    for vector in vectors:
+        feature = vector.split(":")[0]
+        feature_list.append(feature)
+    return set(feature_list)
+
+
 parser = argparse.ArgumentParser(description='A script to split vector file into training and testing by different tax rank')
 parser.add_argument('-v', '--vector', help ='full vector file',required=True)
 #parser.add_argument('-r', '--rank', help ='rank file',required=True) 
 #parser.add_argument('-o', '--outfile', help ='output file', required=True) 
+
 parser.add_argument('-r', '--virus', help ='for virus classifier or not, True/False',choices=['True','False'],required=True)
 
 args = parser.parse_args()
@@ -44,6 +56,8 @@ args = parser.parse_args()
 file_vector_obj = open(args.vector, 'r')
 #file_rank_obj = open(args.rank, 'r')
 virus_switch = args.virus
+
+file_feature_list_obj = open(args.vector + '.feature_index', 'w')
 
 
 file_order_training_obj = open(args.vector+'.order.training', 'w')
@@ -81,9 +95,11 @@ genus = {}
 
 virus = {} # dictionary to store if it is virus or not
 
+feature_set = set()
 
 for line in file_vector_obj:
     line = line.rstrip()
+    feature_set = feature_set.union(get_feature_set_from_line(line))
     tax_dict = {}
 #    print line
     taxonomy_list = line.split('\t')[2].split(',')[1].split("=")[1].split("/")
@@ -116,7 +132,14 @@ for line in file_vector_obj:
             virus[tax_dict["16"]] = 0
             virus[tax_dict["20"]] = 0
             
-            
+feature_list = sorted(list(feature_set))
+
+count = 0
+for feature in feature_list:
+    line = str(count)+' '+feature
+    file_feature_list_obj.write(line+'\n')
+file_feature_list_obj.close()
+
 print "1st time scanning vector file done!\n"
 file_vector_obj.close()
 
