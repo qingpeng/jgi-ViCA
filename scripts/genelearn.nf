@@ -49,7 +49,7 @@ process get_feature {
     """
     feature_genemark_pfam_vfam.py --input ${inputfile} --output_prefix ${inputfile}
     feature_kmer.py  --input ${inputfile} --output ${inputfile}.kmer --ksize 4
-    feature_combine.py --output vector.out --length 1  ${inputfile}.kmer ${inputfile}.genemark ${inputfile}.pfam ${inputfile}.vfam
+    feature_combine.py --output vector.out --length 1  ${inputfile}.kmer ${inputfile}.genemark ${inputfile}.pfam ${inputfile}.vfam ${inputfile}.img 
     """
 }
 
@@ -67,7 +67,7 @@ process split_vectors_on_rank {
     // *.training and *.testing,   *.index is not included
     
     """
-    split_vectors_on_rank_v3.py -v ${vectors_combine}
+    split_vectors_on_rank_v4.py -v ${vectors_combine} -r True
     """
 }
 

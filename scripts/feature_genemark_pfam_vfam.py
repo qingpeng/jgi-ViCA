@@ -4,7 +4,10 @@
 # feature:
 # 3.  get lowest e-value for pfam and vfam, if there are multiple hits, move such functions from convert to libsvm to here (09/23 updated)
 # 
-
+# hmm profile needs to be compressed before running HMMER
+# hmmpress vFam_IMG.hmm
+# require module load hmmer/3.1b2
+#
 
 
 
@@ -104,6 +107,7 @@ def main():
     parser.add_argument('--mmp', help="the parameters file for GeneMark", default = "/global/homes/q/qpzhang/Bitbucket/jgi-genelearn/scripts/gm_parameters/par_11.modified")
     parser.add_argument('--pfam_db', help="the pfam database, *.hmm", default = "/global/homes/q/qpzhang/Pfam_DB/Pfam-A.hmm")
     parser.add_argument('--vfam_db', help="the vfam database, *.hmm", default = "/global/homes/q/qpzhang/Pfam_DB/vFam-B_2014.hmm")
+    parser.add_argument('--IMG_db', help="the IMG virus database, *.hmm", default = "/global/homes/q/qpzhang/Pfam_DB/final_list.hmms")
     parser.add_argument('--feature', help="feature to calculate, (all, genemark) default: all", default = "all")
 
 # Output format:
@@ -118,7 +122,7 @@ def main():
     tmp = os.path.abspath(args.tmp)
     pfam_db = os.path.abspath(args.pfam_db)
     vfam_db = os.path.abspath(args.vfam_db)
-    
+    img_db = os.path.abspath(args.IMG_db)
     records =  SeqIO.parse(args.input, "fasta")
    # print len(records)
  #   print "here"
@@ -129,6 +133,7 @@ def main():
         output_genemark_obj = open(output_prefix+'.genemark','w')
         output_pfam_obj = open(output_prefix+'.pfam','w')
         output_vfam_obj = open(output_prefix+'.vfam','w')
+        output_img_obj = open(output_prefix+'.img','w')
     elif args.feature == 'genemark':
         output_genemark_obj = open(output_prefix+'.genemark','w')
         
@@ -155,6 +160,7 @@ def main():
         line_genemark = record.id+'\t'+str(length)+'\t'+des+'\t'
         line_pfam = record.id+'\t'+str(length)+'\t'+des+'\t'
         line_vfam = record.id+'\t'+str(length)+'\t'+des+'\t'
+        line_img = record.id+'\t'+str(length)+'\t'+des+'\t'
         MetaGeneMark_params = ["gmhmmp", "-m", meta_mmp, "fragment.fasta", "-a", "-A", "fragment.fasta.aa"]
         p1 = subprocess.Popen(MetaGeneMark_params, stdout=subprocess.PIPE)
         metamarkout, metamarkerr= p1.communicate()
@@ -194,20 +200,28 @@ def main():
                                 vector_vfam = parse_hmmer("fragment.fasta.aa.hmmscan_vfam")
                                 line_vfam = line_vfam + generate_line(vector_vfam)
 
-
+                            hmmscan_params_img = ["hmmscan", "--tblout", "fragment.fasta.aa.hmmscan_img","-E",\
+                             "1e-5", img_db, "fragment.fasta.aa"]
+                            p5 = subprocess.Popen(hmmscan_params_img, stdout=subprocess.PIPE)
+                            metamarkout, metamarkerr= p5.communicate()
+                        
+                        
+                            if p4.returncode == 0:
+                                vector_img = parse_hmmer("fragment.fasta.aa.hmmscan_img")
+                                line_img = line_img + generate_line(vector_img)
             
         output_genemark_obj.write(line_genemark+'\n')
         if args.feature == 'all':
             output_pfam_obj.write(line_pfam+'\n')
             output_vfam_obj.write(line_vfam+'\n')
-            
+            output_img_obj.write(line_img+'\n')
         shutil.rmtree(tmpdir)
     
     output_genemark_obj.close()
     if args.feature == 'all':
         output_pfam_obj.close()
         output_vfam_obj.close()
-        
+        output_img_obj.close()
     
 if __name__ == '__main__':
     main()

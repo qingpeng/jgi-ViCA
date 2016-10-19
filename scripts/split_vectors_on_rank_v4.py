@@ -3,6 +3,8 @@ import argparse
 import random
 
 
+# 10/18 update: 1. add option for virus binary classifier only
+#               2. add randome seed for better reproducibility
 
 # split vector into testing data and training data:
 # criteria:
@@ -34,12 +36,15 @@ parser = argparse.ArgumentParser(description='A script to split vector file into
 parser.add_argument('-v', '--vector', help ='full vector file',required=True)
 #parser.add_argument('-r', '--rank', help ='rank file',required=True) 
 #parser.add_argument('-o', '--outfile', help ='output file', required=True) 
+parser.add_argument('-r', '--virus', help ='for virus classifier or not, True/False',choices=['True','False'],required=True)
 
 args = parser.parse_args()
 
 
 file_vector_obj = open(args.vector, 'r')
 #file_rank_obj = open(args.rank, 'r')
+virus_switch = args.virus
+
 
 file_order_training_obj = open(args.vector+'.order.training', 'w')
 file_family_training_obj = open(args.vector+'.family.training', 'w')
@@ -50,10 +55,10 @@ file_family_testing_obj = open(args.vector+'.family.testing', 'w')
 file_genus_testing_obj = open(args.vector+'.genus.testing', 'w')
 
 # a list of target with index
-
-file_order_index_obj = open(args.vector + '.order.index', 'w')
-file_family_index_obj = open(args.vector + '.family.index', 'w')
-file_genus_index_obj = open(args.vector + '.genus.index', 'w')
+if virus_switch == "False":
+    file_order_index_obj = open(args.vector + '.order.index', 'w')
+    file_family_index_obj = open(args.vector + '.family.index', 'w')
+    file_genus_index_obj = open(args.vector + '.genus.index', 'w')
 
 order = {}
 
@@ -74,6 +79,9 @@ genus = {}
          
 
 
+virus = {} # dictionary to store if it is virus or not
+
+
 for line in file_vector_obj:
     line = line.rstrip()
     tax_dict = {}
@@ -84,10 +92,11 @@ for line in file_vector_obj:
         groups = taxonomy.split(":")
         if groups[1] != "":
             tax_dict[groups[1]] = groups[0]
-    if "11" in tax_dict and "16" in tax_dict and "20" in tax_dict and "24" in tax_dict:
+    if "0" in tax_dict and "11" in tax_dict and "16" in tax_dict and "20" in tax_dict and "24" in tax_dict:
 
         try:
             order[tax_dict["11"]].add(tax_dict["16"])
+            
         except KeyError:
             order[tax_dict["11"]] = set([tax_dict["16"]]) # use set to remove duplicate
         try:
@@ -98,6 +107,15 @@ for line in file_vector_obj:
             genus[tax_dict["20"]].add(tax_dict["24"])
         except KeyError:
             genus[tax_dict["20"]] = set([tax_dict["24"]])
+        if tax_dict["0"] == '10239': # if it is virus
+            virus[tax_dict["11"]] = 1
+            virus[tax_dict["16"]] = 1
+            virus[tax_dict["20"]] = 1
+        else:
+            virus[tax_dict["11"]] = 0
+            virus[tax_dict["16"]] = 0
+            virus[tax_dict["20"]] = 0
+            
             
 print "1st time scanning vector file done!\n"
 file_vector_obj.close()
@@ -143,20 +161,28 @@ for line in file_vector_obj:
     
         if tax_dict["16"] in order_testing[tax_dict["11"]]: 
         # if the family of this  record is picked as testing for the order it belongs to
-            try:
-                order_id_num = order_list.index(tax_dict["11"])
-            except ValueError:
-                order_id_num = len(order_list)
-                order_list.append(tax_dict["11"])
-            file_order_testing_obj.write(str(order_id_num)+'\t'+tax_dict["16"]+'\t'+line+'\n')
-        else: # if this record is for training
-            if order_testing[tax_dict["11"]] != []: # only if there are >=2 sub nodes
-
+            if virus_switch == "True":
+                order_id_num = virus[tax_dict["11"]]
+            else:
+            
                 try:
                     order_id_num = order_list.index(tax_dict["11"])
                 except ValueError:
                     order_id_num = len(order_list)
                     order_list.append(tax_dict["11"])
+            file_order_testing_obj.write(str(order_id_num)+'\t'+tax_dict["16"]+'\t'+line+'\n')
+        else: # if this record is for training
+            if order_testing[tax_dict["11"]] != []: # only if there are >=2 sub nodes
+
+                if virus_switch == "True":
+                    order_id_num = virus[tax_dict["11"]]
+                else:
+            
+                    try:
+                        order_id_num = order_list.index(tax_dict["11"])
+                    except ValueError:
+                        order_id_num = len(order_list)
+                        order_list.append(tax_dict["11"])
                 
                 
                 file_order_training_obj.write(str(order_id_num)+'\t'+tax_dict["16"]+'\t'+line+'\n')
@@ -165,40 +191,40 @@ for line in file_vector_obj:
         
                 
         if tax_dict["20"] in family_testing[tax_dict["16"]]:
-        
-            try:
-                family_id_num = family_list.index(tax_dict["16"])
-            except ValueError:
-                family_id_num = len(family_list)
-                family_list.append(tax_dict["16"])
-                
-            file_family_testing_obj.write(str(family_id_num)+'\t'+tax_dict["20"]+'\t'+line+'\n')
-        else:
-            if family_testing[tax_dict["16"]] != []:
 
+            if virus_switch == "True":
+                family_id_num = virus[tax_dict["16"]]
+            else:
+            
+            
                 try:
                     family_id_num = family_list.index(tax_dict["16"])
                 except ValueError:
                     family_id_num = len(family_list)
                     family_list.append(tax_dict["16"])
                 
+            file_family_testing_obj.write(str(family_id_num)+'\t'+tax_dict["20"]+'\t'+line+'\n')
+        else:
+            if family_testing[tax_dict["16"]] != []:
+                if virus_switch == "True":
+                    family_id_num = virus[tax_dict["16"]]
+                else:
+            
+                    try:
+                        family_id_num = family_list.index(tax_dict["16"])
+                    except ValueError:
+                        family_id_num = len(family_list)
+                        family_list.append(tax_dict["16"])
+                
 
                 file_family_training_obj.write(str(family_id_num)+'\t'+tax_dict["20"]+'\t'+line+'\n')
                 
                 
         if tax_dict["24"] in genus_testing[tax_dict["20"]]:
-
-            try:
-                genus_id_num = genus_list.index(tax_dict["20"])
-            except ValueError:
-                genus_id_num = len(genus_list)
-                genus_list.append(tax_dict["20"])
-                
-                
-            file_genus_testing_obj.write(str(genus_id_num)+'\t'+tax_dict["24"]+'\t'+line+'\n')
-        else:
-            if genus_testing[tax_dict["20"]] != []:
-
+            if virus_switch == "True":
+                genus_id_num = virus[tax_dict["20"]]
+            else:
+            
                 try:
                     genus_id_num = genus_list.index(tax_dict["20"])
                 except ValueError:
@@ -206,17 +232,31 @@ for line in file_vector_obj:
                     genus_list.append(tax_dict["20"])
                 
                 
+            file_genus_testing_obj.write(str(genus_id_num)+'\t'+tax_dict["24"]+'\t'+line+'\n')
+        else:
+            if genus_testing[tax_dict["20"]] != []:
+                if virus_switch == "True":
+                    genus_id_num = virus[tax_dict["20"]]
+                else:
+                    try:
+                        genus_id_num = genus_list.index(tax_dict["20"])
+                    except ValueError:
+                        genus_id_num = len(genus_list)
+                        genus_list.append(tax_dict["20"])
+                
+                
                 file_genus_training_obj.write(str(genus_id_num)+'\t'+tax_dict["24"]+'\t'+line+'\n')
 
+if virus_switch == "False":
 
-for i in range(len(order_list)):
-    file_order_index_obj.write(str(i) + ' ' + order_list[i] + '\n')
+    for i in range(len(order_list)):
+        file_order_index_obj.write(str(i) + ' ' + order_list[i] + '\n')
 
-for i in range(len(family_list)):
-    file_family_index_obj.write(str(i) + ' ' + family_list[i] + '\n')
+    for i in range(len(family_list)):
+        file_family_index_obj.write(str(i) + ' ' + family_list[i] + '\n')
 
-for i in range(len(genus_list)):
-    file_genus_index_obj.write(str(i) + ' ' + genus_list[i] + '\n')
+    for i in range(len(genus_list)):
+        file_genus_index_obj.write(str(i) + ' ' + genus_list[i] + '\n')
 
 
 
