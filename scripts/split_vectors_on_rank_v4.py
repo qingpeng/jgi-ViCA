@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 import argparse
 import random
+import math
 
-# 10/19 update: output index file with feature name and feature id
+# 10/19 update: 1. output index file with feature name and feature id
+#               2. convert to svmlib format directly, including log conversion
+#               3. using feature id directly
 
 # 10/18 update: 1. add option for virus binary classifier only
 #               2. add randome seed for better reproducibility
@@ -42,6 +45,36 @@ def get_feature_set_from_line(line):
         feature_list.append(feature)
     return set(feature_list)
 
+def fun_log(value):
+    if value == 0.0:
+        value = "1e-200"
+    return math.log(float(value))
+    
+
+def to_svmlib(vectors_line, feature_list):
+    #vectors = fields[5]
+
+    
+    vectors_list = vectors_line.split(" ")
+    
+    vector_strings = []
+    
+    for vector in vectors_list:
+        label = vector.split(":")[0]
+        pre = label.split("_")[0]
+        value = float(vector.split(":")[1])
+        if pre == "2" or pre == "3" or pre == "4": # if pfam or vfam or IMG vfam ,get log 
+            value = fun_log(value)
+        
+        label_id = feature_list.index(label)
+        vector_strings.append(str(label_id)+":"+str(value))
+    
+    print_line = ' '.join(vector_strings)
+    return print_line
+
+#    file_out_obj.write(print_line+'\n')
+    
+ 
 
 parser = argparse.ArgumentParser(description='A script to split vector file into training and testing by different tax rank')
 parser.add_argument('-v', '--vector', help ='full vector file',required=True)
@@ -60,19 +93,19 @@ virus_switch = args.virus
 file_feature_list_obj = open(args.vector + '.feature_index', 'w')
 
 
-file_order_training_obj = open(args.vector+'.order.training', 'w')
-file_family_training_obj = open(args.vector+'.family.training', 'w')
-file_genus_training_obj = open(args.vector+'.genus.training', 'w')
+file_order_training_obj = open(args.vector+'.order.training.svmlib', 'w')
+file_family_training_obj = open(args.vector+'.family.training.svmlib', 'w')
+file_genus_training_obj = open(args.vector+'.genus.training.svmlib', 'w')
 
-file_order_testing_obj = open(args.vector+'.order.testing', 'w')
-file_family_testing_obj = open(args.vector+'.family.testing', 'w')
-file_genus_testing_obj = open(args.vector+'.genus.testing', 'w')
+file_order_testing_obj = open(args.vector+'.order.testing.svmlib', 'w')
+file_family_testing_obj = open(args.vector+'.family.testing.svmlib', 'w')
+file_genus_testing_obj = open(args.vector+'.genus.testing.svmlib', 'w')
 
 # a list of target with index
 if virus_switch == "False":
-    file_order_index_obj = open(args.vector + '.order.index', 'w')
-    file_family_index_obj = open(args.vector + '.family.index', 'w')
-    file_genus_index_obj = open(args.vector + '.genus.index', 'w')
+    file_order_index_obj = open(args.vector + '.order.target_index', 'w')
+    file_family_index_obj = open(args.vector + '.family.target_index', 'w')
+    file_genus_index_obj = open(args.vector + '.genus.target_index', 'w')
 
 order = {}
 
@@ -169,6 +202,7 @@ genus_list = []
 for line in file_vector_obj:
     line = line.rstrip()
     fields = line.split('\t')
+    vectors_line = fields[3]
     tax_dict = {}
 #    print fields
     taxonomy_list = fields[2].split(',')[1].split("=")[1].split("/")
@@ -193,7 +227,7 @@ for line in file_vector_obj:
                 except ValueError:
                     order_id_num = len(order_list)
                     order_list.append(tax_dict["11"])
-            file_order_testing_obj.write(str(order_id_num)+'\t'+tax_dict["16"]+'\t'+line+'\n')
+            file_order_testing_obj.write(str(order_id_num)+' '+to_svmlib(vectors_line, feature_list)+'\n')
         else: # if this record is for training
             if order_testing[tax_dict["11"]] != []: # only if there are >=2 sub nodes
 
@@ -208,7 +242,7 @@ for line in file_vector_obj:
                         order_list.append(tax_dict["11"])
                 
                 
-                file_order_training_obj.write(str(order_id_num)+'\t'+tax_dict["16"]+'\t'+line+'\n')
+                file_order_training_obj.write(str(order_id_num)+' '+to_svmlib(vectors_line, feature_list)+'\n')
         # output for order level...
         # output format : order_id_number family_id ...
         
@@ -226,7 +260,7 @@ for line in file_vector_obj:
                     family_id_num = len(family_list)
                     family_list.append(tax_dict["16"])
                 
-            file_family_testing_obj.write(str(family_id_num)+'\t'+tax_dict["20"]+'\t'+line+'\n')
+            file_family_testing_obj.write(str(family_id_num)+' '+to_svmlib(vectors_line, feature_list)+'\n')
         else:
             if family_testing[tax_dict["16"]] != []:
                 if virus_switch == "True":
@@ -240,7 +274,7 @@ for line in file_vector_obj:
                         family_list.append(tax_dict["16"])
                 
 
-                file_family_training_obj.write(str(family_id_num)+'\t'+tax_dict["20"]+'\t'+line+'\n')
+                file_family_training_obj.write(str(family_id_num)+' '+to_svmlib(vectors_line, feature_list)+'\n')
                 
                 
         if tax_dict["24"] in genus_testing[tax_dict["20"]]:
@@ -255,7 +289,7 @@ for line in file_vector_obj:
                     genus_list.append(tax_dict["20"])
                 
                 
-            file_genus_testing_obj.write(str(genus_id_num)+'\t'+tax_dict["24"]+'\t'+line+'\n')
+            file_genus_testing_obj.write(str(genus_id_num)+' '+to_svmlib(vectors_line, feature_list)+'\n')
         else:
             if genus_testing[tax_dict["20"]] != []:
                 if virus_switch == "True":
@@ -268,7 +302,7 @@ for line in file_vector_obj:
                         genus_list.append(tax_dict["20"])
                 
                 
-                file_genus_training_obj.write(str(genus_id_num)+'\t'+tax_dict["24"]+'\t'+line+'\n')
+                file_genus_training_obj.write(str(genus_id_num)+' '+to_svmlib(vectors_line, feature_list)+'\n')
 
 if virus_switch == "False":
 
