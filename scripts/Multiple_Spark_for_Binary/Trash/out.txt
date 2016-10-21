@@ -1,0 +1,7 @@
+start-slave.sh: NOT in master doing /usr/common/software/spark/1.5.1/sbin/spark-daemon.sh start org.apache.spark.deploy.worker.Worker 1 --webui-port 8081 spark://nid02168:7077
+starting org.apache.spark.deploy.worker.Worker, logging to /global/cscratch1/sd/qpzhang/spark/2908231/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid02169.out
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+srun: got SIGCONT
+srun: forcing job termination
+srun: forcing job termination

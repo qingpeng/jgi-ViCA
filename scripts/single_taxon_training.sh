@@ -1,10 +1,5 @@
 #!/bin/bash 
-. /global/homes/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/env.sh
-
-#module load tfmq
-module load biopython
-module load sqlite3
-module load hmmer/3.1b2
+. /global/homes/q/qpzhang/Bitbucket/jgi-genelearn/scripts/env.sh
 
 TAXON=$1
 OUT=$2

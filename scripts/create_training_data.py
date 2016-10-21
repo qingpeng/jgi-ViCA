@@ -14,10 +14,13 @@ args = parser.parse_args()
 
 # Variables
 configpath = os.path.abspath(args.config)
-sts = os.path.join(os.environ['GENELEARN_DIR'],"single_taxon_training.sh")
 
 # Read the configuration file
 config = json.load(open(configpath, 'r'))["create_training_data"]
+config_sys = json.load(open(configpath, 'r'))["environment_variables"]
+
+sts = os.path.join(str(config_sys["genelearn_path"]),"scripts","single_taxon_training.sh")
+
 
 # If an id list is specified in config write it otherwise query everything from the root node \
 if config["trainingid"]:
