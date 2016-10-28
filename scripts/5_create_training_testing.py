@@ -83,6 +83,8 @@ parser.add_argument('-v', '--vector', help ='full vector file',required=True)
 #parser.add_argument('-o', '--outfile', help ='output file', required=True) 
 
 parser.add_argument('-r', '--virus', help ='for virus classifier or not, True/False',choices=['True','False'],required=True)
+#parser.add_argument('-k', '--rank', help ='split the dataset into training using ranking seperation USerch approach, True/False',choices=['True','False'],required=True)
+
 
 args = parser.parse_args()
 
@@ -90,10 +92,11 @@ args = parser.parse_args()
 file_vector_obj = open(args.vector, 'r')
 #file_rank_obj = open(args.rank, 'r')
 virus_switch = args.virus
+rank_switch = args.rank
 
 file_feature_list_obj = open(args.vector + '.feature_index', 'w')
 
-
+#if rank_switch == "True":
 file_order_training_obj = open(args.vector+'.order.training.svmlib', 'w')
 file_family_training_obj = open(args.vector+'.family.training.svmlib', 'w')
 file_genus_training_obj = open(args.vector+'.genus.training.svmlib', 'w')
@@ -102,11 +105,18 @@ file_order_testing_obj = open(args.vector+'.order.testing.svmlib', 'w')
 file_family_testing_obj = open(args.vector+'.family.testing.svmlib', 'w')
 file_genus_testing_obj = open(args.vector+'.genus.testing.svmlib', 'w')
 
+
+
+
 # a list of target with index
 if virus_switch == "False":
+# for multi class classifier, not only virus or not
+
     file_order_index_obj = open(args.vector + '.order.target_index', 'w')
     file_family_index_obj = open(args.vector + '.family.target_index', 'w')
     file_genus_index_obj = open(args.vector + '.genus.target_index', 'w')
+
+
 
 order = {}
 
@@ -172,6 +182,7 @@ count = 0
 for feature in feature_list:
     line = str(count)+' '+feature
     file_feature_list_obj.write(line+'\n')
+    count += 1
 file_feature_list_obj.close()
 
 print "1st time scanning vector file done!\n"

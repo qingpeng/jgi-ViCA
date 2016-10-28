@@ -1,6 +1,0 @@
-Creating Directory SPARK_WORKER_DIR /global/cscratch1/sd/qpzhang/spark/2908231
-Creating /global/cscratch1/sd/qpzhang/spark/2908231/slaves file
-Determining the master node name with /usr/common/software/spark/spark_bin/myfindmaster.sh
-Master node is nid02168
-doing /usr/common/software/spark/spark_bin/conf_stager.sh
-[Stage 0:>                                                       (0 + 0) / 1222][Stage 0:>                                                      (0 + 32) / 1222][Stage 0:>                                                      (0 + 32) / 1222][Stage 0:>                                                      (8 + 32) / 1222][Stage 0:>                                                     (10 + 32) / 1222][Stage 0:>                                                     (13 + 32) / 1222][Stage 0:>                                                     (16 + 32) / 1222][Stage 0:>                                                     (18 + 32) / 1222][Stage 0:=>                                                    (25 + 32) / 1222][Stage 0:=>                                                    (28 + 32) / 1222][Stage 0:=>                                                    (29 + 32) / 1222][Stage 0:=>                                                    (30 + 32) / 1222][Stage 0:=>                                                    (32 + 32) / 1222]

@@ -1,7 +1,0 @@
-Creating Directory SPARK_WORKER_DIR /global/cscratch1/sd/qpzhang/spark/2879249
-Creating /global/cscratch1/sd/qpzhang/spark/2879249/slaves file
-Determining the master node name with /usr/common/software/spark/spark_bin/myfindmaster.sh
-Master node is nid01446
-doing /usr/common/software/spark/spark_bin/conf_stager.sh
-Error: Cannot load main class from JAR file:/global/u2/q/qpzhang/Bitbucket/jgi-genelearn/scripts/Multiple_Spark_for_Binary/spark.eventLog.enabled=true
-Run with --help for usage help or --verbose for debug output
