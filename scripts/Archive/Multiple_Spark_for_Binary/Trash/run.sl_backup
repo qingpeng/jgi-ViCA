@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#SBATCH -p regular
+#SBATCH --qos premium
+#SBATCH -N 2 
+#SBATCH -t 00:00:06
+#SBATCH -e mysparkjob_%j.err
+#SBATCH -o mysparkjob_%j.out
+module load spark/1.5.1
+start-all.sh
+spark-submit --master $SPARKURL  /global/homes/q/qpzhang/Bitbucket/jgi-genelearn/scripts/Multiple_Spark_for_Binary/target/scala-2.10/simple-project_2.10-1.0.jar --verbose --driver-memory 25G --executor-memory 30G 
+stop-all.sh
+

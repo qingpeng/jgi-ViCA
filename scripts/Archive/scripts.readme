@@ -1,0 +1,6 @@
+split_vectors_on_rank_v2.py
+----
+A script to split vector file into training and testing by different tax rank
+input: vector file all.vect
+output: 
+*.family(genus/order).testing *.family(genus/order).training *.family(genus/order).index 
