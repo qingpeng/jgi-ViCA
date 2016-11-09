@@ -67,7 +67,7 @@ def to_svmlib(vectors_line, feature_list):
         if pre == "2" or pre == "3" or pre == "4": # if pfam or vfam or IMG vfam ,get log 
             value = fun_log(value)
         
-        label_id = feature_list.index(label)
+        label_id = feature_list.index(label)+1
         vector_strings.append(str(label_id)+":"+str(value))
     
     print_line = ' '.join(vector_strings)
@@ -92,7 +92,7 @@ args = parser.parse_args()
 file_vector_obj = open(args.vector, 'r')
 #file_rank_obj = open(args.rank, 'r')
 virus_switch = args.virus
-rank_switch = args.rank
+#rank_switch = args.rank
 
 file_feature_list_obj = open(args.vector + '.feature_index', 'w')
 
@@ -140,8 +140,12 @@ genus = {}
 virus = {} # dictionary to store if it is virus or not
 
 feature_set = set()
-
+n = 0
 for line in file_vector_obj:
+    n += 1
+    if n % 10000 == 0:
+        print('...', n)
+    #print line
     line = line.rstrip()
     feature_set = feature_set.union(get_feature_set_from_line(line))
     tax_dict = {}
@@ -210,8 +214,13 @@ family_list = []
 genus_list = []
 
 
+n = 0
 
 for line in file_vector_obj:
+    n += 1
+    if n % 100000 == 0:
+        print('...', n)
+            
     line = line.rstrip()
     fields = line.split('\t')
     vectors_line = fields[3]

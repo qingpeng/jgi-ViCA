@@ -1,11 +1,16 @@
 #!/usr/bin/env nextflow
 
+// this script is used for testing the pipeline, 
+// using a non-virus subtree, 
+// split by the rank using new Usearch approach
+// using virus node, does not split , just convert from vector into libsvm 
+// format, this will be similar to real data to classify
+//
 
 
-
-params.out = "./virus.vect"
+params.out = "/global/projectb/scratch/qpzhang/Run_Genelearn/Small_Set/Nextflow/nonvirus.vect"
 params.chunkSize = 52
-params.config = "/global/projectb/scratch/qpzhang/Run_Genelearn/Small_Set/Nextflow/config.json.template.virus"
+params.config = "/global/projectb/scratch/qpzhang/Run_Genelearn/Small_Set/Nextflow/config.json.template"
 params.package_path = "/global/homes/q/qpzhang/Bitbucket/jgi-genelearn/scripts"
 
  
@@ -21,11 +26,9 @@ configfile = Channel.fromPath( params.config )
 
 
 process get_segment {
-//    beforeScript 'source ${package_path}/env.sh'
     
     input:
     file configfile
-
 
     output:
     file "Output/[0-9]*" into segment
@@ -35,11 +38,15 @@ process get_segment {
     """
 }
 
- 
+
+// cat */* >all_segment.fa &
+
+
 segment
-    .flatMap().splitFasta(by: params.chunkSize , file: true)
+    .flatMap().splitFasta(by: params.chunkSize, file: true)
     .set { fasta }
  
+
 
 process get_feature {
     
@@ -63,7 +70,7 @@ vectors.collectFile(name: params.out).into {vectors_combine}
 
 
 process split_vectors_on_rank {
-    publishDir "virus_results"
+    publishDir "nonvirus_results"
 
     input:
     file vectors_combine
