@@ -36,8 +36,8 @@ object Simple {
                 (prediction, label)
             }
 
-        predictionAndLabels.saveAsTextFile("predictionAndLabels_binary")
-        model.save(sc, "predictionAndLabels_logistics_model_binary")
+        predictionAndLabels.saveAsTextFile("edison_predictionAndLabels_binary")
+        model.save(sc, "edison_predictionAndLabels_logistics_model_binary")
 
 
     }
