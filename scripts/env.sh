@@ -1,5 +1,6 @@
 export PATH=$PATH:/global/homes/q/qpzhang/bin/genemark_suite_linux_64/gmsuite/
 export PATH=$PATH:/global/homes/q/qpzhang/Bitbucket/jgi-genelearn/scripts/
+export PATH=$PATH:/global/homes/q/qpzhang/bin/hmmer-3.1b2-linux-intel-x86_64/binaries/
 #export PATH=/global/homes/q/qpzhang/Bitbucket/jgi_reftree/perl/bin:$PATH
 #export PERL5LIB=/global/homes/q/qpzhang/Bitbucket/jgi_reftree/perl/lib:$PERL5LIB
 export PATH=/global/homes/e/ekirton/dev/RefTree/perl/bin:$PATH

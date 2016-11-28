@@ -206,7 +206,7 @@ def main():
                             metamarkout, metamarkerr= p5.communicate()
                         
                         
-                            if p4.returncode == 0:
+                            if p5.returncode == 0:
                                 vector_img = parse_hmmer("fragment.fasta.aa.hmmscan_img")
                                 line_img = line_img + generate_line(vector_img)
             
