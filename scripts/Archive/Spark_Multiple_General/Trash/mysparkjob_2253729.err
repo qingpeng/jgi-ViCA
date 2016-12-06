@@ -1,8 +1,0 @@
-slurmstepd: FAILED to change directory to /global/u2/q/qpzhang/Dropbox/Bitbucket/jgi-genelearn/scripts/Spark_Multiple_General, going to /tmp instead.
-slurmstepd: task/cgroup: unable to add task[pid=41218] to memory cg '/dev/memory/slurm/uid_69031/job_2253729/step_batch'
-slurmstepd: Unable to create TMPDIR [/global/cscratch1/sd/qpzhang]: No such file or directory
-slurmstepd: Setting TMPDIR to /tmp
-ModuleCmd_Load.c(226):ERROR:105: Unable to locate a modulefile for 'spark'
-/var/spool/slurmd/job2253729/slurm_script: line 13: start-all.sh: command not found
-/var/spool/slurmd/job2253729/slurm_script: line 14: spark-submit: command not found
-/var/spool/slurmd/job2253729/slurm_script: line 15: stop-all.sh: command not found
