@@ -1,0 +1,14 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+globins4             -          test                 -            5.8e-68  215.6   2.9   6.5e-68  215.4   2.9   1.0   1   0   0   1   1   1   1 -
+#
+# Program:         hmmscan
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SCAN
+# Query file:      segment.fa
+# Target file:     /Users/qingpeng/Downloads/hmmer-3.1b2-macosx-intel/tutorial/minifam
+# Option settings: /Users/qingpeng/Downloads/hmmer-3.1b2-macosx-intel/binaries/hmmscan --tblout fragment.fasta.hmmscan /Users/qingpeng/Downloads/hmmer-3.1b2-macosx-intel/tutorial/minifam segment.fa 
+# Current dir:     /Users/qingpeng/Downloads/hmmer-3.1b2-macosx-intel/tutorial
+# Date:            Mon Nov 21 11:47:53 2016
+# [ok]
