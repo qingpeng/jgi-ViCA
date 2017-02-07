@@ -21,3 +21,17 @@ apt-get install -y oracle-java8-installer
 
 apt-get clean
 
+apt-get install vim
+
+pip install khmer==1.4
+
+apt-get install python-pip
+
+pip install biopython
+
+pip install cherrypy
+
+pip install Flask
+pip install paste
+
+~/Downloads/spark-2.0.2-bin-hadoop2.7/bin/spark-submit server.py
