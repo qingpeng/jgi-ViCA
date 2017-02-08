@@ -194,7 +194,6 @@ def main():
                                                "-E", "1e-5", hmmer_db +
                                                '/Pfam-A.hmm',
                                                "fragment.fasta.aa"]
-                        print hmmscan_params_pfam
                         p3 = subprocess.Popen(hmmscan_params_pfam,
                                               stdout=subprocess.PIPE)
                         metamarkout, metamarkerr= p3.communicate()

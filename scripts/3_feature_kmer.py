@@ -75,7 +75,6 @@ def main():
         kmer_frequency = get_composition(ksize,str(record.seq).upper(), kmers,True)
         
         line = record.id + '\t' + str(length)+'\t'+ des+ '\t'+generate_line(kmer_frequency)
-        print line
         file_output_obj.write(line+'\n')
     
     file_output_obj.close()
