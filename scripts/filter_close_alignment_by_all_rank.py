@@ -57,6 +57,11 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
     count = 0
     block = 0
     num_hit = {}
+    num_hit_family = {}
+    num_hit_order = {}
+    num_hit_genus = {}
+    num_hit_species = {}
+
     for line in file_accession2taxid_obj:
         # print line
         count = count + 1
@@ -106,8 +111,16 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
             count = 0
             print "22222222", block, "\n"
 
-        if num_hit.setdefault(query, 0) == top_number:
-            continue
+        if rank_level != "all":
+            if num_hit.setdefault(query, 0) == top_number:
+                continue
+        else:
+            if (num_hit_family.setdefault(query, 0) == top_number
+                and num_hit_order.setdefault(query, 0) == top_number
+                and num_hit_genus.setdefault(query, 0) == top_number
+                    and num_hit_species.setdefault(query, 0) == top_number):
+
+                continue
 
         try:  # make sure they belong to different family explicitly,
             # if no family info, remove the hit
@@ -117,29 +130,34 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
             # print "test", taxid_query, taxid_target
 
             if rank_level == "all":
-                if not test_same_rank(taxid_query, taxid_target, "family"):
-                    # print "beforePprint"
-                    num_hit[query] += 1
-                    # print "print"
-                    file_output_family_obj.write(line + '\n')
+                if num_hit_family[query] != top_number:
+                    if not test_same_rank(taxid_query, taxid_target, "family"):
+                        # print "beforePprint"
+                        num_hit_family[query] += 1
+                        # print "print"
+                        file_output_family_obj.write(line + '\n')
 
-                if not test_same_rank(taxid_query, taxid_target, "order"):
-                    # print "beforePprint"
-                    num_hit[query] += 1
-                    # print "print"
-                    file_output_order_obj.write(line + '\n')
+                if num_hit_order[query] != top_number:
+                    if not test_same_rank(taxid_query, taxid_target, "order"):
+                        # print "beforePprint"
+                        num_hit_order[query] += 1
+                        # print "print"
+                        file_output_order_obj.write(line + '\n')
 
-                if not test_same_rank(taxid_query, taxid_target, "genus"):
-                    # print "beforePprint"
-                    num_hit[query] += 1
-                    # print "print"
-                    file_output_genus_obj.write(line + '\n')
+                if num_hit_genus[query] != top_number:
+                    if not test_same_rank(taxid_query, taxid_target, "genus"):
+                        # print "beforePprint"
+                        num_hit_genus[query] += 1
+                        # print "print"
+                        file_output_genus_obj.write(line + '\n')
 
-                if not test_same_rank(taxid_query, taxid_target, "species"):
-                    # print "beforePprint"
-                    num_hit[query] += 1
-                    # print "print"
-                    file_output_species_obj.write(line + '\n')
+                if num_hit_species[query] != top_number:
+
+                    if not test_same_rank(taxid_query, taxid_target, "species"):
+                        # print "beforePprint"
+                        num_hit_species[query] += 1
+                        # print "print"
+                        file_output_species_obj.write(line + '\n')
 
             else:
 
@@ -158,6 +176,7 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
         file_output_species_obj.close()
     else:
         file_output_obj.close()
+
 
 def main():
     parser = argparse.ArgumentParser(

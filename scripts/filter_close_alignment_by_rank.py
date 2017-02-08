@@ -62,7 +62,7 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
         if count == 1000000:
             block += 1
             count = 0
-            print "1111111111111111111111111", block, "\n"
+#            print "1111111111111111111111111", block, "\n"
         line = line.rstrip()
         fields = line.split()
         if fields[0] in target_set:
@@ -96,7 +96,7 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
         if count == 1000000:
             block += 1
             count = 0
-            print "22222222", block, "\n"
+ #           print "22222222", block, "\n"
             
         if num_hit.setdefault(query, 0) == top_number:
             continue

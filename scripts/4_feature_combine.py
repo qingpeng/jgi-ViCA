@@ -3,7 +3,8 @@ import argparse
 
 def main():
 
-    parser = argparse.ArgumentParser(description='A script to generate k-mer coposition frequency')
+    parser = argparse.ArgumentParser(
+        description='A script to combine features into one vector file')
     parser.add_argument('feature_files', help="list of feature files to combine", nargs='+')
     parser.add_argument('--output', help= "Output file, space delimited format", default='all.vect')
     parser.add_argument('--length', help= "length cutoff", default=2000)
