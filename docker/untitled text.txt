@@ -1,0 +1,43 @@
+import org.apache.spark.mllib.evaluation.MulticlassMetrics
+import org.apache.spark.mllib.regression.LabeledPoint
+import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.mllib.util.MLUtils
+import org.apache.spark.mllib.feature.StandardScaler
+import org.apache.spark.mllib.classification.{LogisticRegressionWithLBFGS, LogisticRegressionModel}
+import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
+
+val training2 = MLUtils.loadLibSVMFile(sc,"all_segment.fasta.vect.family.training.svmlib.no4.subsample_large")
+training2.cache()
+val scaler = new StandardScaler().fit(training2.map(x => x.features))
+val training2_scaled = training2.map(x => LabeledPoint(x.label, scaler.transform(x.features)))
+training2_scaled.cache()
+val model2 = new LogisticRegressionWithLBFGS().setNumClasses(2).run(training2_scaled)
+val testing2 = MLUtils.loadLibSVMFile(sc,"all_segment.fasta.vect.family.testing.svmlib.no4.subsample_large")
+testing2.cache()
+val scaler = new StandardScaler().fit(testing2.map(x => x.features))
+val testing2_scaled = testing2.map(x => LabeledPoint(x.label, scaler.transform(x.features)))
+testing2_scaled.cache()
+val predictionAndLabels2 = testing2_scaled.map {case LabeledPoint(label, features) =>
+    val prediction = model2.predict(features)
+    (prediction, label)
+}
+predictionAndLabels2.saveAsTextFile("predictionAndLabels2")
+val metrics_m2 = new MulticlassMetrics(predictionAndLabels2)
+println(metrics_m2.confusionMatrix)
+val accuracy = metrics.accuracy
+model2.clearThreshold
+
+val predictionAndLabels2_p = testing2_scaled.map {case LabeledPoint(label, features) =>
+    val prediction = model2.predict(features)
+    (prediction, label)
+}
+
+
+val metrics_b2 = new BinaryClassificationMetrics(predictionAndLabels2_p)
+val precision = metrics.precisionByThreshold
+precision.foreach { case (t, p) =>
+    println(s"Threshold: $t, Precision: $p")
+}
+val PRC = metrics_b2.pr
+val auPRC = metrics_b2.areaUnderPR
+

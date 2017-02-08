@@ -4,17 +4,18 @@ import argparse
 import os
 import tempfile
 import subprocess
+import shutil
 
 
 def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
         hmmer_db):
-    tmpdir = tempfile.mkdtemp(dir="./")
+    tmpdir = os.path.abspath(tempfile.mkdtemp(dir="./"))
     os.chdir(tmpdir)
 
     feature_genemark_pfam_vfam_command = [
         genelearn_path+'/2_feature_genemark_pfam_vfam.py',
         '--input', inputfile,
-        '--output_prefix', inputfile, '--genemark_path', genemark_path,
+        '--output_prefix', "output", '--genemark_path', genemark_path,
         '--hmmer_path', hmmer_path, '--hmmer_db', hmmer_db]
     return_code = subprocess.call(feature_genemark_pfam_vfam_command)
 
@@ -23,7 +24,7 @@ def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
 
     feature_kmer_command = [
         genelearn_path+'/3_feature_kmer.py', '--input', inputfile,
-        '--output', inputfile+'.kmer', '--ksize', '4']
+        '--output', 'output.kmer', '--ksize', '4']
 
     return_code = subprocess.call(feature_kmer_command)
 
@@ -32,14 +33,15 @@ def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
 
     feature_combine_command = [
         genelearn_path+'/4_feature_combine.py', '--output', outputfile,
-        '--length', '1', inputfile+'.kmer', inputfile+'.genemark',
-        inputfile+'.pfam', inputfile+'.vfam', inputfile+'.img']
+        '--length', '1', 'output.kmer', 'output.genemark',
+        'output.pfam', 'output.vfam', 'output.img']
 
     return_code = subprocess.call(feature_combine_command)
 
     if return_code != 0:
         return return_code, 4
 
+    shutil.rmtree(tmpdir)
     return 0
 
 
