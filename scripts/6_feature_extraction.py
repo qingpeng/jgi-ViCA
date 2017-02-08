@@ -60,8 +60,8 @@ def main():
 
     genelearn_path = os.path.dirname(os.path.realpath(__file__))
 
-    input_file = args.input_file
-    output_file = args.output_file
+    input_file = os.path.abspath(args.input_file)
+    output_file = os.path.abspath(args.output_file)
     genemark_path = args.genemark_path
     hmmer_path = args.hmmer_path
     hmmer_db = args.hmmer_db
