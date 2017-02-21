@@ -115,10 +115,16 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
             if num_hit.setdefault(query, 0) == top_number:
                 continue
         else:
-            if (num_hit_family.setdefault(query, 0) == top_number
-                and num_hit_order.setdefault(query, 0) == top_number
-                and num_hit_genus.setdefault(query, 0) == top_number
-                    and num_hit_species.setdefault(query, 0) == top_number):
+            if query not in num_hit_genus:
+                num_hit_genus[query] = 0
+            if query not in num_hit_family:
+                num_hit_family[query] = 0
+            if query not in num_hit_order:
+                num_hit_order[query] = 0
+
+            if (num_hit_genus[query] == top_number
+                and num_hit_family[query] == top_number
+                    and num_hit_order[query] == top_number):
 
                 continue
 

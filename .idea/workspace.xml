@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/test_accessionTaxidFile.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/test_alignmentFile.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/test_filter_close_alignment_by_all_rank_oop.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Archive/ls.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py" afterPath="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/vect2svmlib.py" afterPath="$PROJECT_DIR$/scripts/vect2svmlib.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="filter_close_alignment_by_all_rank_oop.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="filter_close_alignment_by_all_rank_oop.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="157" column="39" lean-forward="false" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
+            <state relative-caret-position="307">
+              <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
               <folding>
                 <element signature="e#86#111#0" expanded="true" />
               </folding>
@@ -36,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter_close_alignment_by_all_rank.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="filter_close_alignment_by_all_rank.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1284">
-              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+            <state relative-caret-position="297">
+              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="e#86#111#0" expanded="true" />
               </folding>
@@ -134,13 +127,13 @@
         <option value="$PROJECT_DIR$/scripts/feature_extraction.nf" />
         <option value="$PROJECT_DIR$/scripts/vect2svmlib.py" />
         <option value="$PROJECT_DIR$/scripts/Flask/run_feature_extraction_for_spark.sh" />
-        <option value="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/scripts/test_alignmentFile.py" />
         <option value="$PROJECT_DIR$/scripts/test_accessionTaxidFile.py" />
         <option value="$PROJECT_DIR$/tests/test-data/test.m8" />
         <option value="$PROJECT_DIR$/scripts/test_filter_close_alignment_by_all_rank_oop.py" />
         <option value="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py" />
+        <option value="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py" />
       </list>
     </option>
   </component>
@@ -862,20 +855,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py">
+    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1284">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="307">
+          <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
           <folding>
             <element signature="e#86#111#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py">
+    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="157" column="39" lean-forward="false" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
+        <state relative-caret-position="297">
+          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
             <element signature="e#86#111#0" expanded="true" />
           </folding>
