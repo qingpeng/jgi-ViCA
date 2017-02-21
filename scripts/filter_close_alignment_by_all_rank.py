@@ -4,7 +4,7 @@
 
 
 from ete2 import NCBITaxa
-import sys
+
 
 import argparse
 

@@ -48,7 +48,8 @@ def to_svmlib(vectors_line, feature_list):
     print_line = ' '.join(vector_strings)
     return print_line, feature_list
 
-def write_new_feature_file(feature_list,new_file_feature):
+
+def write_new_feature_file(feature_list, new_file_feature):
     """
     :param feature_list:
     :param new_file_feature:
