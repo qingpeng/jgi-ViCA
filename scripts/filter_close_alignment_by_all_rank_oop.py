@@ -94,10 +94,11 @@ class AlignmentFile:
         tax_id_1_rank = TaxID(tax_id_1).get_rank(rank_level)
         tax_id_2_rank = TaxID(tax_id_2).get_rank(rank_level)
 
-        # if any one does not have family information, keep it
+        # if any one does not have family information, discard it, can't make
+        # sure it is in the same family or not, probably it is!
         if tax_id_1_rank == "N/A" or tax_id_2_rank == "N/A":
             # print "false"
-            return False
+            return True
 
         elif tax_id_1_rank == tax_id_2_rank:
             # print "true"

@@ -27,7 +27,7 @@ def test_same_rank(taxid1, taxid2, rank_level):
     # if any one does not have family information, keep it
     if family1 == "None" or family2 == "None":
         # print "false"
-        return False
+        return True
 
     if family1 == family2:
         # print "true"
@@ -60,7 +60,6 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
     num_hit_family = {}
     num_hit_order = {}
     num_hit_genus = {}
-    num_hit_species = {}
 
     for line in file_accession2taxid_obj:
         # print line
@@ -93,7 +92,6 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
         file_output_family_obj = open(file_output+'.family', 'w')
         file_output_order_obj = open(file_output+'.order', 'w')
         file_output_genus_obj = open(file_output+'.genus', 'w')
-        file_output_species_obj = open(file_output+'.species', 'w')
     else:
         file_output_obj = open(file_output, 'w')
 
@@ -157,13 +155,6 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
                         # print "print"
                         file_output_genus_obj.write(line + '\n')
 
-                if num_hit_species[query] != top_number:
-
-                    if not test_same_rank(taxid_query, taxid_target, "species"):
-                        # print "beforePprint"
-                        num_hit_species[query] += 1
-                        # print "print"
-                        file_output_species_obj.write(line + '\n')
 
             else:
 
@@ -179,7 +170,6 @@ def filtering(file_raw_seq, file_accession2taxid, file_alignment,
         file_output_family_obj.close()
         file_output_order_obj.close()
         file_output_genus_obj.close()
-        file_output_species_obj.close()
     else:
         file_output_obj.close()
 
