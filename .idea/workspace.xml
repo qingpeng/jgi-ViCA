@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/filter_alignment_with_same_family.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/filter_close_alignment_by_rank.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/test_accessionTaxidFile.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/test_alignmentFile.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/test_filter_close_alignment_by_all_rank_oop.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test-data/test.m8.filter.order" afterPath="$PROJECT_DIR$/tests/test-data/test.m8.filter.order" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.cache/v/cache/lastfailed" afterPath="$PROJECT_DIR$/.cache/v/cache/lastfailed" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/qingpeng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/qingpeng.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test-data/test.m8.filter.genus" afterPath="$PROJECT_DIR$/tests/test-data/test.m8.filter.genus" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN.py" afterPath="$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +20,8 @@
       <file leaf-file-name="filter_close_alignment_for_MEGAN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1002">
-              <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+            <state relative-caret-position="299">
+              <caret line="234" column="43" lean-forward="false" selection-start-line="234" selection-start-column="43" selection-end-line="234" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -885,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1002">
-          <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+        <state relative-caret-position="299">
+          <caret line="234" column="43" lean-forward="false" selection-start-line="234" selection-start-column="43" selection-end-line="234" selection-end-column="43" />
           <folding />
         </state>
       </provider>

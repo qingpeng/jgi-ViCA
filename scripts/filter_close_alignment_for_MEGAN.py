@@ -232,7 +232,7 @@ def main():
     file_output_input = args.output
     # "virus_segment_5k_for_MGRAST_N.fa.daa.m8.filter"
     top_number = int(args.top)
-    filter_option = args.filter_option
+    filter_option = int(args.filter_option)
 
     alignment_file_obj = AlignmentFile(
         file_alignment_input, file_output_input, file_raw_seq_input,
