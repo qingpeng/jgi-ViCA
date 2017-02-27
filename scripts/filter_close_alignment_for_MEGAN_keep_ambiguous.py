@@ -90,8 +90,7 @@ class AlignmentFile:
         return target_set
 
     @staticmethod
-    def test_same_rank_keep_ambiguous(
-            tax_id_1, tax_id_2, rank_level):
+    def test_same_rank(tax_id_1, tax_id_2, rank_level):
         tax_id_1_rank = TaxID(tax_id_1).get_rank(rank_level)
         tax_id_2_rank = TaxID(tax_id_2).get_rank(rank_level)
 
@@ -108,26 +107,6 @@ class AlignmentFile:
             return False
 
     @staticmethod
-    def test_same_rank_discard_ambiguous(
-            tax_id_1, tax_id_2, rank_level):
-        tax_id_1_rank = TaxID(tax_id_1).get_rank(rank_level)
-        tax_id_2_rank = TaxID(tax_id_2).get_rank(rank_level)
-
-        # if any one does not have family information, discard it,
-        # can't make
-        # sure it is in the same family or not, probably it is!
-        if tax_id_1_rank == "N/A" or tax_id_2_rank == "N/A":
-            # print "false"
-            return True
-
-        if tax_id_1_rank == tax_id_2_rank:
-            # print "true"
-            return True
-        else:  # only if the tax_id on that level does not equal explicitly
-            # print "false"
-            return False
-
-    @staticmethod
     def get_query_target(line):
         line = line.rstrip()
         fields = line.split()
@@ -135,7 +114,7 @@ class AlignmentFile:
         target = fields[1].split(".")[0]
         return query, target
 
-    def check_line(self, line, tax_level, test_same_rank_method):
+    def check_line(self, line, tax_level, filter_option):
         query, target = self.get_query_target(line)
         taxid_query = self.dict_seqid_taxid[query]
         try:
@@ -147,12 +126,12 @@ class AlignmentFile:
             #  this record.
         # print taxid_query, taxid_target, tax_level
         # print self.test_same_rank(taxid_query, taxid_target, tax_level)
-        if test_same_rank_method(taxid_query, taxid_target, tax_level):
+        if self.test_same_rank(taxid_query, taxid_target, tax_level):
             return False  # in the same tax, don't keep this record
         else:
             return True  # not in the same definitely, keep this record
 
-    def filtering_with_option(self, test_same_rank_method):
+    def filtering(self):
 
         file_alignment_obj = open(self.file_alignment, 'r')
 
@@ -185,21 +164,21 @@ class AlignmentFile:
             # if no family info, remove the hit
 
             if num_hit_family[query] != self.top_number:
-                if self.check_line(line, "family", test_same_rank_method):
+                if self.check_line(line, "family"):
                     # print "beforePprint"
                     num_hit_family[query] += 1
                     # print "print"
                     file_output_family_obj.write(line + '\n')
 
             if num_hit_order[query] != self.top_number:
-                if self.check_line(line, "order", test_same_rank_method):
+                if self.check_line(line, "order"):
                     # print "beforePprint"
                     num_hit_order[query] += 1
                     # print "print"
                     file_output_order_obj.write(line + '\n')
 
             if num_hit_genus[query] != self.top_number:
-                if self.check_line(line, "genus", test_same_rank_method):
+                if self.check_line(line, "genus"):
                     # print "beforePprint"
                     num_hit_genus[query] += 1
                     # print "print"
@@ -209,14 +188,6 @@ class AlignmentFile:
         file_output_order_obj.close()
         file_output_genus_obj.close()
         return 1
-
-    def filtering(self, filter_option):
-        if filter_option == 1:
-            test_same_rank_method = self.test_same_rank_discard_ambiguous
-        else:
-            test_same_rank_method = self.test_same_rank_keep_ambiguous
-            
-        self.filtering_with_option(test_same_rank_method)
 
 
 def main():
