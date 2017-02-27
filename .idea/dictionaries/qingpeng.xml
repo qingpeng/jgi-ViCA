@@ -5,6 +5,7 @@
       <w>inputfile</w>
       <w>kmer</w>
       <w>ksize</w>
+      <w>maintainence</w>
       <w>outputfile</w>
       <w>svmlib</w>
     </words>
