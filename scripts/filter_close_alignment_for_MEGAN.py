@@ -215,7 +215,7 @@ class AlignmentFile:
             test_same_rank_method = self.test_same_rank_discard_ambiguous
         else:
             test_same_rank_method = self.test_same_rank_keep_ambiguous
-            
+
         self.filtering_with_option(test_same_rank_method)
 
 
