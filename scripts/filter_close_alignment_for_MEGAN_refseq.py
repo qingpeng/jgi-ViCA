@@ -40,7 +40,6 @@ class AccessionTaxidFile:
                 # print "hit!"
                 self.dict_accession2taxid[fields[0]] = int(fields[2])
         file_accession2taxid_obj.close()
-        print "AccessionTax file processing done!"
         return self.dict_accession2taxid
 
 
@@ -60,7 +59,6 @@ class SequenceFile:
                 seqid += 1
                 self.dict_seqid_taxid[seqid] = int(taxid)
         file_raw_seq_obj.close()
-        print "Reading fasta file done!"
         return self.dict_seqid_taxid
 
 
@@ -89,7 +87,6 @@ class AlignmentFile:
             target = fields[1].split(".")[0]  # remove version
             target_set.add(target)
         file_alignment_obj.close()
-        print "Get target set done!"
         return target_set
 
     @staticmethod
@@ -97,17 +94,17 @@ class AlignmentFile:
             tax_id_1, tax_id_2, rank_level):
         tax_id_1_rank = TaxID(tax_id_1).get_rank(rank_level)
         tax_id_2_rank = TaxID(tax_id_2).get_rank(rank_level)
-        print tax_id_1_rank, tax_id_2_rank
-        # if any one does not have family information, keep it, not the same!
+
+        # if any one does not have family information, keep it
         if tax_id_1_rank == "N/A" or tax_id_2_rank == "N/A":
-            print "1false"
+            # print "false"
             return False
 
         if tax_id_1_rank == tax_id_2_rank:
-            print "2true"
+            # print "true"
             return True
         else:  # only if the tax_id on that level does not equal explicitly
-            print "3false"
+            # print "false"
             return False
 
     @staticmethod
@@ -119,16 +116,15 @@ class AlignmentFile:
         # if any one does not have family information, discard it,
         # can't make
         # sure it is in the same family or not, probably it is!
-        print tax_id_1_rank, tax_id_2_rank
         if tax_id_1_rank == "N/A" or tax_id_2_rank == "N/A":
-            print "4true"
+            # print "false"
             return True
 
         if tax_id_1_rank == tax_id_2_rank:
-            print "5true"
+            # print "true"
             return True
         else:  # only if the tax_id on that level does not equal explicitly
-            print "6false"
+            # print "false"
             return False
 
     @staticmethod
@@ -139,19 +135,9 @@ class AlignmentFile:
         target = fields[1].split(".")[0]
         return query, target
 
-    def check_line(self, line, tax_level, ambiguous_option):
-        """
-        check if the line of hit has query and target in the same tax group
-        :param line:
-        :param tax_level:
-        :param ambiguous_option: "keep" or "discard"
-        :return: True if query and target in the same tax group
-                 False if not
-        """
+    def check_line(self, line, tax_level, test_same_rank_method):
         query, target = self.get_query_target(line)
-        print query, target
         taxid_query = self.dict_seqid_taxid[query]
-        print "taxid_query", taxid_query
         try:
             taxid_target = self.dict_accession2taxid[target]
         # print "test", taxid_query, taxid_target
@@ -161,15 +147,12 @@ class AlignmentFile:
             #  this record.
         # print taxid_query, taxid_target, tax_level
         # print self.test_same_rank(taxid_query, taxid_target, tax_level)
-        print "taxid_target", taxid_target
-        if ambiguous_option == "keep":
-            return AlignmentFile.test_same_rank_keep_ambiguous(
-                    taxid_query, taxid_target, tax_level)
+        if test_same_rank_method(taxid_query, taxid_target, tax_level):
+            return False  # in the same tax, don't keep this record
         else:
-            return AlignmentFile.test_same_rank_discard_ambiguous(
-                    taxid_query, taxid_target, tax_level)
+            return True  # not in the same definitely, keep this record
 
-    def filtering_with_option(self, ambiguous_option):
+    def filtering_with_option(self, test_same_rank_method):
 
         file_alignment_obj = open(self.file_alignment, 'r')
 
@@ -202,21 +185,21 @@ class AlignmentFile:
             # if no family info, remove the hit
 
             if num_hit_family[query] != self.top_number:
-                if not self.check_line(line, "family", ambiguous_option):
+                if self.check_line(line, "family", test_same_rank_method):
                     # print "beforePprint"
                     num_hit_family[query] += 1
                     # print "print"
                     file_output_family_obj.write(line + '\n')
 
             if num_hit_order[query] != self.top_number:
-                if not self.check_line(line, "order", ambiguous_option):
+                if self.check_line(line, "order", test_same_rank_method):
                     # print "beforePprint"
                     num_hit_order[query] += 1
                     # print "print"
                     file_output_order_obj.write(line + '\n')
 
             if num_hit_genus[query] != self.top_number:
-                if not self.check_line(line, "genus", ambiguous_option):
+                if self.check_line(line, "genus", test_same_rank_method):
                     # print "beforePprint"
                     num_hit_genus[query] += 1
                     # print "print"
@@ -227,6 +210,14 @@ class AlignmentFile:
         file_output_genus_obj.close()
         return 1
 
+    def filtering(self, filter_option):
+        if filter_option == 1:
+            test_same_rank_method = self.test_same_rank_discard_ambiguous
+        else:
+            test_same_rank_method = self.test_same_rank_keep_ambiguous
+
+        self.filtering_with_option(test_same_rank_method)
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -235,8 +226,13 @@ def main():
                     'rank levels, - family, order, genus, species')
     parser.add_argument('-s', '--sequence',
                         help="raw sequence,virus_segment_5k.fa", required=True)
-    parser.add_argument('-a', '--accession',
-                        help="prot.accession2taxid", required=True)
+    parser.add_argument('-a1', '--accession1', help=
+                        "RefSeq-release81.catalog, accession-tax relation",
+                        required=True)
+    parser.add_argument('-a2', '--accession2', help=
+                        "release81.MultispeciesAutonomousProtein2taxname, "
+                        "accession-tax relation for nonredundant protein",
+                        required=True)
     parser.add_argument('-i', '--input',
                         help="alignment file to filter, .m8 format",
                         required=True)
@@ -246,10 +242,9 @@ def main():
     parser.add_argument('-o', '--output',
                         help="filtered alignment output", required=True)
     parser.add_argument('--filter_option',
-                        help="option for filtering, "
-                             "discard - discard alignment if query/target does"
-                             "not have tax_id on specific level, "
-                             "keep - keep those alignments", required=True)
+                        help="option for filtering, 1 - discard alignment if "
+                             "query/target does not have tax_id on specific "
+                             "level, 0 - keep those alignments", required=True)
 
     args = parser.parse_args()
 
@@ -260,12 +255,12 @@ def main():
     file_output_input = args.output
     # "virus_segment_5k_for_MGRAST_N.fa.daa.m8.filter"
     top_number = int(args.top)
-    filter_option = str(args.filter_option)
+    filter_option = int(args.filter_option)
 
     alignment_file_obj = AlignmentFile(
         file_alignment_input, file_output_input, file_raw_seq_input,
         file_accession2taxid_input, top_number)
-    alignment_file_obj.filtering_with_option(filter_option)
+    alignment_file_obj.filtering(filter_option)
 
 
 if __name__ == '__main__':

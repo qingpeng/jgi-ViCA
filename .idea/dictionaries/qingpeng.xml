@@ -7,8 +7,11 @@
       <w>kmer</w>
       <w>ksize</w>
       <w>maintainence</w>
+      <w>multispecies</w>
+      <w>nonredundant</w>
       <w>outputfile</w>
       <w>svmlib</w>
+      <w>taxname</w>
     </words>
   </dictionary>
 </component>
