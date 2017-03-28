@@ -7,9 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### ToDo
-- 5_create_training_testing.py is too slow for large vector file, need improving
-- finish nextflow pipeline for testing data sets
-- migrate MLlib training from RDD-based to DF-based 20170327
 
 
 ### Added
