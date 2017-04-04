@@ -1,4 +1,4 @@
-from .filter_close_alignment_for_MEGAN \
+from scripts.filter_close_alignment_for_MEGAN \
     import AlignmentFile, AccessionTaxidFile, SequenceFile, TaxID
 
 
@@ -12,7 +12,7 @@ def test_taxid_get_rank():
 
 def test_accession_taxid_file():
     accession_taxid_file = AccessionTaxidFile(
-        '../tests/test-data/prot.accession2taxid.head')
+        './test-data/prot.accession2taxid.head')
     target_set1 = {'WP_015976792', 'ETE43524', 'WP_075180623'}
     dict_accession2taxid = accession_taxid_file.get_dict_accession2taxid(
         target_set1)
@@ -28,9 +28,9 @@ def test_sequence_file_get_dict_seqid_taxid():
 
 def test_alignment_file_get_target_set():
     alignment_file = AlignmentFile(
-        '../tests/test-data/test.m8', '../tests/test-data/test.m8.filter',
-        '../tests/test-data/test_segment_5k.fa.3',
-        '../tests/test-data/prot.accession2taxid.head', 3)
+        './test-data/test.m8', './test-data/test.m8.filter',
+        './test-data/test_segment_5k.fa.3',
+        './test-data/prot.accession2taxid.head', 3)
     target_set = alignment_file.get_target_set(alignment_file.file_alignment)
     print target_set
     assert target_set == {'WP_049883809', 'WP_015976792', 'WP_075180623',
@@ -84,9 +84,9 @@ def test_alignment_file_get_query_target():
 
 def test_alignment_file_check_line():
     alignment_file = AlignmentFile(
-        '../tests/test-data/test.m8', '../tests/test-data/test.m8.filter',
-        '../tests/test-data/test_segment_5k.fa.3',
-        '../tests/test-data/prot.accession2taxid.head', 3)
+        './test-data/test.m8', './test-data/test.m8.filter',
+        './test-data/test_segment_5k.fa.3',
+        './test-data/prot.accession2taxid.head', 3)
     line = '1	WP_070818888.1	76.8	924	214	0	3	' \
            '2774	201	1124	0.0e+00	1239.2'
 
@@ -118,19 +118,19 @@ def test_alignment_file_check_line():
 
 def test_alignment_file_filtering_keep_ambiguous():
     alignment_file = AlignmentFile(
-        '../tests/test-data/test.m8', '../tests/test-data/test.m8.filter.keep',
-        '../tests/test-data/test_segment_5k.fa.3',
-        '../tests/test-data/prot.accession2taxid.head', 3)
+        './test-data/test.m8', './test-data/test.m8.filter.keep',
+        './test-data/test_segment_5k.fa.3',
+        './test-data/prot.accession2taxid.head', 3)
     # m8, 1: 101570, 2: 10090, 3: 10091
     assert alignment_file.filtering_with_option('keep') == 1
 
 
 def test_alignment_file_filtering_discard_ambiguous():
     alignment_file = AlignmentFile(
-        '../tests/test-data/test.m8',
-        '../tests/test-data/test.m8.filter.discard',
-        '../tests/test-data/test_segment_5k.fa.3',
-        '../tests/test-data/prot.accession2taxid.head', 3)
+        './test-data/test.m8',
+        './test-data/test.m8.filter.discard',
+        './test-data/test_segment_5k.fa.3',
+        './test-data/prot.accession2taxid.head', 3)
 
     assert alignment_file.filtering_with_option('discard') == 1
 

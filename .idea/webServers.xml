@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ee92d526-46b5-4e59-a906-dee97ae12147" name="genepool14" url="http://genepool14.nersc.gov">
+        <fileTransfer host="genepool14.nersc.gov" port="22" rootFolder="/global/u2/q/qpzhang" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
