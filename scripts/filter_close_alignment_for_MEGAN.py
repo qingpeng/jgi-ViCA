@@ -97,17 +97,13 @@ class AlignmentFile:
             tax_id_1, tax_id_2, rank_level):
         tax_id_1_rank = TaxID(tax_id_1).get_rank(rank_level)
         tax_id_2_rank = TaxID(tax_id_2).get_rank(rank_level)
-        print tax_id_1_rank, tax_id_2_rank
         # if any one does not have family information, keep it, not the same!
         if tax_id_1_rank == "N/A" or tax_id_2_rank == "N/A":
-            print "1false"
             return False
 
         if tax_id_1_rank == tax_id_2_rank:
-            print "2true"
             return True
         else:  # only if the tax_id on that level does not equal explicitly
-            print "3false"
             return False
 
     @staticmethod
@@ -119,16 +115,12 @@ class AlignmentFile:
         # if any one does not have family information, discard it,
         # can't make
         # sure it is in the same family or not, probably it is!
-        print tax_id_1_rank, tax_id_2_rank
         if tax_id_1_rank == "N/A" or tax_id_2_rank == "N/A":
-            print "4true"
             return True
 
         if tax_id_1_rank == tax_id_2_rank:
-            print "5true"
             return True
         else:  # only if the tax_id on that level does not equal explicitly
-            print "6false"
             return False
 
     @staticmethod
@@ -149,9 +141,7 @@ class AlignmentFile:
                  False if not
         """
         query, target = self.get_query_target(line)
-        print query, target
         taxid_query = self.dict_seqid_taxid[query]
-        print "taxid_query", taxid_query
         try:
             taxid_target = self.dict_accession2taxid[target]
         # print "test", taxid_query, taxid_target
@@ -161,7 +151,6 @@ class AlignmentFile:
             #  this record.
         # print taxid_query, taxid_target, tax_level
         # print self.test_same_rank(taxid_query, taxid_target, tax_level)
-        print "taxid_target", taxid_target
         if ambiguous_option == "keep":
             return AlignmentFile.test_same_rank_keep_ambiguous(
                     taxid_query, taxid_target, tax_level)
