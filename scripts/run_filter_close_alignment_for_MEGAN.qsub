@@ -1,0 +1,40 @@
+#!/bin/bash
+# Set SGE options:
+## ensure a specific environment variable is set properly
+#$ -v env_var=<value>
+## run the job in the current working directory (where qsub is called)
+#$ -cwd
+## specify an email address
+#$ -M qingpeng@lbl.gov
+## specify when to send the email when job is (a)borted, (b)egins or (e)nds normally
+#$ -m abe
+## Specify a run time of 11 hours (or 39600 seconds)
+#$ -l h_rt=11:00:00
+## Specify 12G of memory for the job
+#$ -l ram.c=20G
+#$ -l high.c
+
+## Your job info goes here
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s nonvirus_segment_5k.fa -a prot.accession2taxid -i nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq -t 100 -o nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq.filter_discard --filter_option discard
+
+
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s virus_segment_5k.fa -a prot.accession2taxid -i virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8 -t 100 -o virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.filter_keep --filter_option keep
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s virus_segment_5k.fa -a prot.accession2taxid -i virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8 -t 100 -o virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.filter_discard --filter_option discard
+
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s nonvirus_segment_5k.fa -a prot.accession2taxid -i nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8 -t 100 -o nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.filter_keep --filter_option keep
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s nonvirus_segment_5k.fa -a prot.accession2taxid -i nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8 -t 100 -o nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.filter_discard --filter_option discard
+
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s virus_segment_5k.fa -a prot.accession2taxid -i virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq -t 100 -o virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq.filter_keep --filter_option keep
+
+
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s virus_segment_5k.fa -a prot.accession2taxid -i virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq -t 100 -o virus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq.filter_discard --filter_option discard
+
+
+python /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py -s nonvirus_segment_5k.fa -a prot.accession2taxid -i nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq -t 100 -o nonvirus_segment_5k_for_MGRAST_N.fa.sensitive.all.m8.refseq.filter_keep --filter_option keep
