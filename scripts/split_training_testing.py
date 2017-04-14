@@ -77,7 +77,103 @@ def to_svmlib(vectors_line, feature_list):
     return print_line
 
 #    file_out_obj.write(print_line+'\n')
-    
+
+
+class VectorLine:
+    def __init__(self, line):
+        self.line = line
+
+    def get_feature_set(self):
+        fields = self.line.split('\t')
+        vectors = fields[3].split(' ')
+        feature_set = set()
+        for vector in vectors:
+            feature = vector.split(":")[0]
+            feature_set.add(feature)
+        return feature_set
+
+    def get_tax_dict(self):
+
+        tax_dict = {}
+        #    print line
+        taxonomy_list = self.line.split(
+            '\t')[2].split(',')[1].split("=")[1].split("/")
+        #    print taxonomy_list
+        for taxonomy in taxonomy_list:
+            groups = taxonomy.split(":")
+            if groups[1] != "":
+                tax_dict[groups[1]] = groups[0]
+        return tax_dict
+
+
+class VectorFile:
+    def __init__(self, file_vector):
+        self.file_vector = file_vector
+        self.order = {}
+        self.family = {}
+        self.genus = {}
+        self.virus_label = {}  # set if a tax_id is virus "1" or not "0"
+        self.feature_set = set()
+
+    def __add_tree(self, tax_dict):
+
+        if ("0" in tax_dict and "11" in tax_dict and "16" in tax_dict
+                and "20" in tax_dict and "24" in tax_dict):
+
+            try:
+                self.order[tax_dict["11"]].add(tax_dict["16"])
+            except KeyError:
+                self.order[tax_dict["11"]] = {[tax_dict["16"]]}
+                # use set to remove duplicate
+
+            try:
+                self.family[tax_dict["16"]].add(tax_dict["20"])
+            except KeyError:
+                self.family[tax_dict["16"]] = {[tax_dict["20"]]}
+
+            try:
+                self.genus[tax_dict["20"]].add(tax_dict["24"])
+            except KeyError:
+                self.genus[tax_dict["20"]] = {[tax_dict["24"]]}
+
+            if tax_dict["0"] == '10239':  # if it is virus
+                self.virus_label[tax_dict["11"]] = 1
+                self.virus_label[tax_dict["16"]] = 1
+                self.virus_label[tax_dict["20"]] = 1
+            else:
+                self.virus_label[tax_dict["11"]] = 0
+                self.virus_label[tax_dict["16"]] = 0
+                self.virus_label[tax_dict["20"]] = 0
+
+    def __process_line(self, line):
+        line = line.rstrip()
+        vector_line = VectorLine(line)
+        self.feature_set = self.feature_set.union(
+            vector_line.get_feature_set())
+
+        tax_dict = vector_line.get_tax_dict()
+        self.__add_tree(tax_dict)
+
+    def build_tree(self):
+
+        # 11 - order
+        # 16 - family
+        # 20 - genus
+        # 24 - species
+        # The
+        #          "taxonomy" option outputs the complete taxonomic path in the
+        #          format: "taxonId0:rankId0/..." (note that not all nodes have
+        #          rankIds defined).
+        file_vector_obj = open(self.file_vector, 'r')
+        n = 0
+        for line in file_vector_obj:
+            n += 1
+            if n % 10000 == 0:
+                print('...', n)
+            self.__process_line(line)
+        file_vector_obj.close()
+
+
 
 
 def main():
@@ -92,7 +188,7 @@ def main():
 
     args = parser.parse_args()
 
-    file_vector_obj = open(args.vector, 'r')
+
     virus_switch = args.virus
     file_feature_list_obj = open(args.vector + '.feature_index', 'w')
 
@@ -101,7 +197,7 @@ def main():
     file_genus_training_obj = open(args.vector+'.genus.training.svmlib', 'w')
 
     file_order_testing_obj = open(args.vector+'.order.testing.svmlib', 'w')
-    file_family_testing_obj = open(args.vector+'.family.testing.svmlib', 'w')
+    file_family_testing_obj = open(args.vector+'.f amily.testing.svmlib', 'w')
     file_genus_testing_obj = open(args.vector+'.genus.testing.svmlib', 'w')
 
     # a list of target with index
@@ -111,65 +207,11 @@ def main():
         file_family_index_obj = open(args.vector + '.family.target_index', 'w')
         file_genus_index_obj = open(args.vector + '.genus.target_index', 'w')
 
-
-    order = {}
-    family = {}
-    genus = {}
-
-    # 11 - order
-    # 16 - family
-    # 20 - genus
-    # 24 - species
-    # The
-    #          "taxonomy" option outputs the complete taxonomic path in the
-    #          format: "taxonId0:rankId0/..." (note that not all nodes have
-    #          rankIds defined).
+    vector_file = VectorFile(args.vector)
+    vector_file.build_tree()
 
 
-
-    virus = {}  # dictionary to store if it is virus or not
-
-    feature_set = set()
-    n = 0
-    for line in file_vector_obj:
-        n += 1
-        if n % 10000 == 0:
-            print('...', n)
-        # print line
-        line = line.rstrip()
-        feature_set = feature_set.union(get_feature_set_from_line(line))
-        tax_dict = {}
-        #    print line
-        taxonomy_list = line.split('\t')[2].split(',')[1].split("=")[1].split("/")
-        #    print taxonomy_list
-        for taxonomy in taxonomy_list:
-            groups = taxonomy.split(":")
-            if groups[1] != "":
-                tax_dict[groups[1]] = groups[0]
-        if "0" in tax_dict and "11" in tax_dict and "16" in tax_dict and "20" in tax_dict and "24" in tax_dict:
-
-            try:
-                order[tax_dict["11"]].add(tax_dict["16"])
-
-            except KeyError:
-                order[tax_dict["11"]] = set(
-                    [tax_dict["16"]])  # use set to remove duplicate
-            try:
-                family[tax_dict["16"]].add(tax_dict["20"])
-            except KeyError:
-                family[tax_dict["16"]] = set([tax_dict["20"]])
-            try:
-                genus[tax_dict["20"]].add(tax_dict["24"])
-            except KeyError:
-                genus[tax_dict["20"]] = set([tax_dict["24"]])
-            if tax_dict["0"] == '10239':  # if it is virus
-                virus[tax_dict["11"]] = 1
-                virus[tax_dict["16"]] = 1
-                virus[tax_dict["20"]] = 1
-            else:
-                virus[tax_dict["11"]] = 0
-                virus[tax_dict["16"]] = 0
-                virus[tax_dict["20"]] = 0
+#### here to refactor ...
 
     feature_list = sorted(list(feature_set))
 

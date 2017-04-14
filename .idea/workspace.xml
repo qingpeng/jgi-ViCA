@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/5_create_training_testing_with_seq_name.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/split_training_testing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/.ipynb_checkpoints/L2_evaluation-checkpoint.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/.ipynb_checkpoints/L2_evaluation-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/.ipynb_checkpoints/ModelTuning-checkpoint.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/.ipynb_checkpoints/ModelTuning-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/ModelTuning.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/ModelTuning.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/split_training_testing.py" afterPath="$PROJECT_DIR$/scripts/split_training_testing.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,24 +17,34 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="filter_close_alignment_for_MEGAN_refseq.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_refseq.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-525">
+                    <caret line="138" column="47" lean-forward="false" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="split_training_testing.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="split_training_testing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/split_training_testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2261">
-              <caret line="311" column="60" lean-forward="false" selection-start-line="311" selection-start-column="60" selection-end-line="311" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filter_close_alignment_for_MEGAN_refseq.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_refseq.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+            <state relative-caret-position="615">
+              <caret line="199" column="51" lean-forward="false" selection-start-line="199" selection-start-column="51" selection-end-line="199" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -49,18 +53,8 @@
       <file leaf-file-name="5_create_training_testing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="5_create_training_testing_with_seq_name.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing_with_seq_name.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="318" column="24" lean-forward="true" selection-start-line="318" selection-start-column="24" selection-end-line="318" selection-end-column="24" />
+            <state relative-caret-position="318">
+              <caret line="223" column="24" lean-forward="true" selection-start-line="223" selection-start-column="24" selection-end-line="223" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -116,9 +110,9 @@
         <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/extra/benchmark/MEGAN.ipynb" />
         <option value="$PROJECT_DIR$/extra/benchmark/MEGAN.md" />
-        <option value="$PROJECT_DIR$/scripts/split_training_testing.py" />
         <option value="$PROJECT_DIR$/scripts/5_create_training_testing.py" />
         <option value="$PROJECT_DIR$/scripts/5_create_training_testing_with_seq_name.py" />
+        <option value="$PROJECT_DIR$/scripts/split_training_testing.py" />
       </list>
     </option>
   </component>
@@ -129,10 +123,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="180" />
-    <option name="y" value="80" />
-    <option name="width" value="1596" />
-    <option name="height" value="1157" />
+    <option name="x" value="171" />
+    <option name="y" value="117" />
+    <option name="width" value="1095" />
+    <option name="height" value="646" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -494,10 +488,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="180" y="80" width="1596" height="1157" extended-state="0" />
+    <frame x="171" y="117" width="1095" height="646" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20739348" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3022831" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32585752" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -866,34 +860,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/split_training_testing.py">
+    <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing_with_seq_name.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="311" column="60" lean-forward="false" selection-start-line="311" selection-start-column="60" selection-end-line="311" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_refseq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+        <state relative-caret-position="34">
+          <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+        <state relative-caret-position="318">
+          <caret line="223" column="24" lean-forward="true" selection-start-line="223" selection-start-column="24" selection-end-line="223" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing_with_seq_name.py">
+    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_refseq.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="318" column="24" lean-forward="true" selection-start-line="318" selection-start-column="24" selection-end-line="318" selection-end-column="24" />
+        <state relative-caret-position="-525">
+          <caret line="138" column="47" lean-forward="false" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/split_training_testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="199" column="51" lean-forward="false" selection-start-line="199" selection-start-column="51" selection-end-line="199" selection-end-column="51" />
           <folding />
         </state>
       </provider>
