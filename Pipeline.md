@@ -36,3 +36,8 @@ python ~/Dropbox/NewBitbucket_for_GeneLearn/jgi-genelearn/scripts/process_pfam_v
   python ~/Dropbox/NewBitbucket_for_GeneLearn/jgi-genelearn/scripts/training_data_formatter.py -c /global/homes/q/qpzhang/Dropbox/NewBitbucket_for_GeneLearn/jgi-genelearn/scripts/config.json.template -t training.vect -e testing.vect -s vector -r /global/projectb/scratch/ekirton/RefTree/ -v all.vect -g segment &
 
   
+Model training using Spark!
+===
+```angular2html
+~/Downloads/spark-2.0.2-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_training_model.py
+```

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import argparse
-import random
 import math
+
 
 def fun_log(value):
     if value == 0.0:
@@ -64,7 +64,7 @@ def write_new_feature_file(feature_list, new_file_feature):
     file_new_feature_obj.close()
 
 
-def convert_file(file_vector,file_output,file_feature,target_label):
+def convert_file(file_vector, file_output, file_feature, target_label):
     """ main function """
     feature_list = get_feature_list(file_feature)
     file_vector_obj = open(file_vector, 'r')
@@ -95,11 +95,7 @@ def main():
 
     args = parser.parse_args()
 
-
     convert_file(args.vector, args.outfile, args.feature_file, args.target)
-
 
 if __name__ == '__main__':
     main()
-
-

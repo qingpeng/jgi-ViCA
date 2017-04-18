@@ -76,3 +76,11 @@ virus_testing_5k.vect.fasta  virus_training_25k.vect.fasta
 cat non_virus_testing_5k.vect.fasta virus_testing_5k.vect.fasta >testing_5k.vect.fasta &
 cat non_virus_training_25k.vect.fasta virus_training_25k.vect.fasta >training_25k.vect.fasta &
 ```
+
+9. get 3 virus and non-virus segments sequences as testing file for pipeline
+
+```angular2html
+head -255  virus_testing_5k.vect.fasta >virus_testing_5k.vect.fasta.head255
+head -255 non_virus_testing_5k.vect.fasta >non_virus_testing_5k.vect.fasta.head255
+cat non_virus_testing_5k.vect.fasta.head255 virus_testing_5k.vect.fasta.head255 >virus_nonvirus_3seqs.fa
+```
