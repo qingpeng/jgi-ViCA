@@ -41,3 +41,27 @@ Model training using Spark!
 ```angular2html
 ~/Downloads/spark-2.0.2-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_training_model.py
 ```
+
+extract features from fasta file
+====
+```angular2html
+python ~/Dropbox/Development/Github/jgi-ViCA/scripts/6_feature_extraction.py virus_nonvirus_3seqs.fa virus_nonvirus_3seqs.fa.vect ~/bin/genemark_suite_macosx/gmsuite/ ~/bin/hmmer-3.1b2-macosx-intel/ ~/Local/Pfam_DB/
+```
+
+Prepare libsvm file for prediction
+===
+```angular2html
+python ~/Dropbox/Development/Github/jgi-ViCA/scripts/prepare_libsvm_for_prediction.py virus_nonvirus_3seqs.fa.vect ~/Dropbox/Development/Github/jgi-ViCA/scripts/model/all_segment.fasta.vect.feature_index virus_nonvirus_3seqs.fa.vect.libsvm
+```
+
+Prediction using spark
+====
+```angular2html
+~/Downloads/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_prediction.py virus_nonvirus_3seqs.fa.vect.libsvm  ~/Dropbox/Development/Github/jgi-ViCA/scripts/model/subsample_model/ virus_nonvirus_3seqs.fa.vect.libsvm.prediction
+```
+
+Integrated pipeline!
+====
+```angular2html
+python ~/Dropbox/Development/Github/jgi-ViCA/scripts/prediction_pipeline_lite.py ../virus_nonvirus_3seqs.fa prediction.out ~/bin/genemark_suite_macosx/gmsuite/ ~/bin/hmmer-3.1b2-macosx-intel/ ~/Local/Pfam_DB/ ~/Downloads/spark-2.1.0-bin-hadoop2.7/ ~/Local/GeneLearn/all_segment.fasta.vect.feature_index ~/Dropbox/Development/Github/jgi-ViCA/scripts/model/subsample_model/
+```
