@@ -1,1 +1,0 @@
-srun: fatal: Invalid user id: 69031
