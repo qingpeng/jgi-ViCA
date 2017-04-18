@@ -1,0 +1,1 @@
+subsample_model: model trained by subsamping subset 25k virus + 25k non-virus segments, separated on family level
