@@ -18,11 +18,13 @@ def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
         'python',
         genelearn_path+'/6_feature_extraction.py', inputfile,
         vector_file, genemark_path, hmmer_path, hmmer_db]
+    print feature_extraction_command
     print "feature extraction running...\n"
     return_code = subprocess.call(feature_extraction_command)
 
     if return_code != 0:
         return return_code, "feature_extraction"
+    #exit()
 
     libsvm_file = vector_file+'.libsvm'
     prepare_libsvm_command = [

@@ -9,6 +9,17 @@ Application
 - migrate to pure Spark application
     * full pipeline from segment to vectors on spark
 
+web service
+=====
+to microservice
+
+for now, feature extraction and prediction in the same spark instance
+to be separated...
+
+add DB support...
+
+offline -> online prediction, keep model hot... faster speed
+
 
 Extra
 =======
