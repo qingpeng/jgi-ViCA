@@ -3,6 +3,7 @@ import argparse
 import random
 import math
 
+# 04/18/2017: incompleted, still working on
 # 04/12/2017: split vectors only, do not do transformation....
 # transformation will be used for real data processing, or small data testing.
 

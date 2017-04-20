@@ -1,0 +1,3 @@
+start-slave.sh: NOT in master doing /usr/common/software/spark/1.5.1/sbin/spark-daemon.sh start org.apache.spark.deploy.worker.Worker 1 --webui-port 8081 spark://nid00045:7077
+starting org.apache.spark.deploy.worker.Worker, logging to /scratch2/scratchdirs/qpzhang/spark/2763646/spark-qpzhang-org.apache.spark.deploy.worker.Worker-1-nid00046.out
+spark-daemon.sh: doing first NOT master edison08 /global/common/edison/software/spark/1.5.1/sbin/../bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://nid00045:7077
