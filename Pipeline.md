@@ -65,3 +65,15 @@ Integrated pipeline!
 ```angular2html
 python ~/Dropbox/Development/Github/jgi-ViCA/scripts/prediction_pipeline_lite.py ../virus_nonvirus_3seqs.fa prediction.out ~/bin/genemark_suite_macosx/gmsuite/ ~/bin/hmmer-3.1b2-macosx-intel/ ~/Local/Pfam_DB/ ~/Downloads/spark-2.1.0-bin-hadoop2.7/ ~/Local/GeneLearn/all_segment.fasta.vect.feature_index ~/Dropbox/Development/Github/jgi-ViCA/scripts/model/subsample_model/
 ```
+
+spark training model!
+===
+```angular2html
+~/Downloads/spark-2.0.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_training_model.py training.vect training.vect_model
+```
+
+spark evaluating model!
+====
+```
+ ~/Downloads/spark-2.0.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model.py testing.vect training.vect_model/ testing.vect.prediction testing.vect.report testing.vect.prc.png
+```

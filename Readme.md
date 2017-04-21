@@ -24,6 +24,31 @@ With this package, a model is offered with training using simulated data from
 RefSeq genomes. Tools are provided if the users want to train the model 
 themselves with their own data. 
 
+
+## Model Tuning
+split into training and testing
+```angular2html
+scripts/5_create_training_testing_with_seq_name.py
+```
+model training
+```angular2html
+spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
+```
+
+model evaluation
+```
+spark-submit ./scripts/spark_evaluating_model.py testing.vect training.vect_model/ testing.vect.prediction testing.vect.report testing.vect.prc.png
+```
+
+
+## Training
+
+model training (small data set)
+```angular2html
+spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
+```
+
+## Prediction
 There are three use cases for doing the prediction:
 
 - Large scale prediction - pipeline (in NextFlow) used for prediction on large 
