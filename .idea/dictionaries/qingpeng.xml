@@ -2,12 +2,15 @@
   <dictionary name="qingpeng">
     <words>
       <w>codon</w>
+      <w>contigs</w>
       <w>famiy</w>
       <w>inputfile</w>
       <w>kmer</w>
       <w>ksize</w>
       <w>listfile</w>
       <w>maintainence</w>
+      <w>metagenomic</w>
+      <w>metatransciptomic</w>
       <w>multispecies</w>
       <w>nonredundant</w>
       <w>nonvirus</w>

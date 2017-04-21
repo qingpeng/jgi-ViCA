@@ -2,47 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/run_feature_extraction_for_spark.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/#engine.py#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/2_feature_genemark_pfam_vfam.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/3_feature_kmer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/4_feature_combine.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/app.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/engine.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/env.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/gm_key" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/modify_label.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/nonvirus.vect.feature_index.new_list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/nonvirus.vect.feature_index.new_list.new_list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/reduce_testing_labels.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/run_feature_extraction_for_spark.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.fa" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.fa.genemark" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.fa.img" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.fa.kmer" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.fa.pfam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.fa.vfam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/segment.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/server.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/test_server.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/testing.svmlib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/testing.svmlib.cleanup" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/testing.svmlib.cleanup.backup" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/tmp1eOS1f/fragment.fasta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/tmpR0zrXX/fragment.fasta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/training.svmlib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/training.svmlib.cleanup" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/untitled text 5.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/vect2svmlib.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/vector.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/vector.out.smvlib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/vector.out.smvlib2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/Flask/virus-non-virus.fa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/2_feature_genemark_pfam_vfam.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/3_feature_kmer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/4_feature_combine.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/#engine.py#" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/2_feature_genemark_pfam_vfam.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/3_feature_kmer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/4_feature_combine.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/app.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/engine.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/env.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/gm_key" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/modify_label.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/nonvirus.vect.feature_index.new_list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/nonvirus.vect.feature_index.new_list.new_list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/reduce_testing_labels.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/run_feature_extraction_for_spark.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.fa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.fa.genemark" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.fa.img" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.fa.kmer" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.fa.pfam" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.fa.vfam" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/segment.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/server.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/test_server.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/testing.svmlib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/testing.svmlib.cleanup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/testing.svmlib.cleanup.backup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/tmp1eOS1f/fragment.fasta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/tmpR0zrXX/fragment.fasta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/training.svmlib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/training.svmlib.cleanup" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/untitled text 5.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/vect2svmlib.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/vector.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/vector.out.smvlib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/vector.out.smvlib2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Flask/virus-non-virus.fa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/app.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/engine.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/modify_label.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/reduce_testing_labels.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/run_feature_extraction_for_spark.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/test_server.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/vect2svmlib.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/qingpeng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/qingpeng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/prediction_pipeline_lite.py" afterPath="$PROJECT_DIR$/scripts/prediction_pipeline_lite.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/test_server.py" afterPath="$PROJECT_DIR$/web/test_server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/server.py" afterPath="$PROJECT_DIR$/web/server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,7 +82,7 @@
               <entry file="file://$PROJECT_DIR$/Pipeline.md">
                 <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                   <state split_layout="SPLIT">
-                    <first_editor relative-caret-position="77">
+                    <first_editor relative-caret-position="540">
                       <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
                       <folding />
                     </first_editor>
@@ -94,11 +102,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="6_feature_extraction.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="6_feature_extraction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/6_feature_extraction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            <state relative-caret-position="585">
+              <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -146,24 +154,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="engine.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/engine.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TODO.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TODO.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="300">
-                <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+              <first_editor relative-caret-position="165">
+                <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -171,34 +167,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_feature_extraction_for_spark.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Flask/run_feature_extraction_for_spark.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+      <file leaf-file-name="Readme_genelearn.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Readme_genelearn.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="345">
+                <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_feature_extraction_for_spark.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/run_feature_extraction_for_spark.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-              <folding />
+      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="489">
+                <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_server.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/test_server.py">
+      <file leaf-file-name="spark_training_model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -220,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/3_feature_kmer.py" />
         <option value="$PROJECT_DIR$/scripts/Archive/get_vector_batch_locally.nf" />
         <option value="$PROJECT_DIR$/scripts/feature_extraction.nf" />
         <option value="$PROJECT_DIR$/scripts/Flask/run_feature_extraction_for_spark.sh" />
@@ -268,9 +267,10 @@
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/run_feature_extraction_for_spark.sh" />
         <option value="$PROJECT_DIR$/TODO.md" />
-        <option value="$PROJECT_DIR$/web/test_server.py" />
         <option value="$PROJECT_DIR$/scripts/prediction_pipeline_lite.py" />
         <option value="$PROJECT_DIR$/scripts/6_feature_extraction.py" />
+        <option value="$PROJECT_DIR$/web/test_server.py" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
@@ -287,10 +287,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="113" />
-    <option name="y" value="84" />
-    <option name="width" value="2398" />
-    <option name="height" value="900" />
+    <option name="x" value="224" />
+    <option name="y" value="135" />
+    <option name="width" value="1411" />
+    <option name="height" value="794" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -335,24 +335,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgi-ViCA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgi-ViCA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Flask" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -706,10 +688,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="113" y="84" width="2398" height="900" extended-state="0" />
+    <frame x="224" y="135" width="1411" height="794" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13803169" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2345854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32585752" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -752,13 +734,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/remove_segment_name_from_vector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/random_seq.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -791,7 +766,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extra/model_tuning/readme.md" />
-    <entry file="file://$PROJECT_DIR$/Readme.md" />
     <entry file="file://$PROJECT_DIR$/scripts/2_feature_genemark_pfam_vfam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2460">
@@ -927,20 +901,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#30#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,9 +937,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -992,9 +955,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,31 +971,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
           <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="300">
-            <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pipeline.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="77">
-            <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,32 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Flask/run_feature_extraction_for_spark.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/test_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/run_feature_extraction_for_spark.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/prediction_pipeline_lite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -1100,9 +1011,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/6_feature_extraction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        <state relative-caret-position="585">
+          <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Flask/run_feature_extraction_for_spark.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/run_feature_extraction_for_spark.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="165">
+            <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme_genelearn.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="345">
+            <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipeline.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="540">
+            <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="489">
+            <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

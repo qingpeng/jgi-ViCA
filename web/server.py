@@ -1,42 +1,45 @@
-import time, sys, cherrypy, os
-from paste.translogger import TransLogger
-from app import create_app
-from pyspark import SparkContext, SparkConf
-
-def init_spark_context():
-    # load spark context
-    conf = SparkConf().setAppName("genelearn-server")
-    # IMPORTANT: pass aditional Python modules to each worker
-    sc = SparkContext(conf=conf, pyFiles=['engine.py', 'app.py'])
-
-    return sc
+from flask import Flask, redirect, url_for, request
+import subprocess
+app = Flask(__name__)
 
 
-def run_server(app):
-
-    # Enable WSGI access logging via Paste
-    app_logged = TransLogger(app)
-
-    # Mount the WSGI callable object (app) on the root directory
-    cherrypy.tree.graft(app_logged, '/')
-
-    # Set the configuration of the web server
-    cherrypy.config.update({
-        'engine.autoreload.on': True,
-        'log.screen': True,
-        'server.socket_port': 5432,
-        'server.socket_host': '0.0.0.0'
-    })
-
-    # Start the CherryPy WSGI web server
-    cherrypy.engine.start()
-    cherrypy.engine.block()
+@app.route('/')
+def main_form():
+    return '<form action="submit" id="textform" method="post"><p>Enter the fasta sequences:</p><textarea name="text" cols="40" rows="5" maxlength="5000000"></textarea><input type="submit" value="Submit"></form>'
 
 
-if __name__ == "__main__":
-    # Init spark context and load libraries
-    sc = init_spark_context()
-    app = create_app(sc)
+@app.route('/submit', methods=['POST'])
+def submit_textarea():
+    fasta_seqs = request.form["text"]
+    file_fasta_obj = open("file_fasta.fa", 'w')
+    file_fasta_obj.write(fasta_seqs)
+    file_fasta_obj.close()
+    genelearn_path = "/Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/scripts/"
+    genemark_path = "/Users/qingpeng/bin/genemark_suite_macosx/gmsuite/"
+    hmmer_path = "/Users/qingpeng/bin/hmmer-3.1b2-macosx-intel/"
+    pfam_db = "/Users/qingpeng/Local/Pfam_DB/"
+    spark_path = "/Users/qingpeng/Downloads/spark-2.1.0-bin-hadoop2.7/"
+    feature_index_file = "/Users/qingpeng/Local/GeneLearn/all_segment.fasta.vect.feature_index"
+    model_path = "/Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/scripts/model/subsample_model/"
+    prediction_pipeline_lite_command = [
+        'python',
+        genelearn_path+'prediction_pipeline_lite.py', "file_fasta.fa",
+        "file_fasta_fa.prediction",
+        genemark_path, hmmer_path, pfam_db, spark_path, feature_index_file,
+        model_path]
+    print prediction_pipeline_lite_command
+    print "spark prediction running...\n"
+    return_code = subprocess.call(prediction_pipeline_lite_command)
 
-    # start web server
-    run_server(app)
+    if return_code != 0:
+        return return_code, "prediction_pipeline_lite_command"
+    print "done!\n"
+
+    file_prediction_obj = open("file_fasta_fa.prediction", 'r')
+    result = '<br>'.join(file_prediction_obj.readlines())
+
+    return "prediction score:<br> {}".format(result)
+
+
+if __name__ == '__main__':
+   app.run(debug = True)
