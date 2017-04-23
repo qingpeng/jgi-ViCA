@@ -16,7 +16,8 @@ class Feature:
             fields = line.split()
             feature_code = fields[1][0]
             if feature_code in feature_code_set:
-                feature_id_set.add(fields[0])
+                feature_id_set.add(int(fields[0])+1)
+                # feature list starts from 0
         return feature_id_set
 
 
@@ -31,7 +32,7 @@ class VectorFile:
         newline = fields[0]
         for vector in fields[1:]:
             items = vector.split(":")
-            if items[0] in feature_id_set:
+            if int(items[0]) in feature_id_set:
                 newline = newline + ' ' + vector
         return newline
 

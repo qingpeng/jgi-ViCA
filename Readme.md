@@ -54,6 +54,15 @@ There are three use cases for doing the prediction:
 - Large scale prediction - pipeline (in NextFlow) used for prediction on large 
 number of sequences using HPC or Cloud system
 
+a. feature extraction using nextflow workflow management
+```angular2html
+scripts/feature_extraction.nf
+```
+b. using spark to do prediction on the vectors
+```angular2html
+scripts/spark_prediction.py
+```
+
 - Small scale prediction  - downloadable package used for prediction on small
 number of sequences running locally (like a laptop)
 ```angular2html

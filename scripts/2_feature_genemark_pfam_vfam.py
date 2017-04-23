@@ -220,7 +220,7 @@ def main():
                                 "fragment.fasta.aa.hmmscan_vfam")
                             line_vfam = (line_vfam +
                                          generate_line(vector_vfam))
-
+## hmmsearch
                         hmmscan_params_img = [hmmer_path+"/binaries/hmmscan",
                                               "--tblout", "fragment.fasta.aa."
                                               "hmmscan_img", "-E", "1e-5",
