@@ -4,8 +4,11 @@ from pyspark import SparkContext
 from pyspark.mllib.util import MLUtils
 from pyspark.mllib.feature import StandardScaler, StandardScalerModel
 from pyspark.mllib.linalg import Vectors
+from pyspark.mllib.linalg import SparseVector
+from pyspark.mllib.regression import LabeledPoint
 
-from pyspark.mllib.classification import LogisticRegressionWithLBFGS, LogisticRegressionModel
+from pyspark.mllib.classification import LogisticRegressionWithLBFGS, \
+    LogisticRegressionModel
 import argparse
 
 
@@ -19,7 +22,9 @@ def training(model_directory, libsvm, scaler):
 
         scaler1 = StandardScaler().fit(features)
         data1 = label.zip(scaler1.transform(features))
-        model_logistic = LogisticRegressionWithLBFGS.train(data1)
+        # convert into labeled point
+        data2 = data1.map(lambda x: LabeledPoint(x[0], x[1]))
+        model_logistic = LogisticRegressionWithLBFGS.train(data2)
     else:
         model_logistic = LogisticRegressionWithLBFGS.train(training_rdd)
     model_logistic.save(sc, model_directory)
