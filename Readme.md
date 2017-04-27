@@ -17,6 +17,7 @@
 * [matplotlib](http://matplotlib.org/)
 * [khmer v1.4](https://pypi.python.org/pypi/khmer/1.4/)
 * Pfam/Vfam HMMER
+pip install khmer==1.4
 
 # User Case
 
@@ -79,6 +80,12 @@ usage: prediction_pipeline_lite.py [-h]
 sequences for prediction
 ```angular2html
 ~/web/server.py
+```
+
+### Other helper scripts
+select vectors from specific features:
+```angular2html
+scripts/pick_vectors_by_feature.py
 ```
 
 ## Diagram of program

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 python ~/GDrive/Development/Bitbucket/jgi-genelearn/scripts/pick_vectors_by_feature.py -d all_segment.fasta.vect.feature_index -f 0 -i training.vect -o training.vect.0
 python ~/GDrive/Development/Bitbucket/jgi-genelearn/scripts/pick_vectors_by_feature.py -d all_segment.fasta.vect.feature_index -f 1 -i training.vect -o training.vect.1
 python ~/GDrive/Development/Bitbucket/jgi-genelearn/scripts/pick_vectors_by_feature.py -d all_segment.fasta.vect.feature_index -f 2 -i training.vect -o training.vect.2
