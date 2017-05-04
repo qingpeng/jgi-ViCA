@@ -2,10 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jgi-genelearn.iml" afterPath="$PROJECT_DIR$/.idea/jgi-genelearn.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/db.lck" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/db.lck" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log.ctrl" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log.ctrl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/logmirror.ctrl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c10.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c10.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c101.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c101.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c111.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c111.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c121.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c121.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c130.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c130.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c141.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c141.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c150.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c150.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c161.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c161.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c171.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c171.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c180.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c180.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c191.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c191.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1e0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1e0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1f1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1f1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c20.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c20.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c200.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c200.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c211.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c211.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c221.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c221.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c230.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c230.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c241.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c241.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c31.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c31.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c380.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c380.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c391.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c391.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c41.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c41.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c490.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c490.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4b0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4d1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4d1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4f0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c51.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c51.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c510.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c510.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c530.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c530.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c550.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c550.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c570.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c570.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c590.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c590.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5b0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5c1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5d0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5d0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5e1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5e1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5f0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c60.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c60.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c610.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c610.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c621.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c621.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c630.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c630.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c650.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c650.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c661.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c661.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c670.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c670.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c690.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c690.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6b0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6c1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6d0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6d0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6f0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c71.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c71.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7c1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7d1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7d1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7e1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7e1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7f1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7f1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c801.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c801.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c81.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c81.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c840.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c840.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c860.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c860.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c880.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c880.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c891.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c891.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8a0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8a0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c90.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c90.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c920.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c920.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c931.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c931.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c940.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c940.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c951.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c951.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c960.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c960.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c971.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c971.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c981.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c981.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c990.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c990.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9c0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9c0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9e0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9e0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/ca1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/ca1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cb1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cb1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cf0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cf0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/spark_training_model.py" afterPath="$PROJECT_DIR$/scripts/spark_training_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/ModelTuning.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/ModelTuning.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/derby.log" afterPath="$PROJECT_DIR$/extra/model_tuning/derby.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/service.properties" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/service.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +137,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spark_training_model.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spark_training_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#23#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spark_training_model_dataframe.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#23#55#0" expanded="true" />
               </folding>
@@ -90,16 +194,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2_feature_genemark_pfam_vfam.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/2_feature_genemark_pfam_vfam.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="genelearn.nf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Archive/genelearn.nf">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,8 +228,8 @@
         <entry file="file://$PROJECT_DIR$/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="143">
-                <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="46" />
+              <first_editor relative-caret-position="233">
+                <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -165,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank_oop.py" />
         <option value="$PROJECT_DIR$/scripts/filter_close_alignment_by_all_rank.py" />
         <option value="$PROJECT_DIR$/scripts/test_filter_close_alignment_by_all_rank_oop.py" />
         <option value="$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_keep_ambiguous.py" />
@@ -216,6 +309,7 @@
         <option value="$PROJECT_DIR$/doc/training.md" />
         <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/scripts/spark_training_model.py" />
+        <option value="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
       </list>
     </option>
   </component>
@@ -232,10 +326,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="280" />
-    <option name="width" value="1541" />
-    <option name="height" value="874" />
+    <option name="x" value="77" />
+    <option name="y" value="23" />
+    <option name="width" value="1471" />
+    <option name="height" value="912" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -502,6 +596,17 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -730,10 +835,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="280" width="1541" height="874" extended-state="0" />
+    <frame x="77" y="23" width="1471" height="912" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36080468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17704688" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32585752" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -788,7 +893,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/Flask/engine.py" />
     <entry file="file://$PROJECT_DIR$/scripts/Flask/server.py" />
     <entry file="file://$PROJECT_DIR$/web/index.html" />
     <entry file="file://$PROJECT_DIR$/web/server.py">
@@ -1028,23 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="143">
-            <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="46" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Run_Spark/Multiple_Spark_for_Binary/SimpleApp.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1061,10 +1148,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="233">
+            <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#23#55#0" expanded="true" />
           </folding>
