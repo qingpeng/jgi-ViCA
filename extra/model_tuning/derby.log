@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Wed May 03 23:42:11 PDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-015b-d231-d06f-000017b1cca0 
-on database directory /Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/extra/model_tuning/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@7db164c0 
+Thu May 04 14:33:50 PDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-015b-d562-21a9-00001588fab0 
+on database directory /Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/extra/model_tuning/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@6c3640ef 
 Loaded from file:/Users/qingpeng/Downloads/spark-2.0.0-bin-hadoop2.7/jars/derby-10.11.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_121-b13

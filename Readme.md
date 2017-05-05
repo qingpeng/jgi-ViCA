@@ -18,6 +18,24 @@
 * [khmer v1.4](https://pypi.python.org/pypi/khmer/1.4/)
 * Pfam/Vfam HMMER
 pip install khmer==1.4
+* [Spark]
+
+# Preparation
+## Spark:
+
+You may come cross warnings like below if you run it on your laptop
+```
+17/05/04 14:34:34 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+17/05/04 14:34:34 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+```
+This is because the native BLAS is not used. This may affect the speed of 
+model training and prediction.
+
+If you want to avoid this, you may want to build the Spark from source code. 
+
+Please refer to this page:
+http://www.spark.tc/blas-libraries-in-mllib/
+
 
 # User Case
 
