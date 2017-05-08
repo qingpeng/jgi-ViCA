@@ -112,4 +112,5 @@ scripts/pick_vectors_by_feature.py
 
 ## Description of scripts
 
-
+scripts/sklearn_training_model.py : training model using sklearn, with weighted option
+scripts/sklearn_evaluate_model.py: evaluate model using sklearn
