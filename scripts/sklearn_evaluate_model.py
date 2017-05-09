@@ -8,8 +8,10 @@ from sklearn.metrics import confusion_matrix, precision_recall_curve
 
 
 def evaluating(model, libsvm, report):
-    x_test, y_test = load_svmlight_file(libsvm)
+
     clf = joblib.load(model)
+    num_features = len(clf.coef_[0])
+    x_test, y_test = load_svmlight_file(libsvm, n_features=num_features)
 
     probability = clf.predict_proba(x_test)
     probability_list = [i[1] for i in probability]
@@ -25,9 +27,11 @@ def evaluating(model, libsvm, report):
     report_obj.write(str(matrix[0][0])+' '+str(matrix[0][1])+'\n')
     report_obj.write(str(matrix[1][0])+' '+str(matrix[1][1])+'\n')
     report_obj.write('precision recall thresholds\n')
-    for i in range(len(precision)):
-        report_obj.write(precision[i]+' '+recall[i]+' '+thresholds[i]+'\n')
-
+    for i in range(len(precision)-1):
+        report_obj.write(str(precision[i])+' '+str(recall[i])+' '
+                         + str(thresholds[i])+'\n')
+    report_obj.write(str(precision[len(precision)-1])+' '
+                     + str(recall[len(precision)-1])+'\n')
 
 def main():
     parser = argparse.ArgumentParser(
