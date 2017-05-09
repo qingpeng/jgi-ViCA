@@ -14,7 +14,10 @@ class Model:
 
     def train(self, libsvm, model, scaler_file, scaler_with_mean):
         x_train, y_train = load_svmlight_file(libsvm)
-        scaler = preprocessing.StandardScaler(with_mean=scaler_with_mean)
+        if scaler_with_mean == 'False':
+            scaler = preprocessing.StandardScaler(with_mean=False)
+        else:
+            scaler = preprocessing.StandardScaler(with_mean=True)
         scaler.fit(x_train)
         joblib.dump(scaler, scaler_file)
         scaled_x_train = scaler.transform(x_train)

@@ -5,18 +5,20 @@ from sklearn.externals import joblib
 import argparse
 from sklearn.metrics import average_precision_score
 from sklearn.metrics import confusion_matrix, precision_recall_curve
+from sklearn import preprocessing
 
 
-def evaluating(model, libsvm, report):
+def evaluating(model, scaler_file, libsvm, report):
     x_test, y_test = load_svmlight_file(libsvm)
     clf = joblib.load(model)
-
-    probability = clf.predict_proba(x_test)
+    scaler = joblib.load(scaler_file)
+    x_test_scaled = scaler.transform(x_test)
+    probability = clf.predict_proba(x_test_scaled)
     probability_list = [i[1] for i in probability]
     auprc = average_precision_score(y_test, probability_list)
     precision, recall, thresholds = precision_recall_curve(y_test,
                                                            probability_list)
-    prediction = clf.predict(x_test)
+    prediction = clf.predict(x_test_scaled)
     matrix = confusion_matrix(y_test, prediction)
 
     report_obj = open(report, 'w')
@@ -34,11 +36,12 @@ def main():
         description='A script to use spark to train model')
 
     parser.add_argument('libsvm', help='libsvm file of testing data')
-    parser.add_argument('model',  help='model name to save')
+    parser.add_argument('model',  help='model file name to load')
+    parser.add_argument('scaler',  help='scaler file name to load')
     parser.add_argument('report',  help='evaluation report file')
 
     args = parser.parse_args()
-    evaluating(args.model, args.libsvm, args.report)
+    evaluating(args.model, args.scaler, args.libsvm, args.report)
 
 if __name__ == '__main__':
     main()
