@@ -9,11 +9,14 @@ from sklearn import preprocessing
 
 
 def evaluating(model, scaler_file, libsvm, report):
-    x_test, y_test = load_svmlight_file(libsvm)
     clf = joblib.load(model)
+    num_features = len(clf.coef_[0])
+    x_test, y_test = load_svmlight_file(libsvm, n_features=num_features)
+
     scaler = joblib.load(scaler_file)
     x_test_scaled = scaler.transform(x_test)
     probability = clf.predict_proba(x_test_scaled)
+
     probability_list = [i[1] for i in probability]
     auprc = average_precision_score(y_test, probability_list)
     precision, recall, thresholds = precision_recall_curve(y_test,
@@ -27,9 +30,11 @@ def evaluating(model, scaler_file, libsvm, report):
     report_obj.write(str(matrix[0][0])+' '+str(matrix[0][1])+'\n')
     report_obj.write(str(matrix[1][0])+' '+str(matrix[1][1])+'\n')
     report_obj.write('precision recall thresholds\n')
-    for i in range(len(precision)):
-        report_obj.write(precision[i]+' '+recall[i]+' '+thresholds[i]+'\n')
-
+    for i in range(len(precision)-1):
+        report_obj.write(str(precision[i])+' '+str(recall[i])+' '
+                         + str(thresholds[i])+'\n')
+    report_obj.write(str(precision[len(precision)-1])+' '
+                     + str(recall[len(precision)-1])+'\n')
 
 def main():
     parser = argparse.ArgumentParser(
