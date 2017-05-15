@@ -47,7 +47,7 @@ def to_svmlib(vectors_line, feature_list):
         dict_vectors[int(label[0])] = label[1]
     # sort the feature id
     sorted_key = sorted(dict_vectors.keys())
-    print sorted_key
+    #print sorted_key
     out = ''
     for key in sorted_key:
         out = out + ' ' + str(key) + ':' + dict_vectors[key]
