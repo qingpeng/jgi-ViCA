@@ -5,6 +5,7 @@
       <w>contigs</w>
       <w>famiy</w>
       <w>inputfile</w>
+      <w>intergenic</w>
       <w>kmer</w>
       <w>ksize</w>
       <w>libsvm</w>

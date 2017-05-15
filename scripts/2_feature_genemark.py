@@ -30,6 +30,10 @@ def flatten(list_of_lists):
 def parsemod(dir_name):
     """Finds the Genemark model, parses it and returns a feature vector
     with the taxid as the first element"""
+
+    itemvect = []
+    name_list = []
+    value_list = []
     for file_name in os.listdir(dir_name):
         if file_name.endswith("hmm.mod"):
             model_file = os.path.join(dir_name, file_name)
@@ -43,51 +47,64 @@ def parsemod(dir_name):
                 start2 = 1 + rawvec.index(['NONC'])
                 nonc = (list(flatten(rawvec[start2: start2 + 64])))
                 itemvect = cod1 + nonc
-                if len(itemvect) == 256:
-                
-                    return zip(range(256), itemvect)
+
             f.close()
-            break
+
+        elif file_name.endswith("fasta.lst"):
+            lst_file = os.path.join(dir_name, file_name)
+            lst_file_obj = open(lst_file, 'r')
+            switch = 0
+            gene_lines = []
+            segment_length = 0
+            for line in lst_file_obj:
+                if "FASTA definition line" in line:
+                    line = line.rstrip()
+                    start_end = line.split()[3].split('|')[-1].split('..')
+                    segment_length = int(start_end[1]) - int(start_end[0])
+
+                if "Predicted genes" in line:
+                    switch = 1
+                elif "Predicted proteins:" in line:
+                    switch = 0
+                else:
+                    if switch == 1:
+                        if (('Gene' not in line) and ('#' not in line) and
+                                line != '\n'):
+                            gene_lines.append(line)
+            lst_file_obj.close()
+
+            left_end = []
+            right_end = []
+            gene_length = []
+            # print gene_lines
+            for gene_line in gene_lines:
+                gene_line = gene_line.rstrip()
+                fields = gene_line.split()
+                # print fields
+                left_end.append(int(fields[2].strip('<')))
+                right_end.append(int(fields[3].strip('>')))
+                gene_length.append(int(fields[4]))
+
+            fraction_coding = sum(gene_length)*1.0/segment_length
+            ave_gene_length = sum(gene_length)*1.0/len(gene_length)
+
+            ave_intergenic_length = (1.0*((right_end[-1]-left_end[0]+1)
+                                          - sum(gene_length)) /
+                                     (len(gene_length)-1))
+            name_list = ['fraction_coding', 'ave_gene_length',
+                         'ave_intergenic_length']
+            value_list = [fraction_coding, ave_gene_length,
+                          ave_intergenic_length]
+            # print value_list, gene_length, segment_length
+
+    id_list = range(256) + name_list
+    num_list = itemvect + value_list
+
+    if len(num_list) == 259:
+        return zip(id_list, num_list)
 
 
-# 
-# #                                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
-# # target name        accession  query name                           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc descript
-# #------------------- ----------                 -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- --------
-# COX2_TM              PF02790.12 gene_4|GeneMark.hmm|92_aa|+|4616|4894 -            1.5e-15   56.9   0.7   1.9e-15   56.6   0.7   1.1   1   0   0   1   1   1   1 Cytochr
-# #
-# # Program:         hmmscan
-# # Version:         3.1b2 (February 2015)
-# #
 
-
-def parse_hmmer(filename):
-    """
-    extract vector numbers from hmmer result file
-    also pick the lowest e value if there are multiple hits
-    """
-    # rawvec = []
-    # number_processed = 0
-
-    file_obj = open(filename, 'r')
-
-    e_values = {}
-    for line in file_obj:
-        if line[0] != "#":
-            line = line.rstrip()
-            fields = line.split()
-            label = fields[0]
-            
-#            labels.append(fields[0]) # target name
-#            values.append(fields[4])
-            if label not in e_values:
-                e_values[label] = float(fields[4])
-            else:
-                if float(fields[4]) < e_values[label]:
-                    e_values[label] = float(fields[4])
-
-    file_obj.close()
-    return e_values.items()
 
 
 def generate_line(zip_list):
@@ -181,7 +198,7 @@ def main():
             
         output_genemark_obj.write(line_genemark+'\n')
 
-        shutil.rmtree(tmpdir)
+        #shutil.rmtree(tmpdir)
     
     output_genemark_obj.close()
 
