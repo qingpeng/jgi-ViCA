@@ -198,7 +198,7 @@ def main():
             
         output_genemark_obj.write(line_genemark+'\n')
 
-        #shutil.rmtree(tmpdir)
+        shutil.rmtree(tmpdir)
     
     output_genemark_obj.close()
 
