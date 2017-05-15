@@ -88,9 +88,12 @@ def parsemod(dir_name):
             fraction_coding = sum(gene_length)*1.0/segment_length
             ave_gene_length = sum(gene_length)*1.0/len(gene_length)
 
-            ave_intergenic_length = (1.0*((right_end[-1]-left_end[0]+1)
-                                          - sum(gene_length)) /
-                                     (len(gene_length)-1))
+            if len(gene_length) == 1:
+                ave_intergenic_length = 0
+            else:
+                ave_intergenic_length = (1.0*((right_end[-1]-left_end[0]+1)
+                                         - sum(gene_length)) /
+                                         (len(gene_length)-1))
             name_list = ['fraction_coding', 'ave_gene_length',
                          'ave_intergenic_length']
             value_list = [fraction_coding, ave_gene_length,
