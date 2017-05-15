@@ -16,11 +16,14 @@ class Model:
         x_train, y_train = load_svmlight_file(libsvm)
         if scaler_with_mean == 'False':
             scaler = preprocessing.StandardScaler(with_mean=False)
+            scaler.fit(x_train)
+            scaled_x_train = scaler.transform(x_train)
         else:
             scaler = preprocessing.StandardScaler(with_mean=True)
-        scaler.fit(x_train)
+            x_train_dense = x_train.todense()
+            scaler.fit(x_train_dense)
+            scaled_x_train = scaler.transform(x_train_dense)
         joblib.dump(scaler, scaler_file)
-        scaled_x_train = scaler.transform(x_train)
 
         self.logreg.fit(scaled_x_train, y_train)
         joblib.dump(self.logreg, model)

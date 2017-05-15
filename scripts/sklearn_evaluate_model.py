@@ -8,13 +8,21 @@ from sklearn.metrics import confusion_matrix, precision_recall_curve
 from sklearn import preprocessing
 
 
-def evaluating(model, scaler_file, libsvm, report):
+def evaluating(model, scaler_file, libsvm, report, scaler_with_mean):
     clf = joblib.load(model)
     num_features = len(clf.coef_[0])
     x_test, y_test = load_svmlight_file(libsvm, n_features=num_features)
-
     scaler = joblib.load(scaler_file)
-    x_test_scaled = scaler.transform(x_test)
+    if scaler_with_mean == 'False':
+
+        scaler.fit(x_test)
+        x_test_scaled = scaler.transform(x_test)
+    else:
+
+        x_test_dense = x_test.todense()
+        scaler.fit(x_test_dense)
+        x_test_scaled = scaler.transform(x_test_dense)
+
     probability = clf.predict_proba(x_test_scaled)
 
     probability_list = [i[1] for i in probability]
@@ -36,6 +44,7 @@ def evaluating(model, scaler_file, libsvm, report):
     report_obj.write(str(precision[len(precision)-1])+' '
                      + str(recall[len(precision)-1])+'\n')
 
+
 def main():
     parser = argparse.ArgumentParser(
         description='A script to use spark to train model')
@@ -43,10 +52,12 @@ def main():
     parser.add_argument('libsvm', help='libsvm file of testing data')
     parser.add_argument('model',  help='model file name to load')
     parser.add_argument('scaler',  help='scaler file name to load')
+    parser.add_argument('scaler_with_mean', help='True or False')
     parser.add_argument('report',  help='evaluation report file')
 
     args = parser.parse_args()
-    evaluating(args.model, args.scaler, args.libsvm, args.report)
+    evaluating(args.model, args.scaler, args.libsvm, args.report,
+               args.scaler_with_mean)
 
 if __name__ == '__main__':
     main()
