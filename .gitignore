@@ -1,6 +1,7 @@
 .DS_Store
 *~
 *.swp
-.pynb_checkpoints
-.idea
+.idea/*
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
 
