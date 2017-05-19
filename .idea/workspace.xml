@@ -2,106 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/extra/model_tuning/SparkDF_evaluation_1X_full.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log2.dat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/db.lck" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/db.lck" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log.ctrl" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log.ctrl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/logmirror.ctrl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c10.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c10.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c101.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c101.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c111.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c111.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c121.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c121.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c130.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c130.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c141.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c141.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c150.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c150.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c161.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c161.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c171.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c171.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c180.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c180.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c191.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c191.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1b1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1e0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1e0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1f1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1f1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c20.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c20.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c200.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c200.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c211.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c211.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c221.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c221.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c230.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c230.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c241.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c241.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c251.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c251.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c31.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c31.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c380.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c380.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c391.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c391.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3b1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c41.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c41.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c490.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c490.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4b0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4d1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4d1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4f0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c51.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c51.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c510.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c510.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c530.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c530.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c550.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c550.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c570.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c570.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c590.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c590.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5b0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5c1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5d0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5d0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5e1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5e1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5f0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c60.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c60.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c601.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c601.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c610.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c610.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c621.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c621.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c630.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c630.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c641.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c641.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c650.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c650.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c661.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c661.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c670.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c670.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c681.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c681.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c690.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c690.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6b0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6c1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6d0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6d0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6e1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6e1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6f0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c701.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c701.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c71.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c71.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7b1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c81.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c81.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c840.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c840.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c860.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c860.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c880.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c880.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8a0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8a0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c90.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c90.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c920.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c920.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c931.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c931.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c940.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c940.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c951.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c951.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c960.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c960.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c971.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c971.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c981.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c981.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c990.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c990.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9a1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9b1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9c0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9c0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9e0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9e0.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/ca1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/ca1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cb1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cb1.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cf0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cf0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/spark_prediction_dataframe.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_spark_prediction_dataframe.sh" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/extra/model_tuning/Model_Training_Spark_With_Pfam.ipynb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Pipeline.md" afterPath="$PROJECT_DIR$/doc/Pipeline.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/derby.log" afterPath="$PROJECT_DIR$/extra/model_tuning/derby.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/service.properties" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/service.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" afterPath="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" afterPath="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" afterPath="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -125,28 +30,6 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="spark_training_model_dataframe.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="450">
-                    <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#23#55#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="jgi-ViCA" />
@@ -156,8 +39,8 @@
       <file leaf-file-name="sklearn_evaluate_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/sklearn_evaluate_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="44" selection-end-column="58" />
+            <state relative-caret-position="207">
+              <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -166,8 +49,8 @@
       <file leaf-file-name="spark_evaluating_model_dataframe.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="297">
+              <caret line="90" column="25" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="e#23#55#0" expanded="true" />
               </folding>
@@ -179,7 +62,17 @@
         <entry file="file://$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="54" />
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_spark_prediction_dataframe.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_spark_prediction_dataframe.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,8 +81,8 @@
       <file leaf-file-name="spark_prediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/spark_prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="330">
+              <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
               <folding>
                 <element signature="e#23#55#0" expanded="true" />
               </folding>
@@ -197,51 +90,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pipeline.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spark_prediction_dataframe.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/spark_prediction_dataframe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <folding>
+                <element signature="e#23#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="training.vect.200" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test-data/training.vect.200">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing.vect.200.prediction" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test-data/testing.vect.200.prediction">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pipeline.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/Pipeline.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="426">
-                <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="training.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/training.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Readme_genelearn.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/Readme_genelearn.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pipeline_create_subsample_for_training_with_fasta.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/pipeline_create_subsample_for_training_with_fasta.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="156">
-                <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <first_editor relative-caret-position="240">
+                <caret line="87" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -253,17 +139,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/get_refseq_hits.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3_feature_kmer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/3_feature_kmer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -291,8 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py" />
-        <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/tests/test_filter_close_alignment_for_MEGAN.py" />
         <option value="$PROJECT_DIR$/test.ipynb" />
         <option value="$PROJECT_DIR$/extra/CHANGELOG.md" />
@@ -342,6 +216,8 @@
         <option value="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
         <option value="$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh" />
         <option value="$PROJECT_DIR$/doc/Pipeline.md" />
+        <option value="$PROJECT_DIR$/scripts/spark_prediction_dataframe.py" />
+        <option value="$PROJECT_DIR$/tests/test_spark_prediction_dataframe.sh" />
       </list>
     </option>
   </component>
@@ -358,10 +234,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="21" />
+    <option name="x" value="52" />
     <option name="y" value="23" />
-    <option name="width" value="1144" />
-    <option name="height" value="703" />
+    <option name="width" value="1207" />
+    <option name="height" value="723" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -381,7 +257,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -689,6 +564,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -720,9 +596,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/scripts/Archive" />
-      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/web/" />
       <recent name="$PROJECT_DIR$/extra" />
     </key>
@@ -998,45 +874,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="23" width="1144" height="703" extended-state="0" />
+    <frame x="52" y="23" width="1207" height="723" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32585752" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.620438" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58797526" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29310346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31759655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32585752" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.620438" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58797526" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35952637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1047,47 +909,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/sklearn_training_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="27" column="48" lean-forward="false" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/prediction_pipeline_lite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/vect2svmlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Archive/transform_log_pfam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/2_feature_genemark.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="94" column="38" lean-forward="false" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1103,51 +932,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme_genelearn.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Setup.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="390">
-            <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="886">
-            <caret line="99" column="11" lean-forward="false" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst" />
+    <entry file="file://$PROJECT_DIR$/Readme_genelearn.md" />
+    <entry file="file://$PROJECT_DIR$/Setup.md" />
+    <entry file="file://$PROJECT_DIR$/TODO.md" />
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1156,43 +947,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pipeline.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="600">
-            <caret line="40" column="15" lean-forward="true" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GeneLearn.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contributors.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.cfg" />
+    <entry file="file://$PROJECT_DIR$/Pipeline.md" />
+    <entry file="file://$PROJECT_DIR$/GeneLearn.png" />
+    <entry file="file://$PROJECT_DIR$/contributors.txt" />
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1201,7 +963,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="195">
             <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1211,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1219,9 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding>
-            <element signature="e#24#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1229,9 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1239,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,7 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1214">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,7 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1295,7 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,7 +1049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-704">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1062,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1158">
             <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1327,7 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
           <caret line="90" column="6" lean-forward="false" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1335,17 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1353,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,15 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/3_feature_kmer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1377,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,7 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1409,62 +1127,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/get_refseq_hits.py">
+    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/sklearn_evaluate_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="44" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-          <folding>
-            <element signature="e#23#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <element signature="e#23#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/training.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="540">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1473,7 +1142,16 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/training.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -1483,21 +1161,105 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="156">
-            <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-            <folding />
+            <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/3_feature_kmer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/get_refseq_hits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/Pipeline.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="426">
-            <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <first_editor relative-caret-position="240">
+            <caret line="87" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/sklearn_evaluate_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="90" column="25" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test-data/training.vect.200">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test-data/testing.vect.200.prediction">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_spark_prediction_dataframe.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_prediction_dataframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

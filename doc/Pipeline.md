@@ -102,6 +102,23 @@ Get Spark ML model for prediction
 ======
 
 
+```angular2html
+/global/projectb/scratch/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/Spark_1X> python ~/Github/jgi-ViCA/scripts/subsample_random.py ../../^C
+```
+
+```
+Training model on Cori
+Using 1x non-virus - all virus training data
+
+```angular2html
+spark-submit --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=$SCRATCH/spark/  --conf spark.driver.maxResultSize=60g  --driver
+-memory 60G --executor-memory 60G /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/spark_training_model_dataframe.py /global/projectb/scrat
+ch/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus /global/projectb/scratch/q
+pzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model /global/projectb/scratch
+/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler
+
+```
+
 Evaluate the performance of the model
 ```angular2html
  ~/Downloads/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model_dataframe.py ../testing.vect all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.report all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.png
