@@ -77,3 +77,22 @@ spark evaluating model!
 ```
  ~/Downloads/spark-2.0.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model.py testing.vect training.vect_model/ testing.vect.prediction testing.vect.report testing.vect.prc.png
 ```
+
+creating vector files for unit-testing
+====
+Generate vectors for 100 virus segments and 100 non-virus segments for testing purpose.
+```angular2html
+$python ~/Dropbox/Development/Github/jgi-ViCA/scripts/subsample_training_100.py training.vect 100 100 training.vect.200
+
+$ more training.vect.200|cut -f 1 -d ' '|grep -c '0'
+111
+$ more training.vect.200|cut -f 1 -d ' '|grep -c '1'
+86
+
+$ python ~/Dropbox/Development/Github/jgi-ViCA/scripts/subsample_training_100.py testing.vect 100 100 testing.vect.200
+$ more testing.vect.200|cut -f 1 -d ' '|grep -c '1'
+108
+$ more testing.vect.200|cut -f 1 -d ' '|grep -c '0'
+112
+
+```
