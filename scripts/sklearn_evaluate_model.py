@@ -47,7 +47,7 @@ def evaluating(model, scaler_file, libsvm, report, scaler_with_mean):
 
 def main():
     parser = argparse.ArgumentParser(
-        description='A script to use spark to train model')
+        description='A script to evaluate model with sklearn')
 
     parser.add_argument('libsvm', help='libsvm file of testing data')
     parser.add_argument('model',  help='model file name to load')

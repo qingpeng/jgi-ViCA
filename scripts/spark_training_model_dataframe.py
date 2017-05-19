@@ -10,7 +10,7 @@ from pyspark.sql import SparkSession
 import argparse
 
 
-def training(model_dir, libsvm, scaler_dir):
+def training_model(model_dir, libsvm, scaler_dir):
 
     spark = SparkSession \
         .builder \
@@ -18,7 +18,8 @@ def training(model_dir, libsvm, scaler_dir):
         .config("spark.some.config.option", "some-value") \
         .getOrCreate()
 
-    training = spark.read.format("libsvm").load(libsvm)
+    training = spark.read.format("libsvm").option(
+        "numFeatures", 19423).load(libsvm)
     scaler = StandardScaler(inputCol="features", outputCol="scaledFeatures")
     scalerModel = scaler.fit(training)
     scaledData = scalerModel.transform(training)
@@ -38,7 +39,7 @@ def main():
     parser.add_argument('scaler_dir',  help='directory to save standardscaler')
 
     args = parser.parse_args()
-    training(args.model_dir, args.libsvm, args.scaler_dir)
+    training_model(args.model_dir, args.libsvm, args.scaler_dir)
 
 if __name__ == '__main__':
     main()

@@ -96,3 +96,14 @@ $ more testing.vect.200|cut -f 1 -d ' '|grep -c '0'
 112
 
 ```
+
+
+Get Spark ML model for prediction
+======
+
+
+Evaluate the performance of the model
+```angular2html
+ ~/Downloads/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model_dataframe.py ../testing.vect all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.report all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.png
+ 
+```

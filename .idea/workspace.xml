@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/subsample_training_100.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log1.dat" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/extra/model_tuning/SparkDF_evaluation_1X_full.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log2.dat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/db.lck" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/db.lck" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log.ctrl" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/log.ctrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/logmirror.ctrl" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/log/logmirror.ctrl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c10.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c10.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c101.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c101.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c111.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c111.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c121.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c121.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c130.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c130.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c141.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c141.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c150.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c150.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c161.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c161.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c171.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c171.dat" />
@@ -16,16 +21,87 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c191.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c191.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1a1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1e0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1e0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1f1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c1f1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c20.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c20.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c200.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c200.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c211.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c211.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c221.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c221.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c230.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c230.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c241.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c241.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c251.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c251.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c31.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c31.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c380.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c380.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c391.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c391.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c3b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c41.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c41.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c490.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c490.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4b0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4d1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4d1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c4f0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c51.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c51.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c510.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c510.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c530.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c530.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c550.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c550.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c570.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c570.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c590.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c590.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5b0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5c1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5d0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5d0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5e1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5e1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c5f0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c60.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c60.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c601.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c601.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c610.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c610.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c621.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c621.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c630.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c630.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c641.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c641.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c650.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c650.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c661.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c661.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c670.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c670.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c681.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c681.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c690.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c690.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6b0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6b0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6c1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6c1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6d0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6d0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6e1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6e1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6f0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c6f0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c701.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c701.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c71.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c71.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c7b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c81.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c81.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c840.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c840.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c860.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c860.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c880.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c880.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8a0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c8a0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c90.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c90.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c920.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c920.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c931.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c931.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c940.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c940.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c951.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c951.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c960.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c960.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c971.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c971.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c981.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c981.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c990.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c990.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9a1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9a1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9b1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9b1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9c0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9c0.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9e0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/c9e0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/ca1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/ca1.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cb1.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cb1.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cf0.dat" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/seg0/cf0.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Pipeline.md" afterPath="$PROJECT_DIR$/doc/Pipeline.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/ML_dataframe.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/ML_dataframe.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/derby.log" afterPath="$PROJECT_DIR$/extra/model_tuning/derby.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/metastore_db/service.properties" afterPath="$PROJECT_DIR$/extra/model_tuning/metastore_db/service.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" afterPath="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" afterPath="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" afterPath="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,9 +133,11 @@
             <file leaf-file-name="spark_training_model_dataframe.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="345">
+                  <state relative-caret-position="450">
                     <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-                    <folding />
+                    <folding>
+                      <element signature="e#23#55#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -78,51 +156,43 @@
       <file leaf-file-name="sklearn_evaluate_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/sklearn_evaluate_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="330">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="44" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modify_class_for_training.py" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/modify_class_for_training.py">
+      <file leaf-file-name="spark_evaluating_model_dataframe.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subsample_random.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/subsample_random.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
               <folding>
-                <element signature="e#24#34#0" expanded="true" />
+                <element signature="e#23#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spark_evaluating_model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model.py">
+      <file leaf-file-name="test_spark_training_model_dataframe.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="90" column="6" lean-forward="false" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subsample.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/subsample.py">
+      <file leaf-file-name="spark_prediction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/spark_prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+              <folding>
+                <element signature="e#23#55#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,8 +201,34 @@
         <entry file="file://$PROJECT_DIR$/doc/Pipeline.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="540">
-                <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <first_editor relative-caret-position="426">
+                <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="training.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/training.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Readme_genelearn.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/Readme_genelearn.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -144,7 +240,7 @@
         <entry file="file://$PROJECT_DIR$/doc/pipeline_create_subsample_for_training_with_fasta.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="510">
+              <first_editor relative-caret-position="156">
                 <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
                 <folding />
               </first_editor>
@@ -153,21 +249,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pick_random_lines.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/pick_random_lines.py">
+      <file leaf-file-name="get_refseq_hits.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/get_refseq_hits.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spark_evaluating_model_dataframe.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
+      <file leaf-file-name="3_feature_kmer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/3_feature_kmer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state relative-caret-position="214">
+              <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -195,7 +291,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/run_filter_close_alignment_for_MEGAN.qsub" />
         <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/filter_close_alignment_for_MEGAN.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/tests/test_filter_close_alignment_for_MEGAN.py" />
@@ -212,7 +307,6 @@
         <option value="$PROJECT_DIR$/doc/pipeline_create_subsample_for_training_with_fasta.md" />
         <option value="$PROJECT_DIR$/scripts/vect2svmlib.py" />
         <option value="$PROJECT_DIR$/scripts/prepare_libsvm_for_prediction.py" />
-        <option value="$PROJECT_DIR$/scripts/spark_prediction.py" />
         <option value="$PROJECT_DIR$/scripts/split_training_testing.py" />
         <option value="$PROJECT_DIR$/scripts/Flask/index.html" />
         <option value="$PROJECT_DIR$/scripts/Flask/test_server.py" />
@@ -230,21 +324,23 @@
         <option value="$PROJECT_DIR$/extra/manuscript/pipeline.md" />
         <option value="$PROJECT_DIR$/doc/training.md" />
         <option value="$PROJECT_DIR$/scripts/spark_training_model.py" />
-        <option value="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
         <option value="$PROJECT_DIR$/scripts/scikit_training_model.py" />
         <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/sklearn_evaluate_model.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/scripts/sklearn_training_model.py" />
-        <option value="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" />
         <option value="$PROJECT_DIR$/scripts/2_feature_genemark.py" />
         <option value="$PROJECT_DIR$/scripts/Archive/get_genemark_feature.nf" />
         <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/modify_class_for_training.py" />
         <option value="$PROJECT_DIR$/scripts/subsample_random.py" />
         <option value="$PROJECT_DIR$/scripts/extract_column_from_libsvm.py" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
-        <option value="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
         <option value="$PROJECT_DIR$/scripts/subsample_training_100.py" />
+        <option value="$PROJECT_DIR$/Readme.md" />
+        <option value="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
+        <option value="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" />
+        <option value="$PROJECT_DIR$/scripts/spark_prediction.py" />
+        <option value="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
+        <option value="$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh" />
         <option value="$PROJECT_DIR$/doc/Pipeline.md" />
       </list>
     </option>
@@ -262,10 +358,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="144" />
-    <option name="y" value="177" />
-    <option name="width" value="1823" />
-    <option name="height" value="1057" />
+    <option name="x" value="21" />
+    <option name="y" value="23" />
+    <option name="width" value="1144" />
+    <option name="height" value="703" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -902,7 +998,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="144" y="177" width="1823" height="1057" extended-state="0" />
+    <frame x="21" y="23" width="1144" height="703" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -913,7 +1009,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58797526" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18135878" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29310346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -951,170 +1047,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/spark_prediction.py</url>
-          <line>2</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/test_feature_extraction_metamark.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Run_Spark/Training/SimpleApp.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_filter_close_alignment_for_MEGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_scripts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test-data/test_feature_extraction.fa.vect">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test-data/test_feature_extraction.fa">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test-data/test_segment_5k.fa">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7349">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test-data/test_segment_5k.fa.3">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_feature_genemark.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_keep_ambiguous.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Archive/genelearn.nf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-851">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Archive/get_vector.nf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Archive/get_vector_batch.nf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-257">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Archive/get_genemark_feature.nf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Archive/get_vector_lite.nf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/3_feature_kmer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/4_feature_combine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/sklearn_training_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="27" column="48" lean-forward="false" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/6_feature_extraction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-354">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1266,59 +1207,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="556">
-            <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
+    <entry file="file://$PROJECT_DIR$/scripts/pick_random_lines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
+    <entry file="file://$PROJECT_DIR$/scripts/subsample_training_100.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="375">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding>
+            <element signature="e#24#34#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/sklearn_evaluate_model.py">
+    <entry file="file://$PROJECT_DIR$/scripts/subsample_random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="90" column="6" lean-forward="false" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#24#34#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,38 +1243,246 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/pick_random_lines.py">
+    <entry file="file://$PROJECT_DIR$/tests/test-data/test_feature_extraction.fa">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_feature_extraction_kmer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_feature_extraction_metamark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_filter_close_alignment_for_MEGAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/subsample_random.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_feature_genemark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1214">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_single_taxon_training.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_shred.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_scripts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-704">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1158">
+            <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="90" column="6" lean-forward="false" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_training_model_dataframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#24#34#0" expanded="true" />
+            <element signature="e#23#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/subsample_training_100.py">
+    <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing_with_seq_name.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/4_feature_combine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/3_feature_kmer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/filter_close_alignment_for_MEGAN_refseq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/modify_class_for_training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/2_feature_genemark_pfam_vfam.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/5_create_training_testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/6_feature_extraction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/get_refseq_hits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/sklearn_evaluate_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="44" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
           <folding>
-            <element signature="e#24#34#0" expanded="true" />
+            <element signature="e#23#55#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/spark_prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/training.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/Readme_genelearn.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/pipeline_create_subsample_for_training_with_fasta.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="510">
+          <first_editor relative-caret-position="156">
             <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
             <folding />
           </first_editor>
@@ -1372,8 +1493,8 @@
     <entry file="file://$PROJECT_DIR$/doc/Pipeline.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="540">
-            <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <first_editor relative-caret-position="426">
+            <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />

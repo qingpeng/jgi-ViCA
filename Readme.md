@@ -15,10 +15,9 @@
 * [numpy](http://www.numpy.org/)
 * [scipy](http://www.scipy.org/)
 * [matplotlib](http://matplotlib.org/)
-* [khmer v1.4](https://pypi.python.org/pypi/khmer/1.4/)
-* Pfam/Vfam HMMER
-pip install khmer==1.4
-* [Spark]
+* [khmer v1.4](https://pypi.python.org/pypi/khmer/1.4/) pip install khmer==1.4
+* [Pfam/Vfam HMMER]
+* [Spark 2.1.0]
 
 # Preparation
 ## Spark:
@@ -51,12 +50,12 @@ scripts/5_create_training_testing_with_seq_name.py
 ```
 model training
 ```angular2html
-spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
+$SPARKPATH/bin/spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
 ```
 
 model evaluation
 ```
-spark-submit ./scripts/spark_evaluating_model.py testing.vect training.vect_model/ testing.vect.prediction testing.vect.report testing.vect.prc.png
+$SPARKPATH/bin/spark-submit ./scripts/spark_evaluating_model.py testing.vect training.vect_model/ testing.vect.prediction testing.vect.report testing.vect.prc.png
 ```
 
 
@@ -64,7 +63,7 @@ spark-submit ./scripts/spark_evaluating_model.py testing.vect training.vect_mode
 
 model training (small data set)
 ```angular2html
-spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
+$SPARKPATH/bin/spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
 ```
 
 ## Prediction

@@ -1,107 +1,80 @@
 #!/usr/bin/env python
 
 from pyspark import SparkContext
-from pyspark.mllib.util import MLUtils
-from pyspark.mllib.classification \
-    import LogisticRegressionWithLBFGS, LogisticRegressionModel
+from pyspark.ml.classification import LogisticRegressionModel
+from pyspark.ml.feature import StandardScaler, StandardScalerModel
+from pyspark.sql import SparkSession
 import argparse
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import average_precision_score
+from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
 
-def evaluate_model(testing, model):
-    model.clearThreshold()
-    labels_and_scores_rdd = testing.map(
-        lambda p: (p.label, model.predict(p.features)))
-    labels_and_scores = labels_and_scores_rdd.collect()
-    y_true = []
-    y_scores = []
-    for s in labels_and_scores:
-        y_true.append(s[0])
-        y_scores.append(s[1])
-    precision, recall, thresholds = precision_recall_curve(y_true, y_scores)
-    au_prc = average_precision_score(y_true, y_scores)
-    return au_prc, precision, recall, thresholds, y_true, y_scores
+class Model:
+    def __init__(self, model_path, scaler_path):
 
+        self.model = LogisticRegressionModel.load(model_path)
+        self.scaler = StandardScalerModel.load(scaler_path)
+        self.au_PRC = 0
+        self.precision = []
+        self.recall = []
+        self.thresholds = []
+        self.matrix = []
 
-def write_to_report(au_prc, precision, recall, thresholds, report):
-    file_report_obj = open(report, 'w')
-    file_report_obj.write('#au_prc:\n')
-    file_report_obj.write(str(au_prc)+'\n')
-    file_report_obj.write('#precision recall thresholds\n')
-    # print precision
-    # print 'length='+str(len(precision))+'\n'
-    # print recall
-    # print 'length='+str(len(recall))+'\n'
-    # print thresholds
-    # print 'length='+str(len(thresholds))+'\n'
+    def evaluate(self, test_path):
+        spark = SparkSession \
+            .builder \
+            .appName("LogisticRegressionWithElasticNet") \
+            .getOrCreate()
 
-    for i in xrange(len(precision)-1):
-        file_report_obj.write(
-            str(precision[i])+' '+str(recall[i])+' '+str(thresholds[i])+'\n')
-    file_report_obj.write(
-            str(precision[-1])+' '+str(recall[-1])+' '+'N/A'+'\n')
-    file_report_obj.close()
+        testing = spark.read.format(
+            "libsvm").option("numFeatures", self.model.numFeatures).load(
+            test_path)
+        testing_scaler = self.scaler.transform(testing)
+        testing_scaler_prediction = self.model.transform(testing_scaler)
+        label_list = [i.label for i in
+                      testing_scaler_prediction.select('label').collect()]
+        prediction_list = [i.prediction for i in
+                           testing_scaler_prediction.select(
+                               'prediction').collect()]
+        probability_list = [i.probability[1] for i in
+                            testing_scaler_prediction.select(
+                                'probability').collect()]
+        self.au_PRC = average_precision_score(label_list, probability_list)
+        self.precision, self.recall, self.thresholds = precision_recall_curve(
+            label_list, probability_list)
+        self.matrix = confusion_matrix(label_list, prediction_list)
 
+    def write_to_report(self, report_path):
+        report_obj = open(report_path, 'w')
+        report_obj.write('auprc=' + str(self.au_PRC) + '\n')
+        report_obj.write('confusion_matrix:\n')
+        report_obj.write(str(self.matrix[0][0]) + ' ' + str(self.matrix[0][1])
+                         + '\n')
+        report_obj.write(str(self.matrix[1][0]) + ' ' + str(self.matrix[1][1])
+                         + '\n')
+        report_obj.write('precision recall thresholds\n')
+        for i in range(len(self.precision) - 1):
+            report_obj.write(str(self.precision[i]) + ' ' + str(self.recall[i])
+                             + ' '
+                             + str(self.thresholds[i]) + '\n')
+        report_obj.write(str(self.precision[len(self.precision) - 1]) + ' '
+                         + str(self.recall[len(self.precision) - 1]) + '\n')
 
-def write_to_prediction(y_true, y_scores, prediction):
-    file_prediction_obj = open(prediction, 'w')
-    file_prediction_obj.write('#true_label score\n')
-
-    for i in xrange(len(y_true)):
-        file_prediction_obj.write(str(y_true[i])+' '+str(y_scores[i])+'\n')
-    file_prediction_obj.close()
-
-
-def draw_prc(precision, recall, prc_file, au_prc):
-    lw = 2
-    plt.figure(figsize=(6, 4), dpi=80)
-    plt.clf()
-    plt.plot(recall, precision, lw=lw, color='teal',
-             label='all, AUC={0:0.4f}'.format(au_prc))
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.ylim([0.0, 1.05])
-    plt.xlim([0.0, 1.0])
-    plt.title('Precision-Recall curve')
-    plt.legend(loc="lower left")
-    plt.savefig(prc_file)
-
-
-def testing_model(model_directory, libsvm, prediction, report, prc_file):
-    sc = SparkContext(appName="PythonLinearRegressionWithSGDExample")
-    model = LogisticRegressionModel.load(sc, model_directory)
-    testing_rdd = MLUtils.loadLibSVMFile(sc, libsvm,
-                                         numFeatures=model.numFeatures)
-    testing_rdd.cache()
-    au_prc, precision, recall, thresholds, y_true, y_scores = evaluate_model(
-        testing_rdd, model)
-    print 'evaluating_model done!\n'
-    write_to_report(au_prc, precision, recall, thresholds, report)
-    print 'write_to_report done!\n'
-    write_to_prediction(y_true, y_scores, prediction)
-    print 'write_to_prediction done!\n'
-    draw_prc(precision, recall, prc_file, au_prc)
-    print 'draw_prc done!\n'
-
-def evaluation_model(model_dir, libsvm, scaler_dir):
-    spark = SparkSession \
-        .builder \
-        .appName("PythonSQL") \
-        .config("spark.some.config.option", "some-value") \
-        .getOrCreate()
-
-    testing = spark.read.format("libsvm").load(libsvm)
-    scaler = StandardScaler(inputCol="features", outputCol="scaledFeatures")
-    scalerModel = scaler.fit(training)
-    scaledData = scalerModel.transform(training)
-    scalerModel.save(scaler_dir)
-
-    lr_scaler = LogisticRegression(featuresCol="scaledFeatures")
-    lrModel_scaler = lr_scaler.fit(scaledData)
-    lrModel_scaler.save(model_dir)
-
+    def draw_prc(self, figure_path):
+        lw = 2
+        plt.figure(figsize=(6, 4), dpi=80)
+        plt.clf()
+        plt.plot(self.recall, self.precision, lw=lw, color='teal',
+                 label='all, AUC={0:0.4f}'.format(self.au_PRC))
+        plt.xlabel('Recall')
+        plt.ylabel('Precision')
+        plt.ylim([0.0, 1.05])
+        plt.xlim([0.0, 1.0])
+        plt.title('Precision-Recall curve')
+        plt.legend(loc="lower left")
+        plt.savefig(figure_path)
 
 
 def main():
@@ -110,14 +83,21 @@ def main():
 
     parser.add_argument('libsvm', help='libsvm file of testing data')
     parser.add_argument('model',  help='model directory to save')
-    parser.add_argument('prediction',
-                        help='prediction result, label and score')
+    parser.add_argument('scaler',  help='scaler file name to load')
     parser.add_argument('report', help='report file')
     parser.add_argument('PRC', help='PRC figure file')
 
     args = parser.parse_args()
-    testing_model(args.model, args.libsvm, args.prediction, args.report,
-                  args.PRC)
+    sc = SparkContext(appName="PythonLinearRegressionWithSGDExample")
+
+    model = Model(args.model, args.scaler)
+    print 'load model done!\n'
+    model.evaluate(args.libsvm)
+    print 'evaluating_model done!\n'
+    model.write_to_report(args.report)
+    print 'write_to_report done!\n'
+    model.draw_prc(args.PRC)
+    print 'draw_prc done!\n'
 
 if __name__ == '__main__':
     main()
