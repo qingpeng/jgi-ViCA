@@ -19,16 +19,18 @@ def submit_textarea():
     hmmer_path = "/Users/qingpeng/bin/hmmer-3.1b2-macosx-intel/"
     pfam_db = "/Users/qingpeng/Local/Pfam_DB/"
     spark_path = "/Users/qingpeng/Downloads/spark-2.1.0-bin-hadoop2.7/"
-    feature_index_file = "/Users/qingpeng/Local/GeneLearn/all_segment.fasta.vect.feature_index"
-    model_path = "/Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/scripts/model/subsample_model/"
+    feature_index_file = genelearn_path+"model/all_segment.fasta.vect.feature_index"
+    model_path = genelearn_path+"model/Spark_2.1.0/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model"
+    scaler_path = genelearn_path+"model/Spark_2.1.0/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler"
     prediction_pipeline_lite_command = [
         'python',
         genelearn_path+'prediction_pipeline_lite.py', "file_fasta.fa",
         "file_fasta_fa.prediction",
         genemark_path, hmmer_path, pfam_db, spark_path, feature_index_file,
-        model_path]
+        model_path, scaler_path]
     print prediction_pipeline_lite_command
     print "spark prediction running...\n"
+    print prediction_pipeline_lite_command
     return_code = subprocess.call(prediction_pipeline_lite_command)
 
     if return_code != 0:
