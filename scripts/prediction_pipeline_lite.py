@@ -8,7 +8,7 @@ import shutil
 
 
 def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
-        hmmer_db, spark_path, feature_file, model_path):
+        hmmer_db, spark_path, feature_file, model_path, scaler_path):
     tmpdir = os.path.abspath(tempfile.mkdtemp(dir="./"))
     os.chdir(tmpdir)
 
@@ -24,7 +24,7 @@ def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
 
     if return_code != 0:
         return return_code, "feature_extraction"
-    #exit()
+    # exit()
 
     libsvm_file = vector_file+'.libsvm'
     prepare_libsvm_command = [
@@ -37,10 +37,23 @@ def run(genelearn_path, inputfile, outputfile, genemark_path, hmmer_path,
     if return_code != 0:
         return return_code, "prepare_libsvm"
 
+    libsvm_file_no4 = libsvm_file+'.no4'  # without HMM vfam features
+    prepare_libsvm_command = [
+        'python',
+        genelearn_path+'/pick_vectors_by_feature.py',
+        '-d', genelearn_path+'/model/all_segment.fasta.vect.feature_index',
+        '-f', '0_1_2_3', '-i', libsvm_file, '-o', libsvm_file_no4]
+    print "pick features from libsvm running...\n"
+    return_code = subprocess.call(prepare_libsvm_command)
+
+    if return_code != 0:
+        return return_code, "pick_features"
+
     spark_prediction_command = [
         spark_path+'bin/spark-submit',
-        genelearn_path+'/spark_prediction.py', libsvm_file, model_path,
-        outputfile]
+        genelearn_path+'/spark_prediction_dataframe.py', libsvm_file_no4,
+        model_path,
+        scaler_path, outputfile]
     print "spark prediction running...\n"
     return_code = subprocess.call(spark_prediction_command)
 
@@ -66,6 +79,8 @@ def main():
                         help="feature list file from training data")
     parser.add_argument('model_directory',
                         help="model used for prediction")
+    parser.add_argument('scaler_directory',
+                        help="scaler used for normalization")
     args = parser.parse_args()
 
     genelearn_path = os.path.dirname(os.path.realpath(__file__))
@@ -78,10 +93,11 @@ def main():
     spark_path = args.spark_path
     feature_file = args.feature_file
     model_path = args.model_directory
+    scaler_path = args.scaler_directory
 
     return_code = run(genelearn_path, input_file, output_file, genemark_path,
                       hmmer_path, hmmer_db, spark_path, feature_file,
-                      model_path)
+                      model_path, scaler_path)
 
     if return_code == 0:
         print "Done!"

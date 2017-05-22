@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+cd ./test-data/
+python ../../scripts/prediction_pipeline_lite.py test_segment_5k.fa.3 test_segment_5k.fa.3.prediction ~/bin/genemark_suite_macosx/gmsuite/ ~/bin/hmmer-3.1b2-macosx-intel/ ~/Local/Pfam_DB/ ~/Downloads/spark-2.1.0-bin-hadoop2.7/ /Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/scripts/model/all_segment.fasta.vect.feature_index  /Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/scripts/model/Spark_2.1.0/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model/ /Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/scripts/model/Spark_2.1.0/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler/
