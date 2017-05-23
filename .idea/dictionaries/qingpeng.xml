@@ -3,6 +3,7 @@
     <words>
       <w>codon</w>
       <w>contigs</w>
+      <w>dataframe</w>
       <w>famiy</w>
       <w>inputfile</w>
       <w>intergenic</w>
@@ -10,11 +11,13 @@
       <w>ksize</w>
       <w>libsvm</w>
       <w>listfile</w>
+      <w>llib</w>
       <w>maintainence</w>
       <w>matplotlib</w>
       <w>metagenomic</w>
       <w>metatransciptomic</w>
       <w>multispecies</w>
+      <w>nextflow</w>
       <w>nonredundant</w>
       <w>nonvirus</w>
       <w>outputfile</w>
