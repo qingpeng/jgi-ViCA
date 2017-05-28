@@ -1,25 +1,3 @@
-.. GeneLearn documentation master file, created by
-   sphinx-quickstart on Thu Jul  9 13:38:57 2015.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to GeneLearn's documentation!
-=====================================
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
 
 ## Model Tuning
 split into training and testing
@@ -40,6 +18,13 @@ $SPARKPATH/bin/spark-submit ./scripts/spark_evaluating_model.py testing.vect tra
 ## Training
 
 model training (small data set)
-```angular2html
+```bash
 $SPARKPATH/bin/spark-submit ./scripts/spark_training_model.py training.vect training.vect_model
+```
+
+## Get kmer/codon only features for full testing set
+```bash
+python ~/Github/jgi-ViCA/scripts/pick_vectors_by_feature.py -d ~/Github/jgi-Vi
+CA/scripts/model/all_segment.fasta.vect.feature_index -f 0_1 -i all_segment.
+fasta.vect.family.testing.svmlib.no4 -o all_segment.fasta.vect.family.testing.svmlib.no4.0_1
 ```

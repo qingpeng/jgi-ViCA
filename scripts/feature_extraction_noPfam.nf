@@ -4,12 +4,12 @@
 // if run locally, it will use all the CPUs available to speed up the calculation
 // if run on HPC, you can modify nextflow.config to adjust the resource request for HPC
 
-params.out = "./test.fa.14.vect"
-params.segment_file = "./test.fa.14"
+params.out = "./head10000.fasta.vect"
+params.segment_file = "./head10000.fasta"
 
-params.chunkSize = 2
+params.chunkSize = 10
 
-params.package_path = "/Users/qingpeng/Dropbox/Development/Bitbucket/jgi-genelearn/scripts"
+params.package_path = "/global/homes/q/qpzhang/Github/jgi-ViCA/scripts"
 package_path = Channel.value(params.package_path)
 
 params.genemark_path = "/global/homes/q/qpzhang/bin/genemark_suite_linux_64/gmsuite"
@@ -27,8 +27,6 @@ process get_feature {
     file inputfile from  fasta
     val package_path
     val genemark_path
-    val hmmer_path
-    val hmmer_db
 
     output:
     file 'vector.out' into vectors

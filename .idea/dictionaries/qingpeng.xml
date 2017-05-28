@@ -21,6 +21,7 @@
       <w>nonredundant</w>
       <w>nonvirus</w>
       <w>outputfile</w>
+      <w>pfam</w>
       <w>scaler</w>
       <w>svmlib</w>
       <w>taxname</w>
