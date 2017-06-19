@@ -14,7 +14,7 @@ for line in file_vect:
     fields = line.split()
     name_list.append(fields[0])
     length_list.append(fields[1])
-    if int(fields[1]) >= 5000:
+    if int(fields[1]) >= 4000:
         id_set.add(count)
     count += 1
 
