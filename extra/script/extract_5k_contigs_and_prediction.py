@@ -14,7 +14,7 @@ for line in file_vect:
     fields = line.split()
     name_list.append(fields[0])
     length_list.append(fields[1])
-    if int(fields[1]) >= 5000:
+    if int(fields[1]) >= 4000:
         id_set.add(count)
     count += 1
 
@@ -27,3 +27,4 @@ for line in file_prediction:
     if count2 in id_set:
         to_print = name_list[count2]+' '+str(length_list[count2])+' '+line+'\n'
         file_out.write(to_print)
+    count2 += 1
