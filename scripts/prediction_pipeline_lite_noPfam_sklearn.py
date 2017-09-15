@@ -48,7 +48,7 @@ def run(genelearn_path, inputfile, outputfile, genemark_path, feature_file,
     if return_code != 0:
         return return_code, "sklearn_prediction"
     print "done!\n"
-    shutil.rmtree(tmpdir)
+    #shutil.rmtree(tmpdir)
     return 0
 
 

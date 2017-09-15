@@ -25,12 +25,9 @@ Indices and tables
 
 # Dependencies
 * [GenemarkS version 4.29](http://exon.gatech.edu/GeneMark/)
-* [RefTree](https://bitbucket.org/berkeleylab/jgi_reftree)
-* [Task Farmer](http://jgi.goe.gov)
-* [Python v2.74](https://www.python.org/)
+* [Python v2.7.4](https://www.python.org/)
 * [Scikit-learn](https://scikits.appspot.com/scikit-learn)
 * [Biopython](http://biopython.org)
-* [simplejson](https://github.com/simplejson/simplejson)
 * [numpy](http://www.numpy.org/)
 * [scipy](http://www.scipy.org/)
 * [matplotlib](http://matplotlib.org/)
