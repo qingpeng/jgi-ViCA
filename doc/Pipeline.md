@@ -77,3 +77,50 @@ spark evaluating model!
 ```
  ~/Downloads/spark-2.0.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model.py testing.vect training.vect_model/ testing.vect.prediction testing.vect.report testing.vect.prc.png
 ```
+
+creating vector files for unit-testing
+====
+Generate vectors for 100 virus segments and 100 non-virus segments for testing purpose.
+```angular2html
+$python ~/Dropbox/Development/Github/jgi-ViCA/scripts/subsample_training_100.py training.vect 100 100 training.vect.200
+
+$ more training.vect.200|cut -f 1 -d ' '|grep -c '0'
+111
+$ more training.vect.200|cut -f 1 -d ' '|grep -c '1'
+86
+
+$ python ~/Dropbox/Development/Github/jgi-ViCA/scripts/subsample_training_100.py testing.vect 100 100 testing.vect.200
+$ more testing.vect.200|cut -f 1 -d ' '|grep -c '1'
+108
+$ more testing.vect.200|cut -f 1 -d ' '|grep -c '0'
+112
+
+```
+
+
+Get Spark ML model for prediction
+======
+
+
+```angular2html
+/global/projectb/scratch/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/Spark_1X> python ~/Github/jgi-ViCA/scripts/subsample_random.py ../../^C
+```
+
+```
+Training model on Cori
+Using 1x non-virus - all virus training data
+
+```angular2html
+spark-submit --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=$SCRATCH/spark/  --conf spark.driver.maxResultSize=60g  --driver
+-memory 60G --executor-memory 60G /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/spark_training_model_dataframe.py /global/projectb/scrat
+ch/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus /global/projectb/scratch/q
+pzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model /global/projectb/scratch
+/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler
+
+```
+
+Evaluate the performance of the model
+```angular2html
+ ~/Downloads/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model_dataframe.py ../testing.vect all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.report all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.png
+ 
+```
