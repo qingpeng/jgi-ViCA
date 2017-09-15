@@ -27,3 +27,4 @@ for line in file_prediction:
     if count2 in id_set:
         to_print = name_list[count2]+' '+str(length_list[count2])+' '+line+'\n'
         file_out.write(to_print)
+    count2 += 1
