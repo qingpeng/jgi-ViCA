@@ -1,8 +1,8 @@
 
-file_in_obj = open("/Users/qingpeng/Dropbox/Development/Github/jgi-ViCA/extra/model_tuning/Micromonas/tmpL1fNBb/shred.fa.vect.libsvm", 'r')
+file_in_obj = open("/Users/qingpeng/all_segment.fasta.vect.family.training.svmlib.no4.0_1.1x_nonvirus", 'r')
 
-virus_out = open("algea.vector", 'w')
-
+virus_out = open("virus.vector", 'w')
+nonvirus_out = open("nonvirus.vector", 'w')
 
 for line in file_in_obj:
     line = line.rstrip()
@@ -11,6 +11,8 @@ for line in file_in_obj:
     for field in fields[1:]:
         s = field.split(":")
         output = output+' '+s[1]
-
-    virus_out.write(output+'\n')
+    if fields[0] == '0':
+        nonvirus_out.write(output+'\n')
+    else:
+        virus_out.write(output+'\n')
 
