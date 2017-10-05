@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 
+# to split the all vectors into euk and non-euk, virus and non-virus,non-euk
 
 # 2759 - Eukaryota
 # 10239 -Virus
@@ -96,10 +97,9 @@ class VectorLine:
 
 def main():
 
-    parser = argparse.ArgumentParser(description='A script to only keep '
-                                                 'vectors about virus and '
-                                                 'Eukaryota to check the '
-                                                 'performance')
+    parser = argparse.ArgumentParser(description='A script to split vector '
+                                                 'into subsets, '
+                                                 'virus/nonvirus, euk/noneuk')
     parser.add_argument("vector", help='full vector file')
     args = parser.parse_args()
 
