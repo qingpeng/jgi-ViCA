@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beacc786-0ce7-4d6f-94c9-c37351b23d44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/qingpeng.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/qingpeng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/.ipynb_checkpoints/ModelTuning-checkpoint.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/.ipynb_checkpoints/ModelTuning-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/prepair_vector.py" afterPath="$PROJECT_DIR$/extra/model_tuning/prepair_vector.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/TARA-Copy1.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/TARA-Copy1.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/TARA-Copy2.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/TARA-Copy2.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra/model_tuning/TARA.ipynb" afterPath="$PROJECT_DIR$/extra/model_tuning/TARA.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,51 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="split_vector_into_virus_nonvirus.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/split_vector_into_virus_nonvirus.py">
+      <file leaf-file-name="combine_prediction_from_multiple_model.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/TARA/combine_prediction_from_multiple_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="split_to_virus_nonvirus_segment.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra/script/split_to_virus_nonvirus_segment.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="extract_5k_contigs_and_prediction.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra/script/extract_5k_contigs_and_prediction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prepair_vector_algea.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra/model_tuning/prepair_vector_algea.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prepair_vector.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/extra/model_tuning/prepair_vector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="151">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,22 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/Archive/get_genemark_feature.nf" />
-        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/modify_class_for_training.py" />
-        <option value="$PROJECT_DIR$/scripts/subsample_random.py" />
-        <option value="$PROJECT_DIR$/scripts/extract_column_from_libsvm.py" />
-        <option value="$PROJECT_DIR$/scripts/subsample_training_100.py" />
-        <option value="$PROJECT_DIR$/scripts/spark_training_model_dataframe.py" />
-        <option value="$PROJECT_DIR$/scripts/sklearn_evaluate_model.py" />
-        <option value="$PROJECT_DIR$/scripts/spark_evaluating_model_dataframe.py" />
-        <option value="$PROJECT_DIR$/tests/test_spark_training_model_dataframe.sh" />
-        <option value="$PROJECT_DIR$/scripts/spark_prediction_dataframe.py" />
-        <option value="$PROJECT_DIR$/tests/test_spark_prediction_dataframe.sh" />
-        <option value="$PROJECT_DIR$/scripts/prediction_pipeline_lite.py" />
-        <option value="$PROJECT_DIR$/tests/test_prediction_pipeline_lite.sh" />
-        <option value="$PROJECT_DIR$/web/server.py" />
-        <option value="$PROJECT_DIR$/doc/installation.rst" />
-        <option value="$PROJECT_DIR$/doc/script_description.rst" />
         <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
         <option value="$PROJECT_DIR$/scripts/6_feature_extraction_noPfam.py" />
@@ -159,6 +102,22 @@
         <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/generate_euk_virus_only_svmlib.py" />
         <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/tests/test_spark_prediction_dataframe.sh" />
         <option value="$PROJECT_DIR$/extra/model_tuning/prepair_vector.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/extra/model_tuning/prepair_vector.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/extra/model_tuning/prepair_vector_for_feature_exploration.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/extract_5k_contigs_svmlib.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/test_nersc4.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/spark_prediction.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/spark_prediction_2k_full_training.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/extra/script/random_lines.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/HPC_Job/euk_non_euk_model_evaluation.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/split_training_and_testing_set.py" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/HPC_Job/euk_non_euk_training.svmlib.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/HPC_Job/virus_non_euk_non_virus_training.svmlib.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/spark_prediction_2k_all_traing_data.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/spark_prediction_2k_euk_non_euk.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/spark_prediction_2k_virus_non_virus.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/spark_prediction_2k_non_euk_non_virus_and_virus.sl" />
+        <option value="&lt;ee92d526-46b5-4e59-a906-dee97ae12147&gt;/Github/jgi-ViCA/scripts/TARA/combine_prediction_from_multiple_model.py" />
       </list>
     </option>
   </component>
@@ -175,8 +134,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="182" />
-    <option name="y" value="109" />
+    <option name="x" value="44" />
+    <option name="y" value="22" />
     <option name="width" value="1236" />
     <option name="height" value="778" />
   </component>
@@ -198,8 +157,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,25 +209,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="extra" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgi-ViCA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jgi-ViCA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extra" />
+              <option name="myItemId" value="TARA" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,11 +227,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="extra" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model_tuning" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -619,22 +564,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="182" y="109" width="1236" height="778" extended-state="0" />
-    <editor active="true" />
+    <frame x="44" y="22" width="1236" height="778" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3254902" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56559765" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27470687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26130652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969284" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3752094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3760469" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914573" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -669,13 +613,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/6_feature_extraction_noPfam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
@@ -831,17 +768,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/installation.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="36" column="78" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="78" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="395">
             <caret line="50" column="15" lean-forward="false" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="36" column="78" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -957,17 +894,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/script_description.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="330">
             <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1014,17 +951,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/TODO.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="360">
             <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1036,6 +973,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/Pipeline.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="123" column="259" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1470">
@@ -1044,25 +986,11 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="123" column="259" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/split_vector_into_virus_nonvirus.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extra/script/split_to_virus_nonvirus_segment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1070,22 +998,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/extra/model_tuning/prepair_vector.py" />
     <entry file="file://$PROJECT_DIR$/extra/model_tuning/prepair_vector_algea.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extra/model_tuning/prepair_vector.py">
+    <entry file="file://$PROJECT_DIR$/scripts/split_vector_into_virus_nonvirus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/TARA/combine_prediction_from_multiple_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
