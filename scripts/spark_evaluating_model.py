@@ -91,13 +91,13 @@ def main():
     sc = SparkContext(appName="PythonLinearRegressionWithSGDExample")
 
     model = Model(args.model, args.scaler)
-    print 'load model done!\n'
+    #print 'load model done!\n'
     model.evaluate(args.libsvm)
-    print 'evaluating_model done!\n'
+    #print 'evaluating_model done!\n'
     model.write_to_report(args.report)
-    print 'write_to_report done!\n'
+    #print 'write_to_report done!\n'
     model.draw_prc(args.PRC)
-    print 'draw_prc done!\n'
+    #print 'draw_prc done!\n'
 
 if __name__ == '__main__':
     main()

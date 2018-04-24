@@ -124,3 +124,16 @@ Evaluate the performance of the model
  ~/Downloads/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ~/Dropbox/Development/Github/jgi-ViCA/scripts/spark_evaluating_model_dataframe.py ../testing.vect all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_scaler all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.report all_segment.fasta.vect.family.training.svmlib.no4.1x_nonvirus_model.png
  
 ```
+
+Training model on Cori
+Using 1x non-virus - all virus training data, no pfam features...
+
+```angular2html
+spark-submit --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=$SCRATCH/spark/  --conf spark.driver.maxResultSize=120g  --driver-memory 120G --ex
+ecutor-memory 120G /global/homes/q/qpzhang/Github/jgi-ViCA/scripts/spark_training_model_noPfam.py /global/projectb/scratch/qpzhang/Run_Genelearn/Full_nextfl
+ow/Test_Spark/all_segment.fasta.vect.family.training.svmlib.no4.0_1.1x_nonvirus /global/projectb/scratch/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_
+segment.fasta.vect.family.training.svmlib.no4.0_1.1x_nonvirus_model /global/projectb/scratch/qpzhang/Run_Genelearn/Full_nextflow/Test_Spark/all_segment.fast
+a.vect.family.training.svmlib.no4.0_1.1x_nonvirus_scaler
+stop-all.sh
+```
+

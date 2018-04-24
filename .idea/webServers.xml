@@ -10,6 +10,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="c5862e3e-c65c-4dbe-9379-930ff0fbebd5" name="genepoolcdd" url="http://genepool14.nersc.gov">
+        <fileTransfer host="genepool14.nersc.gov" port="22" rootFolder="/global/projectb/scratch/qpzhang/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

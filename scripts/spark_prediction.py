@@ -56,11 +56,11 @@ def main():
     sc = SparkContext(appName="prediction")
 
     model = Model(args.model, args.scaler)
-    print 'load model done!\n'
+    #  print 'load model done!\n'
     model.predict(args.libsvm)
-    print 'prediction done!\n'
+    #  print 'prediction done!\n'
     model.write_output(args.outfile)
-    print 'output result done!\n'
+    #  print 'output result done!\n'
 
 if __name__ == '__main__':
     main()

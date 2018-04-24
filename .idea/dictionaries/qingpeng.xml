@@ -4,6 +4,8 @@
       <w>codon</w>
       <w>contigs</w>
       <w>dataframe</w>
+      <w>euka</w>
+      <w>eukaryota</w>
       <w>famiy</w>
       <w>inputfile</w>
       <w>intergenic</w>
@@ -18,9 +20,11 @@
       <w>metatransciptomic</w>
       <w>multispecies</w>
       <w>nextflow</w>
+      <w>noneuk</w>
       <w>nonredundant</w>
       <w>nonvirus</w>
       <w>outputfile</w>
+      <w>pfam</w>
       <w>scaler</w>
       <w>svmlib</w>
       <w>taxname</w>

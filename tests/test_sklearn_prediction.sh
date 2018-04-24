@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+python ../../scripts/sklearn_prediction.py testing.vect.200_0_1 ../../scripts/model/Sklearn/all_segment.fasta.vect.family.training.svmlib.no4.0_1_scikit_model_median_True_1x ../../scripts/model/Sklearn/all_segment.fasta.vect.family.training.svmlib.no4.0_1_scikit_scaler_median_True_1x True  testing.vect.200_0_1.prediction_sklearn
