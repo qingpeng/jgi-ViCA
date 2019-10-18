@@ -3,7 +3,8 @@
 Classifying virus from metagenomic and metatransciptomic contigs
  
 
-
+An updated version of ViCA using Deep Learning approach is hosted at:
+https://github.com/USDA-ARS-GBRU/vica
 
 ## Usage
 
